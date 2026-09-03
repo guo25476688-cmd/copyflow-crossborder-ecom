@@ -147,7 +147,7 @@ flowchart LR
 
 ## 关于这个项目
 
-个人项目，全部内容由 **郭树奇** 独立完成：需求与竞品分析、PRD、Dify 工作流架构、Prompt 工程与迭代、CopyFlow Web 原型开发与部署。
+个人项目，全部内容由 **Stella** 独立完成：需求与竞品分析、PRD、Dify 工作流架构、Prompt 工程与迭代、CopyFlow Web 原型开发与部署。
 
 ## License
 
