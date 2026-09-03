@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CopyFlow — 多平台跨境电商内容自动化</title>
+<meta name="description" content="一次输入产品信息，同时生成 Amazon / Shopee / TikTok / SHEIN 四平台差异化文案与多语种本地化译文。CopyFlow 产品原型（演示模式）。">
+<meta property="og:title" content="CopyFlow — 多平台跨境电商内容自动化">
+<meta property="og:description" content="一次输入，四平台差异化文案 + 多语种深度本地化。产品原型演示。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,700;1,300&family=Playfair+Display:ital,wght@0,400;1,400;1,700&family=Noto+Serif+SC:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:          #04050d;
+  --blue-bright: #1e6fff;
+  --blue-mid:    #1145b0;
+  --blue-deep:   #0a2a6b;
+  --blue-dim:    #0d1f4a;
+  --txt-1:       #c8d8f8;
+  --txt-2:       #4a6aac;
+  --txt-3:       #1e3570;
+  --mono:        'JetBrains Mono', 'Courier New', monospace;
+  --serif-en:    'Playfair Display', Georgia, serif;
+  --serif-zh:    'Noto Serif SC', 'STSong', serif;
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--txt-1);
+  font-family: var(--mono);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Grain ── */
+#grain {
+  position: fixed; inset: 0; z-index: 99;
+  pointer-events: none; opacity: .09;
+}
+
+/* ── Code rain ── */
+#c-rain {
+  position: fixed; inset: 0; z-index: 0;
+  pointer-events: none; opacity: .07;
+}
+
+/* ── Header ── */
+.hdr {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 80; padding: 22px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid var(--txt-3);
+}
+.hdr-logo {
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: .28em; text-transform: uppercase; color: var(--txt-2);
+}
+.hdr-right { display: flex; align-items: center; gap: 28px; }
+.hdr-status {
+  font-size: 10px; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--txt-3);
+}
+.hdr-status.on  { color: var(--blue-bright); }
+.hdr-status.dm  { color: var(--txt-2); }
+.hdr-cfg {
+  background: none; border: none; border-bottom: 1px solid transparent;
+  color: var(--txt-2); font-family: var(--mono); font-size: 10px;
+  letter-spacing: .2em; text-transform: uppercase; cursor: pointer;
+  padding-bottom: 2px; transition: color .3s, border-color .3s;
+}
+.hdr-cfg:hover { color: var(--blue-bright); border-bottom-color: var(--blue-bright); }
+
+/* ── Section I: Art ── */
+.s-art {
+  position: relative; min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding-bottom: 64px; z-index: 2; overflow: hidden;
+}
+
+/* floating editorial labels */
+.fl {
+  position: absolute;
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--txt-3); pointer-events: none;
+  opacity: 0; transform: translateY(12px);
+  transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1);
+}
+.fl.in { opacity: 1; transform: translateY(0); }
+.fl-tl { top: 100px; left: 48px; }
+.fl-tr { top: 100px; right: 48px; text-align: right; }
+.fl-tr2 { top: 120px; right: 48px; text-align: right; transition-delay: .12s; }
+.fl-poem {
+  bottom: 120px; right: 56px; text-align: right;
+  font-family: var(--serif-zh); font-size: 13px;
+  letter-spacing: .12em; line-height: 2.2;
+  text-transform: none; color: var(--txt-2);
+  transition-delay: .25s;
+}
+.fl-poem em {
+  display: block; font-style: normal;
+  font-family: var(--mono); font-size: 9px;
+  letter-spacing: .28em; text-transform: uppercase;
+  color: var(--blue-bright); margin-top: 10px;
+}
+
+/* Art canvas */
+.art-wrap {
+  position: absolute; top: 50%; left: 44%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+/* Hero title */
+.hero-title {
+  position: absolute; bottom: 64px; left: 48px;
+  font-family: var(--serif-en); font-style: italic;
+  font-size: clamp(56px, 9vw, 110px);
+  font-weight: 400; line-height: 1.05;
+  letter-spacing: -.02em; color: var(--txt-1);
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 1.1s cubic-bezier(.22,1,.36,1) .1s,
+              transform 1.1s cubic-bezier(.22,1,.36,1) .1s;
+}
+.hero-title.in { opacity: 1; transform: translateY(0); }
+.hero-title span { color: var(--txt-3); font-size: .55em; display: block; letter-spacing: .01em; }
+
+/* scroll hint */
+.scroll-hint {
+  position: absolute; bottom: 28px; left: 50%;
+  transform: translateX(-50%);
+  font-size: 9px; letter-spacing: .3em; text-transform: uppercase;
+  color: var(--txt-3); animation: sc-hint 2.4s ease-in-out infinite;
+}
+@keyframes sc-hint { 0%,100%{opacity:.3} 50%{opacity:.8} }
+
+/* ── Divider ── */
+.s-div {
+  display: flex; align-items: center; gap: 24px;
+  padding: 0 48px;
+  opacity: 0; transform: translateY(14px);
+  transition: opacity .8s cubic-bezier(.22,1,.36,1),
+              transform .8s cubic-bezier(.22,1,.36,1);
+}
+.s-div.in { opacity: 1; transform: translateY(0); }
+.s-div-lbl {
+  font-size: 9px; letter-spacing: .35em;
+  text-transform: uppercase; color: var(--txt-2); white-space: nowrap;
+}
+.s-div-line { flex: 1; height: 1px; background: var(--txt-3); }
+
+/* ── Section II: Input ── */
+.s-input {
+  position: relative; z-index: 2;
+  padding: 56px 48px 72px; max-width: 860px;
+}
+
+/* mode tabs */
+.mode-tabs { display: flex; gap: 0; margin-bottom: 44px; }
+.mode-tab {
+  background: none; border: none;
+  border-bottom: 1px solid var(--txt-3);
+  color: var(--txt-3); font-family: var(--mono);
+  font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+  cursor: pointer; padding: 6px 20px 6px 0; margin-right: 24px;
+  transition: color .3s, border-color .3s;
+}
+.mode-tab.a { color: var(--txt-1); border-bottom-color: var(--blue-bright); }
+
+/* form fields */
+.ff {
+  display: grid; grid-template-columns: 108px 1fr;
+  gap: 0 20px; align-items: baseline;
+  margin-bottom: 30px;
+  opacity: 0; transform: translateY(14px);
+  transition: opacity .8s cubic-bezier(.22,1,.36,1),
+              transform .8s cubic-bezier(.22,1,.36,1);
+}
+.ff.in { opacity: 1; transform: translateY(0); }
+.ff-lbl {
+  font-size: 9px; letter-spacing: .28em;
+  text-transform: uppercase; color: var(--txt-2);
+  padding-bottom: 5px; border-bottom: 1px solid var(--txt-3);
+  align-self: end;
+}
+.ff-ctrl input,
+.ff-ctrl textarea {
+  width: 100%; background: none; border: none;
+  border-bottom: 1px solid var(--txt-3);
+  color: var(--txt-1); font-family: var(--mono);
+  font-size: 13px; letter-spacing: .05em;
+  padding: 4px 0 7px; outline: none; resize: none;
+  transition: border-color .35s;
+}
+.ff-ctrl input:focus,
+.ff-ctrl textarea:focus { border-bottom-color: var(--blue-bright); }
+.ff-ctrl input::placeholder,
+.ff-ctrl textarea::placeholder { color: var(--txt-3); font-style: italic; }
+
+/* category pills (text) */
+.cat-row { display: flex; flex-wrap: wrap; gap: 0; border-bottom: 1px solid var(--txt-3); padding-bottom: 6px; }
+.cat-btn {
+  background: none; border: none; color: var(--txt-3);
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: .18em; text-transform: uppercase;
+  cursor: pointer; padding: 3px 16px 3px 0;
+  transition: color .25s;
+}
+.cat-btn.a { color: var(--txt-1); }
+
+/* platform */
+.plt-row { display: flex; flex-wrap: wrap; gap: 8px 8px; border-bottom: 1px solid var(--txt-3); padding-bottom: 8px; }
+.plt-btn {
+  background: none; border: 1px solid var(--txt-3);
+  color: var(--txt-3); font-family: var(--mono);
+  font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+  cursor: pointer; padding: 5px 14px;
+  transition: all .3s cubic-bezier(.22,1,.36,1);
+}
+.plt-btn.a { background: var(--blue-bright); border-color: var(--blue-bright); color: var(--bg); }
+
+/* lang tags */
+.lang-row {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  border-bottom: 1px solid var(--txt-3); padding-bottom: 6px;
+}
+.l-tag {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: var(--blue-dim); color: var(--txt-2);
+  font-size: 11px; letter-spacing: .1em; padding: 2px 8px;
+}
+.l-tag button {
+  background: none; border: none; color: inherit;
+  cursor: pointer; font-size: 14px; line-height: 1;
+  opacity: .6; padding: 0; transition: opacity .2s;
+}
+.l-tag button:hover { opacity: 1; }
+.l-inp {
+  background: none; border: none; color: var(--txt-1);
+  font-family: var(--mono); font-size: 13px;
+  letter-spacing: .05em; outline: none; min-width: 100px;
+}
+
+/* errors */
+.err-msg {
+  font-size: 10px; letter-spacing: .12em;
+  color: var(--blue-bright); margin-top: 5px; display: none;
+}
+.err-msg.sh { display: block; }
+
+/* generate row */
+.gen-row {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 44px; padding-top: 22px; border-top: 1px solid var(--txt-3);
+  opacity: 0; transform: translateY(14px);
+  transition: opacity .8s cubic-bezier(.22,1,.36,1) .2s,
+              transform .8s cubic-bezier(.22,1,.36,1) .2s;
+}
+.gen-row.in { opacity: 1; transform: translateY(0); }
+.gen-status { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--txt-3); }
+.gen-btn {
+  background: none; border: 1px solid var(--blue-bright);
+  color: var(--blue-bright); font-family: var(--mono);
+  font-size: 10px; letter-spacing: .35em; text-transform: uppercase;
+  cursor: pointer; padding: 10px 28px;
+  position: relative; overflow: hidden;
+  transition: color .4s cubic-bezier(.22,1,.36,1);
+}
+.gen-btn::before {
+  content: ''; position: absolute;
+  top: 0; left: -100%; width: 100%; height: 100%;
+  background: var(--blue-bright);
+  transition: left .4s cubic-bezier(.22,1,.36,1); z-index: 0;
+}
+.gen-btn:hover::before { left: 0; }
+.gen-btn:hover { color: var(--bg); }
+.gen-btn span { position: relative; z-index: 1; }
+.gen-btn:disabled { opacity: .35; cursor: not-allowed; }
+.gen-btn:disabled::before { display: none; }
+.gen-btn:disabled:hover { color: var(--blue-bright); }
+
+/* ── Section III: Output ── */
+.s-out {
+  position: relative; z-index: 2;
+  padding: 0 48px 120px; display: none;
+}
+.s-out.vis { display: block; }
+
+.out-tabs {
+  display: flex; gap: 0;
+  border-bottom: 1px solid var(--txt-3);
+  margin-bottom: 48px;
+}
+.out-tab {
+  background: none; border: none;
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+  color: var(--txt-3); font-family: var(--mono);
+  font-size: 10px; letter-spacing: .28em; text-transform: uppercase;
+  cursor: pointer; padding: 12px 28px 12px 0;
+  transition: all .3s;
+}
+.out-tab.a { color: var(--txt-1); border-bottom-color: var(--blue-bright); }
+.out-tab.ld { opacity: .4; }
+
+.out-panel { display: none; }
+.out-panel.a { display: block; }
+
+.lang-tabs { display: flex; gap: 20px; margin-bottom: 32px; }
+.l-tab {
+  background: none; border: none;
+  border-bottom: 1px solid transparent;
+  color: var(--txt-3); font-family: var(--mono);
+  font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
+  cursor: pointer; padding-bottom: 3px; transition: all .3s;
+}
+.l-tab.a { color: var(--txt-1); border-bottom-color: var(--blue-bright); }
+
+.l-panel { display: none; }
+.l-panel.a { display: block; }
+
+.r-content { max-width: 680px; }
+.r-block {
+  margin-bottom: 52px;
+  opacity: 0; transform: translateY(18px);
+  transition: opacity .9s cubic-bezier(.22,1,.36,1),
+              transform .9s cubic-bezier(.22,1,.36,1);
+}
+.r-block.in { opacity: 1; transform: translateY(0); }
+.r-block-hdr {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 18px;
+}
+.r-block-lbl {
+  font-size: 9px; letter-spacing: .38em;
+  text-transform: uppercase; color: var(--txt-3); white-space: nowrap;
+}
+.r-block-line { flex: 1; height: 1px; background: var(--txt-3); opacity: .5; }
+.r-copy-btn {
+  background: none; border: none; color: var(--txt-3);
+  font-family: var(--mono); font-size: 9px;
+  letter-spacing: .2em; cursor: pointer; white-space: nowrap;
+  transition: color .3s; padding: 0;
+}
+.r-copy-btn:hover { color: var(--blue-bright); }
+.r-copy-btn.cp { color: var(--blue-bright); }
+
+.r-text {
+  font-family: var(--mono); font-size: 13px;
+  letter-spacing: .04em; line-height: 1.88; color: var(--txt-1);
+}
+.r-text p { margin-bottom: 12px; }
+.r-text p:last-child { margin-bottom: 0; }
+.r-text strong { font-weight: 700; color: var(--txt-1); }
+.r-text em { font-style: italic; color: var(--txt-2); }
+.r-text ul { list-style: none; }
+.r-text li { padding-left: 18px; position: relative; margin-bottom: 10px; line-height: 1.78; }
+.r-text li::before { content: '—'; position: absolute; left: 0; color: var(--txt-3); }
+.r-text h2, .r-text h3 {
+  font-family: var(--mono); font-size: 9px;
+  letter-spacing: .32em; text-transform: uppercase;
+  color: var(--txt-2); margin: 22px 0 12px;
+}
+
+/* skel */
+.skel { display: flex; flex-direction: column; gap: 10px; }
+.skel-l {
+  height: 1px; background: var(--txt-3);
+  animation: sk 1.5s ease-in-out infinite;
+}
+@keyframes sk { 0%,100%{opacity:.15} 50%{opacity:.55} }
+
+/* ── Modal ── */
+.modal-veil {
+  position: fixed; inset: 0;
+  background: rgba(4,5,13,.92);
+  z-index: 200; display: flex;
+  align-items: center; justify-content: center;
+}
+.modal-veil.h { display: none; }
+.modal-box {
+  width: 460px; border: 1px solid var(--txt-3);
+  padding: 48px; background: var(--bg);
+  position: relative;
+}
+.modal-ttl {
+  font-size: 9px; letter-spacing: .38em;
+  text-transform: uppercase; color: var(--txt-2); margin-bottom: 36px;
+}
+.modal-close {
+  position: absolute; top: 18px; right: 20px;
+  background: none; border: none; color: var(--txt-3);
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: .18em; cursor: pointer; transition: color .3s;
+}
+.modal-close:hover { color: var(--txt-1); }
+.modal-f { margin-bottom: 24px; }
+.modal-f label {
+  display: block; font-size: 9px; letter-spacing: .3em;
+  text-transform: uppercase; color: var(--txt-3); margin-bottom: 10px;
+}
+.modal-f input {
+  width: 100%; background: none; border: none;
+  border-bottom: 1px solid var(--txt-3);
+  color: var(--txt-1); font-family: var(--mono);
+  font-size: 12px; letter-spacing: .05em;
+  padding: 4px 0 8px; outline: none; transition: border-color .3s;
+}
+.modal-f input:focus { border-bottom-color: var(--blue-bright); }
+.modal-f input::placeholder { color: var(--txt-3); }
+.modal-acts {
+  display: flex; justify-content: space-between;
+  align-items: center; margin-top: 36px;
+}
+.modal-demo {
+  background: none; border: none; color: var(--txt-3);
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: .2em; text-transform: uppercase;
+  cursor: pointer; border-bottom: 1px solid transparent;
+  padding-bottom: 2px; transition: all .3s;
+}
+.modal-demo:hover { color: var(--txt-2); border-bottom-color: var(--txt-2); }
+.modal-save {
+  background: none; border: 1px solid var(--blue-bright);
+  color: var(--blue-bright); font-family: var(--mono);
+  font-size: 10px; letter-spacing: .3em; text-transform: uppercase;
+  cursor: pointer; padding: 8px 22px; transition: all .3s;
+}
+.modal-save:hover { background: var(--blue-bright); color: var(--bg); }
+
+.h { display: none !important; }
+</style>
+</head>
+<body>
+
+<!-- grain -->
+<svg id="grain" xmlns="http://www.w3.org/2000/svg">
+  <filter id="gf">
+    <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="4" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#gf)"/>
+</svg>
+
+<!-- code rain -->
+<canvas id="c-rain"></canvas>
+
+<!-- modal -->
+<div class="modal-veil h" id="modal">
+  <div class="modal-box">
+    <div class="modal-ttl">— api configuration</div>
+    <button class="modal-close" id="mClose">[ close ]</button>
+    <div class="modal-f">
+      <label>Dify API endpoint</label>
+      <input type="url" id="cfgUrl" placeholder="http://your-server/v1">
+    </div>
+    <div class="modal-f">
+      <label>Workflow API key</label>
+      <input type="password" id="cfgKey" placeholder="app-xxxxxxxxxxxxxxxx">
+    </div>
+    <div class="modal-acts">
+      <button class="modal-demo" id="demoBtn">enter as demo</button>
+      <button class="modal-save" id="saveBtn">connect</button>
+    </div>
+  </div>
+</div>
+
+<!-- header -->
+<header class="hdr">
+  <div class="hdr-logo">CopyFlow &nbsp;/&nbsp; Vol. I — MMXXVI</div>
+  <div class="hdr-right">
+    <span class="hdr-status" id="hdrSt">—— unconfigured</span>
+    <button class="hdr-cfg" id="cfgBtn">configure</button>
+  </div>
+</header>
+
+<!-- S1: Art -->
+<section class="s-art" id="sArt">
+  <div class="art-wrap" id="artWrap">
+    <canvas id="c-art"></canvas>
+  </div>
+
+  <span class="fl fl-tl" id="fl1">N 31°14′ · E 121°28′</span>
+  <span class="fl fl-tr" id="fl2">文字渡洋</span>
+  <span class="fl fl-tr2" id="fl3">Words cross latitudes</span>
+  <span class="fl fl-poem" id="fl4">
+    在异乡的货架上<br>文字再一次成为意义<br>
+    <em>the sentence is the vessel</em>
+  </span>
+
+  <h1 class="hero-title" id="heroT">
+    Language<br><em>as</em> Vessel.
+    <span>A cross-border copy engine</span>
+  </h1>
+
+  <div class="scroll-hint">scroll</div>
+</section>
+
+<!-- S2: Input -->
+<section class="s-input" id="sInput">
+
+  <div class="s-div" id="div1" style="margin-bottom:44px">
+    <span class="s-div-lbl">— Input</span>
+    <div class="s-div-line"></div>
+    <span class="s-div-lbl">Section 01</span>
+  </div>
+
+  <!-- mode tabs -->
+  <div class="mode-tabs" style="margin-bottom:40px">
+    <button class="mode-tab a" data-m="form">product form</button>
+    <button class="mode-tab" data-m="url">paste url</button>
+    <button class="mode-tab" data-m="free">free text</button>
+  </div>
+
+  <!-- form pane -->
+  <div id="pane-form">
+    <div class="ff" id="ff1">
+      <div class="ff-lbl">product</div>
+      <div class="ff-ctrl">
+        <input type="text" id="pName" placeholder="name of the product">
+        <div class="err-msg" id="eN">required</div>
+      </div>
+    </div>
+    <div class="ff" id="ff2">
+      <div class="ff-lbl">features</div>
+      <div class="ff-ctrl">
+        <textarea id="pFeat" rows="3" placeholder="core features, specifications, materials..."></textarea>
+        <div class="err-msg" id="eF">required</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- url pane -->
+  <div id="pane-url" class="h">
+    <div class="ff in">
+      <div class="ff-lbl">url</div>
+      <div class="ff-ctrl">
+        <input type="url" id="pUrl" placeholder="https://www.amazon.com/dp/...">
+      </div>
+    </div>
+  </div>
+
+  <!-- free pane -->
+  <div id="pane-free" class="h">
+    <div class="ff in">
+      <div class="ff-lbl">text</div>
+      <div class="ff-ctrl">
+        <textarea id="pFree" rows="6" placeholder="describe the product in any way you choose..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- category -->
+  <div class="ff" id="ff3">
+    <div class="ff-lbl">category</div>
+    <div class="ff-ctrl">
+      <div class="cat-row">
+        <button class="cat-btn" data-v="electronics">electronics</button>
+        <button class="cat-btn" data-v="clothing">clothing</button>
+        <button class="cat-btn" data-v="home">home</button>
+        <button class="cat-btn" data-v="beauty">beauty</button>
+        <button class="cat-btn" data-v="sports">sports</button>
+        <button class="cat-btn" data-v="food">food</button>
+      </div>
+      <div class="err-msg" id="eC">select a category</div>
+    </div>
+  </div>
+
+  <!-- platform -->
+  <div class="ff" id="ff4">
+    <div class="ff-lbl">platform</div>
+    <div class="ff-ctrl">
+      <div class="plt-row">
+        <button class="plt-btn" data-v="Amazon">Amazon</button>
+        <button class="plt-btn" data-v="Shopee">Shopee</button>
+        <button class="plt-btn" data-v="TikTok">TikTok</button>
+        <button class="plt-btn" data-v="Shein">Shein</button>
+      </div>
+      <div class="err-msg" id="eP">select at least one platform</div>
+    </div>
+  </div>
+
+  <!-- language -->
+  <div class="ff" id="ff5">
+    <div class="ff-lbl">language</div>
+    <div class="ff-ctrl">
+      <div class="lang-row" id="langRow">
+        <div id="lTags"></div>
+        <input class="l-inp" id="lInp" placeholder="add language…">
+      </div>
+    </div>
+  </div>
+
+  <!-- generate -->
+  <div class="gen-row" id="genRow">
+    <button class="mode-tab" id="loadExample" style="margin:0;padding:6px 0;border-bottom-color:var(--txt-2)">load example — HoverGo Pro</button>
+    <div style="display:flex;align-items:center;gap:22px">
+      <span class="gen-status" id="genSt">—— ready</span>
+      <button class="gen-btn" id="genBtn"><span id="genLbl">generate</span></button>
+    </div>
+  </div>
+
+</section>
+
+<!-- S3: Output -->
+<section class="s-out" id="sOut">
+  <div class="s-div in" style="margin-bottom:44px">
+    <span class="s-div-lbl">— Output</span>
+    <div class="s-div-line"></div>
+    <span class="s-div-lbl">Section 02</span>
+  </div>
+  <div class="out-tabs" id="outTabs"></div>
+  <div id="outPanels"></div>
+</section>
+
+<!-- footer -->
+<footer style="position:relative;z-index:2;padding:40px 48px 64px;border-top:1px solid var(--txt-3);display:flex;flex-wrap:wrap;gap:10px 28px;align-items:center;justify-content:space-between">
+  <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--txt-3)">CopyFlow · 演示模式 · 数据为预置样例</span>
+  <a href="https://github.com/guo25476688-cmd/copyflow-crossborder-ecom" style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--txt-2);text-decoration:none;border-bottom:1px solid var(--txt-3);padding-bottom:2px">项目仓库 / PRD / Prompt 工程文档 →</a>
+</footer>
+
+<script>
+/* ═══ Code Rain ═══════════════════════════════════════ */
+(function(){
+  const cv = document.getElementById('c-rain');
+  const cx = cv.getContext('2d');
+  const CH = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789文字语言渡洋意义边境贸易.:;|—×∆Ω'.split('');
+  let cols=[], W, H, FS=13;
+
+  function resize(){
+    W=cv.width=innerWidth; H=cv.height=innerHeight;
+    cols=[];
+    for(let i=0;i<Math.floor(W/FS);i++)
+      cols.push({x:i*FS,y:-Math.random()*H,sp:.25+Math.random()*.5,
+        ch:CH[0|Math.random()*CH.length],t:0,ti:30+Math.random()*80});
+  }
+  let last=0;
+  function tick(ts){
+    const dt=Math.min(ts-last,50); last=ts;
+    cx.fillStyle='rgba(4,5,13,.18)';
+    cx.fillRect(0,0,W,H);
+    cx.font=`300 ${FS}px 'JetBrains Mono',monospace`;
+    for(const c of cols){
+      c.t+=dt;
+      if(c.t>c.ti){c.ch=CH[0|Math.random()*CH.length];c.t=0;c.ti=30+Math.random()*80;}
+      c.y+=c.sp*(dt/16);
+      cx.fillStyle=`rgba(30,111,255,${.4+Math.random()*.6})`;
+      cx.fillText(c.ch,c.x,c.y);
+      if(c.y>H+FS){c.y=-FS*(1+Math.random()*24);c.sp=.25+Math.random()*.5;}
+    }
+    requestAnimationFrame(tick);
+  }
+  resize(); addEventListener('resize',resize); requestAnimationFrame(tick);
+})();
+
+/* ═══ Text-as-Image Art ════════════════════════════════ */
+(function(){
+  const cv=document.getElementById('c-art');
+  const cx=cv.getContext('2d');
+  const SZ=500; cv.width=cv.height=SZ;
+  cv.style.width=cv.style.height=SZ+'px';
+
+  const DENSE=[':','|','+','·','·',';','×'];
+  const LIGHT=['.','·','·','·',' ',' '];
+  const GRID=8;
+  let pts=[];
+
+  function buildPts(fontReady){
+    const off=document.createElement('canvas');
+    off.width=off.height=SZ;
+    const oc=off.getContext('2d');
+    oc.fillStyle='#000'; oc.fillRect(0,0,SZ,SZ);
+
+    if(fontReady){
+      oc.font=`700 360px 'Noto Serif SC',serif`;
+      oc.fillStyle='rgba(255,255,255,1)';
+      oc.textAlign='center'; oc.textBaseline='middle';
+      oc.fillText('文',SZ/2,SZ/2+18);
+    } else {
+      // Fallback: concentric circles pattern
+      for(let r=40;r<230;r+=22){
+        oc.beginPath(); oc.arc(SZ/2,SZ/2,r,0,Math.PI*2);
+        oc.strokeStyle=`rgba(255,255,255,${.15+.85*(1-(r/230))})`;
+        oc.lineWidth=r<80?6:r<140?3:1.5;
+        oc.stroke();
+      }
+    }
+
+    const id=oc.getImageData(0,0,SZ,SZ).data;
+    pts=[];
+    for(let y=0;y<SZ;y+=GRID){
+      for(let x=0;x<SZ;x+=GRID){
+        const i=(y*SZ+x)*4, b=id[i];
+        if(b>14){
+          const t=b/255;
+          const set=t>.45?DENSE:LIGHT;
+          pts.push({
+            ox:x+(Math.random()-.5)*GRID,
+            oy:y+(Math.random()-.5)*GRID,
+            x:x+(Math.random()-.5)*GRID,
+            y:y+(Math.random()-.5)*GRID,
+            t, char:set[0|Math.random()*set.length],
+            a:.15+t*.8, sz:6.5+t*3.5,
+            vx:0, vy:0,
+          });
+        }
+      }
+    }
+  }
+
+  let mx=-9999, my=-9999;
+  document.addEventListener('mousemove',e=>{
+    const r=cv.getBoundingClientRect();
+    mx=e.clientX-r.left; my=e.clientY-r.top;
+  });
+
+  function drawArt(ts){
+    cx.clearRect(0,0,SZ,SZ);
+    const RRAD=90, SPR=.07, DAMP=.76;
+    for(const p of pts){
+      const dx=p.x-mx, dy=p.y-my, d=Math.sqrt(dx*dx+dy*dy);
+      if(d<RRAD && d>0){const f=(RRAD-d)/RRAD; p.vx+=(dx/d)*f*3.5; p.vy+=(dy/d)*f*3.5;}
+      p.vx+=(p.ox-p.x)*SPR; p.vy+=(p.oy-p.y)*SPR;
+      p.vx*=DAMP; p.vy*=DAMP;
+      p.x+=p.vx; p.y+=p.vy;
+      const a=p.a*(.82+Math.sin(ts*.0009+p.ox*.05)*.18);
+      cx.globalAlpha=a;
+      cx.font=`300 ${p.sz}px 'JetBrains Mono',monospace`;
+      cx.fillStyle=p.t>.62?'#c8d8f8':p.t>.35?'#4a6aac':'#1e3570';
+      cx.fillText(p.char,p.x,p.y);
+    }
+    cx.globalAlpha=1;
+    requestAnimationFrame(drawArt);
+  }
+
+  buildPts(false);
+  requestAnimationFrame(drawArt);
+
+  document.fonts.ready.then(()=>{ buildPts(true); });
+})();
+
+/* ═══ Parallax ════════════════════════════════════════ */
+addEventListener('scroll',()=>{
+  const w=document.getElementById('artWrap');
+  w.style.transform=`translate(-50%,calc(-50% + ${scrollY*.32}px))`;
+},{passive:true});
+
+/* ═══ Scroll Reveal ═══════════════════════════════════ */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+},{threshold:.12});
+
+['fl1','fl2','fl3','fl4','heroT','div1','ff1','ff2','ff3','ff4','ff5','genRow'].forEach(id=>{
+  const el=document.getElementById(id);
+  if(el) obs.observe(el);
+});
+
+setTimeout(()=>{
+  document.getElementById('heroT').classList.add('in');
+  ['fl1','fl2','fl3','fl4'].forEach((id,i)=>{
+    setTimeout(()=>document.getElementById(id)?.classList.add('in'),200+i*120);
+  });
+},300);
+
+/* ═══ App State ════════════════════════════════════════ */
+const st={
+  mode:'form', cat:null, plats:new Set(), langs:['English'],
+  busy:false, results:{}, activePlat:null,
+  cfg:{url:'',key:''}, demo:false,
+};
+
+/* config */
+function loadCfg(){
+  st.cfg.url=localStorage.getItem('cf_url')||'';
+  st.cfg.key=localStorage.getItem('cf_key')||'';
+  st.demo=localStorage.getItem('cf_demo')==='true';
+  const el=document.getElementById('hdrSt');
+  if(st.demo){el.textContent='—— demo mode';el.className='hdr-status dm';}
+  else if(st.cfg.url&&st.cfg.key){el.textContent='—— connected';el.className='hdr-status on';}
+  else{el.textContent='—— unconfigured';el.className='hdr-status';}
+}
+function saveCfg(){
+  const u=document.getElementById('cfgUrl').value.trim().replace(/\/$/,'');
+  const k=document.getElementById('cfgKey').value.trim();
+  if(!u||!k)return;
+  st.cfg.url=u; st.cfg.key=k; st.demo=false;
+  localStorage.setItem('cf_url',u); localStorage.setItem('cf_key',k);
+  localStorage.removeItem('cf_demo');
+  loadCfg(); hideModal();
+}
+function setDemo(){
+  st.demo=true; localStorage.setItem('cf_demo','true');
+  loadCfg(); hideModal();
+}
+const showModal=()=>document.getElementById('modal').classList.remove('h');
+const hideModal=()=>document.getElementById('modal').classList.add('h');
+
+/* mode tabs */
+document.querySelectorAll('.mode-tab').forEach(b=>{
+  b.addEventListener('click',()=>{
+    st.mode=b.dataset.m;
+    document.querySelectorAll('.mode-tab').forEach(x=>x.classList.toggle('a',x===b));
+    ['form','url','free'].forEach(m=>{
+      document.getElementById('pane-'+m).classList.toggle('h',m!==st.mode);
+    });
+  });
+});
+
+/* category */
+document.querySelectorAll('.cat-btn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.cat-btn').forEach(x=>x.classList.remove('a'));
+    b.classList.add('a'); st.cat=b.dataset.v;
+    document.getElementById('eC').classList.remove('sh');
+  });
+});
+
+/* platform */
+document.querySelectorAll('.plt-btn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const v=b.dataset.v;
+    if(st.plats.has(v)){st.plats.delete(v);b.classList.remove('a');}
+    else{st.plats.add(v);b.classList.add('a');}
+    if(st.plats.size) document.getElementById('eP').classList.remove('sh');
+  });
+});
+
+/* lang tags */
+function renderTags(){
+  const el=document.getElementById('lTags'); el.innerHTML='';
+  st.langs.forEach(l=>{
+    const t=document.createElement('span'); t.className='l-tag';
+    t.innerHTML=`${l} <button onclick="rmLang('${l}')">×</button>`;
+    el.appendChild(t);
+  });
+}
+window.rmLang=l=>{ st.langs=st.langs.filter(x=>x!==l); renderTags(); };
+document.getElementById('lInp').addEventListener('keydown',e=>{
+  if(e.key==='Enter'||e.key===','){
+    e.preventDefault();
+    const v=e.target.value.trim();
+    if(v&&!st.langs.includes(v)){st.langs.push(v);renderTags();}
+    e.target.value='';
+  }
+  if(e.key==='Backspace'&&!e.target.value&&st.langs.length){st.langs.pop();renderTags();}
+});
+
+/* validate */
+function validate(){
+  let ok=true;
+  if(st.mode==='form'){
+    if(!document.getElementById('pName').value.trim()){document.getElementById('eN').classList.add('sh');ok=false;}
+    if(!document.getElementById('pFeat').value.trim()){document.getElementById('eF').classList.add('sh');ok=false;}
+  }
+  if(!st.cat){document.getElementById('eC').classList.add('sh');ok=false;}
+  if(!st.plats.size){document.getElementById('eP').classList.add('sh');ok=false;}
+  return ok;
+}
+['pName','pFeat'].forEach(id=>{
+  document.getElementById(id)?.addEventListener('input',()=>{
+    document.getElementById(id==='pName'?'eN':'eF').classList.remove('sh');
+  });
+});
+
+/* build inputs */
+function mkInputs(plat){
+  const langs=st.langs.join(', ')||'English';
+  if(st.mode==='url'){
+    const u=document.getElementById('pUrl').value.trim();
+    return{product_name:u,product_features:`URL: ${u}`,category:st.cat,platforms:plat,target_languages:langs};
+  }
+  if(st.mode==='free'){
+    const t=document.getElementById('pFree').value.trim();
+    return{product_name:t.split('\n')[0].slice(0,80),product_features:t,category:st.cat,platforms:plat,target_languages:langs};
+  }
+  return{
+    product_name:document.getElementById('pName').value.trim(),
+    product_features:document.getElementById('pFeat').value.trim(),
+    category:st.cat, platforms:plat,
+    target_languages:langs,
+  };
+}
+
+/* generate */
+document.getElementById('genBtn').addEventListener('click',async()=>{
+  if(st.busy||!validate())return;
+  if(!st.cfg.url&&!st.demo){showModal();return;}
+  st.busy=true; st.results={};
+  const btn=document.getElementById('genBtn');
+  btn.disabled=true;
+  document.getElementById('genSt').textContent='—— generating...';
+  document.getElementById('genLbl').textContent='generating';
+  const plats=[...st.plats];
+  showOut(plats);
+  try{
+    if(st.demo) await runDemo(plats);
+    else await Promise.all(plats.map(callApi));
+  }finally{
+    st.busy=false; btn.disabled=false;
+    document.getElementById('genSt').textContent='—— complete';
+    document.getElementById('genLbl').textContent='regenerate';
+  }
+});
+
+async function callApi(plat){
+  try{
+    const r=await fetch(`${st.cfg.url}/workflows/run`,{
+      method:'POST',
+      headers:{'Authorization':`Bearer ${st.cfg.key}`,'Content-Type':'application/json'},
+      body:JSON.stringify({inputs:mkInputs(plat),response_mode:'blocking',user:'copyflow'}),
+    });
+    if(!r.ok)throw new Error(`${r.status}`);
+    const d=await r.json();
+    const arr=d?.data?.outputs?.output;
+    if(!arr)throw new Error('no output');
+    st.results[plat]=parseOut(arr,st.langs);
+    renderResult(plat);
+  }catch(e){ renderErr(plat,e.message); }
+}
+
+function parseOut(arr,langs){
+  const o={};
+  langs.forEach((l,i)=>{ o[l]=parseSecs(arr[i]||arr[0]||''); });
+  return o;
+}
+function parseSecs(raw){
+  const blocks=raw.split(/(?=^### )/m).filter(b=>b.trim());
+  if(!blocks.length)return[{title:'result',content:raw}];
+  return blocks.map(b=>{
+    const lines=b.split('\n'); let ttl='',con=[];
+    for(const l of lines){
+      if(!ttl&&l.startsWith('### ')){ttl=l.replace(/^### /,'').trim();}
+      else con.push(l);
+    }
+    return{title:ttl||'section',content:con.join('\n').trim()};
+  });
+}
+function md(s){
+  let h=s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const ls=[];
+  h=h.replace(/((?:^[*\-] .+(?:\n|$))+)/gm,m=>{
+    const items=m.trim().split('\n').map(l=>`<li>${il(l.replace(/^[*\-] /,''))}</li>`).join('');
+    const ph=`\x00L${ls.length}\x00`; ls.push(`<ul>${items}</ul>`); return ph;
+  });
+  h=il(h);
+  h=h.replace(/^[-]{3,}$/gm,'<hr>').replace(/^## (.+)$/gm,'<h2>$1</h2>').replace(/^# (.+)$/gm,'<h1>$1</h1>');
+  ls.forEach((b,i)=>{h=h.replace(`\x00L${i}\x00`,b);});
+  h=h.split('\n\n').map(b=>{
+    b=b.trim(); if(!b||/^(<[hul]|\x00)/.test(b))return b;
+    return`<p>${b.replace(/\n/g,'<br>')}</p>`;
+  }).join('\n');
+  return h;
+}
+function il(s){
+  return s
+    .replace(/\*\*([^*\n]+?)\*\*/g,'<strong>$1</strong>')
+    .replace(/(?<![*\[\]])\*(?![* ])([^*\n]+?)(?<! )\*(?![*])/g,'<em>$1</em>')
+    .replace(/`([^`\n]+?)`/g,'<code>$1</code>');
+}
+function eid(s){return s.replace(/[^a-zA-Z0-9]/g,'_');}
+
+/* show output section */
+function showOut(plats){
+  const sec=document.getElementById('sOut'); sec.classList.add('vis');
+  sec.scrollIntoView({behavior:'smooth',block:'start'});
+  const tabs=document.getElementById('outTabs'); tabs.innerHTML='';
+  document.getElementById('outPanels').innerHTML='';
+  plats.forEach((p,i)=>{
+    const t=document.createElement('button');
+    t.className='out-tab ld'+(i===0?' a':'');
+    t.dataset.p=p; t.textContent=p.toUpperCase();
+    t.addEventListener('click',()=>swTab(p));
+    tabs.appendChild(t);
+    const pn=document.createElement('div');
+    pn.className='out-panel'+(i===0?' a':'');
+    pn.id='op-'+p; pn.innerHTML=skelHtml();
+    document.getElementById('outPanels').appendChild(pn);
+  });
+  st.activePlat=plats[0];
+}
+function skelHtml(){
+  return`<div class="skel">${[82,60,96,48,72,38,88,55].map(w=>`<div class="skel-l" style="width:${w}%;margin-bottom:10px"></div>`).join('')}</div>`;
+}
+function swTab(p){
+  st.activePlat=p;
+  document.querySelectorAll('.out-tab').forEach(t=>t.classList.toggle('a',t.dataset.p===p));
+  document.querySelectorAll('.out-panel').forEach(el=>el.classList.toggle('a',el.id===`op-${p}`));
+}
+function renderResult(plat){
+  const panel=document.getElementById('op-'+plat); if(!panel)return;
+  const tab=document.querySelector(`.out-tab[data-p="${plat}"]`);
+  if(tab)tab.classList.remove('ld');
+  const langs=Object.keys(st.results[plat]);
+  let h='';
+  if(langs.length>1){
+    h+=`<div class="lang-tabs">${langs.map((l,i)=>`<button class="l-tab${i===0?' a':''}" data-l="${l}" data-p="${plat}">${l}</button>`).join('')}</div>`;
+  }
+  langs.forEach((lang,i)=>{
+    const secs=st.results[plat][lang];
+    h+=`<div class="l-panel${i===0?' a':''}" id="lp-${plat}-${eid(lang)}"><div class="r-content">`;
+    secs.forEach((s,si)=>{
+      h+=`<div class="r-block" style="transition-delay:${si*.09}s">
+        <div class="r-block-hdr">
+          <span class="r-block-lbl">${s.title.toLowerCase()}</span>
+          <div class="r-block-line"></div>
+          <button class="r-copy-btn" data-t="${encodeURIComponent(s.content)}">[ copy ]</button>
+        </div>
+        <div class="r-text">${md(s.content)}</div>
+      </div>`;
+    });
+    h+=`</div></div>`;
+  });
+  panel.innerHTML=h;
+  requestAnimationFrame(()=>{
+    panel.querySelectorAll('.r-block').forEach(el=>setTimeout(()=>el.classList.add('in'),50));
+  });
+  panel.querySelectorAll('.r-copy-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const text=decodeURIComponent(b.dataset.t);
+      navigator.clipboard.writeText(text).catch(()=>{});
+      const orig=b.textContent; b.textContent='[ copied ]'; b.classList.add('cp');
+      setTimeout(()=>{b.textContent=orig;b.classList.remove('cp');},1800);
+    });
+  });
+  panel.querySelectorAll('.l-tab').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const l=b.dataset.l,p=b.dataset.p;
+      panel.querySelectorAll('.l-tab').forEach(x=>x.classList.toggle('a',x.dataset.l===l));
+      panel.querySelectorAll('.l-panel').forEach(x=>x.classList.toggle('a',x.id===`lp-${p}-${eid(l)}`));
+    });
+  });
+}
+function renderErr(plat,msg){
+  const pn=document.getElementById('op-'+plat);
+  if(pn)pn.innerHTML=`<p style="font-size:11px;letter-spacing:.12em;color:var(--blue-bright)">error — ${msg}</p>`;
+  const t=document.querySelector(`.out-tab[data-p="${plat}"]`);
+  if(t){t.classList.remove('ld');t.textContent+=` ×`;}
+}
+
+/* demo data */
+const DEMO={
+  Amazon:{English:[
+    {title:'title',content:'HoverGo Pro 3-Axis Gimbal Stabilizer · 249g Ultra-Lightweight · 12-Hour Battery · iPhone & Android · Professional Vlogging Stabilizer'},
+    {title:'bullet points',content:'* **CINEMA-SMOOTH 3-AXIS STABILIZATION** — Brushless motors compensate for shake in real time across all three axes. Whether walking, running, or filming on a moving vehicle, footage stays perfectly smooth.\n\n* **FEATHER-LIGHT AT 249G** — Lighter than most smartphones. Aircraft-grade aluminum alloy, engineered for creators who never stop moving.\n\n* **12-HOUR ALL-DAY BATTERY** — 2,600mAh powers 12 continuous hours. USB-C fast charging: 80% in 45 minutes.\n\n* **AI OBJECT TRACKING** — Lock a subject; the gimbal tracks automatically through complex motion.\n\n* **UNIVERSAL COMPATIBILITY** — Fits 55–90mm phones. iPhone 15 Pro Max, Galaxy S24 Ultra, all leading flagships.'},
+    {title:'product description',content:'The HoverGo Pro is the creative tool serious content creators have been waiting for.\n\nPrecision-engineered at 249 grams, it delivers professional-grade 3-axis stabilization without the bulk of traditional gimbals. The SteadyCore™ algorithm reacts to movement in under 0.01 seconds — eliminating shake before your eyes can register it.\n\nCharge once in the morning. Shoot until midnight. Available in Matte Obsidian and Arctic White.'},
+  ]},
+  Shopee:{English:[
+    {title:'product title',content:'HoverGo Pro Smartphone Gimbal 3-Axis Stabilizer 249g Lightweight 12Hr Battery AI Tracking iPhone Android Vlog Anti-Shake — Ready Stock'},
+    {title:'core selling point',content:'249g ultra-light · 12-hour battery · AI intelligent tracking\nOne lightweight device that turns your smartphone into a professional studio.'},
+    {title:'features',content:'* 3-axis stabilization, movement compensation < 0.01 seconds\n* 2600mAh battery, 12 continuous hours, USB-C 45-min fast charge to 80%\n* Fits 55–90mm, compatible with all major smartphones\n* AI object lock and real-time tracking\n* 249g, folds to pocket size'},
+    {title:'promotion tags',content:'Ready Stock · Express Delivery\n7-Day No-Questions Return · 1-Year Warranty · Free Shipping'},
+  ]},
+  TikTok:{English:[
+    {title:'caption & hashtags',content:'I tested the world\'s lightest gimbal for 30 days — honest verdict\n\n#gimbal #contentcreator #vlog #techreview #smoothvideo #fyp #creatortools'},
+    {title:'audio script',content:'If your videos always look shaky, this is about to change everything. I\'ve been creating content for three years, and the HoverGo Pro is the first gimbal that literally fits in my jacket pocket. At 249 grams, it\'s lighter than my phone. The footage? Buttery smooth, every single time. No more stabilizing in post. Just clip on your phone and shoot.'},
+    {title:'script structure',content:'* **0–5s hook** — side-by-side footage comparison: "Same street. Same walk. Same phone. Without the HoverGo. With it."\n\n* **5–15s pain point** — blurry raw footage. Creator frustrated. "I\'ve spent hours stabilizing in editing. Sound familiar?"\n\n* **15–35s solution** — unbox on one finger to show weight. Attach in 10 seconds. Silky walking shot, pan, AI tracking subject around a corner.\n\n* **35–50s CTA** — "Three-axis stabilization. Twelve-hour battery. 249 grams. Link in bio."'},
+  ]},
+  Shein:{English:[
+    {title:'style notes',content:'For the creator who moves through the world like the world is their studio. The HoverGo Pro doesn\'t just capture your aesthetic — it *becomes* part of it. Effortlessly minimal. Quietly powerful.'},
+    {title:'material & design',content:'* Aircraft-grade aluminum alloy chassis — premium the instant it touches your hand\n* Matte obsidian finish with subtle brushed metalwork detailing\n* Whisper-quiet brushless motors — cinema-smooth, always on'},
+    {title:'recommended scenarios',content:'Golden-hour street walks, rooftop lifestyle shoots, café content days, and spontaneous travel adventures where every frame earns its place.'},
+    {title:'search keywords',content:'smartphone gimbal · content creator tools · vlog stabilizer · travel camera gear · aesthetic shooting setup · lightweight gimbal'},
+  ]},
+};
+
+/* 预置的印尼语深度本地化样例 —— 演示「本地化 ≠ 直译」这一核心差异点：
+   植入 gratis ongkir / Ready Stock / diskon 等本土高频促销词 */
+const DEMO_ID={
+  Amazon:[
+    {title:'title',content:'HoverGo Pro Gimbal Stabilizer 3-Axis · 249g Super Ringan · Baterai 12 Jam · iPhone & Android · Stabilizer Vlogging Profesional'},
+    {title:'bullet points',content:'* **STABILISASI 3-AXIS SEHALUS FILM** — Motor brushless meredam guncangan secara real-time di ketiga sumbu. Entah jalan kaki, lari, atau syuting dari kendaraan, hasil rekaman tetap mulus.\n\n* **RINGAN HANYA 249G** — Lebih ringan dari kebanyakan smartphone. Aluminium alloy tingkat pesawat, dirancang untuk kreator yang selalu bergerak.\n\n* **BATERAI 12 JAM SEHARIAN** — 2.600mAh untuk 12 jam nonstop. Fast charging USB-C: 80% dalam 45 menit.\n\n* **AI OBJECT TRACKING** — Kunci subjek; gimbal mengikuti otomatis melewati gerakan kompleks.\n\n* **KOMPATIBEL UNIVERSAL** — Muat HP 55–90mm. iPhone 15 Pro Max, Galaxy S24 Ultra, semua flagship terkini.'},
+    {title:'product description',content:'HoverGo Pro adalah alat kreatif yang ditunggu para content creator serius.\n\nDirekayasa presisi di 249 gram, memberikan stabilisasi 3-axis kelas profesional tanpa bobot gimbal tradisional. Algoritma SteadyCore™ merespons gerakan dalam waktu di bawah 0,01 detik.\n\nSekali cas di pagi hari, syuting sampai tengah malam. Tersedia dalam Matte Obsidian dan Arctic White.'},
+  ],
+  Shopee:[
+    {title:'product title',content:'HoverGo Pro Gimbal Stabilizer HP 3-Axis 249g Ringan Baterai 12 Jam AI Tracking iPhone Android Vlog Anti Goyang — Ready Stock'},
+    {title:'core selling point',content:'249g super ringan · baterai 12 jam · AI tracking pintar 🔥\nSatu alat ringan yang menyulap HP kamu jadi studio profesional.'},
+    {title:'features',content:'* Stabilisasi 3-axis, kompensasi gerakan < 0,01 detik\n* Baterai 2600mAh, 12 jam nonstop, fast charge USB-C 45 menit ke 80%\n* Muat HP 55–90mm, kompatibel semua smartphone utama\n* AI object lock & tracking real-time\n* 249g, dilipat sebesar saku'},
+    {title:'promotion tags',content:'Ready Stock ｜ Pengiriman Cepat\ngratis ongkir ｜ Garansi 1 Tahun ｜ Bisa COD ｜ Retur 7 Hari'},
+  ],
+  TikTok:[
+    {title:'caption & hashtags',content:'Aku tes gimbal paling ringan sedunia selama 30 hari — ini jujurnya\n\n#gimbal #contentcreator #vlog #reviewjujur #videohalus #fyp #alatkreator'},
+    {title:'audio script',content:'Kalau video kamu selalu goyang, ini bakal ngubah semuanya. Aku udah bikin konten tiga tahun, dan HoverGo Pro ini gimbal pertama yang benar-benar muat di saku jaket. Cuma 249 gram, lebih ringan dari HP-ku. Hasilnya? Halus banget, tiap kali. Nggak perlu stabilin lagi pas editing. Tinggal jepit HP kamu, langsung syuting.'},
+    {title:'script structure',content:'* **0–5 dtk hook** — perbandingan footage: "Jalan yang sama. Langkah yang sama. HP yang sama. Tanpa HoverGo. Pakai HoverGo."\n\n* **5–15 dtk pain point** — footage buram, kreator frustrasi. "Aku habisin berjam-jam stabilin video pas editing. Familiar nggak?"\n\n* **15–35 dtk solusi** — unbox di satu jari buat tunjukin bobot. Pasang 10 detik. Shot jalan yang mulus, panning, AI tracking subjek di tikungan.\n\n* **35–50 dtk CTA** — "Stabilisasi 3-axis. Baterai 12 jam. 249 gram. Link di bio."'},
+  ],
+  Shein:[
+    {title:'style notes',content:'Untuk kreator yang menyusuri dunia seakan dunia adalah studionya. HoverGo Pro bukan cuma menangkap estetikamu — ia *jadi* bagian darinya. Minimalis tanpa usaha. Kuat tanpa berisik.'},
+    {title:'material & design',content:'* Bodi aluminium alloy tingkat pesawat — terasa premium begitu disentuh\n* Finishing matte obsidian dengan detail brushed metal halus\n* Motor brushless senyap — sehalus film, selalu aktif'},
+    {title:'recommended scenarios',content:'Jalan sore golden hour, konten rooftop, hari nongkrong di kafe, dan petualangan traveling dadakan di mana tiap frame layak diabadikan.'},
+    {title:'search keywords',content:'gimbal hp · alat content creator · stabilizer vlog · perlengkapan kamera travel · setup syuting estetik · gimbal ringan'},
+  ],
+};
+
+async function runDemo(plats){
+  const delay=ms=>new Promise(r=>setTimeout(r,ms));
+  await Promise.all(plats.map(async(p,i)=>{
+    await delay(700+i*550);
+    const lr={};
+    const base=DEMO[p]?.English||DEMO.Amazon.English;
+    st.langs.forEach(l=>{
+      const k=l.toLowerCase();
+      if(k==='english'||k==='英语') lr[l]=base;
+      else if((k==='indonesian'||k==='印尼语'||k==='bahasa indonesia')&&DEMO_ID[p]) lr[l]=DEMO_ID[p];
+      else lr[l]=base.map(s=>({...s,content:`〔${l} · 演示样例〕\n\n${s.content}`}));
+    });
+    st.results[p]=lr; renderResult(p);
+  }));
+}
+
+/* bind events */
+document.getElementById('cfgBtn').addEventListener('click',showModal);
+document.getElementById('mClose').addEventListener('click',hideModal);
+document.getElementById('demoBtn').addEventListener('click',setDemo);
+document.getElementById('saveBtn').addEventListener('click',saveCfg);
+document.getElementById('modal').addEventListener('click',e=>{if(e.target===document.getElementById('modal'))hideModal();});
+
+/* prefill demo product — the "Aha moment": one click to a full result */
+document.getElementById('loadExample')?.addEventListener('click',()=>{
+  document.querySelector('.mode-tab[data-m="form"]')?.click();
+  document.getElementById('pName').value='HoverGo Pro';
+  document.getElementById('pFeat').value='249g 超轻机身 · 三轴防抖云台 · 12 小时续航 · USB-C 快充 · AI 目标追踪 · 兼容 iPhone / Android';
+  document.getElementById('eN').classList.remove('sh');
+  document.getElementById('eF').classList.remove('sh');
+  document.querySelector('.cat-btn[data-v="electronics"]')?.click();
+  ['Amazon','Shopee','TikTok','Shein'].forEach(p=>{
+    const b=document.querySelector(`.plt-btn[data-v="${p}"]`);
+    if(b&&!st.plats.has(p))b.click();
+  });
+  if(!st.langs.includes('Indonesian')){st.langs.push('Indonesian');renderTags();}
+  document.getElementById('genSt').textContent='—— example loaded · press generate';
+  document.getElementById('sInput').scrollIntoView({behavior:'smooth',block:'start'});
+});
+
+/* init */
+loadCfg(); renderTags();
+if(st.cfg.url)document.getElementById('cfgUrl').value=st.cfg.url;
+if(st.cfg.key)document.getElementById('cfgKey').value=st.cfg.key;
+const configured=(st.cfg.url&&st.cfg.key)||st.demo;
+/* 无配置时默认进入演示模式（预置样例数据），而不是强制弹窗 */
+if(!configured){ setDemo(); }
+</script>
+</body>
+</html>

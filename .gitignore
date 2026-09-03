@@ -1,0 +1,12 @@
+# 本地草稿 / 历史迭代（不纳入仓库）
+/_local/
+.claude/
+.DS_Store
+
+# 编辑器
+.vscode/
+.idea/
+
+# 依赖 / 构建产物
+node_modules/
+dist/
