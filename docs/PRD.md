@@ -3,6 +3,7 @@
 | | |
 |---|---|
 | 文档版本 | v1.0 |
+| 作者 | 郭树奇 |
 | 文档状态 | 评审中 |
 | 覆盖范围 | MVP（v1.0）——单用户、单品、多平台文案并行生成 |
 | 关联文档 | [工作流设计](workflow-design.md) · [Prompt 工程](prompt-engineering.md) · [产品原型](../prototype/) |

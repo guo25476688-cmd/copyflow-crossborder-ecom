@@ -135,8 +135,7 @@ flowchart LR
 │   ├── PRD.md                    产品需求文档（含北极星指标、用户研究、竞品、评估体系、冷启动）
 │   ├── workflow-design.md        Dify 工作流架构与节点级设计
 │   ├── prompt-engineering.md     Prompt 设计原则、逐平台决策、迭代记录、权衡
-│   ├── assets/                   工作流画布截图
-│   └── _archive/                 原始交付物（.docx）
+│   └── assets/                   工作流画布截图
 ├── workflow/
 │   ├── 多平台跨境电商文案及图片生成.yml   可导入的 Dify DSL
 │   ├── README.md                导入方式、知识库依赖、模型说明
@@ -146,10 +145,9 @@ flowchart LR
     └── README.md                运行方式、接入真实 API、已实现清单
 ```
 
-## 团队与分工
+## 关于这个项目
 
-课程小组作业。小组成员：郭树奇、李青、陈启辉、白伟、刘建通。
-本仓库为 **郭树奇** 负责部分的整理版：产品需求、工作流架构、Prompt 工程、Web 原型。
+个人项目，全部内容由 **郭树奇** 独立完成：需求与竞品分析、PRD、Dify 工作流架构、Prompt 工程与迭代、CopyFlow Web 原型开发与部署。
 
 ## License
 
