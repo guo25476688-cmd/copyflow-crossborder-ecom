@@ -10,7 +10,7 @@ dependencies:
 - current_identifier: null
   type: marketplace
   value:
-    marketplace_plugin_unique_identifier: langgenius/openrouter:0.0.43@241af6052a82fa08c0d7c3756d7f2a57cc16d8b3c05d7fd58088ece28cae9e34
+    marketplace_plugin_unique_identifier: langgenius/deepseek:0.0.24
     version: null
 - current_identifier: null
   type: marketplace
@@ -433,8 +433,8 @@ workflow:
           completion_params:
             temperature: 0.7
           mode: chat
-          name: arcee-ai/trinity-large-preview:free
-          provider: langgenius/openrouter/openrouter
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
         prompt_template:
         - id: c47c6c39-724d-4247-9ae9-c8607bbac537
           role: system
@@ -479,8 +479,8 @@ workflow:
           completion_params:
             temperature: 0.7
           mode: chat
-          name: arcee-ai/trinity-large-preview:free
-          provider: langgenius/openrouter/openrouter
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
         prompt_template:
         - id: 934716d6-9936-4fc6-abf4-f23e1637cd82
           role: system
@@ -564,8 +564,8 @@ workflow:
           completion_params:
             temperature: 0.7
           mode: chat
-          name: arcee-ai/trinity-large-preview:free
-          provider: langgenius/openrouter/openrouter
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
         prompt_template:
         - id: a441d66d-156d-4222-9e73-a8a0031e5e31
           role: system
@@ -650,8 +650,8 @@ workflow:
           completion_params:
             temperature: 0.7
           mode: chat
-          name: arcee-ai/trinity-large-preview:free
-          provider: langgenius/openrouter/openrouter
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
         prompt_template:
         - id: b3bbad6d-4ff0-406e-afb0-a91733782ab8
           role: system
@@ -728,8 +728,8 @@ workflow:
           completion_params:
             temperature: 0.7
           mode: chat
-          name: arcee-ai/trinity-large-preview:free
-          provider: langgenius/openrouter/openrouter
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
         prompt_template:
         - id: 8d1e02f4-1746-47bf-9c00-6418656f4161
           role: system
@@ -870,8 +870,8 @@ workflow:
           completion_params:
             temperature: 0.7
           mode: chat
-          name: minimax/minimax-m2.5:free
-          provider: langgenius/openrouter/openrouter
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
         prompt_template:
         - id: 36f064f1-d570-46f4-a72e-7cac0c71e043
           role: system
@@ -933,8 +933,8 @@ workflow:
           completion_params:
             temperature: 0.7
           mode: chat
-          name: arcee-ai/trinity-large-preview:free
-          provider: langgenius/openrouter/openrouter
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
         prompt_template:
         - id: img-prompt-sys-001
           role: system

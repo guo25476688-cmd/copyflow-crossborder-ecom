@@ -5,8 +5,8 @@
 ## 导入方式
 
 1. Dify 控制台 → 工作室 → 导入 DSL 文件 → 选择该 `.yml`
-2. 补齐依赖插件：`langgenius/openrouter`、`langgenius/tavily`
-3. 配置密钥：OpenRouter API Key、Tavily API Key
+2. 补齐依赖插件：`langgenius/deepseek`、`langgenius/tavily`
+3. 配置密钥：DeepSeek API Key、Tavily API Key
 4. 重建节点 `检索_电商热词` 引用的 4 个知识库（见下），或临时关闭该节点
 
 ## 工作流结构
@@ -34,7 +34,9 @@
 | SHEIN 场景标签库 | 生活方式场景与风格描述符 |
 
 > 知识库原始语料不含在本仓库中。`dataset_ids` 为占位，导入后需替换为你自己的知识库 ID。
+>
+> 4 个知识库目前是静态上传，自动化更新的知识库流水线（Knowledge Pipeline）设计见 [`../docs/workflow-design.md`](../docs/workflow-design.md#8-知识库流水线设计自动化更新方案)。
 
 ## 模型与成本
 
-原型阶段通过 OpenRouter 接入**免费模型**（`arcee-ai/trinity-large-preview:free`、`minimax/minimax-m2.5:free`），目的是零成本验证 Prompt 设计与工作流架构，代价是速率受限、输出稳定性偏低。产品化阶段的模型选型权衡见 [`../docs/PRD.md`](../docs/PRD.md#83-技术架构概述产品化方向)。
+生成模型统一使用 **DeepSeek API**（`deepseek-chat`），相比原型阶段验证用的 OpenRouter 免费模型，具备更稳定的输出质量和更低的调用成本，适合面向真实商家规模化使用。导入时若插件版本与 DSL 记录的 `langgenius/deepseek:0.0.24` 不一致，Dify 会提示从插件市场安装匹配版本。模型选型权衡见 [`../docs/PRD.md`](../docs/PRD.md#83-技术架构概述产品化方向)。
