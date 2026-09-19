@@ -1,6 +1,8 @@
-# Dify 工作流
+# Dify 工作流（历史原型，已归档）
 
-[`多平台跨境电商文案及图片生成.yml`](多平台跨境电商文案及图片生成.yml) 是可直接导入 [Dify](https://dify.ai) 的工作流 DSL（`version: 0.6.0`）。
+> **现状**：产品化阶段已改用 [`../worker/`](../worker/)（Cloudflare Worker + DeepSeek）作为生成后端，不再依赖 Dify。这里的 DSL 和以下说明保留作原型验证阶段的历史记录——里面的 Prompt 已经原样移植进 `worker/src/index.js`，逻辑没有丢失。
+
+[`多平台跨境电商文案及图片生成.yml`](多平台跨境电商文案及图片生成.yml) 是可直接导入 [Dify](https://dify.ai) 的工作流 DSL（`version: 0.6.0`），原型验证阶段用它跑通了整个生成逻辑。
 
 ## 导入方式
 
@@ -39,4 +41,4 @@
 
 ## 模型与成本
 
-生成模型统一使用 **DeepSeek API**（`deepseek-chat`），相比原型阶段验证用的 OpenRouter 免费模型，具备更稳定的输出质量和更低的调用成本，适合面向真实商家规模化使用。导入时若插件版本与 DSL 记录的 `langgenius/deepseek:0.0.24` 不一致，Dify 会提示从插件市场安装匹配版本。模型选型权衡见 [`../docs/PRD.md`](../docs/PRD.md#83-技术架构概述产品化方向)。
+生成模型统一使用 **DeepSeek API**（`deepseek-flash`），相比原型阶段验证用的 OpenRouter 免费模型，具备更稳定的输出质量和更低的调用成本。导入时若插件版本与 DSL 记录的 `langgenius/deepseek:0.0.24` 不一致，Dify 会提示从插件市场安装匹配版本。模型选型权衡见 [`../docs/PRD.md`](../docs/PRD.md#83-技术架构概述产品化方向)。

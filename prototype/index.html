@@ -453,12 +453,8 @@ body {
     <div class="modal-ttl">— api configuration</div>
     <button class="modal-close" id="mClose">[ close ]</button>
     <div class="modal-f">
-      <label>Dify API endpoint</label>
-      <input type="url" id="cfgUrl" placeholder="http://your-server/v1">
-    </div>
-    <div class="modal-f">
-      <label>Workflow API key</label>
-      <input type="password" id="cfgKey" placeholder="app-xxxxxxxxxxxxxxxx">
+      <label>CopyFlow API base URL</label>
+      <input type="url" id="cfgUrl" placeholder="https://copyflow-api.your-name.workers.dev">
     </div>
     <div class="modal-acts">
       <button class="modal-demo" id="demoBtn">enter as demo</button>
@@ -768,25 +764,23 @@ setTimeout(()=>{
 const st={
   mode:'form', cat:null, plats:new Set(), langs:['English'],
   busy:false, results:{}, activePlat:null,
-  cfg:{url:'',key:''}, demo:false,
+  cfg:{url:''}, demo:false,
 };
 
 /* config */
 function loadCfg(){
   st.cfg.url=localStorage.getItem('cf_url')||'';
-  st.cfg.key=localStorage.getItem('cf_key')||'';
   st.demo=localStorage.getItem('cf_demo')==='true';
   const el=document.getElementById('hdrSt');
   if(st.demo){el.textContent='—— demo mode';el.className='hdr-status dm';}
-  else if(st.cfg.url&&st.cfg.key){el.textContent='—— connected';el.className='hdr-status on';}
+  else if(st.cfg.url){el.textContent='—— connected';el.className='hdr-status on';}
   else{el.textContent='—— unconfigured';el.className='hdr-status';}
 }
 function saveCfg(){
   const u=document.getElementById('cfgUrl').value.trim().replace(/\/$/,'');
-  const k=document.getElementById('cfgKey').value.trim();
-  if(!u||!k)return;
-  st.cfg.url=u; st.cfg.key=k; st.demo=false;
-  localStorage.setItem('cf_url',u); localStorage.setItem('cf_key',k);
+  if(!u)return;
+  st.cfg.url=u; st.demo=false;
+  localStorage.setItem('cf_url',u);
   localStorage.removeItem('cf_demo');
   loadCfg(); hideModal();
 }
@@ -869,17 +863,17 @@ function mkInputs(plat){
   const langs=st.langs.join(', ')||'English';
   if(st.mode==='url'){
     const u=document.getElementById('pUrl').value.trim();
-    return{product_name:u,product_features:`URL: ${u}`,category:st.cat,platforms:plat,target_languages:langs};
+    return{productName:u,productFeatures:`URL: ${u}`,category:st.cat,platforms:[plat],targetLanguages:langs};
   }
   if(st.mode==='free'){
     const t=document.getElementById('pFree').value.trim();
-    return{product_name:t.split('\n')[0].slice(0,80),product_features:t,category:st.cat,platforms:plat,target_languages:langs};
+    return{productName:t.split('\n')[0].slice(0,80),productFeatures:t,category:st.cat,platforms:[plat],targetLanguages:langs};
   }
   return{
-    product_name:document.getElementById('pName').value.trim(),
-    product_features:document.getElementById('pFeat').value.trim(),
-    category:st.cat, platforms:plat,
-    target_languages:langs,
+    productName:document.getElementById('pName').value.trim(),
+    productFeatures:document.getElementById('pFeat').value.trim(),
+    category:st.cat, platforms:[plat],
+    targetLanguages:langs,
   };
 }
 
@@ -906,24 +900,23 @@ document.getElementById('genBtn').addEventListener('click',async()=>{
 
 async function callApi(plat){
   try{
-    const r=await fetch(`${st.cfg.url}/workflows/run`,{
+    const r=await fetch(`${st.cfg.url}/api/generate`,{
       method:'POST',
-      headers:{'Authorization':`Bearer ${st.cfg.key}`,'Content-Type':'application/json'},
-      body:JSON.stringify({inputs:mkInputs(plat),response_mode:'blocking',user:'copyflow'}),
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(mkInputs(plat)),
     });
-    if(!r.ok)throw new Error(`${r.status}`);
+    if(!r.ok){
+      const e=await r.json().catch(()=>({}));
+      throw new Error(e.error||`${r.status}`);
+    }
     const d=await r.json();
-    const arr=d?.data?.outputs?.output;
-    if(!arr)throw new Error('no output');
-    st.results[plat]=parseOut(arr,st.langs);
+    const langMap=d?.platforms?.[plat];
+    if(!langMap)throw new Error('no output');
+    const parsed={};
+    for(const [lang,text] of Object.entries(langMap)) parsed[lang]=parseSecs(text||'');
+    st.results[plat]=parsed;
     renderResult(plat);
   }catch(e){ renderErr(plat,e.message); }
-}
-
-function parseOut(arr,langs){
-  const o={};
-  langs.forEach((l,i)=>{ o[l]=parseSecs(arr[i]||arr[0]||''); });
-  return o;
 }
 function parseSecs(raw){
   const blocks=raw.split(/(?=^### )/m).filter(b=>b.trim());
@@ -1135,8 +1128,7 @@ document.getElementById('loadExample')?.addEventListener('click',()=>{
 /* init */
 loadCfg(); renderTags();
 if(st.cfg.url)document.getElementById('cfgUrl').value=st.cfg.url;
-if(st.cfg.key)document.getElementById('cfgKey').value=st.cfg.key;
-const configured=(st.cfg.url&&st.cfg.key)||st.demo;
+const configured=st.cfg.url||st.demo;
 /* 无配置时默认进入演示模式（预置样例数据），而不是强制弹窗 */
 if(!configured){ setDemo(); }
 </script>

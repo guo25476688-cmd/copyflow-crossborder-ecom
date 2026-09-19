@@ -18,7 +18,7 @@
 
 | | |
 |---|---|
-| **是什么** | 一个跑通的 AI 内容生产系统：Dify 工作流（后端逻辑）+ CopyFlow Web 原型（产品界面）+ 完整 PRD |
+| **是什么** | 一个跑通的 AI 内容生产系统：CopyFlow API（[Cloudflare Worker](worker/) + DeepSeek，后端逻辑）+ CopyFlow Web 原型（产品界面）+ 完整 PRD |
 | **解决什么** | 跨境卖家上一款新品要为 4 个平台写 4 套风格迥异的文案，再翻译成多个东南亚语种并做本地化——每次耗时数天，而流量窗口只有几天 |
 | **怎么解决** | 三源数据（本地电商热词 RAG + Tavily 实时 SEO + 原始产品特性）强制降维成结构化卖点 → 平台专属 Prompt 并行生成 → 逐语种沙箱做本地化编辑 |
 | **验证到什么程度** | 工作流端到端跑通，四平台 Prompt 产出真实样本；Web 原型实现核心交互并部署上线；北极星指标（文案采纳率 ≥ 60%）与评估体系已定义 |
@@ -36,7 +36,7 @@ CopyFlow 面向跨境电商中小卖家，目标是把「多平台文案 + 多�
 
 **在线体验**（30 秒）：打开 [Demo](https://guo25476688-cmd.github.io/copyflow-crossborder-ecom/) → 点输入区的 `load example` 一键预填 `HoverGo Pro` → 点 `generate` → 看四个平台 Tab 依次点亮，Amazon 下切换 English / Indonesian 对比本地化差异。
 
-> Demo 默认演示模式，数据为预置样例；填入自己的 Dify endpoint + key 即可接真实工作流。
+> Demo 默认演示模式，数据为预置样例；部署自己的 [CopyFlow API](worker/) 后填入地址即可接真实生成——不需要任何 key，key 只存在 Worker 里。
 
 ## 三大痛点 → 解法
 
@@ -70,12 +70,13 @@ flowchart LR
 
 关键设计决策：
 
-- **三源数据强制融合**：RAG 本地热词 + Tavily 实时 SEO + 原始特性，在一个节点降维成「核心卖点 / 用户痛点 / 视频钩子 / 应用场景」四维结构，平台 Prompt 只消费干净结构
+- **三源数据强制融合**：RAG 本地热词 + Tavily 实时 SEO + 原始特性，在一步降维成「核心卖点 / 用户痛点 / 视频钩子 / 应用场景」四维结构，平台 Prompt 只消费干净结构
 - **LLM 原生检索**：用 Tavily 替代传统 HTTP 搜索，AI 在底层清洗去重，直接返回高密度摘要，避免 token 浪费和上下文溢出
-- **迭代节点替代单次多语输出**：为每种语言开独立推理沙箱，防止语言污染、格式坍塌、token 截断
-- **平台路由遵循开放/封闭原则**：新增平台只需加一个并行分支 + 一个 Prompt，不改动现有流程
+- **逐语言独立调用替代单次多语输出**：为每种语言单独调一次模型，防止语言污染、格式坍塌、token 截断
+- **平台路由遵循开放/封闭原则**：新增平台只需加一个 Prompt + 一个分支，不改动现有流程
+- **违禁词校验用真代码兜底**：Amazon 分支生成后跑一次真实的正则检查，查到违禁词就带着词表要求模型重新生成，而不是只靠 Prompt 里的自查清单
 
-详见 [工作流设计说明](docs/workflow-design.md)。
+这套逻辑最初在 Dify 里可视化验证通过（历史设计记录见 [工作流设计说明](docs/workflow-design.md)），现已用一个 [Cloudflare Worker](worker/) 重新实现：不用维护一整套 Dify 服务，DeepSeek/Tavily 的 key 也不会暴露给最终用户。
 
 ## Prompt 工程亮点
 
@@ -104,7 +105,7 @@ flowchart LR
 - 三种输入模式：结构化表单 / 粘贴商品 URL / 自由文本
 - 生成中各平台 Tab 依次「点亮」，让「多平台并行」被看见
 - 结果页平台 Tab + 语种 Tab 双层对比，分区块复制
-- 演示模式免配置，也可接入真实 Dify API
+- 演示模式免配置，也可接入真实 CopyFlow API（[Cloudflare Worker](worker/)）
 
 已实现与未实现的诚实清单见 [prototype/README.md](prototype/README.md) 和 [PRD 4.5](docs/PRD.md#45-原型与-prd-的差异诚实记录)。
 
@@ -112,19 +113,21 @@ flowchart LR
 
 | 决策 | 选择 | 权衡 |
 |---|---|---|
-| 工作流引擎 | Dify | 快速验证 Prompt 与架构，产品化后降级为纯推理引擎，业务逻辑收归自有后端 |
-| 模型 | DeepSeek API（`deepseek-chat`） | 中文语境效果与调用成本的平衡点，适合面向真实商家规模化调用；已从原型验证阶段的免费模型切换为正式模型 |
+| 编排层 | [Cloudflare Workers](worker/) | 原型阶段用 Dify 可视化编排验证 Prompt；产品化后换成几十行代码的 Worker，key 只存在 secret 里、无服务器运维成本，代价是没有 Dify 那种可视化调试界面 |
+| 模型 | DeepSeek API（`deepseek-flash`） | 中文语境效果与调用成本的平衡点；已从原型验证阶段的免费模型切换为正式模型 |
 | 检索 | Tavily（LLM 原生） | 相比 SerpApi 式 HTTP 搜索，省 token、降噪声；替换成本高、收益低，产品化保持不变 |
-| 多语输出 | 迭代节点逐语种 | 隔离性换延迟：调用次数 = 语言数 |
+| 知识库 | Worker + KV，Cron 定时抓取 | 关键词表/平台规则这类结构化小文档用不上向量检索，一个 KV + 定时任务够用，比自建 RAG 基建轻量 |
+| 多语输出 | 逐语言独立调用 | 隔离性换延迟：调用次数 = 语言数 |
 | 输入形态 | 文本，放弃语音 | 语音信噪比低、识别错误会在下游连锁放大 |
 
 ## 局限与下一步
 
-- 知识库需人工定期更新 → 用 Dify 知识库流水线做自动化更新，方案见 [工作流设计 §8](docs/workflow-design.md#8-知识库流水线设计自动化更新方案)
+- 知识库定时抓取的目标 URL 还是占位（`worker/src/index.js` 里的 `KB_SOURCES` 为空）→ 需要调研并填入各平台真实的规则页面
 - 平台路由新增需手写 Prompt → 探索元提示（从规则库动态拼装）
-- 条件分支单次只路由一个平台、质量自检只靠 Prompt 不可靠 → 用 New Agent 重新编排 + 沙箱校验重试，方案见 [工作流设计 §9](docs/workflow-design.md#9-agent-化改造设计)
+- Amazon 违禁词校验目前是关键词表 + 一次重试，覆盖面有限 → 扩充词表或换更完整的规则引擎
 - 本地化深度不均（仅印尼/泰/西语有明确指南）→ 扩展语言规则或建本地化知识库
 - 原型前端缺历史记录页、主图预览、合规标红可视化
+- CopyFlow API（`worker/`）目前未对外部署运营，是这套架构的实现参考，不是一个正在运行的线上服务
 
 ## 仓库导航
 
@@ -133,15 +136,19 @@ flowchart LR
 ├── README.md                    本文件
 ├── docs/
 │   ├── PRD.md                    产品需求文档（含北极星指标、用户研究、竞品、评估体系、冷启动）
-│   ├── workflow-design.md        Dify 工作流架构与节点级设计
-│   ├── prompt-engineering.md     Prompt 设计原则、逐平台决策、迭代记录、权衡
+│   ├── workflow-design.md        历史设计记录：Dify 原型阶段的节点级设计
+│   ├── prompt-engineering.md     Prompt 设计原则、逐平台决策、迭代记录、权衡（现仍在用）
 │   └── assets/                   工作流画布截图
-├── workflow/
-│   ├── 多平台跨境电商文案及图片生成.yml   可导入的 Dify DSL
-│   ├── README.md                导入方式、知识库依赖、模型说明
-│   └── prompts/                  从工作流抽取的各节点 Prompt 原文
+├── worker/
+│   ├── src/index.js             CopyFlow API：DeepSeek/Tavily 调用逻辑（现役后端）
+│   ├── wrangler.toml            Cloudflare Worker 配置
+│   └── README.md                部署步骤、接口说明、知识库自动更新
+├── workflow/                    历史原型：Dify 工作流 DSL 与节点 Prompt（已不再使用，仅存档）
+│   ├── 多平台跨境电商文案及图片生成.yml
+│   ├── README.md
+│   └── prompts/                  各平台 Prompt 原文，已原样移植进 worker/src/index.js
 └── prototype/
-    ├── index.html               CopyFlow Web 原型（单文件）
+    ├── index.html               CopyFlow Web 原型（单文件，调用 worker/ 提供的 API）
     └── README.md                运行方式、接入真实 API、已实现清单
 ```
 

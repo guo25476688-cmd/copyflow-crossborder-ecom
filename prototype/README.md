@@ -1,6 +1,6 @@
 # CopyFlow 原型
 
-单文件 Web 原型（`index.html`，无构建、无依赖），把 [Dify 工作流](../workflow/) 封装成可交互的产品界面。
+单文件 Web 原型（`index.html`，无构建、无依赖），调用 [CopyFlow API](../worker/)（Cloudflare Worker + DeepSeek）生成文案。原型早期版本对接的是 Dify 工作流，历史设计记录见 [`../docs/workflow-design.md`](../docs/workflow-design.md)。
 
 ## 在线 Demo
 
@@ -16,14 +16,11 @@ python3 -m http.server 7788
 # 打开 http://localhost:7788
 ```
 
-## 接入真实 Dify 工作流
+## 接入真实 CopyFlow API
 
-点右上角 **configure**，填入：
+点右上角 **configure**，填入部署好的 [CopyFlow API](../worker/) 地址（如 `https://copyflow-api.your-name.workers.dev`）。**不需要填任何 key**——DeepSeek/Tavily 的 key 只存在 Worker 的 secret 里，浏览器端和这个原型都接触不到。
 
-- **Dify API endpoint**：如 `http://your-server/v1`
-- **Workflow API key**：`app-xxxxxxxx`
-
-原型会以 `blocking` 模式调用 `POST {endpoint}/workflows/run`，每个平台一次请求并行发出，解析 `data.outputs.output`（多语种数组）后按平台 Tab + 语种 Tab 渲染。API Key 仅存于浏览器 `localStorage`，不上传。
+原型对每个选中的平台调用一次 `POST {url}/api/generate`，解析返回的 `platforms.{platform}.{language}`（各语种 Markdown 文案）后按平台 Tab + 语种 Tab 渲染。
 
 ## 已实现 / 未实现
 

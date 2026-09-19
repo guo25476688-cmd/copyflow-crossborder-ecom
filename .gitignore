@@ -10,3 +10,7 @@
 # 依赖 / 构建产物
 node_modules/
 dist/
+
+# Cloudflare Worker 本地密钥（真实 key 只放 wrangler secret，不进仓库）
+worker/.dev.vars
+.wrangler/

@@ -1,0 +1,13 @@
+name = "copyflow-api"
+main = "src/index.js"
+compatibility_date = "2026-09-19"
+
+# 部署前先 `wrangler kv namespace create COPYFLOW_KB`，
+# 把命令返回的 id 填到下面（预览环境用 preview_id）
+kv_namespaces = [
+  { binding = "COPYFLOW_KB", id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID" }
+]
+
+# 每周一 03:00 UTC 自动刷新一次知识库（对应北京时间周一 11:00）
+[triggers]
+crons = ["0 3 * * 1"]
