@@ -9,6 +9,7 @@ const factSheet = read('valid/fact-sheet.json');
 const brief = read('valid/brief.json');
 const amazon = read('valid/listing-amazon.json');
 const shopee = read('valid/listing-shopee.json');
+const tiktok = read('valid/listing-tiktok.json');
 const report = read('valid/compliance-report.json');
 
 test('有效样例：结构全部通过', () => {
@@ -16,12 +17,14 @@ test('有效样例：结构全部通过', () => {
   assert.deepEqual(validate('brief', brief), { ok: true, errors: [] });
   assert.deepEqual(validate('listing', amazon), { ok: true, errors: [] });
   assert.deepEqual(validate('listing', shopee), { ok: true, errors: [] });
+  assert.deepEqual(validate('listing', tiktok), { ok: true, errors: [] });
   assert.deepEqual(validate('report', report), { ok: true, errors: [] });
 });
 
 test('有效样例：事实编号引用完整、报告自洽', () => {
   assert.deepEqual(checkReferences({ factSheet, brief, listing: amazon }), []);
   assert.deepEqual(checkReferences({ factSheet, brief, listing: shopee }), []);
+  assert.deepEqual(checkReferences({ factSheet, brief, listing: tiktok }), []);
   assert.deepEqual(checkReport(report), []);
 });
 
@@ -55,4 +58,24 @@ test('平台内容结构串台：shopee 的 content 用了 amazon 结构会被�
   const wrong = structuredClone(shopee);
   wrong.content = structuredClone(amazon.content);
   assert.equal(validate('listing', wrong).ok, false);
+});
+
+test('TikTok 结构：缺 description、要点为空数组、串用 Amazon 结构都会被拒绝', () => {
+  const noDesc = structuredClone(tiktok);
+  delete noDesc.content.description;
+  assert.equal(validate('listing', noDesc).ok, false);
+
+  const emptyBullets = structuredClone(tiktok);
+  emptyBullets.content.bullets = [];
+  assert.equal(validate('listing', emptyBullets).ok, false);
+
+  const wrong = structuredClone(tiktok);
+  wrong.content = structuredClone(amazon.content);
+  assert.equal(validate('listing', wrong).ok, false);
+});
+
+test('TikTok 卖点必须带事实编号', () => {
+  const bad = structuredClone(tiktok);
+  delete bad.claims[0].fact_ids;
+  assert.equal(validate('listing', bad).ok, false);
 });

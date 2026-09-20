@@ -61,7 +61,7 @@
           "basis": "official_category"
         },
         {
-          "pattern": "(?<![\\d.])\\+?\\d[\\d\\s().-]{7,}\\d(?![\\d.])",
+          "pattern": "(?<!\\d|\\d\\.)\\+?\\d[\\d\\s().-]{7,}\\d(?!\\d|\\.\\d)",
           "basis": "official_category"
         }
       ],

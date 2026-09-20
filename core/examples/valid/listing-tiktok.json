@@ -1,0 +1,90 @@
+{
+  "platform": "tiktok",
+  "market": "en-US",
+  "content": {
+    "title": "HoverGo Pro Wireless Earbuds with Active Noise Cancelling, Bluetooth 5.3, IPX5 Water Resistant",
+    "description": "HoverGo Pro wireless earbuds are built for people who move between crowded trains, open offices, and gym sessions in the same day. Active noise cancelling helps quiet background sound so calls and music stay easy to follow, while Bluetooth 5.3 keeps the connection to your phone steady. The charging case extends total battery life to about 30 hours, which means fewer trips to the charger during a busy week. With an IPX5 rating, the earbuds are made to handle sweat and light rain during workouts and daily commutes.",
+    "bullets": [
+      "Active noise cancelling helps quiet background sound on trains, in offices, and on busy streets.",
+      "Up to about 30 hours of total battery life when used with the charging case.",
+      "Bluetooth 5.3 keeps a steady wireless connection with your phone and other paired devices.",
+      "Rated IPX5 for water resistance, made to handle sweat and light rain."
+    ]
+  },
+  "attributes": [
+    {
+      "name": "Connectivity",
+      "value": "Bluetooth 5.3",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "Battery life",
+      "value": "Up to 30 hours with charging case",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "Water resistance",
+      "value": "IPX5",
+      "fact_ids": [
+        "F4"
+      ]
+    }
+  ],
+  "qa": [
+    {
+      "question": "Do these earbuds have noise cancelling?",
+      "answer": "Yes, they feature active noise cancelling.",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "question": "How long does the battery last?",
+      "answer": "Up to about 30 hours in total when using the charging case.",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "question": "Are they sweat resistant?",
+      "answer": "They are rated IPX5 for water resistance.",
+      "fact_ids": [
+        "F4"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "text": "Active noise cancelling helps quiet background sound",
+      "path": "content/bullets/0",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "text": "about 30 hours",
+      "path": "content/bullets/1",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "text": "Bluetooth 5.3",
+      "path": "content/bullets/2",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "text": "Rated IPX5",
+      "path": "content/bullets/3",
+      "fact_ids": [
+        "F4"
+      ]
+    }
+  ]
+}

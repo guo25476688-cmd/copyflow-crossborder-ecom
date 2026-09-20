@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 
 const load = (name) => JSON.parse(readFileSync(new URL(`../rules/${name}.json`, import.meta.url), 'utf-8'));
-export const RULE_SETS = ['amazon-us', 'shopee-id'].map(load);
+export const RULE_SETS = ['amazon-us', 'shopee-id', 'tiktok-us'].map(load);
 
 // ™ © ® 属于 Extended_Pictographic，但 Shopee 官方明确允许 ™，所以排除
 const EMOJI = /(?![™©®])\p{Extended_Pictographic}/gu;
@@ -21,6 +21,10 @@ export function extractFields(listing) {
     });
     add('content/description', c.description, 'description');
     (c.item_highlights || []).forEach((h, i) => add(`content/item_highlights/${i}`, h, 'highlights', 'highlights', 'content/item_highlights'));
+  } else if (listing.platform === 'tiktok') {
+    add('content/title', c.title, 'title');
+    add('content/description', c.description, 'description');
+    (c.bullets || []).forEach((b, i) => add(`content/bullets/${i}`, b, 'bullet', `bullet-${i}`, `content/bullets/${i}`));
   } else if (listing.platform === 'shopee') {
     add('content/title', c.title, 'title');
     add('content/highlight', c.highlight, 'highlight');
@@ -120,6 +124,44 @@ const checks = {
       }
     }
     return issues;
+  },
+
+  // 描述整体 = 描述正文 + 要点（TikTok 官方把 3-5 条要点算作描述的一部分）
+  min_length(rule, ctx) {
+    const parts = rule.target === 'description_full' ? ctx.fields.filter((f) => f.kind === 'description' || f.kind === 'bullet') : ctx.fields.filter((f) => f.kind === rule.target);
+    if (!parts.length) return [];
+    const text = parts.map((f) => f.text).join(' ');
+    const n = rule.unit === 'words' ? text.split(/\s+/).filter(Boolean).length : text.length;
+    const unit = rule.unit === 'words' ? '词' : '字符';
+    return n < rule.min ? [{ severity: rule.severity, path: parts[0].path, evidence: `${n}${unit}，少于 ${rule.min}` }] : [];
+  },
+
+  // 同一个词里混用拉丁字母与西里尔/希腊字母，是官方点名的“用相似字符替代字母”（如 Дpple）
+  mixed_script(rule, ctx) {
+    const issues = [];
+    for (const f of inScope(ctx.fields, rule.scope)) {
+      const bad = f.text.split(/\s+/).filter((w) => /\p{Script=Latin}/u.test(w) && /[\p{Script=Cyrillic}\p{Script=Greek}]/u.test(w));
+      if (bad.length) issues.push({ severity: rule.severity, path: f.path, evidence: clip(bad.join('、')) });
+    }
+    return issues;
+  },
+
+  // 事实表里有品牌时，标题必须包含它；没有品牌信息就无从检查
+  title_includes_brand(rule, ctx) {
+    const title = ctx.fields.find((f) => f.kind === 'title');
+    if (!title || !ctx.brand) return [];
+    return title.text.toLowerCase().includes(ctx.brand.toLowerCase()) ? [] : [{ severity: rule.severity, path: title.path, evidence: `标题中没有品牌「${ctx.brand}」` }];
+  },
+
+  bullet_starts_capital(rule, ctx) {
+    return ctx.fields
+      .filter((f) => f.kind === 'bullet' && /^\p{Ll}/u.test(f.text.trim()))
+      .map((f) => ({ severity: rule.severity, path: f.path, evidence: clip(f.text.trim(), 40) }));
+  },
+
+  count_range(rule, ctx) {
+    const n = ctx.fields.filter((f) => f.kind === 'bullet').length;
+    return n < rule.min || n > rule.max ? [{ severity: rule.severity, path: 'content/bullets', evidence: `${n} 条，建议 ${rule.min}-${rule.max} 条` }] : [];
   },
 
   non_latin_script(rule, ctx) {

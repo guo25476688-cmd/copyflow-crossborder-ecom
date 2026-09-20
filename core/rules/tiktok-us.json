@@ -1,0 +1,641 @@
+{
+  "id": "tiktok-us",
+  "version": "2026-09-21",
+  "platform": "tiktok",
+  "markets": [
+    "en-US"
+  ],
+  "retrieved_at": "2026-09-21",
+  "description": "TikTok Shop 美国站商品 Listing（标题、描述）规则，来自官方卖家大学「Product Listing Policy」（页面日期 2026-09-01）与「Product Listing: What You Need to Know」（2026-08-10），两篇均注明适用于美国站。严重程度跟随官方措辞：写“必须/禁止”的为错误，写“建议/避免/should”的为警告；依据等级同 Amazon 规则集。只覆盖文字，不涉及图片与视频。",
+  "rules": [
+    {
+      "id": "tt.title.max-length",
+      "check": "max_length",
+      "target": "title",
+      "max": 200,
+      "severity": "warning",
+      "description": "标题建议不超过 200 字符（官方在标题写作建议里写“should be between 25-200 characters”，措辞为建议，故为警告）",
+      "fix_hint": "把标题缩短到 200 字符以内",
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=7073362639816491&default_language=en",
+        "section": "Product Title > Tips for Writing Product Titles",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.title.min-length",
+      "check": "min_length",
+      "target": "title",
+      "unit": "chars",
+      "min": 25,
+      "severity": "warning",
+      "description": "标题建议不少于 25 字符（同上，措辞为建议）",
+      "fix_hint": "补充产品类型、关键特征等识别信息，使标题不少于 25 字符",
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=7073362639816491&default_language=en",
+        "section": "Product Title > Tips for Writing Product Titles",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.title.includes-brand",
+      "check": "title_includes_brand",
+      "severity": "error",
+      "description": "标题必须包含品牌（需有授权）。事实表里有品牌时才检查；品牌是否与官网、商标、包装一致无法自动核对",
+      "fix_hint": "在标题开头写上品牌名",
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921&lang=en",
+        "section": "Product Title > It must include: The brand (with authorization)",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.title.capitalization",
+      "check": "title_case",
+      "scope": [
+        "title"
+      ],
+      "severity": "error",
+      "description": "标题每个词首字母大写，介词、连词、冠词除外；计量单位可缩写（cm、oz、in、kg）",
+      "fix_hint": "把每个实词的首字母改为大写",
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921&lang=en",
+        "section": "Product Title > Capitalize the first letter of each word",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.title.special-chars",
+      "check": "forbidden_chars",
+      "scope": [
+        "title"
+      ],
+      "chars": "~!*$?_{}#<>|;^¬¦",
+      "ignore_brand": true,
+      "severity": "warning",
+      "description": "标题应避免使用这些符号：~ ! * $ ? _ { } # < > | ; ^ ¬ ¦（官方写“Avoid”，属最佳实践，故为警告）",
+      "fix_hint": "删除这些符号",
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=7073362639816491&default_language=en",
+        "section": "Product Title > Avoid symbols and special characters",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.title.word-repeat",
+      "check": "max_word_repeat",
+      "scope": [
+        "title"
+      ],
+      "max": 2,
+      "allowed_words": [
+        "in",
+        "on",
+        "over",
+        "with",
+        "and",
+        "or",
+        "for",
+        "the",
+        "a",
+        "an",
+        "of",
+        "to",
+        "by",
+        "at",
+        "from"
+      ],
+      "severity": "warning",
+      "description": "标题应避免重复用词（官方示例 “Cotton Shirt, Soft Cotton Shirt, 100% Cotton Shirt”，同词出现 3 次；阈值取自该示例，官方未写具体次数）",
+      "fix_hint": "合并重复的词",
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=7073362639816491&default_language=en",
+        "section": "Product Title > Avoid repeating words or phrases in the title",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.title.variations-in-title",
+      "check": "forbidden_patterns",
+      "scope": [
+        "title"
+      ],
+      "severity": "warning",
+      "description": "标题里不要罗列全部变体（官方示例 “XXS-6XL all sizes”），尺码颜色应放在变体标题里",
+      "fix_hint": "把尺码、颜色等变体信息从主标题移到变体设置",
+      "patterns": [
+        {
+          "pattern": "\\ball sizes\\b",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "\\b[XS]{1,3}S?\\s*[-–]\\s*\\d?X+L\\b",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "\\bavailable in\\b",
+          "basis": "derived"
+        }
+      ],
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=7073362639816491&default_language=en",
+        "section": "Product Title > Avoid listing all product variations in the title",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.all-caps",
+      "check": "all_caps",
+      "scope": [
+        "title",
+        "description",
+        "bullet"
+      ],
+      "min_letters": 4,
+      "severity": "error",
+      "description": "标题、描述、要点不得使用全大写",
+      "fix_hint": "改成正常大小写",
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921&lang=en",
+        "section": "Product Detail Page Requirements > Do not USE ALL CAPITAL LETTERS",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.no-subjective",
+      "check": "forbidden_patterns",
+      "scope": [
+        "title",
+        "description",
+        "bullet"
+      ],
+      "severity": "error",
+      "description": "不得使用主观评价（官方示例：Best Seller、Trending Item）",
+      "fix_hint": "删除主观评价，只描述产品本身",
+      "patterns": [
+        {
+          "pattern": "\\bbest[- ]?seller\\b",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "\\btrending item\\b",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "\\bbest[- ]?selling\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "\\bhot (item|seller)\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "\\btop[- ]?(rated|selling|seller)\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "\\bmust[- ]?have\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "\\bviral\\b",
+          "basis": "derived"
+        }
+      ],
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921&lang=en",
+        "section": "Product Detail Page Requirements > Do not include subjective comments like “Best Seller” or “Trending Item”",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.no-promotion",
+      "check": "forbidden_patterns",
+      "scope": [
+        "title",
+        "description",
+        "bullet"
+      ],
+      "severity": "error",
+      "description": "不得包含营销或促销信息（官方示例：x% off），只写与产品本身有关的描述",
+      "fix_hint": "删除折扣、促销、优惠措辞",
+      "patterns": [
+        {
+          "pattern": "\\d+\\s*%\\s*off\\b",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "\\bon sale\\b|\\bsale\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "\\bdiscount(ed)?\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "\\bfree shipping\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "\\blimited[- ]time\\b|\\bbuy now\\b|\\border now\\b|\\bhurry\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "\\bcoupon\\b|\\bpromo(tion)?\\b",
+          "basis": "derived"
+        }
+      ],
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921&lang=en",
+        "section": "Product Detail Page Requirements > Do not include marketing material, promotions … (for example, “x% off”)",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.no-offplatform",
+      "check": "forbidden_patterns",
+      "scope": [
+        "title",
+        "description",
+        "bullet"
+      ],
+      "severity": "error",
+      "description": "不得包含把顾客引到站外的信息（网址、二维码），描述中不得有邮箱、网址等卖家信息",
+      "fix_hint": "删除网址、二维码、邮箱等",
+      "patterns": [
+        {
+          "pattern": "https?://\\S+",
+          "basis": "official_category"
+        },
+        {
+          "pattern": "\\bwww\\.\\S+",
+          "basis": "official_category"
+        },
+        {
+          "pattern": "[\\w.+-]+@[\\w-]+\\.[\\w.-]+",
+          "basis": "official_category"
+        },
+        {
+          "pattern": "\\bqr[- ]?codes?\\b",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "(?<!\\d|\\d\\.)\\+?\\d[\\d\\s().-]{7,}\\d(?!\\d|\\.\\d)",
+          "basis": "derived"
+        }
+      ],
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921&lang=en",
+        "section": "Product Detail Page Requirements > Do not include any information which attempts to redirect customers off of TikTok Shop",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.no-platform-refs",
+      "check": "forbidden_patterns",
+      "scope": [
+        "title",
+        "description",
+        "bullet"
+      ],
+      "severity": "error",
+      "description": "不得出现 “TikTok”（除非获得授权）或其他电商平台的品牌/名称。其他平台名的检测是我的推断（如 “Amazon Echo” 是合法的兼容性说明），故只给警告",
+      "fix_hint": "删除对 TikTok 及其他电商平台的提及",
+      "patterns": [
+        {
+          "pattern": "\\btik[- ]?tok\\b",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "\\b(amazon|shopee|lazada|temu|aliexpress|walmart|ebay|etsy|shein|shopify)\\b",
+          "basis": "derived"
+        }
+      ],
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921&lang=en",
+        "section": "Product Detail Page Requirements > Do not include branding or references to “TikTok” … or other e-commerce platforms",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.no-lookalike-script",
+      "check": "mixed_script",
+      "scope": [
+        "title",
+        "description",
+        "bullet"
+      ],
+      "severity": "error",
+      "description": "不得用其他字母表里的相似字符替代字母（官方示例 “Дpple”）",
+      "fix_hint": "改用标准拉丁字母",
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921&lang=en",
+        "section": "Product Detail Page Requirements > Do not use special characters, numbers or alternate typefaces to substitute letters",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.no-lookalike-symbols",
+      "check": "forbidden_patterns",
+      "scope": [
+        "title",
+        "description",
+        "bullet"
+      ],
+      "severity": "error",
+      "description": "不得用符号或数字替代字母（官方示例 “N!KE”）",
+      "fix_hint": "改用标准字母拼写",
+      "patterns": [
+        {
+          "pattern": "[A-Za-z][!@$][A-Za-z]",
+          "basis": "official_example"
+        }
+      ],
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921&lang=en",
+        "section": "Product Detail Page Requirements > Do not use special characters, numbers or alternate typefaces to substitute letters",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.no-imitation",
+      "check": "forbidden_patterns",
+      "scope": [
+        "all"
+      ],
+      "severity": "error",
+      "description": "不得声称商品是平替（dupe）、仿品、山寨（knock-off）。“fake”“replica”等词有合法用法（如 fake leather），只给警告",
+      "fix_hint": "删除此类表述",
+      "patterns": [
+        {
+          "pattern": "\\bdupes?\\b",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "knock[- ]?offs?",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "\\breplica\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "\\bfakes?\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "\\binspired by\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "\\bimitation\\b",
+          "basis": "derived"
+        }
+      ],
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921&lang=en",
+        "section": "Prohibited Product Listing Behavior > claims … that the products are dupes, fakes, knock-offs",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.no-comparison",
+      "check": "forbidden_patterns",
+      "scope": [
+        "all"
+      ],
+      "severity": "warning",
+      "description": "不得做贬低性或不客观的对比（官方禁止；检测短语是我的推断，故为警告，需人工确认是否属于客观事实对比）",
+      "fix_hint": "删除对比性表述，或改为客观、可验证的事实",
+      "patterns": [
+        {
+          "pattern": "\\b(better|cheaper|stronger|faster|superior)\\s+(than|to)\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "\\bunlike (other|the )?(brands?|products?|competitors?)\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "\\bbeats?\\b\\s+(the\\s+)?(competition|competitors)\\b",
+          "basis": "derived"
+        }
+      ],
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921&lang=en",
+        "section": "Prohibited Product Listing Behavior > negative or disparaging comparisons to other brands or products",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.claims.unproven",
+      "check": "forbidden_patterns",
+      "scope": [
+        "all"
+      ],
+      "severity": "warning",
+      "description": "不得做虚假、夸大或没有依据的功能与效果声称（官方点名 “before and after”、未经验证的性能声称；具体触发词由我推断，故为警告）",
+      "fix_hint": "删除绝对化、夸大表述；有客观依据的性能规格请在事实表中提供并保留证明材料",
+      "patterns": [
+        {
+          "pattern": "before and after",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "\\bbest\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "\\bguarantee(d|s)?\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "100%\\s*(effective|guaranteed|safe|pure|natural)",
+          "basis": "derived"
+        },
+        {
+          "pattern": "#\\s*1\\b|\\bnumber one\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "world'?s (best|first|only)|\\bunbeatable\\b|\\bmiracle\\b",
+          "basis": "derived"
+        }
+      ],
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921&lang=en",
+        "section": "Prohibited Product Listing Behavior > false, exaggerated, or unproven claims about a product’s functionality or effects",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.claim.disease",
+      "check": "forbidden_patterns",
+      "scope": [
+        "all"
+      ],
+      "severity": "error",
+      "description": "不得声称治愈或管理疾病（官方示例 “claiming to cure or manage a disease”）",
+      "fix_hint": "删除疾病功效表述；食品、保健品尤其需要人工复核",
+      "patterns": [
+        {
+          "pattern": "\\b(treat(s|ing|ment)?|cures?|curing|prevent(s|ing)?|mitigat(e|es|ing)|heal(s|ing)?|relie(f|ve|ves)|reduc(e|es|ing)|alleviat(e|es|ing)|manag(e|es|ing)|diagnos(e|es|ing))\\b[^.!?\\n]{0,60}\\b(AIDS|ADHD|ALS|Alzheimer'?s|cancer|cataracts?|celiac|chlamydia|concussions?|coronavirus|covid[- ]?19|crohn'?s|cystic fibrosis|dementia|depression|diabet(es|ic)|epilepsy|glaucoma|gonorrhea|gout|hepatitis|herpes|HIV|HPV|influenza|kidney disease|liver disease|lupus|meningitis|multiple sclerosis|muscular dystrophy|obesity|parkinson'?s|seizures?|stroke|syphilis|tumou?rs?|arthritis)\\b",
+          "basis": "official_category"
+        },
+        {
+          "pattern": "\\b(AIDS|ADHD|ALS|Alzheimer'?s|cancer|cataracts?|celiac|chlamydia|concussions?|coronavirus|covid[- ]?19|crohn'?s|cystic fibrosis|dementia|depression|diabet(es|ic)|epilepsy|glaucoma|gonorrhea|gout|hepatitis|herpes|HIV|HPV|influenza|kidney disease|liver disease|lupus|meningitis|multiple sclerosis|muscular dystrophy|obesity|parkinson'?s|seizures?|stroke|syphilis|tumou?rs?|arthritis)\\b[^.!?\\n]{0,40}\\b(treat(s|ing|ment)?|cures?|curing|prevent(s|ing)?|mitigat(e|es|ing)|heal(s|ing)?|relie(f|ve|ves)|reduc(e|es|ing)|alleviat(e|es|ing)|manag(e|es|ing)|diagnos(e|es|ing))\\b",
+          "basis": "official_category"
+        }
+      ],
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921&lang=en",
+        "section": "Product Detail Page Requirements > Do not include misleading claims … (for example, claiming to cure or manage a disease)",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.claim.origin",
+      "check": "claim_needs_fact",
+      "scope": [
+        "all"
+      ],
+      "severity": "error",
+      "description": "原产地声称必须真实（官方示例：在印尼组装的产品不能标 Made in the USA），事实表里没有依据就不能写",
+      "fix_hint": "删除原产地声称，或在事实表中补充经卖家确认的产地依据",
+      "patterns": [
+        {
+          "pattern": "\\bmade in (the )?(usa|u\\.s\\.a?\\.?|united states|america)\\b",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "\\bmade in \\w+",
+          "basis": "derived"
+        }
+      ],
+      "fact_patterns": [
+        "made in",
+        "origin",
+        "产地",
+        "制造",
+        "生产地"
+      ],
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921&lang=en",
+        "section": "Prohibited Product Listing Behavior > truthful and accurate origin claims",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.numerals",
+      "check": "forbidden_patterns",
+      "scope": [
+        "title",
+        "description",
+        "bullet"
+      ],
+      "severity": "warning",
+      "description": "数字用阿拉伯数字（“2” 而不是 “two”）；官方明确要求，但检测数字单词是启发式，故为警告",
+      "fix_hint": "把英文数字单词改成阿拉伯数字",
+      "patterns": [
+        {
+          "pattern": "\\b(two|three|four|five|six|seven|eight|nine|ten)\\b",
+          "basis": "derived"
+        }
+      ],
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921&lang=en",
+        "section": "Product Detail Page Requirements > Use numerals: “2” instead of “two”",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.description.min-words",
+      "check": "min_length",
+      "target": "description_full",
+      "unit": "words",
+      "min": 30,
+      "severity": "error",
+      "description": "描述不得少于 30 个词（描述与要点合计）",
+      "fix_hint": "补充产品特点、用途、规格等，使描述不少于 30 词",
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921&lang=en",
+        "section": "Product Description > Be no less than 30 words",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.description.min-chars",
+      "check": "min_length",
+      "target": "description_full",
+      "unit": "chars",
+      "min": 500,
+      "severity": "warning",
+      "description": "描述建议不少于 500 字符（含空格；官方写 “should be at least 500 characters”，措辞为建议，故为警告；官方未说明是否含空格，按含空格计）",
+      "fix_hint": "补充产品特点、用途、规格等，使描述不少于 500 字符",
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=7073362639816491&default_language=en",
+        "section": "Product Description > Descriptions should be at least 500 characters long",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.bullets.count",
+      "check": "count_range",
+      "min": 3,
+      "max": 5,
+      "severity": "warning",
+      "description": "官方建议在描述里加 3-5 条要点",
+      "fix_hint": "整理成 3 到 5 条要点",
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921&lang=en",
+        "section": "Product Description > It is recommended to include 3-5 bullet points",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.bullets.capital-start",
+      "check": "bullet_starts_capital",
+      "severity": "error",
+      "description": "每条要点以大写字母开头",
+      "fix_hint": "把要点的第一个字母改为大写",
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921&lang=en",
+        "section": "Product Description > Begin each bullet point with a capital letter",
+        "retrieved_at": "2026-09-21"
+      }
+    },
+    {
+      "id": "tt.bullets.units-full-form",
+      "check": "forbidden_patterns",
+      "scope": [
+        "bullet"
+      ],
+      "severity": "error",
+      "description": "要点里的计量单位要写全称（如 inch、feet），不能缩写；注意标题里恰恰相反，官方要求缩写。缩写清单是我的启发式（已排除易与介词混淆的 in）",
+      "fix_hint": "把 cm、mm、kg、oz、lb、ft 等缩写写成全称（centimeters、kilograms…）",
+      "patterns": [
+        {
+          "pattern": "\\b\\d+(?:\\.\\d+)?\\s*(?:ft|qt|oz|lbs?|cm|mm|kg|ml)\\b",
+          "basis": "official_category"
+        }
+      ],
+      "source": {
+        "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921&lang=en",
+        "section": "Product Description > State units like quart, inch, or feet in full form",
+        "retrieved_at": "2026-09-21"
+      }
+    }
+  ],
+  "unverified": [
+    "标题 25–200 字符与描述 500 字符出自官方“建议”性文章（措辞为 should），是否为后台硬性限制未核实；描述 30 词出自 Policy 的标准。描述字符数是否含空格官方未说明",
+    "品牌授权，以及品牌名必须与官网、注册商标、包装标签一致（官方要求），无法自动核对；只在事实表有品牌时检查标题是否包含品牌",
+    "商品类目必须准确（错误类目属违规，影响 Shop Health），本规则集不做类目校验",
+    "依法必须展示的披露与警告（加州 65 号提案、窒息危险警示标签），以及含成分商品必须按含量从高到低披露完整成分：需要类目与产品信息，未做",
+    "标题中不得含卖家名称：链接已检测，卖家名称无法检测",
+    "官方「Requirements for Responsible Health-Related Content」「Prohibited Products」「Restricted Products」「Product Quality」等政策页未读；健康类与受限类目商品需另行核对",
+    "官方页面没有提到 emoji，本规则集不检测 emoji",
+    "变体信息（尺码、颜色）应放在变体标题里，只有启发式检测；“in” 等易与介词混淆的缩写未检测",
+    "本规则集只声明适用于美国站；TikTok Shop 其他站点（英国、东南亚等）的规则未核实",
+    "只覆盖文字；图片、视频规则不在范围内（本工具不生成图片）"
+  ]
+}
