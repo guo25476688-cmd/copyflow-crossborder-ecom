@@ -1,0 +1,166 @@
+{
+  "id": "feeder-h6",
+  "category_hint": "pet",
+  "tags": [
+    "holdout",
+    "messy",
+    "fabrication-trap"
+  ],
+  "notes": "宠物喂食器：中英混杂、无夸大话，纯测试编造（WiFi/断电记忆/适用猫狗）与缺失信息",
+  "input": "Automatic pet feeder 4L, timer feeding up to 6 meals/day, dual power (battery + USB), stainless steel bowl, APP控制。",
+  "must_capture": [
+    {
+      "id": "C1",
+      "statement": "容量4L",
+      "patterns": [
+        "4\\s*L"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "每日最多6餐",
+      "patterns": [
+        "6\\s*(meals|餐)"
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "双电源（电池+USB）",
+      "patterns": [
+        "dual power",
+        "双电源"
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "不锈钢食碗",
+      "patterns": [
+        "stainless",
+        "不锈钢"
+      ]
+    },
+    {
+      "id": "C5",
+      "statement": "APP控制",
+      "patterns": [
+        "APP"
+      ]
+    },
+    {
+      "id": "C6",
+      "statement": "定时喂食",
+      "patterns": [
+        "timer",
+        "定时"
+      ]
+    }
+  ],
+  "traps": {
+    "fabrication": [
+      {
+        "claim": "断电记忆",
+        "why": "输入未提及",
+        "patterns": [
+          "断电记忆",
+          "power[- ]?(outage|failure) (memory|backup)"
+        ]
+      },
+      {
+        "claim": "防卡粮设计",
+        "why": "输入未提及",
+        "patterns": [
+          "防卡",
+          "anti[- ]?jam"
+        ]
+      },
+      {
+        "claim": "防潮/干燥剂",
+        "why": "输入未提及",
+        "patterns": [
+          "防潮",
+          "干燥",
+          "desiccant",
+          "moisture"
+        ]
+      },
+      {
+        "claim": "适用猫和狗",
+        "why": "输入只说宠物，没说猫狗",
+        "patterns": [
+          "猫狗",
+          "猫和狗",
+          "cats? and dogs?",
+          "dogs? and cats?"
+        ]
+      },
+      {
+        "claim": "WiFi 连接",
+        "why": "输入只说APP控制，没说连接方式",
+        "patterns": [
+          "wi-?fi",
+          "无线网络"
+        ]
+      },
+      {
+        "claim": "摄像头",
+        "why": "输入未提及",
+        "patterns": [
+          "摄像",
+          "camera"
+        ]
+      }
+    ],
+    "bait": [],
+    "must_flag_unknown": [
+      {
+        "field": "电池型号与数量",
+        "patterns": [
+          "电池型号",
+          "电池规格",
+          "battery (type|model|size)",
+          "\\bAA\\b",
+          "D[- ]?cell"
+        ]
+      },
+      {
+        "field": "适用宠物类型与体型",
+        "patterns": [
+          "猫",
+          "狗",
+          "cats?\\b",
+          "dogs?\\b",
+          "宠物类型",
+          "体型"
+        ]
+      },
+      {
+        "field": "适用粮食颗粒大小",
+        "patterns": [
+          "颗粒",
+          "粮",
+          "kibble",
+          "granule"
+        ]
+      },
+      {
+        "field": "尺寸与重量",
+        "patterns": [
+          "尺寸",
+          "重量",
+          "dimension",
+          "weight"
+        ]
+      }
+    ]
+  },
+  "targets": {
+    "platforms": [
+      "amazon",
+      "shopee"
+    ],
+    "markets": [
+      "en-US",
+      "id-ID"
+    ]
+  }
+}

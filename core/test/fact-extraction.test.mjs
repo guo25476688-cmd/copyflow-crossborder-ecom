@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { extractFactSheet, checkEvidence, verifyFactSheet, buildExtractionPrompt, PROMPT_VERSIONS, LATEST_PROMPT } from '../src/fact-extraction.mjs';
 import { createChat, getApiKey, parseJsonLoose } from '../src/llm.mjs';
+import { loadCases } from '../eval/cases-loader.mjs';
 
 const readJson = (p) => JSON.parse(readFileSync(new URL(p, import.meta.url), 'utf-8'));
 const earbuds = readJson('../eval/cases/earbuds-01.json');
@@ -213,21 +214,42 @@ test('客户端：thinking 选项只在设置时才写入请求；默认不写�
   assert.deepEqual(bodies[1].thinking, { type: 'disabled' });
 });
 
-test('提示词版本：p2 与 p3 只在第 3 条规则上不同，默认用最新版，未知版本报错', () => {
-  assert.deepEqual(PROMPT_VERSIONS, ['p2', 'p3']);
-  assert.equal(LATEST_PROMPT, 'p3');
-  const p2 = buildExtractionPrompt('x', 'p2').system;
-  const p3 = buildExtractionPrompt('x').system;
-  assert.notEqual(p2, p3);
-  assert.ok(p3.includes('整句都不是事实'));
-  assert.ok(!p2.includes('整句都不是事实'));
-  const added = '关于安全性、无毒无害、环保、功效的说法同理：除非输入同时给出了检测或认证依据，否则整句都不是事实，不要把其中一部分当事实、另一部分当禁止声称。';
-  assert.equal(p3.replace(added, ''), p2, 'p3 去掉新增那一句后应与 p2 完全一致');
+test('提示词版本：各版本只在第 3 条规则上不同，默认用最新版，未知版本报错', () => {
+  assert.deepEqual(PROMPT_VERSIONS, ['p2', 'p3', 'p4']);
+  assert.equal(LATEST_PROMPT, 'p4');
+  const [p2, p3, p4] = ['p2', 'p3', 'p4'].map((v) => buildExtractionPrompt('x', v).system);
+  assert.equal(buildExtractionPrompt('x').system, p4);
+  const rule3Line = (t) => t.split('\n').find((l) => l.startsWith('3.'));
+  const strip = (t) => t.split('\n').filter((l) => !l.startsWith('3.') && !l.startsWith('但卖家写明')).join('\n');
+  assert.equal(strip(p3), strip(p2), 'p3 除第 3 条外应与 p2 一致');
+  assert.equal(strip(p4), strip(p2), 'p4 除第 3 条外应与 p2 一致');
+  assert.ok(rule3Line(p3).includes('整句都不是事实'));
   assert.throws(() => buildExtractionPrompt('x', 'p9'), /未知提示词版本/);
+});
+
+test('p4 同时包含两条相反方向的指引：模糊说法整句不算事实；具体规格记为事实并追问依据', () => {
+  const p4 = buildExtractionPrompt('x', 'p4').system;
+  assert.match(p4, /"无毒无味""绝对环保"/);
+  assert.match(p4, /整句都不是事实/);
+  assert.match(p4, /"防摔 1\.5 米""不含 BPA"/);
+  assert.ok(!/150\s*kg|3\s*岁/.test(p4), '提示词例子不能含留出集探针');
+  assert.match(p4, /要记为事实/);
+  assert.match(p4, /在 unknowns 里追问依据/);
 });
 
 test('extractFactSheet 会按指定版本发送提示词', async () => {
   const chat = fakeChat(good);
   await extractFactSheet({ rawInput: input, chat, promptVersion: 'p2' });
   assert.equal(chat.calls[0].system, buildExtractionPrompt(input, 'p2').system);
+});
+
+test('防泄漏：提示词的任何版本都不得包含留出集用例输入里的片段（否则留出集失去意义）', () => {
+  const squash = (t) => t.normalize('NFKC').replace(/\s+/g, '').toLowerCase();
+  const prompts = PROMPT_VERSIONS.map((v) => squash(buildExtractionPrompt('', v).system));
+  for (const c of loadCases('holdout')) {
+    const fragments = c.input.split(/[，。、；,.;\s（）()]+/).map(squash).filter((f) => f.length >= 3);
+    for (const f of fragments) {
+      for (const p of prompts) assert.ok(!p.includes(f), `提示词包含了留出用例 ${c.id} 的输入片段「${f}」`);
+    }
+  }
 });

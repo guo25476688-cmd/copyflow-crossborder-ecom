@@ -1,0 +1,136 @@
+{
+  "product": {
+    "name": "LED台灯",
+    "brand": null,
+    "category": {
+      "value": "Home & Kitchen > Lamps & Lighting > Desk Lamps",
+      "confidence": 0.7
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品为LED台灯。",
+      "source": "user_input",
+      "evidence": "LED台灯"
+    },
+    {
+      "id": "F2",
+      "statement": "具有三档色温。",
+      "source": "user_input",
+      "evidence": "三档色温"
+    },
+    {
+      "id": "F3",
+      "statement": "支持无极调光。",
+      "source": "user_input",
+      "evidence": "无极调光"
+    },
+    {
+      "id": "F4",
+      "statement": "采用USB-C供电。",
+      "source": "user_input",
+      "evidence": "USB-C供电"
+    },
+    {
+      "id": "F5",
+      "statement": "灯臂材质为铝合金。",
+      "source": "user_input",
+      "evidence": "铝合金灯臂"
+    },
+    {
+      "id": "F6",
+      "statement": "功率为9W。",
+      "source": "user_input",
+      "evidence": "功率9W"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "LED台灯",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "色温档位",
+      "value": "三档",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "调光方式",
+      "value": "无极调光",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "供电接口",
+      "value": "USB-C",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "灯臂材质",
+      "value": "铝合金",
+      "fact_ids": [
+        "F5"
+      ]
+    },
+    {
+      "name": "功率",
+      "value": "9W",
+      "fact_ids": [
+        "F6"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "让孩子远离近视",
+      "reason": "疾病/健康功效声称，输入未提供医学或临床依据"
+    },
+    {
+      "claim": "保护视力",
+      "reason": "健康功效声称，输入未提供检测或认证依据"
+    },
+    {
+      "claim": "护眼认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "无频闪",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "色温具体数值（K）",
+      "why_needed": "输入只写三档色温，未说明各档色温，买家无法判断光线冷暖与适用场景"
+    },
+    {
+      "field": "亮度范围或流明值",
+      "why_needed": "输入只写无极调光，未说明亮度范围，买家无法判断照明能力"
+    },
+    {
+      "field": "尺寸与重量",
+      "why_needed": "买家关心摆放空间、底座稳定性和便携性"
+    },
+    {
+      "field": "颜色/外观颜色",
+      "why_needed": "买家关心与桌面搭配及可选款式"
+    },
+    {
+      "field": "认证与检测证明（如 CE、FCC、RoHS、护眼检测报告）",
+      "why_needed": "输入未提供，需补充以证明安全、合规及支撑护眼相关声称"
+    },
+    {
+      "field": "保修与售后服务",
+      "why_needed": "买家关心售后保障和维修政策"
+    }
+  ]
+}

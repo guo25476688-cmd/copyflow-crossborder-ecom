@@ -1,0 +1,117 @@
+{
+  "product": {
+    "name": "婴儿玻璃奶瓶 240ml",
+    "brand": null,
+    "category": {
+      "value": "Baby > Feeding > Baby Bottles",
+      "confidence": 0.9
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品为婴儿玻璃奶瓶，容量240ml",
+      "source": "user_input",
+      "evidence": "婴儿玻璃奶瓶 240ml"
+    },
+    {
+      "id": "F2",
+      "statement": "产品为宽口径",
+      "source": "user_input",
+      "evidence": "宽口径"
+    },
+    {
+      "id": "F3",
+      "statement": "产品配硅胶奶嘴",
+      "source": "user_input",
+      "evidence": "硅胶奶嘴"
+    },
+    {
+      "id": "F4",
+      "statement": "产品耐高温，可煮沸消毒",
+      "source": "user_input",
+      "evidence": "耐高温可煮沸消毒"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "婴儿玻璃奶瓶",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "容量",
+      "value": "240ml",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "口径",
+      "value": "宽口径",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "奶嘴材质",
+      "value": "硅胶",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "耐热与消毒",
+      "value": "耐高温可煮沸消毒",
+      "fact_ids": [
+        "F4"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "绝对安全",
+      "reason": "绝对化安全声称，输入未提供检测或认证依据"
+    },
+    {
+      "claim": "妈妈们都放心",
+      "reason": "主观背书，输入未提供依据"
+    },
+    {
+      "claim": "FDA认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "不含BPA",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "耐高温的具体温度范围及煮沸消毒的测试依据",
+      "why_needed": "“耐高温”较模糊，需要明确安全阈值和消毒条件，避免使用风险"
+    },
+    {
+      "field": "食品接触材料及婴幼儿产品认证/检测报告（如 FDA、LFGB、CPC 等）",
+      "why_needed": "输入未提供认证或检测报告，无法证明安全合规"
+    },
+    {
+      "field": "奶瓶尺寸（瓶身高、直径）与重量",
+      "why_needed": "买家需要判断握持、收纳、物流和适用场景，输入未提供"
+    },
+    {
+      "field": "奶嘴流速/适用月龄",
+      "why_needed": "不同月龄需匹配流速，影响婴儿进食安全，输入未提供"
+    },
+    {
+      "field": "颜色/图案/配件（如手柄、防尘盖）",
+      "why_needed": "影响购买选择和使用便利性，输入未提供"
+    },
+    {
+      "field": "清洗方式及是否可微波/蒸汽消毒",
+      "why_needed": "买家需要正确清洁保养，避免损坏产品，输入未提供"
+    }
+  ]
+}

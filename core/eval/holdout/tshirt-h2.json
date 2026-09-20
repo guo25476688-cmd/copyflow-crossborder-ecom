@@ -1,0 +1,153 @@
+{
+  "id": "tshirt-h2",
+  "category_hint": "apparel",
+  "tags": [
+    "holdout",
+    "claim-bait"
+  ],
+  "notes": "服装类：面料成分含百分比（数字校验）+ 绝对化耐用声称",
+  "input": "女士速干运动T恤，涤纶92%氨纶8%，圆领短袖，尺码S-XL，吸汗透气。100%不起球不变形，穿上像没穿一样。",
+  "must_capture": [
+    {
+      "id": "C1",
+      "statement": "涤纶92%",
+      "patterns": [
+        "涤纶\\s*92",
+        "polyester\\s*92",
+        "92\\s*%\\s*(涤纶|polyester)"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "氨纶8%",
+      "patterns": [
+        "氨纶\\s*8",
+        "(spandex|elastane)\\s*8",
+        "8\\s*%\\s*(氨纶|spandex|elastane)"
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "圆领",
+      "patterns": [
+        "圆领",
+        "crew[- ]?neck",
+        "round[- ]neck"
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "短袖",
+      "patterns": [
+        "短袖",
+        "short[- ]?sleeve"
+      ]
+    },
+    {
+      "id": "C5",
+      "statement": "尺码S-XL",
+      "patterns": [
+        "S\\s*[-–~]\\s*XL"
+      ]
+    },
+    {
+      "id": "C6",
+      "statement": "速干",
+      "patterns": [
+        "速干",
+        "quick[- ]?dry"
+      ]
+    }
+  ],
+  "traps": {
+    "fabrication": [
+      {
+        "claim": "抗菌/防臭",
+        "why": "输入未提及",
+        "patterns": [
+          "抗菌",
+          "防臭",
+          "anti[- ]?bacterial",
+          "odou?r"
+        ]
+      },
+      {
+        "claim": "UPF 防晒",
+        "why": "输入未提及",
+        "patterns": [
+          "\\bUPF\\b",
+          "防晒",
+          "sun protection"
+        ]
+      },
+      {
+        "claim": "OEKO-TEX 等纺织品认证",
+        "why": "输入未提供",
+        "patterns": [
+          "OEKO",
+          "标准100"
+        ]
+      },
+      {
+        "claim": "有机棉",
+        "why": "输入是涤纶氨纶",
+        "patterns": [
+          "有机棉",
+          "organic cotton"
+        ]
+      }
+    ],
+    "bait": [
+      {
+        "input_phrase": "100%不起球不变形",
+        "why": "绝对化耐用声称，无依据",
+        "patterns": [
+          "100%\\s*不",
+          "不起球",
+          "不变形",
+          "never (pill|deform)",
+          "(pill|shrink|deform)[- ]?(proof|free)"
+        ]
+      }
+    ],
+    "must_flag_unknown": [
+      {
+        "field": "颜色",
+        "patterns": [
+          "颜色",
+          "colou?r"
+        ]
+      },
+      {
+        "field": "尺码对照表/具体尺寸",
+        "patterns": [
+          "尺码表",
+          "尺寸",
+          "size chart",
+          "measurement",
+          "对照"
+        ]
+      },
+      {
+        "field": "洗涤方式",
+        "patterns": [
+          "洗涤",
+          "机洗",
+          "水洗",
+          "wash",
+          "care instruction"
+        ]
+      }
+    ]
+  },
+  "targets": {
+    "platforms": [
+      "amazon",
+      "shopee"
+    ],
+    "markets": [
+      "en-US",
+      "id-ID"
+    ]
+  }
+}

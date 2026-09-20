@@ -1,0 +1,123 @@
+{
+  "product": {
+    "name": "HoverGo Pro 无线蓝牙耳机",
+    "brand": null,
+    "category": {
+      "value": "Consumer Electronics > Headphones",
+      "confidence": 0.9
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品为 HoverGo Pro 无线蓝牙耳机",
+      "source": "user_input",
+      "evidence": "HoverGo Pro 无线蓝牙耳机"
+    },
+    {
+      "id": "F2",
+      "statement": "蓝牙版本为 5.3",
+      "source": "user_input",
+      "evidence": "蓝牙5.3"
+    },
+    {
+      "id": "F3",
+      "statement": "具备主动降噪功能",
+      "source": "user_input",
+      "evidence": "主动降噪"
+    },
+    {
+      "id": "F4",
+      "statement": "续航 30 小时（含充电盒）",
+      "source": "user_input",
+      "evidence": "续航30小时（含充电盒）"
+    },
+    {
+      "id": "F5",
+      "statement": "防水等级为 IPX5",
+      "source": "user_input",
+      "evidence": "IPX5防水"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品名称",
+      "value": "HoverGo Pro 无线蓝牙耳机",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "蓝牙版本",
+      "value": "5.3",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "主动降噪",
+      "value": "支持",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "续航",
+      "value": "30小时（含充电盒）",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "防水等级",
+      "value": "IPX5",
+      "fact_ids": [
+        "F5"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "降噪效果吊打AirPods",
+      "reason": "与竞品比较且夸大，输入未提供可验证依据"
+    },
+    {
+      "claim": "CE、FCC、RoHS 等认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "检测报告（如防水检测报告、蓝牙认证报告）",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "环保/无毒无害材质",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "尺寸和重量",
+      "why_needed": "买家关心佩戴舒适度与运输成本，输入未提供"
+    },
+    {
+      "field": "颜色/外观",
+      "why_needed": "买家需要选择款式，输入未提供"
+    },
+    {
+      "field": "适用设备/型号与蓝牙协议支持",
+      "why_needed": "买家需确认能否连接自己的设备，输入未提供"
+    },
+    {
+      "field": "主动降噪量化参数（降噪深度/频段等）",
+      "why_needed": "输入只写了主动降噪，未提供可验证的降噪性能指标"
+    },
+    {
+      "field": "保修期与售后政策",
+      "why_needed": "买家关心售后保障，输入未提供"
+    },
+    {
+      "field": "认证与检测证明（如 CE、FCC、RoHS、IPX5 检测报告）",
+      "why_needed": "输入未提供认证或检测报告，需补充以合规并支撑防水等声称"
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "product": {
+    "name": "Cordless screwdriver",
+    "brand": null,
+    "category": {
+      "value": "Tools & Home Improvement > Power & Hand Tools > Power Tools > Screwdrivers",
+      "confidence": 0.85
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品是无线螺丝刀。",
+      "source": "user_input",
+      "evidence": "Cordless screwdriver"
+    },
+    {
+      "id": "F2",
+      "statement": "电压为 3.6V。",
+      "source": "user_input",
+      "evidence": "3.6V"
+    },
+    {
+      "id": "F3",
+      "statement": "电池为 1500mAh Li-ion。",
+      "source": "user_input",
+      "evidence": "1500mAh Li-ion"
+    },
+    {
+      "id": "F4",
+      "statement": "扭矩为 5N.m。",
+      "source": "user_input",
+      "evidence": "扭矩 5N.m"
+    },
+    {
+      "id": "F5",
+      "statement": "附赠 24 pcs bits。",
+      "source": "user_input",
+      "evidence": "附赠24 pcs bits"
+    },
+    {
+      "id": "F6",
+      "statement": "支持 USB-C 充电。",
+      "source": "user_input",
+      "evidence": "USB-C充电"
+    },
+    {
+      "id": "F7",
+      "statement": "充满约 3h。",
+      "source": "user_input",
+      "evidence": "充满约3h"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "Cordless screwdriver",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "电压",
+      "value": "3.6V",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "电池",
+      "value": "1500mAh Li-ion",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "扭矩",
+      "value": "5N.m",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "附赠批头",
+      "value": "24 pcs bits",
+      "fact_ids": [
+        "F5"
+      ]
+    },
+    {
+      "name": "充电接口",
+      "value": "USB-C",
+      "fact_ids": [
+        "F6"
+      ]
+    },
+    {
+      "name": "充电时间",
+      "value": "约3h",
+      "fact_ids": [
+        "F7"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "Professional grade",
+      "reason": "主观营销用语，无法客观验证，输入未提供依据"
+    },
+    {
+      "claim": "比博世更耐用",
+      "reason": "与竞品比较的耐用性声称，输入未提供测试或对比依据"
+    },
+    {
+      "claim": "CE/FCC/RoHS认证或检测报告",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "防水/防摔等级（如 IPX）",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "认证与检测证明（如 CE、FCC、RoHS、UN38.3、MSDS、检测报告）",
+      "why_needed": "平台合规、清关和买家信任通常需要，输入未提供"
+    },
+    {
+      "field": "尺寸和重量",
+      "why_needed": "买家判断便携性、握持手感和运费，输入未提供"
+    },
+    {
+      "field": "颜色/外观选项",
+      "why_needed": "影响购买选择，输入未提供"
+    },
+    {
+      "field": "保修期和售后政策",
+      "why_needed": "买家关心售后保障，输入未提供"
+    },
+    {
+      "field": "包装清单（除 24 pcs bits 外是否含 USB-C 线、收纳盒等）",
+      "why_needed": "明确交付内容，避免订单纠纷，输入未提供"
+    },
+    {
+      "field": "充电电源规格（适配器功率/输出要求）",
+      "why_needed": "输入仅写 USB-C 充电，未说明充电头要求，影响使用"
+    }
+  ]
+}

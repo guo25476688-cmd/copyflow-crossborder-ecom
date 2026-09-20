@@ -1,0 +1,117 @@
+{
+  "product": {
+    "name": "玻尿酸神经酰胺保湿面霜 50ml",
+    "brand": null,
+    "category": {
+      "value": "Beauty & Personal Care > Skin Care > Face > Moisturizers",
+      "confidence": 0.9
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品名称为玻尿酸神经酰胺保湿面霜 50ml。",
+      "source": "user_input",
+      "evidence": "玻尿酸神经酰胺保湿面霜 50ml"
+    },
+    {
+      "id": "F2",
+      "statement": "适合干皮。",
+      "source": "user_input",
+      "evidence": "适合干皮"
+    },
+    {
+      "id": "F3",
+      "statement": "含透明质酸钠。",
+      "source": "user_input",
+      "evidence": "含透明质酸钠、神经酰胺"
+    },
+    {
+      "id": "F4",
+      "statement": "含神经酰胺。",
+      "source": "user_input",
+      "evidence": "含透明质酸钠、神经酰胺"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品名称",
+      "value": "玻尿酸神经酰胺保湿面霜 50ml",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "净含量",
+      "value": "50ml",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "适用肤质",
+      "value": "干皮",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "成分",
+      "value": "透明质酸钠",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "成分",
+      "value": "神经酰胺",
+      "fact_ids": [
+        "F4"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "7天美白祛斑",
+      "reason": "美白祛斑属于功效宣称，需有相应检测或注册依据，输入未提供，不能作为事实。"
+    },
+    {
+      "claim": "医美级修复屏障",
+      "reason": "“医美级”为医疗/专业等级宣称，“修复屏障”为功效宣称，输入未提供检测、认证或资质依据。"
+    },
+    {
+      "claim": "特殊化妆品注册证/功效检测报告",
+      "reason": "输入未提供。"
+    },
+    {
+      "claim": "敏感肌测试/皮肤科测试",
+      "reason": "输入未提供。"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "品牌、生产商、产地",
+      "why_needed": "输入未提供品牌、生产商和产地，买家需要确认产品来源和售后责任主体。"
+    },
+    {
+      "field": "完整成分表及透明质酸钠、神经酰胺的浓度/含量",
+      "why_needed": "输入只列出两种成分，未提供完整成分和浓度，买家可能关心是否含酒精、香精、防腐剂及成分有效性。"
+    },
+    {
+      "field": "用法用量",
+      "why_needed": "输入未说明使用频率、步骤和每次用量，买家需要正确使用。"
+    },
+    {
+      "field": "保质期、开封后使用期限",
+      "why_needed": "输入未提供，影响产品使用安全和购买决策。"
+    },
+    {
+      "field": "适用人群、禁忌及敏感肌测试数据",
+      "why_needed": "输入只写适合干皮，未说明敏感肌、孕妇等是否适用及不良反应风险。"
+    },
+    {
+      "field": "产品合规认证与功效检测报告（如特殊化妆品注册证、美白祛斑功效评价、修复屏障检测依据）",
+      "why_needed": "输入未提供认证或检测证明，无法支撑美白祛斑、修复屏障等宣称并满足合规要求。"
+    }
+  ]
+}

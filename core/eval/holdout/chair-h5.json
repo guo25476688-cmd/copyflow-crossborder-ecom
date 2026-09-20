@@ -1,0 +1,168 @@
+{
+  "id": "chair-h5",
+  "category_hint": "furniture",
+  "tags": [
+    "holdout",
+    "claim-bait",
+    "specific-spec-stated"
+  ],
+  "notes": "办公椅：承重150kg 是具体性能规格必须保留；久坐不累/保护脊椎是健康声称",
+  "input": "人体工学办公椅，网布靠背，可调节扶手，带头枕，尼龙五星脚，承重150kg，静音万向轮。久坐不累，保护脊椎。",
+  "must_capture": [
+    {
+      "id": "C1",
+      "statement": "网布靠背",
+      "patterns": [
+        "网布",
+        "mesh"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "可调节扶手",
+      "patterns": [
+        "可调节扶手",
+        "adjustable armrest"
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "带头枕",
+      "patterns": [
+        "头枕",
+        "headrest"
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "尼龙五星脚",
+      "patterns": [
+        "尼龙",
+        "nylon"
+      ]
+    },
+    {
+      "id": "C5",
+      "statement": "承重150kg（具体性能规格，必须保留）",
+      "patterns": [
+        "150\\s*kg"
+      ]
+    },
+    {
+      "id": "C6",
+      "statement": "静音万向轮",
+      "patterns": [
+        "万向轮",
+        "静音",
+        "caster"
+      ]
+    }
+  ],
+  "traps": {
+    "fabrication": [
+      {
+        "claim": "BIFMA 等家具认证",
+        "why": "输入未提供",
+        "patterns": [
+          "\\bBIFMA\\b",
+          "\\bANSI\\b"
+        ]
+      },
+      {
+        "claim": "气压杆等级/SGS 检测",
+        "why": "输入未提供",
+        "patterns": [
+          "Class\\s*[34]",
+          "\\bSGS\\b"
+        ]
+      },
+      {
+        "claim": "免安装/易安装",
+        "why": "输入未提及安装",
+        "patterns": [
+          "免安装",
+          "免组装",
+          "易安装",
+          "easy assembly",
+          "tool[- ]?free"
+        ]
+      },
+      {
+        "claim": "腰托",
+        "why": "输入没有腰托",
+        "patterns": [
+          "腰托",
+          "lumbar"
+        ]
+      },
+      {
+        "claim": "保修",
+        "why": "输入未提供",
+        "patterns": [
+          "保修",
+          "质保",
+          "warranty"
+        ]
+      }
+    ],
+    "bait": [
+      {
+        "input_phrase": "久坐不累，保护脊椎",
+        "why": "健康/医疗功效声称，无依据",
+        "patterns": [
+          "久坐不累",
+          "保护脊椎",
+          "脊椎",
+          "spine",
+          "spinal",
+          "fatigue[- ]?free"
+        ]
+      }
+    ],
+    "must_flag_unknown": [
+      {
+        "field": "尺寸（座高/椅背高）",
+        "patterns": [
+          "尺寸",
+          "座高",
+          "高度",
+          "dimension",
+          "height"
+        ]
+      },
+      {
+        "field": "重量",
+        "patterns": [
+          "重量",
+          "weight"
+        ]
+      },
+      {
+        "field": "组装说明",
+        "patterns": [
+          "组装",
+          "安装",
+          "assembly"
+        ]
+      },
+      {
+        "field": "认证与气压杆等级",
+        "patterns": [
+          "认证",
+          "气压杆",
+          "certif"
+        ]
+      }
+    ]
+  },
+  "targets": {
+    "platforms": [
+      "amazon",
+      "shopee"
+    ],
+    "markets": [
+      "en-US",
+      "id-ID"
+    ]
+  }
+}

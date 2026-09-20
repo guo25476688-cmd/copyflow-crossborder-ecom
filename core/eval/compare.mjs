@@ -5,7 +5,7 @@
  */
 import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { loadCases, detectSet } from './cases-loader.mjs';
 import { scoreFactSheet } from './scorers.mjs';
 
 const dirs = process.argv.slice(2);
@@ -13,12 +13,12 @@ if (!dirs.length) {
   console.error('用法：node eval/compare.mjs <输出目录1> <输出目录2> ...');
   process.exit(1);
 }
-const casesDir = fileURLToPath(new URL('./cases/', import.meta.url));
-const cases = readdirSync(casesDir).filter((f) => f.endsWith('.json')).sort().map((f) => JSON.parse(readFileSync(join(casesDir, f), 'utf-8')));
 const pct = (x) => `${Math.round(x * 100)}%`;
 const avg = (xs) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null);
 
 const rows = dirs.map((dir) => {
+  const set = detectSet(dir);
+  const cases = loadCases(set);
   const metaPath = join(dir, 'meta.json');
   const meta = existsSync(metaPath) ? JSON.parse(readFileSync(metaPath, 'utf-8')) : null;
   const scores = [];
@@ -28,7 +28,7 @@ const rows = dirs.map((dir) => {
   }
   const n = cases.length;
   const calls = meta ? Object.values(meta.cases).flatMap((v) => v.api || []) : [];
-  const cfg = meta ? `${meta.prompt || '-'} / 思考${meta.thinking ?? '-'}${meta.effort && meta.effort !== 'default' ? ` / 强度${meta.effort}` : ''}` : '未知';
+  const cfg = meta ? `${set === 'holdout' ? '【留出集】' : ''}${meta.prompt || '-'} / 思考${meta.thinking ?? '-'}${meta.effort && meta.effort !== 'default' ? ` / 强度${meta.effort}` : ''}` : '未知';
   return {
     dir,
     cfg,

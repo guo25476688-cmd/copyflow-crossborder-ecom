@@ -6,6 +6,15 @@ export function getApiKey(env = process.env) {
   return env.DEEPSEEK_API_KEY || null;
 }
 
+// 仅供测试：把请求指向本机的假服务器。只允许 localhost/127.0.0.1，绝不允许把密钥发往其他地址
+function resolveApiUrl(env = process.env) {
+  const override = env.COPYFLOW_TEST_API_URL;
+  if (!override) return API_URL;
+  const { hostname } = new URL(override);
+  if (hostname !== '127.0.0.1' && hostname !== 'localhost') throw new Error('COPYFLOW_TEST_API_URL 只允许指向 localhost');
+  return override;
+}
+
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 /**
@@ -38,7 +47,7 @@ export function createChat({ apiKey, model = DEFAULT_MODEL, fetchImpl = fetch, r
       if (attempt > 0) await sleep(retryDelayMs);
       let res;
       try {
-        res = await fetchImpl(API_URL, {
+        res = await fetchImpl(resolveApiUrl(), {
           method: 'POST',
           headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
           body: JSON.stringify(body),

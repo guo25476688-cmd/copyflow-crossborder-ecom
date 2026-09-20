@@ -1,0 +1,149 @@
+{
+  "product": {
+    "name": "人体工学办公椅",
+    "brand": null,
+    "category": {
+      "value": "Furniture > Office Furniture > Office Chairs",
+      "confidence": 0.95
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "人体工学办公椅",
+      "source": "user_input",
+      "evidence": "人体工学办公椅"
+    },
+    {
+      "id": "F2",
+      "statement": "网布靠背",
+      "source": "user_input",
+      "evidence": "网布靠背"
+    },
+    {
+      "id": "F3",
+      "statement": "可调节扶手",
+      "source": "user_input",
+      "evidence": "可调节扶手"
+    },
+    {
+      "id": "F4",
+      "statement": "带头枕",
+      "source": "user_input",
+      "evidence": "带头枕"
+    },
+    {
+      "id": "F5",
+      "statement": "尼龙五星脚",
+      "source": "user_input",
+      "evidence": "尼龙五星脚"
+    },
+    {
+      "id": "F6",
+      "statement": "承重150kg",
+      "source": "user_input",
+      "evidence": "承重150kg"
+    },
+    {
+      "id": "F7",
+      "statement": "静音万向轮",
+      "source": "user_input",
+      "evidence": "静音万向轮"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "人体工学办公椅",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "靠背材质",
+      "value": "网布",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "扶手",
+      "value": "可调节",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "头枕",
+      "value": "带头枕",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "五星脚材质",
+      "value": "尼龙",
+      "fact_ids": [
+        "F5"
+      ]
+    },
+    {
+      "name": "承重",
+      "value": "150kg",
+      "fact_ids": [
+        "F6"
+      ]
+    },
+    {
+      "name": "轮子类型",
+      "value": "静音万向轮",
+      "fact_ids": [
+        "F7"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "久坐不累",
+      "reason": "主观舒适性/功效宣称，无法客观验证，输入未提供依据。"
+    },
+    {
+      "claim": "保护脊椎",
+      "reason": "健康功效宣称，涉及人体健康，输入未提供医学或检测依据。"
+    },
+    {
+      "claim": "通过BIFMA认证",
+      "reason": "输入未提供。"
+    },
+    {
+      "claim": "通过SGS承重测试报告",
+      "reason": "输入未提供。"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "认证与检测证明（如 BIFMA、EN 1335、SGS、承重测试报告）",
+      "why_needed": "输入未提供，需补充以支撑承重150kg等安全与质量宣称。"
+    },
+    {
+      "field": "尺寸规格（座高、座宽、总高）",
+      "why_needed": "买家需确认椅子是否适配桌面高度和体型。"
+    },
+    {
+      "field": "颜色/面料颜色",
+      "why_needed": "买家需根据装修或喜好选择。"
+    },
+    {
+      "field": "可调节扶手的具体调节方式与范围，以及头枕是否可调及范围",
+      "why_needed": "买家需了解人体工学适配能力和调节维度。"
+    },
+    {
+      "field": "静音万向轮的噪声测试数据/标准",
+      "why_needed": "买家关心实际静音效果，需提供可验证依据。"
+    },
+    {
+      "field": "保修期与售后",
+      "why_needed": "买家需了解购买后的保障。"
+    }
+  ]
+}

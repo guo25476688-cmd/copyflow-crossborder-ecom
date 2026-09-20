@@ -1,0 +1,106 @@
+{
+  "product": {
+    "name": "维生素D3+K2软胶囊",
+    "brand": null,
+    "category": {
+      "value": "Health & Household > Vitamins & Dietary Supplements",
+      "confidence": 0.85
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品为维生素D3+K2软胶囊",
+      "source": "user_input",
+      "evidence": "维生素D3+K2软胶囊"
+    },
+    {
+      "id": "F2",
+      "statement": "规格为60粒装",
+      "source": "user_input",
+      "evidence": "60粒装"
+    },
+    {
+      "id": "F3",
+      "statement": "每粒含维生素D3 2000IU",
+      "source": "user_input",
+      "evidence": "每粒含维生素D3 2000IU"
+    },
+    {
+      "id": "F4",
+      "statement": "产品无糖",
+      "source": "user_input",
+      "evidence": "无糖"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品名称",
+      "value": "维生素D3+K2软胶囊",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "包装规格",
+      "value": "60粒装",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "每粒维生素D3含量",
+      "value": "2000IU",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "无糖",
+      "value": "是",
+      "fact_ids": [
+        "F4"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "补钙好帮手",
+      "reason": "健康功效/功能声称，输入未提供依据或批准文号，不能作为产品事实或宣称。"
+    },
+    {
+      "claim": "有助改善骨质疏松",
+      "reason": "涉及疾病改善/治疗功效，属于医疗/健康功效声称，输入未提供依据，不能作为产品事实或宣称。"
+    },
+    {
+      "claim": "增强免疫力",
+      "reason": "保健功能声称，输入未提供依据或批准文号，不能作为产品事实或宣称。"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "维生素K2的含量、类型（如MK-7、MK-4）",
+      "why_needed": "产品名含K2，但未标明每粒K2剂量和类型，买家需要据此判断配方。"
+    },
+    {
+      "field": "适用人群、用法用量、禁忌与警示",
+      "why_needed": "维生素类补充剂需明确每日摄入量、适用人群和禁忌，避免误用。"
+    },
+    {
+      "field": "认证/检测报告（如FDA、cGMP、第三方检测报告，及无糖/含量检测依据）",
+      "why_needed": "输入未提供，需补充以证明质量、成分含量和合规性。"
+    },
+    {
+      "field": "保质期、储存条件",
+      "why_needed": "买家关心产品有效期和保存方式，输入未提供。"
+    },
+    {
+      "field": "净含量/单粒重量/尺寸",
+      "why_needed": "买家需要了解实际包装大小、运输重量和单粒规格，输入未提供。"
+    },
+    {
+      "field": "品牌/生产商/批准文号",
+      "why_needed": "输入未提供品牌、生产商或保健食品批准文号，影响信任与合规判断。"
+    }
+  ]
+}

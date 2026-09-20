@@ -23,13 +23,17 @@ ${rule3}
 attributes 是把 facts 里的规格整理成"名称/值"的结构化属性，每项必须引用 fact_ids。`;
 
 const RULE3 = '3. 输入里的夸大、绝对化、与竞品比较、疾病或健康功效等说法，不是事实，写进 forbidden_claims 并说明原因。';
-// 版本记录：p2 = 首轮评测后加入"认证进 unknowns"与"严格合法 JSON"；p3 = 再补充"安全/无毒/环保/功效说法整句都不是事实"
+// 版本记录：
+//   p2 = 首轮评测后加入"认证进 unknowns"与"严格合法 JSON"
+//   p3 = 在 p2 上补充"安全/无毒/环保/功效说法整句都不是事实"——修好了 yoga-mat，但开思考时把卖家写明的具体规格（防摔 1.5 米、BPA free）也一并拦掉了
+//   p4 = 区分两类：具体可测试的规格记为事实并追问依据；模糊/绝对化的安全环保说法整句不算事实
 const PROMPTS = {
   p2: systemPrompt(RULE3),
   p3: systemPrompt(`${RULE3}关于安全性、无毒无害、环保、功效的说法同理：除非输入同时给出了检测或认证依据，否则整句都不是事实，不要把其中一部分当事实、另一部分当禁止声称。`),
+  p4: systemPrompt(`${RULE3}模糊或绝对化的安全、无毒无害、环保、功效说法（如"无毒无味""绝对环保""绝对安全""保护视力"）整句都不是事实，不要把其中一部分当事实、另一部分当禁止声称。\n但卖家写明的具体、可测试或可量化的规格与性能（如"防水 IPX5""防摔 1.5 米""不含 BPA""耐热 120℃"）要记为事实；如果它需要检测或认证依据来支撑，同时在 unknowns 里追问依据。`),
 };
 export const PROMPT_VERSIONS = Object.keys(PROMPTS);
-export const LATEST_PROMPT = 'p3';
+export const LATEST_PROMPT = 'p4';
 
 export function buildExtractionPrompt(rawInput, version = LATEST_PROMPT) {
   if (!PROMPTS[version]) throw new Error(`未知提示词版本：${version}`);

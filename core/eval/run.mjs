@@ -8,7 +8,7 @@
  */
 import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { loadCases, detectSet } from './cases-loader.mjs';
 import { scoreFactSheet, scoreListing, aggregate } from './scorers.mjs';
 
 const outDir = process.argv[2];
@@ -17,11 +17,8 @@ if (!outDir) {
   process.exit(1);
 }
 
-const casesDir = fileURLToPath(new URL('./cases/', import.meta.url));
-const cases = readdirSync(casesDir)
-  .filter((f) => f.endsWith('.json'))
-  .sort()
-  .map((f) => JSON.parse(readFileSync(join(casesDir, f), 'utf-8')));
+const set = detectSet(outDir);
+const cases = loadCases(set);
 
 const pct = (x) => (x === null ? '—' : `${Math.round(x * 100)}%`);
 const fsScores = [];
@@ -64,7 +61,7 @@ for (const c of cases) {
 }
 
 const agg = aggregate(fsScores, lsScores);
-console.log(`# 评测报告\n\n输出目录：\`${outDir}\`　用例数：${cases.length}（已评 ${agg.cases}）\n`);
+console.log(`# 评测报告\n\n输出目录：\`${outDir}\`　用例集：${set}　用例数：${cases.length}（已评 ${agg.cases}）\n`);
 console.log('| 用例 | 事实表通过 | 事实召回 | 编造 | 夸大话入事实 | 缺失信息识别 | 文案通过 |');
 console.log('|---|---|---|---|---|---|---|');
 console.log(rows.join('\n'));

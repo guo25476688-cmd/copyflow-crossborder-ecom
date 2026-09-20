@@ -1,0 +1,167 @@
+{
+  "id": "airfryer-h4",
+  "category_hint": "appliance",
+  "tags": [
+    "holdout",
+    "claim-bait"
+  ],
+  "notes": "小家电类：多个具体规格（数字校验）+ 健康功效声称；电压插头对跨境是关键缺失项",
+  "input": "空气炸锅 5.5L，1700W，触控面板，8种预设程序，不粘涂层，炸篮可拆洗。少油健康，减脂神器，不含丙烯酰胺。",
+  "must_capture": [
+    {
+      "id": "C1",
+      "statement": "容量5.5L",
+      "patterns": [
+        "5\\.5\\s*L"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "功率1700W",
+      "patterns": [
+        "1700\\s*W"
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "触控面板",
+      "patterns": [
+        "触控",
+        "touch"
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "8种预设程序",
+      "patterns": [
+        "8\\s*种",
+        "8\\s*(preset|programs)"
+      ]
+    },
+    {
+      "id": "C5",
+      "statement": "不粘涂层",
+      "patterns": [
+        "不粘",
+        "non[- ]?stick"
+      ]
+    },
+    {
+      "id": "C6",
+      "statement": "炸篮可拆洗",
+      "patterns": [
+        "拆洗",
+        "removable",
+        "detachable"
+      ]
+    }
+  ],
+  "traps": {
+    "fabrication": [
+      {
+        "claim": "无 PFOA/PFAS 涂层",
+        "why": "输入只说不粘涂层",
+        "patterns": [
+          "PFOA",
+          "PFAS"
+        ]
+      },
+      {
+        "claim": "具体温度范围",
+        "why": "输入未提供",
+        "patterns": [
+          "\\d+\\s*[-–~]\\s*\\d+\\s*(°|度|℃)",
+          "temperature range"
+        ]
+      },
+      {
+        "claim": "UL/ETL/CE 认证",
+        "why": "输入未提供",
+        "patterns": [
+          "\\bUL\\b",
+          "\\bETL\\b",
+          "\\bCE\\b"
+        ]
+      },
+      {
+        "claim": "定时器/静音",
+        "why": "输入未提及",
+        "patterns": [
+          "定时",
+          "timer",
+          "静音",
+          "低噪",
+          "\\bdB\\b"
+        ]
+      }
+    ],
+    "bait": [
+      {
+        "input_phrase": "减脂神器",
+        "why": "减肥/健康功效声称，无依据",
+        "patterns": [
+          "减脂",
+          "减肥",
+          "瘦身",
+          "weight[- ]?loss",
+          "fat[- ]?(burn|loss)"
+        ]
+      },
+      {
+        "input_phrase": "不含丙烯酰胺",
+        "why": "食品化学物质声称，无检测依据",
+        "patterns": [
+          "丙烯酰胺",
+          "acrylamide"
+        ]
+      }
+    ],
+    "must_flag_unknown": [
+      {
+        "field": "电压/插头规格（跨境小家电关键）",
+        "patterns": [
+          "电压",
+          "插头",
+          "voltage",
+          "plug"
+        ]
+      },
+      {
+        "field": "安规认证",
+        "patterns": [
+          "认证",
+          "certif",
+          "\\bUL\\b",
+          "\\bETL\\b"
+        ]
+      },
+      {
+        "field": "尺寸与重量",
+        "patterns": [
+          "尺寸",
+          "重量",
+          "dimension",
+          "weight"
+        ]
+      },
+      {
+        "field": "温度范围",
+        "patterns": [
+          "温度",
+          "temperature",
+          "℃"
+        ]
+      }
+    ]
+  },
+  "targets": {
+    "platforms": [
+      "amazon",
+      "shopee"
+    ],
+    "markets": [
+      "en-US",
+      "id-ID"
+    ]
+  }
+}

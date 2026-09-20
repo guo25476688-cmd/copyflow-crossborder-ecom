@@ -3,9 +3,12 @@ import assert from 'node:assert/strict';
 import { readdirSync, readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { scoreFactSheet, scoreListing, anyMatch } from '../eval/scorers.mjs';
+import { loadCases, detectSet } from '../eval/cases-loader.mjs';
 
 const casesDir = new URL('../eval/cases/', import.meta.url);
-const cases = readdirSync(casesDir).filter((f) => f.endsWith('.json')).map((f) => JSON.parse(readFileSync(new URL(f, casesDir), 'utf-8')));
+const cases = loadCases('dev');
+const holdout = loadCases('holdout');
+const allCases = [...cases, ...holdout];
 const fixture = (kind, id, file) => JSON.parse(readFileSync(new URL(`../eval/fixtures/${kind}/${id}/${file}`, import.meta.url), 'utf-8'));
 const earbuds = cases.find((c) => c.id === 'earbuds-01');
 
@@ -21,7 +24,7 @@ test('用例自检：数量、id 唯一、目标平台合法', () => {
 });
 
 test('用例自检：所有正则都能编译', () => {
-  for (const c of cases) {
+  for (const c of allCases) {
     const all = [...c.must_capture, ...c.traps.fabrication, ...c.traps.bait, ...c.traps.must_flag_unknown];
     for (const item of all) assert.ok(item.patterns.length > 0, `${c.id} 有条目没写 patterns`);
     for (const item of all) item.patterns.forEach((p) => assert.doesNotThrow(() => new RegExp(p, 'iu'), `${c.id}: ${p}`));
@@ -29,23 +32,34 @@ test('用例自检：所有正则都能编译', () => {
 });
 
 test('用例自检：应提取的事实，输入里必须真的有', () => {
-  for (const c of cases)
+  for (const c of allCases)
     for (const m of c.must_capture) assert.ok(anyMatch(m.patterns, c.input), `${c.id}/${m.id} 在输入里匹配不到`);
 });
 
 test('用例自检：编造陷阱与缺失信息，输入里必须真的没有（否则陷阱不成立）', () => {
-  for (const c of cases) {
+  for (const c of allCases) {
     for (const t of c.traps.fabrication) assert.ok(!anyMatch(t.patterns, c.input), `${c.id} 编造陷阱「${t.claim}」在输入里已存在`);
     for (const u of c.traps.must_flag_unknown) assert.ok(!anyMatch(u.patterns, c.input), `${c.id} 缺失项「${u.field}」在输入里其实有`);
   }
 });
 
 test('用例自检：夸大话必须原样出现在输入里，且检测规则能匹配到', () => {
-  for (const c of cases)
+  for (const c of allCases)
     for (const b of c.traps.bait) {
       assert.ok(c.input.includes(b.input_phrase), `${c.id} 夸大话「${b.input_phrase}」不在输入里`);
       assert.ok(anyMatch(b.patterns, c.input), `${c.id} 夸大话检测规则匹配不到输入`);
     }
+});
+
+test('留出集：6 个用例，id 与开发集不重叠，且都带 holdout 标签', () => {
+  assert.equal(holdout.length, 6);
+  assert.equal(new Set(allCases.map((c) => c.id)).size, allCases.length);
+  holdout.forEach((c) => assert.ok(c.tags.includes('holdout'), c.id));
+});
+
+test('评测输出目录的用例集以 meta.json 为准，没有则视为开发集', () => {
+  assert.equal(detectSet('eval/runs/flash-v2'), 'dev');
+  assert.equal(detectSet('eval/fixtures/good'), 'dev');
 });
 
 test('用例覆盖：包含高风险品类、信息很少、混杂格式、夸大话陷阱', () => {

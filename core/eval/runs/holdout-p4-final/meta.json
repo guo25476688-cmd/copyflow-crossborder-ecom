@@ -1,0 +1,160 @@
+{
+  "set": "holdout",
+  "model": "deepseek-flash",
+  "thinking": "on",
+  "effort": "default",
+  "prompt": "p4",
+  "date": "2026-09-20T18:27:55.246Z",
+  "cases": {
+    "airfryer-h4": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 23,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 767,
+            "completion_tokens": 5954,
+            "total_tokens": 6721,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 5073
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 255
+          },
+          "content_length": 2410
+        }
+      ]
+    },
+    "blocks-h3": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 12,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 758,
+            "completion_tokens": 2918,
+            "total_tokens": 3676,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 2033
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 246
+          },
+          "content_length": 2340
+        }
+      ]
+    },
+    "chair-h5": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 29,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 764,
+            "completion_tokens": 7169,
+            "total_tokens": 7933,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 6226
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 252
+          },
+          "content_length": 2487
+        }
+      ]
+    },
+    "coffee-h1": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 15.3,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 769,
+            "completion_tokens": 3567,
+            "total_tokens": 4336,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 2915
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 257
+          },
+          "content_length": 1610
+        }
+      ]
+    },
+    "feeder-h6": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 10,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 755,
+            "completion_tokens": 2274,
+            "total_tokens": 3029,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 1710
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 243
+          },
+          "content_length": 1627
+        }
+      ]
+    },
+    "tshirt-h2": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 19,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 766,
+            "completion_tokens": 4586,
+            "total_tokens": 5352,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 3684
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 254
+          },
+          "content_length": 2267
+        }
+      ]
+    }
+  }
+}

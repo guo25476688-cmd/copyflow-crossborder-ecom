@@ -1,0 +1,138 @@
+{
+  "product": {
+    "name": "埃塞俄比亚耶加雪菲咖啡豆 227g",
+    "brand": null,
+    "category": {
+      "value": "Food, Beverages & Tobacco > Beverages > Coffee > Coffee Beans",
+      "confidence": 0.9
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品为埃塞俄比亚耶加雪菲咖啡豆，净含量 227g。",
+      "source": "user_input",
+      "evidence": "埃塞俄比亚耶加雪菲咖啡豆 227g"
+    },
+    {
+      "id": "F2",
+      "statement": "烘焙度为中浅烘焙。",
+      "source": "user_input",
+      "evidence": "中浅烘焙"
+    },
+    {
+      "id": "F3",
+      "statement": "处理方式为水洗处理。",
+      "source": "user_input",
+      "evidence": "水洗处理"
+    },
+    {
+      "id": "F4",
+      "statement": "种植海拔为1900-2100米。",
+      "source": "user_input",
+      "evidence": "种植海拔1900-2100米"
+    },
+    {
+      "id": "F5",
+      "statement": "产品为新鲜烘焙。",
+      "source": "user_input",
+      "evidence": "新鲜烘焙"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品名称",
+      "value": "埃塞俄比亚耶加雪菲咖啡豆 227g",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "净含量",
+      "value": "227g",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "烘焙度",
+      "value": "中浅烘焙",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "处理方式",
+      "value": "水洗处理",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "种植海拔",
+      "value": "1900-2100米",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "烘焙状态",
+      "value": "新鲜烘焙",
+      "fact_ids": [
+        "F5"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "喝了不会胖",
+      "reason": "体重管理/健康功效声称，输入未提供科学或合规依据，且可能误导消费者。"
+    },
+    {
+      "claim": "比星巴克好喝10倍",
+      "reason": "与竞品比较且绝对化，主观夸大，输入未提供依据。"
+    },
+    {
+      "claim": "有机认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "公平贸易认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "无农药残留/零农残",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "SCA杯测评分",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "认证与检测证明（如有机认证、公平贸易认证、农残/重金属检测报告）",
+      "why_needed": "食品类商品需合规与安全依据，输入未提供任何认证或检测报告。"
+    },
+    {
+      "field": "具体烘焙日期与保质期",
+      "why_needed": "仅写“新鲜烘焙”，买家需要判断新鲜度和可保存期限。"
+    },
+    {
+      "field": "是否整豆或研磨度",
+      "why_needed": "影响买家选择冲煮方式与设备。"
+    },
+    {
+      "field": "风味/杯测描述",
+      "why_needed": "咖啡买家常关注风味特征，输入只写了产地与处理法，未提供风味信息。"
+    },
+    {
+      "field": "储存方式",
+      "why_needed": "咖啡豆开封后的保存条件会影响品质，输入未说明。"
+    },
+    {
+      "field": "品牌/生产商",
+      "why_needed": "输入未提供品牌或生产商，买家无法确认来源与售后责任主体。"
+    }
+  ]
+}

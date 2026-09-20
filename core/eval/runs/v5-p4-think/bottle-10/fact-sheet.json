@@ -1,0 +1,149 @@
+{
+  "product": {
+    "name": "304 stainless steel insulated bottle 500ml",
+    "brand": null,
+    "category": {
+      "value": "Home & Kitchen > Kitchen & Dining > Drinkware > Water Bottles",
+      "confidence": 0.6
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "材质为 304 stainless steel",
+      "source": "user_input",
+      "evidence": "304 stainless steel"
+    },
+    {
+      "id": "F2",
+      "statement": "产品类型为 insulated bottle",
+      "source": "user_input",
+      "evidence": "insulated bottle"
+    },
+    {
+      "id": "F3",
+      "statement": "容量为 500ml",
+      "source": "user_input",
+      "evidence": "bottle 500ml"
+    },
+    {
+      "id": "F4",
+      "statement": "保温12小时",
+      "source": "user_input",
+      "evidence": "保温12小时"
+    },
+    {
+      "id": "F5",
+      "statement": "保冷24小时",
+      "source": "user_input",
+      "evidence": "保冷24小时"
+    },
+    {
+      "id": "F6",
+      "statement": "BPA free",
+      "source": "user_input",
+      "evidence": "BPA free"
+    },
+    {
+      "id": "F7",
+      "statement": "带茶漏",
+      "source": "user_input",
+      "evidence": "带茶漏"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "材质",
+      "value": "304 stainless steel",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "产品类型",
+      "value": "insulated bottle",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "容量",
+      "value": "500ml",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "保温时长",
+      "value": "12小时",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "保冷时长",
+      "value": "24小时",
+      "fact_ids": [
+        "F5"
+      ]
+    },
+    {
+      "name": "BPA",
+      "value": "free",
+      "fact_ids": [
+        "F6"
+      ]
+    },
+    {
+      "name": "配件",
+      "value": "带茶漏",
+      "fact_ids": [
+        "F7"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "World's best insulation!!",
+      "reason": "绝对化与竞品比较，输入未提供可验证依据"
+    },
+    {
+      "claim": "通过 FDA/LFGB 食品级认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "防漏/完全不漏水",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "可用洗碗机清洗",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "认证与检测报告（如 FDA、LFGB、SGS、BPA free 检测报告）",
+      "why_needed": "输入未提供；平台合规与买家信任需要检测或认证依据"
+    },
+    {
+      "field": "保温12小时、保冷24小时的测试条件",
+      "why_needed": "需要初始水温、环境温度等条件才能验证量化性能"
+    },
+    {
+      "field": "尺寸、重量、瓶口直径",
+      "why_needed": "买家关心便携性、握持与杯架/瓶盖适配"
+    },
+    {
+      "field": "颜色与外观选项",
+      "why_needed": "购买决策需要可选颜色与外观信息"
+    },
+    {
+      "field": "茶漏材质与可拆卸性",
+      "why_needed": "影响清洗、安全与使用体验"
+    },
+    {
+      "field": "保修与清洗/使用限制",
+      "why_needed": "影响售后与正确使用，输入未提供"
+    }
+  ]
+}

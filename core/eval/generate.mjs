@@ -3,14 +3,14 @@
  * 对黄金测试集批量提取事实表，输出到 <输出目录>/<用例id>/，再用 run.mjs 打分。
  *
  * 用法：
- *   node eval/generate.mjs <输出目录> [--cases id1,id2] [--model deepseek-flash] [--thinking on|off] [--effort low|high] [--prompt p2|p3]
+ *   node eval/generate.mjs <输出目录> [--cases id1,id2] [--model deepseek-flash] [--thinking on|off] [--effort low|high] [--prompt p2|p3|p4] [--set dev|holdout --final]
  *   node eval/run.mjs <输出目录>
  *
  * 需要环境变量 DEEPSEEK_API_KEY（只读取，不会写入任何输出）。
  */
-import { readdirSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { loadCases, SETS } from './cases-loader.mjs';
 import { createChat, getApiKey, DEFAULT_MODEL } from '../src/llm.mjs';
 import { extractFactSheet, PROMPT_VERSIONS, LATEST_PROMPT } from '../src/fact-extraction.mjs';
 
@@ -30,6 +30,15 @@ if (!apiKey) {
   process.exit(1);
 }
 
+const set = opt('set') || 'dev';
+if (!SETS[set]) {
+  console.error(`--set 只能是 ${Object.keys(SETS).join('/')}`);
+  process.exit(1);
+}
+if (set === 'holdout' && !args.includes('--final')) {
+  console.error('留出集只应在提示词定稿后跑一次，用来报告真实水平；反复跑并据此调提示词，它就失去留出的意义了。\n确认已定稿，请加上 --final 参数。');
+  process.exit(1);
+}
 const model = opt('model') || DEFAULT_MODEL;
 const thinking = opt('thinking') || 'on';
 const effort = opt('effort');
@@ -39,16 +48,11 @@ if (!['on', 'off'].includes(thinking) || !PROMPT_VERSIONS.includes(promptVersion
   process.exit(1);
 }
 const only = opt('cases')?.split(',');
-const casesDir = fileURLToPath(new URL('./cases/', import.meta.url));
-const cases = readdirSync(casesDir)
-  .filter((f) => f.endsWith('.json'))
-  .sort()
-  .map((f) => JSON.parse(readFileSync(join(casesDir, f), 'utf-8')))
-  .filter((c) => !only || only.includes(c.id));
+const cases = loadCases(set).filter((c) => !only || only.includes(c.id));
 
 let apiLog = [];
 const chat = createChat({ apiKey, model, thinking: thinking === 'off' ? 'disabled' : undefined, reasoningEffort: effort || undefined, onResponse: (info) => apiLog.push(info) });
-const meta = { model, thinking, effort: effort || 'default', prompt: promptVersion, date: new Date().toISOString(), cases: {} };
+const meta = { set, model, thinking, effort: effort || 'default', prompt: promptVersion, date: new Date().toISOString(), cases: {} };
 
 for (const c of cases) {
   const dir = join(outDir, c.id);

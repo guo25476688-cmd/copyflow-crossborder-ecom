@@ -1,0 +1,136 @@
+{
+  "product": {
+    "name": "木质积木",
+    "brand": null,
+    "category": {
+      "value": "Toys & Games > Building Toys > Building Blocks",
+      "confidence": 0.85
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "木质积木，100粒。",
+      "source": "user_input",
+      "evidence": "木质积木 100粒"
+    },
+    {
+      "id": "F2",
+      "statement": "彩色。",
+      "source": "user_input",
+      "evidence": "彩色"
+    },
+    {
+      "id": "F3",
+      "statement": "附收纳桶。",
+      "source": "user_input",
+      "evidence": "附收纳桶"
+    },
+    {
+      "id": "F4",
+      "statement": "榉木材质。",
+      "source": "user_input",
+      "evidence": "榉木材质"
+    },
+    {
+      "id": "F5",
+      "statement": "表面水性漆。",
+      "source": "user_input",
+      "evidence": "表面水性漆"
+    },
+    {
+      "id": "F6",
+      "statement": "适合3岁以上。",
+      "source": "user_input",
+      "evidence": "适合3岁以上"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "粒数",
+      "value": "100粒",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "颜色",
+      "value": "彩色",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "配件",
+      "value": "收纳桶",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "材质",
+      "value": "榉木",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "表面处理",
+      "value": "水性漆",
+      "fact_ids": [
+        "F5"
+      ]
+    },
+    {
+      "name": "适用年龄",
+      "value": "3岁以上",
+      "fact_ids": [
+        "F6"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "益智开发大脑",
+      "reason": "输入中的宣传性功效声称，无具体依据，不应作为产品事实。"
+    },
+    {
+      "claim": "提高孩子智商",
+      "reason": "涉及智力提升的功效声称，无依据，不应作为产品事实。"
+    },
+    {
+      "claim": "通过 CE/EN71/ASTM F963 等认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "提供检测报告",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "安全认证/检测报告（如 CE、EN71、ASTM F963、CCC 等）",
+      "why_needed": "该产品为3岁以上儿童玩具，目标市场可能要求玩具安全认证或检测报告以证明符合法规和年龄适用性。"
+    },
+    {
+      "field": "水性漆成分与检测依据",
+      "why_needed": "输入声称表面水性漆，买家会关心涂层是否安全；需要成分或检测报告支撑。"
+    },
+    {
+      "field": "单块积木尺寸、总重量",
+      "why_needed": "买家关心积木大小是否适合3岁儿童抓握、有无吞咽风险，以及运费和包装。"
+    },
+    {
+      "field": "收纳桶材质、尺寸和容量",
+      "why_needed": "买家关心收纳便利性和包装完整性。"
+    },
+    {
+      "field": "清洗/消毒方式",
+      "why_needed": "木质积木需说明是否可水洗、擦拭或消毒，避免损坏。"
+    },
+    {
+      "field": "保修/售后与适用市场",
+      "why_needed": "买家关心售后保障和产品是否符合目标市场要求。"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "product": {
+    "name": "女士速干运动T恤",
+    "brand": null,
+    "category": {
+      "value": "Apparel > Women's Clothing > Activewear > T-Shirts",
+      "confidence": 0.8
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品为女士运动T恤。",
+      "source": "user_input",
+      "evidence": "女士速干运动T恤"
+    },
+    {
+      "id": "F2",
+      "statement": "面料成分为涤纶92%、氨纶8%。",
+      "source": "user_input",
+      "evidence": "涤纶92%氨纶8%"
+    },
+    {
+      "id": "F3",
+      "statement": "款式为圆领短袖。",
+      "source": "user_input",
+      "evidence": "圆领短袖"
+    },
+    {
+      "id": "F4",
+      "statement": "尺码范围为S-XL。",
+      "source": "user_input",
+      "evidence": "尺码S-XL"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "女士运动T恤",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "面料成分",
+      "value": "涤纶92%、氨纶8%",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "领型",
+      "value": "圆领",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "袖长",
+      "value": "短袖",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "尺码",
+      "value": "S-XL",
+      "fact_ids": [
+        "F4"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "速干",
+      "reason": "模糊功效声称，输入未提供速干等级、测试标准或检测依据。"
+    },
+    {
+      "claim": "吸汗透气",
+      "reason": "模糊功效声称，输入未提供可量化或检测依据。"
+    },
+    {
+      "claim": "100%不起球不变形",
+      "reason": "绝对化声称，输入未提供起球/变形测试或检测报告。"
+    },
+    {
+      "claim": "穿上像没穿一样",
+      "reason": "主观夸大描述，无法验证。"
+    },
+    {
+      "claim": "认证（如CE、FCC、FDA等）",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "防水等级（如IPX5等）",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "检测报告",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "抗菌/防臭",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "认证与检测证明（如成分检测、色牢度、起球测试、甲醛含量、GB 18401等）",
+      "why_needed": "输入未提供，电商上架和消费者信任需要合规证明。"
+    },
+    {
+      "field": "速干、吸汗透气、不起球不变形等性能的检测标准或报告",
+      "why_needed": "这些功效/绝对化声称目前无依据，需要可验证数据支撑。"
+    },
+    {
+      "field": "颜色",
+      "why_needed": "买家需要选择颜色，输入未提供。"
+    },
+    {
+      "field": "具体尺寸（胸围、衣长、肩宽等）",
+      "why_needed": "仅有S-XL无法判断合身程度。"
+    },
+    {
+      "field": "洗护方式",
+      "why_needed": "影响洗涤、保养和使用寿命。"
+    },
+    {
+      "field": "品牌",
+      "why_needed": "输入未提供，影响信任和售后。"
+    }
+  ]
+}
