@@ -858,21 +858,21 @@ function validate(){
   });
 });
 
-/* build inputs */
-function mkInputs(plat){
+/* build request payload：现在一次请求带上全部选中平台，Worker 用 SSE 按平台流式返回 */
+function mkPayload(plats){
   const langs=st.langs.join(', ')||'English';
   if(st.mode==='url'){
     const u=document.getElementById('pUrl').value.trim();
-    return{productName:u,productFeatures:`URL: ${u}`,category:st.cat,platforms:[plat],targetLanguages:langs};
+    return{productName:u,productFeatures:`URL: ${u}`,category:st.cat,platforms:plats,targetLanguages:langs};
   }
   if(st.mode==='free'){
     const t=document.getElementById('pFree').value.trim();
-    return{productName:t.split('\n')[0].slice(0,80),productFeatures:t,category:st.cat,platforms:[plat],targetLanguages:langs};
+    return{productName:t.split('\n')[0].slice(0,80),productFeatures:t,category:st.cat,platforms:plats,targetLanguages:langs};
   }
   return{
     productName:document.getElementById('pName').value.trim(),
     productFeatures:document.getElementById('pFeat').value.trim(),
-    category:st.cat, platforms:[plat],
+    category:st.cat, platforms:plats,
     targetLanguages:langs,
   };
 }
@@ -890,7 +890,7 @@ document.getElementById('genBtn').addEventListener('click',async()=>{
   showOut(plats);
   try{
     if(st.demo) await runDemo(plats);
-    else await Promise.all(plats.map(callApi));
+    else await streamGenerate(plats);
   }finally{
     st.busy=false; btn.disabled=false;
     document.getElementById('genSt').textContent='—— complete';
@@ -898,25 +898,82 @@ document.getElementById('genBtn').addEventListener('click',async()=>{
   }
 });
 
-async function callApi(plat){
+/* 把各平台结构化 JSON 转成 renderResult 需要的 [{title,content}] 段落数组，
+   content 用现成的「- 列表 / **加粗**」写法，复用下面已有的 md()/il() 渲染 */
+function jsonToSections(plat,d){
+  if(plat==='amazon')return[
+    {title:'title',content:d.title||''},
+    {title:'bullet points',content:(d.bulletPoints||[]).map(b=>`- **${b.heading}**：${b.description}`).join('\n')},
+    {title:'product description',content:d.productDescription||''},
+  ];
+  if(plat==='shopee')return[
+    {title:'title',content:d.title||''},
+    {title:'core selling point',content:d.coreSellingPoint||''},
+    {title:'features',content:(d.features||[]).map(f=>`- ${f}`).join('\n')},
+    {title:'promotion tags',content:(d.promotionTags||[]).join(' ｜ ')},
+  ];
+  if(plat==='tiktok')return[
+    {title:'caption & hashtags',content:`${d.caption||''}\n${(d.hashtags||[]).join(' ')}`},
+    {title:'audio script',content:d.audioScript||''},
+    {title:'timeline',content:(d.timeline||[]).map(t=>`- **${t.time} ${t.label}**：${t.content}`).join('\n')},
+  ];
+  if(plat==='shein')return[
+    {title:'style notes',content:d.styleNotes||''},
+    {title:'details',content:(d.details||[]).map(x=>`- ${x}`).join('\n')},
+    {title:'scenarios',content:d.scenarios||''},
+    {title:'search keywords',content:(d.searchKeywords||[]).join(', ')},
+  ];
+  return[{title:'result',content:JSON.stringify(d)}];
+}
+
+/* 用 fetch + ReadableStream 手动解析 SSE（原生 EventSource 不支持 POST 带 body） */
+async function streamGenerate(plats){
+  let res;
   try{
-    const r=await fetch(`${st.cfg.url}/api/generate`,{
+    res=await fetch(`${st.cfg.url}/api/generate`,{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify(mkInputs(plat)),
+      body:JSON.stringify(mkPayload(plats)),
     });
-    if(!r.ok){
-      const e=await r.json().catch(()=>({}));
-      throw new Error(e.error||`${r.status}`);
+  }catch(e){ plats.forEach(p=>renderErr(p,'network error')); return; }
+  if(!res.ok||!res.body){
+    plats.forEach(p=>renderErr(p,`${res.status}`));
+    return;
+  }
+  const reader=res.body.getReader();
+  const decoder=new TextDecoder();
+  let buf='';
+  const handle=(rawEvent)=>{
+    let ev='message',data='';
+    rawEvent.split('\n').forEach(line=>{
+      if(line.startsWith('event:'))ev=line.slice(6).trim();
+      else if(line.startsWith('data:'))data+=line.slice(5).trim();
+    });
+    let payload; try{ payload=JSON.parse(data); }catch{ return; }
+    if(ev==='platform'){
+      const parsed={};
+      for(const [lang,obj] of Object.entries(payload.data||{})) parsed[lang]=jsonToSections(payload.platform,obj);
+      st.results[payload.platform]=parsed;
+      renderResult(payload.platform);
+    }else if(ev==='platformError'){
+      renderErr(payload.platform,payload.error);
+    }else if(ev==='error'){
+      plats.forEach(p=>{ if(!st.results[p]) renderErr(p,payload.error); });
+    }else if(ev==='status'){
+      const label=payload.stage==='researching'?'researching':'structuring';
+      document.getElementById('genSt').textContent=`—— ${label}...`;
     }
-    const d=await r.json();
-    const langMap=d?.platforms?.[plat];
-    if(!langMap)throw new Error('no output');
-    const parsed={};
-    for(const [lang,text] of Object.entries(langMap)) parsed[lang]=parseSecs(text||'');
-    st.results[plat]=parsed;
-    renderResult(plat);
-  }catch(e){ renderErr(plat,e.message); }
+  };
+  while(true){
+    const {value,done}=await reader.read();
+    if(done)break;
+    buf+=decoder.decode(value,{stream:true});
+    let idx;
+    while((idx=buf.indexOf('\n\n'))!==-1){
+      handle(buf.slice(0,idx));
+      buf=buf.slice(idx+2);
+    }
+  }
 }
 function parseSecs(raw){
   const blocks=raw.split(/(?=^### )/m).filter(b=>b.trim());

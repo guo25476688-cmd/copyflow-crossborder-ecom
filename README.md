@@ -1,13 +1,13 @@
 # CopyFlow · 多平台跨境电商内容自动化系统
 
-> 一次输入产品信息，同时产出 **Amazon / Shopee / TikTok / SHEIN** 四平台差异化文案 + **多语种深度本地化**译文 + 商品主图。
+> 一次输入产品信息，同时产出 **Amazon / Shopee / TikTok / SHEIN** 四平台差异化文案 + **多语种深度本地化**译文。
 > 把跨境卖家的多平台内容生产，从「串行人工撰写 3–7 天」压缩为「并行自动化输出 分钟级」。
 
 <p>
   <a href="https://guo25476688-cmd.github.io/copyflow-crossborder-ecom/"><b>▶ 在线 Demo（演示模式，免配置）</b></a> ·
   <a href="docs/PRD.md">PRD</a> ·
   <a href="docs/prompt-engineering.md">Prompt 工程</a> ·
-  <a href="docs/workflow-design.md">工作流设计</a>
+  <a href="docs/architecture.md">系统架构</a>
 </p>
 
 ![Dify 工作流画布](docs/assets/dify-workflow-canvas.png)
@@ -28,7 +28,7 @@
 CopyFlow 面向跨境电商中小卖家，目标是把「多平台文案 + 多语种本地化」从人工串行撰写变成分钟级自动化产出，让没有专职本地化团队的卖家也能低成本用上。项目由我独立完成：
 
 - **需求与竞品**：跨境卖家访谈 + 6 个竞品拆解，定位「跨平台 + 懂规则 + 能本地化」的市场空白，输出 [PRD](docs/PRD.md)（含北极星指标、用户旅程、MVP 范围与「不做什么」的取舍）
-- **工作流设计**：设计十余节点 Dify 工作流的整体架构——三源数据融合、开放/封闭原则的平台路由、迭代节点做多语种本地化（[设计说明](docs/workflow-design.md)）
+- **工作流设计**：设计十余节点 Dify 工作流的整体架构——三源数据融合、开放/封闭原则的平台路由、迭代节点做多语种本地化（[设计说明](docs/architecture.md)）
 - **Prompt 工程**：为 4 个平台分别设计 System Prompt，并基于实测做了 4 轮迭代（违禁词、JSON 格式坍塌、脚本结构、翻译丢格式），把 Amazon 违规率从 ~15% 降到接近 0（[Prompt 工程文档](docs/prompt-engineering.md)）
 - **产品原型**：把工作流封装成可交互的 [CopyFlow Web 原型](prototype/)，设计输入分流、并行进度、多平台/多语种对比结果页，并部署为在线 Demo
 
@@ -63,9 +63,7 @@ flowchart LR
     AM & SH & TK & SN --> AG[变量聚合器]
     AG --> IT[多语种迭代翻译<br/>逐语种推理沙箱]
     SP --> IT
-    EX --> IP[配图 Prompt] --> HT[文生图]
     IT --> END[输出]
-    HT --> END
 ```
 
 关键设计决策：
@@ -76,7 +74,7 @@ flowchart LR
 - **平台路由遵循开放/封闭原则**：新增平台只需加一个 Prompt + 一个分支，不改动现有流程
 - **违禁词校验用真代码兜底**：Amazon 分支生成后跑一次真实的正则检查，查到违禁词就带着词表要求模型重新生成，而不是只靠 Prompt 里的自查清单
 
-这套逻辑最初在 Dify 里可视化验证通过（历史设计记录见 [工作流设计说明](docs/workflow-design.md)），现已用一个 [Cloudflare Worker](worker/) 重新实现：不用维护一整套 Dify 服务，DeepSeek/Tavily 的 key 也不会暴露给最终用户。
+这套逻辑最初在 Dify 里可视化验证通过（历史设计记录见 [系统架构说明](docs/architecture.md)），现已用一个 [Cloudflare Worker](worker/) 重新实现：不用维护一整套 Dify 服务，DeepSeek/Tavily 的 key 也不会暴露给最终用户。
 
 ## Prompt 工程亮点
 
@@ -126,7 +124,7 @@ flowchart LR
 - 平台路由新增需手写 Prompt → 探索元提示（从规则库动态拼装）
 - Amazon 违禁词校验目前是关键词表 + 一次重试，覆盖面有限 → 扩充词表或换更完整的规则引擎
 - 本地化深度不均（仅印尼/泰/西语有明确指南）→ 扩展语言规则或建本地化知识库
-- 原型前端缺历史记录页、主图预览、合规标红可视化
+- 原型前端缺历史记录页、合规标红可视化
 - CopyFlow API（`worker/`）目前未对外部署运营，是这套架构的实现参考，不是一个正在运行的线上服务
 
 ## 仓库导航
@@ -136,7 +134,7 @@ flowchart LR
 ├── README.md                    本文件
 ├── docs/
 │   ├── PRD.md                    产品需求文档（含北极星指标、用户研究、竞品、评估体系、冷启动）
-│   ├── workflow-design.md        历史设计记录：Dify 原型阶段的节点级设计
+│   ├── architecture.md             系统架构说明（三源融合、平台路由、SSE、语义检索等设计决策）
 │   ├── prompt-engineering.md     Prompt 设计原则、逐平台决策、迭代记录、权衡（现仍在用）
 │   └── assets/                   工作流画布截图
 ├── worker/

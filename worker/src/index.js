@@ -3,13 +3,17 @@
  *
  * 用一个 Worker 取代原型阶段的 Dify 工作流：
  * - DeepSeek / Tavily 的 key 只存在 Worker 的 secret 里，浏览器端永远看不到
- * - "知识库" 就是 KV 里的几段文本，由 Cron Trigger 定时抓取刷新（见 scheduled()）
- * - 各平台 Prompt 直接照搬 workflow/prompts/*.md 里验证过的版本，未改写文案本身
+ * - 生成结果是结构化 JSON（DeepSeek response_format: json_object），不再靠正则解析 Markdown
+ * - 结果按平台流式（SSE）返回，哪个平台先跑完就先推给前端，不用等全部平台
+ * - "知识库"用 Cloudflare Vectorize 做语义检索（Workers AI 的 bge-m3 生成向量），由 Cron Trigger 定时抓取刷新
+ * - 每次生成结果落一份到 D1，对应 PRD 里一直没做的"历史记录"能力
+ * - 各平台 Prompt 的文案要求承袭 workflow/prompts/*.md 里验证过的版本，只是把输出格式从 Markdown 换成 JSON
  */
 
 const DEEPSEEK_API_URL = 'https://api.deepseek.com/chat/completions';
 const DEEPSEEK_MODEL = 'deepseek-flash';
 const TAVILY_API_URL = 'https://api.tavily.com/search';
+const EMBEDDING_MODEL = '@cf/baai/bge-m3'; // 多语言 embedding，配中文知识库更合适
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -24,21 +28,55 @@ function json(data, status = 200) {
   });
 }
 
-async function callDeepSeek(env, systemPrompt, userPrompt, temperature = 0.7) {
+/* ── SSE：把一个异步生成过程包装成 text/event-stream 响应 ── */
+
+function sseResponse(runner) {
+  const { readable, writable } = new TransformStream();
+  const writer = writable.getWriter();
+  const encoder = new TextEncoder();
+  const send = async (event, data) => {
+    await writer.write(encoder.encode(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`));
+  };
+  (async () => {
+    try {
+      await runner(send);
+    } catch (err) {
+      await send('error', { error: err.message || String(err) });
+    } finally {
+      await writer.close();
+    }
+  })();
+  return new Response(readable, {
+    headers: {
+      'Content-Type': 'text/event-stream; charset=utf-8',
+      'Cache-Control': 'no-cache',
+      Connection: 'keep-alive',
+      ...CORS_HEADERS,
+    },
+  });
+}
+
+/* ── DeepSeek 调用 ── */
+
+async function callDeepSeek(env, systemPrompt, userPrompt, opts = {}) {
+  const body = {
+    model: DEEPSEEK_MODEL,
+    temperature: opts.temperature ?? 0.7,
+    max_tokens: opts.maxTokens ?? 2048,
+    messages: [
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: userPrompt || '请开始处理。' },
+    ],
+  };
+  if (opts.json) body.response_format = { type: 'json_object' };
+
   const res = await fetch(DEEPSEEK_API_URL, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${env.DEEPSEEK_API_KEY}`,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      model: DEEPSEEK_MODEL,
-      temperature,
-      messages: [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: userPrompt || '请开始处理。' },
-      ],
-    }),
+    body: JSON.stringify(body),
   });
   if (!res.ok) {
     const text = await res.text().catch(() => '');
@@ -46,6 +84,27 @@ async function callDeepSeek(env, systemPrompt, userPrompt, temperature = 0.7) {
   }
   const data = await res.json();
   return data.choices?.[0]?.message?.content?.trim() || '';
+}
+
+function extractJson(text) {
+  const cleaned = text
+    .trim()
+    .replace(/^```json\s*/i, '')
+    .replace(/^```\s*/, '')
+    .replace(/```\s*$/, '')
+    .trim();
+  return JSON.parse(cleaned);
+}
+
+// DeepSeek 的 json_object 模式是"尽力而为"，不保证完全符合我们要的 schema，
+// 所以这里统一做一次防御性解析，解析失败时把原始输出的前 200 字带出来方便排查。
+async function callDeepSeekJSON(env, system, user, opts = {}) {
+  const raw = await callDeepSeek(env, system, user, { ...opts, json: true });
+  try {
+    return extractJson(raw);
+  } catch (e) {
+    throw new Error(`JSON 解析失败：${e.message}；原始输出前 200 字：${raw.slice(0, 200)}`);
+  }
 }
 
 async function tavilySearch(env, query) {
@@ -70,13 +129,35 @@ async function tavilySearch(env, query) {
   }
 }
 
-async function getKnowledge(env, key) {
-  if (!env.COPYFLOW_KB) return '';
-  const value = await env.COPYFLOW_KB.get(key);
-  return value || '';
+/* ── 知识库：Workers AI 生成 embedding + Vectorize 语义检索 ──
+ * 替代原来 Dify 的 RAG 节点 / 上一版用 KV 存文本再精确匹配 key 的做法。
+ */
+
+async function embed(env, texts) {
+  const resp = await env.AI.run(EMBEDDING_MODEL, { text: texts });
+  return resp.data; // number[][]，与 texts 一一对应
 }
 
-/* ── Prompt 构造：逐字复用 workflow/prompts/*.md 里验证过的版本 ── */
+async function queryKnowledge(env, queryText, { type, platform, topK = 4 } = {}) {
+  if (!env.VECTORIZE || !env.AI) return '';
+  try {
+    const [vector] = await embed(env, [queryText]);
+    // 多查一些再按 metadata 过滤，因为 Vectorize 这边没有按 metadata 精确筛选再排序的能力保证
+    const result = await env.VECTORIZE.query(vector, { topK: topK * 3, returnMetadata: 'all' });
+    const matches = (result.matches || [])
+      .filter((m) => {
+        if (type && m.metadata?.type !== type) return false;
+        if (platform && m.metadata?.platform && m.metadata.platform !== platform) return false;
+        return true;
+      })
+      .slice(0, topK);
+    return matches.map((m) => m.metadata?.text || '').filter(Boolean).join('\n\n');
+  } catch {
+    return '';
+  }
+}
+
+/* ── Prompt 构造：延续 workflow/prompts/*.md 里验证过的文案要求，输出格式从 Markdown 改成 JSON ── */
 
 function buildStructurePrompt({ productName, productFeatures, kbContext, seoTrends }) {
   const system = `你是资深的跨境电商产品分析师。请根据提供的电商热词上下文（Context）和用户输入的产品信息，为产品提取结构化的核心卖点、痛点以及应用场景。
@@ -87,178 +168,137 @@ ${kbContext || '（暂无）'}
 【谷歌 SEO 热搜趋势】：
 ${seoTrends || '（暂无）'}
 
-请结合电商热词和 SEO 趋势，将结果以清晰的层级结构输出，确保包含：核心卖点（Features）、用户痛点（Pain Points）、视频钩子建议（Hook Ideas）和应用场景（Scenarios）。`;
-  const user = `产品名称：${productName}\n产品特性：${productFeatures}\n\n请进行卖点结构化提取。`;
+请以 JSON 格式输出，严格遵循以下结构，不要输出任何 JSON 之外的文字：
+{
+  "features": ["核心卖点1", "核心卖点2"],
+  "painPoints": ["用户痛点1", "用户痛点2"],
+  "hookIdeas": ["视频钩子建议1", "视频钩子建议2"],
+  "scenarios": ["应用场景1", "应用场景2"]
+}`;
+  const user = `产品名称：${productName}\n产品特性：${productFeatures}\n\n请进行卖点结构化提取，以 JSON 输出。`;
   return { system, user };
 }
 
 const PLATFORM_PROMPTS = {
   amazon: {
     useContext: true,
-    system: (rules) => `你是亚马逊 Listing（产品详情页）优化专家。请严格遵循以下平台规则生成纯文本排版的文案，切勿使用 JSON 格式。
+    system: (rules) => `你是亚马逊 Listing（产品详情页）优化专家。请严格遵循以下平台规则生成文案。
 
 【平台规则】：
 ${rules || '（暂无）'}
 
-## 输出要求
-请使用清晰的 Markdown 格式输出，包含以下结构：
-
-### 标题 (Title)
-[在此输出标题：要求包含核心词+品牌+属性+场景，长度控制在 80-200 字符]
-
-### 五点描述 (Bullet Points)
-* **[小标题1]**：[具体描述]
-* **[小标题2]**：[具体描述]
-* **[小标题3]**：[具体描述]
-* **[小标题4]**：[具体描述]
-* **[小标题5]**：[具体描述]
-
-### 产品描述 (Product Description)
-[在此用段落形式输出具有吸引力的详细产品描述]
+请以 JSON 格式输出，严格遵循以下结构，不要输出任何 JSON 之外的文字：
+{
+  "title": "标题：包含核心词+品牌+属性+场景，长度控制在 80-200 字符",
+  "bulletPoints": [
+    {"heading": "小标题", "description": "具体描述"}
+  ],
+  "productDescription": "段落形式的详细产品描述"
+}
+bulletPoints 需要正好 5 条。
 
 ## 规则检查清单
 - 标题和文案中必须包含：核心词、品牌、属性、场景。
 - 严禁出现 sale/discount 等促销违规词汇。`,
     user: (productName, structured) => `产品名称：${productName}
 
-结构化卖点参考：
-${structured}
+结构化卖点参考（JSON）：
+${JSON.stringify(structured)}
 
-请根据以上卖点生成 Amazon Listing 文案。`,
+请根据以上卖点生成 Amazon Listing 文案，以 JSON 输出。`,
   },
   shopee: {
     useContext: true,
-    system: (rules) => `你是 Shopee（虾皮）资深运营和爆款文案专家。请严格遵循以下平台规则生成纯文本排版的文案，切勿使用 JSON 格式。
+    system: (rules) => `你是 Shopee（虾皮）资深运营和爆款文案专家。请严格遵循以下平台规则生成文案。
 
 【平台规则参考】：
 ${rules || '（暂无）'}
 
-## 输出要求
-请使用清晰的 Markdown 格式输出，包含以下结构：
-
-### 商品标题
-[在此输出标题：必须包含精准的长尾词（Long-tail keywords，即搜索量较小但转化率高的具体搜索词），尽量填满120字符]
-
-### 核心卖点
-[一句话核心卖点，加上显眼的🔥或⭐Emoji]
-
-### 详细特性 (Features)
-* [卖点1]
-* [卖点2]
-* [卖点3]
-
-### 促销与服务标签 (Promotion Tags)
-[标签1（如 Ready Stock/现货）] ｜ [标签2（如 Fast Shipping/极速发货）]
+请以 JSON 格式输出，严格遵循以下结构，不要输出任何 JSON 之外的文字：
+{
+  "title": "商品标题：必须包含精准长尾词（搜索量较小但转化率高），尽量填满120字符",
+  "coreSellingPoint": "一句话核心卖点，加上显眼的🔥或⭐Emoji",
+  "features": ["详细特性1", "详细特性2", "详细特性3"],
+  "promotionTags": ["Ready Stock/现货", "Fast Shipping/极速发货"]
+}
 
 ## 风格要求
-- 语言口语化、热情，善用分隔符（如【】、｜、-）和 Emoji（表情符号）。
+- 语言口语化、热情，善用分隔符（如【】、｜、-）和 Emoji。
 - 强烈突出产品的性价比、现货发售和售后保障。`,
     user: (productName, structured) => `产品名称：${productName}
 
-请仔细阅读以下结构化卖点参考，提取核心痛点和功能，为我生成 Shopee 商品详情文案：
+请仔细阅读以下结构化卖点参考（JSON），提取核心痛点和功能，为我生成 Shopee 商品详情文案，以 JSON 输出：
 
-【结构化卖点参考】：
-${structured}`,
+${JSON.stringify(structured)}`,
   },
   tiktok: {
     useContext: true,
-    system: (rules) => `你是 TikTok 短视频脚本专家。请生成纯文本排版的短视频脚本，切勿使用 JSON 格式。
+    system: (rules) => `你是 TikTok 短视频脚本专家。
 
 【平台规则参考】：
 ${rules || '（暂无）'}
 
-## 输出要求
-请使用清晰的 Markdown 格式输出，包含以下结构：
-
-### 视频标题与标签 (Caption & Hashtags)
-[引人注目的视频标题]
-[3-5个热门标签，如 #fyp #产品词]
-
-### 完整口播脚本 (Audio Script)
-[在此输出 80-150 字的口播内容，必须口语化，适合真人发音]
-
-## 脚本结构（总时长控制在 60 秒内）
-- **0-5秒：开场钩子 (Hook)**：[展示悬念/痛点/好奇/对比/紧迫感，迅速抓住眼球，30字符内]
-- **5-15秒：痛点展示**：[点出用户面临的困扰]
-- **15-35秒：产品解决方案与效果**：[展示产品如何解决痛点]
-- **35-50秒：行动指令 (CTA - Call to Action)**：[引导用户进行 follow/关注、like/点赞、comment/评论 或购买]`,
+请以 JSON 格式输出，严格遵循以下结构，不要输出任何 JSON 之外的文字：
+{
+  "caption": "引人注目的视频标题",
+  "hashtags": ["#fyp", "#产品词"],
+  "audioScript": "80-150字的口播内容，必须口语化，适合真人发音",
+  "timeline": [
+    {"time": "0-5s", "label": "开场钩子", "content": "展示悬念/痛点/好奇/对比/紧迫感"},
+    {"time": "5-15s", "label": "痛点展示", "content": "点出用户面临的困扰"},
+    {"time": "15-35s", "label": "产品解决方案与效果", "content": "展示产品如何解决痛点"},
+    {"time": "35-50s", "label": "行动指令 CTA", "content": "引导 follow/like/comment 或购买"}
+  ]
+}
+总时长控制在 60 秒内，用时间轴逼模型按注意力分配组织内容，而不是按产品功能逻辑。`,
     user: (productName, structured) => `产品：${productName}
 
-请仔细阅读以下【结构化卖点参考】，重点提取其中的痛点（Pain Points）和钩子建议（Hook Ideas），为我生成 TikTok 短视频脚本：
+请仔细阅读以下【结构化卖点参考】（JSON），重点提取其中的痛点和钩子建议，为我生成 TikTok 短视频脚本，以 JSON 输出：
 
-【结构化卖点参考】：
-${structured}`,
+${JSON.stringify(structured)}`,
   },
   shein: {
     // 与原设计一致：SHEIN 分支不接知识库 context
     useContext: false,
-    system: () => `你是 SHEIN 的高级时尚与生活方式文案策划（Copywriter）。请生成纯文本排版的文案，切勿使用 JSON 格式。
+    system: () => `你是 SHEIN 的高级时尚与生活方式文案策划（Copywriter）。
 
-## 输出要求
-请使用清晰的 Markdown 格式输出，包含以下结构：
-
-### 风格笔记 (Style Notes)
-[用 1-2 句话，描述这件产品的时尚氛围或生活方式感]
-
-### 材质与设计细节 (Details)
-* [材质/设计细节 1]
-* [材质/设计细节 2]
-* [材质/设计细节 3]
-
-### 推荐场景 (Scenarios)
-[推荐穿着/使用的场景，如：Perfect for a weekend getaway]
-
-### 核心搜索词 (Search Keywords)
-[5个核心词，用逗号分隔]
+请以 JSON 格式输出，严格遵循以下结构，不要输出任何 JSON 之外的文字：
+{
+  "styleNotes": "1-2句话描述这件产品的时尚氛围或生活方式感",
+  "details": ["材质/设计细节1", "材质/设计细节2", "材质/设计细节3"],
+  "scenarios": "推荐穿着/使用的场景，如 Perfect for a weekend getaway",
+  "searchKeywords": ["核心词1", "核心词2", "核心词3", "核心词4", "核心词5"]
+}
 
 ## 风格要求
 - 语气要充满灵感、自信、走在潮流前线（Trendy）。
-- 大量使用感官词汇（Sensory words，即能调动视觉、听觉、触觉等感官体验的形容词），具体描述产品带来的身体和心理感受。`,
+- 大量使用感官词汇（视觉/听觉/触觉），具体描述产品带来的身体和心理感受。`,
     user: (productName, structured) => `产品名称：${productName}
 
-请仔细阅读以下结构化卖点参考，重点提取其中的应用场景（Scenarios）和核心卖点（Features），为我生成 SHEIN 风格的文案：
+请仔细阅读以下结构化卖点参考（JSON），重点提取应用场景和核心卖点，为我生成 SHEIN 风格的文案，以 JSON 输出：
 
-【结构化卖点参考】：
-${structured}`,
+${JSON.stringify(structured)}`,
   },
 };
 
-function buildLocalizationPrompt(lang, baseCopy) {
-  const system = `你是资深的跨境电商本地化（Localization）翻译专家。请将以下产品文案翻译成目标语言：${lang}，并进行符合当地文化和电商搜索习惯的深度微调。
+function buildLocalizationPrompt(lang, baseCopyObj) {
+  const system = `你是资深的跨境电商本地化（Localization）翻译专家。请将以下 JSON 格式的产品文案翻译成目标语言：${lang}，并进行符合当地文化和电商搜索习惯的深度微调。
 
-【待翻译文案】：
-${baseCopy}
+【待翻译文案（JSON）】：
+${JSON.stringify(baseCopyObj)}
 
 ## 语言本地化要求
 - **印尼语**：使用 "diskon besar"（大促）、"gratis ongkir"（包邮）等本土高频促销词。
 - **泰语**：句末自然地添加礼貌助词 "ครับ/ค่ะ"，使用 "ส่งฟรี" 表示包邮。
 - **西班牙语**：使用 "ofertas"（特价）、"envío gratis"（免运费）等词汇。
-- **英语**：如果目标语言是英语，请直接对原文进行母语级别（Native-level）的语法和地道表达润色（Polishing）。
-- **其他语言**：请严格遵循当地主流电商平台（Marketplace）的常用营销话术。
+- **英语**：如果目标语言是英语，请直接对原文进行母语级别（Native-level）的语法和地道表达润色。
+- **其他语言**：请严格遵循当地主流电商平台的常用营销话术。
 
 ## 输出要求
-1. **严格保持排版**：必须保留原文的 Markdown 层级和排版格式（例如 \`###\` 标题分隔符、\`*\` 列表项目符号、Emoji 以及粗体等）。
-2. **忠于原意**：严禁随意增减原文的核心卖点（Features）和痛点（Pain points）逻辑。
-3. **纯文本直出**：直接输出翻译并优化后的文案结果，**绝对不要**使用任何 JSON 代码块，也**不要**输出诸如"好的，这是您的翻译"之类的废话（Filler words）。`;
-  return { system, user: '请开始处理。' };
-}
-
-function buildImagePrompt({ productName, productFeatures, structured }) {
-  const system = `你是一位专业的电商商品摄影导演和AI图像提示词专家。
-根据产品信息，生成一段适合生成高质量电商主图的英文提示词（Prompt）。
-
-## 要求
-- 纯白背景，产品居中摆放
-- 专业商业摄影风格，打光均匀
-- 突出产品核心外观特征与使用场景
-- 英文输出，不超过120词
-- 只输出Prompt本身，不要任何解释、标题或前缀`;
-  const user = `产品名称：${productName}
-产品特性：${productFeatures}
-卖点参考：${structured}
-
-请生成适合此产品的电商主图英文Prompt。`;
-  return { system, user };
+1. **严格保持 JSON 结构**：字段名（key）必须和原文完全一致，只翻译字段的值（value）；数组元素个数保持不变。
+2. **忠于原意**：严禁随意增减原文的核心卖点和痛点逻辑。
+3. **只输出 JSON**：不要输出任何解释或前缀，不要用 \`\`\`json 代码块包裹。`;
+  return { system, user: '请开始处理，以 JSON 输出。' };
 }
 
 /* ── Amazon 违禁词校验（真正可执行的检查，取代纯 Prompt 自检） ──
@@ -276,13 +316,42 @@ function findBannedWords(text) {
 }
 
 async function generateAmazonCopy(env, system, user) {
-  let copy = await callDeepSeek(env, system, user);
-  const hits = findBannedWords(copy);
+  let raw = await callDeepSeek(env, system, user, { json: true });
+  const hits = findBannedWords(raw);
   if (hits.length) {
-    const retryUser = `${user}\n\n【重新生成】上一次输出里出现了违禁词：${hits.join('、')}。请在不改变卖点结构的前提下换一种说法，确保正文完全不包含这些词。`;
-    copy = await callDeepSeek(env, system, retryUser);
+    const retryUser = `${user}\n\n【重新生成】上一次输出里出现了违禁词：${hits.join('、')}。请在不改变卖点结构的前提下换一种说法，确保 JSON 里完全不包含这些词，仍然只输出 JSON。`;
+    raw = await callDeepSeek(env, system, retryUser, { json: true });
   }
-  return copy;
+  try {
+    return extractJson(raw);
+  } catch (e) {
+    throw new Error(`JSON 解析失败：${e.message}；原始输出前 200 字：${raw.slice(0, 200)}`);
+  }
+}
+
+/* ── D1：生成历史记录 ── */
+
+async function saveHistory(env, { requestId, productName, productFeatures, platform, langMap }) {
+  if (!env.DB) return;
+  await env.DB.prepare(
+    `INSERT INTO generations (id, request_id, created_at, product_name, product_features, platform, result_json)
+     VALUES (?, ?, ?, ?, ?, ?, ?)`
+  )
+    .bind(crypto.randomUUID(), requestId, Date.now(), productName, productFeatures, platform, JSON.stringify(langMap))
+    .run();
+}
+
+async function handleHistory(request, env) {
+  if (!env.DB) return json({ items: [] });
+  const url = new URL(request.url);
+  const limit = Math.min(Number(url.searchParams.get('limit')) || 20, 100);
+  const { results } = await env.DB.prepare(
+    `SELECT id, request_id, created_at, product_name, platform, result_json
+     FROM generations ORDER BY created_at DESC LIMIT ?`
+  )
+    .bind(limit)
+    .all();
+  return json({ items: results || [] });
 }
 
 /* ── 主流程 ── */
@@ -293,80 +362,82 @@ function splitLanguages(raw) {
   return String(raw).split(/[,，;；、]/).map((s) => s.trim()).filter(Boolean);
 }
 
-async function handleGenerate(request, env) {
+async function handleGenerateSSE(request, env, send) {
   let body;
   try {
     body = await request.json();
   } catch {
-    return json({ error: 'invalid JSON body' }, 400);
+    await send('error', { error: 'invalid JSON body' });
+    return;
   }
 
   const productName = (body.productName || '').trim();
   const productFeatures = (body.productFeatures || '').trim();
-  const category = body.category || 'general';
   const platforms = (Array.isArray(body.platforms) ? body.platforms : [body.platforms]).filter(
     (p) => PLATFORM_PROMPTS[p]
   );
   const languages = splitLanguages(body.targetLanguages);
 
   if (!productName || !productFeatures) {
-    return json({ error: 'productName 和 productFeatures 为必填项' }, 400);
+    await send('error', { error: 'productName 和 productFeatures 为必填项' });
+    return;
   }
-  if (platforms.length === 0) {
-    return json({ error: '至少选择一个受支持的平台：amazon/shopee/tiktok/shein' }, 400);
+  if (!platforms.length) {
+    await send('error', { error: '至少选择一个受支持的平台：amazon/shopee/tiktok/shein' });
+    return;
   }
 
-  try {
-    const [kbContext, seoTrends] = await Promise.all([
-      getKnowledge(env, `keywords:${category}`).then((v) => v || getKnowledge(env, 'keywords:general')),
-      tavilySearch(
-        env,
-        `${productName} e-commerce SEO trends, best selling features and consumer pain points`
-      ),
-    ]);
+  const requestId = crypto.randomUUID();
 
-    const structurePrompt = buildStructurePrompt({ productName, productFeatures, kbContext, seoTrends });
-    const structured = await callDeepSeek(env, structurePrompt.system, structurePrompt.user);
+  await send('status', { stage: 'researching' });
+  const [kbContext, seoTrends] = await Promise.all([
+    queryKnowledge(env, `${productName} ${productFeatures}`, { type: 'keywords' }),
+    tavilySearch(env, `${productName} e-commerce SEO trends, best selling features and consumer pain points`),
+  ]);
 
-    const platformResults = {};
-    await Promise.all(
-      platforms.map(async (plat) => {
+  await send('status', { stage: 'structuring' });
+  const sp = buildStructurePrompt({ productName, productFeatures, kbContext, seoTrends });
+  const structured = await callDeepSeekJSON(env, sp.system, sp.user);
+  await send('structured', { data: structured });
+
+  await Promise.all(
+    platforms.map(async (plat) => {
+      try {
         const cfg = PLATFORM_PROMPTS[plat];
-        const rules = cfg.useContext ? await getKnowledge(env, `rules:${plat}`) : '';
+        const rules = cfg.useContext
+          ? await queryKnowledge(env, `${productName} ${productFeatures}`, { type: 'rules', platform: plat })
+          : '';
         const system = cfg.system(rules);
         const user = cfg.user(productName, structured);
         const baseCopy = plat === 'amazon'
           ? await generateAmazonCopy(env, system, user)
-          : await callDeepSeek(env, system, user);
+          : await callDeepSeekJSON(env, system, user);
 
         const langEntries = await Promise.all(
           languages.map(async (lang) => {
             const loc = buildLocalizationPrompt(lang, baseCopy);
-            const text = await callDeepSeek(env, loc.system, loc.user);
-            return [lang, text];
+            const localized = await callDeepSeekJSON(env, loc.system, loc.user);
+            return [lang, localized];
           })
         );
-        platformResults[plat] = Object.fromEntries(langEntries);
-      })
-    );
+        const langMap = Object.fromEntries(langEntries);
 
-    let imagePrompt = null;
-    try {
-      const ip = buildImagePrompt({ productName, productFeatures, structured });
-      imagePrompt = await callDeepSeek(env, ip.system, ip.user);
-    } catch {
-      // 配图是锦上添花，失败不影响主流程
-    }
+        await send('platform', { platform: plat, data: langMap });
+        await saveHistory(env, { requestId, productName, productFeatures, platform: plat, langMap }).catch(() => {});
+      } catch (err) {
+        await send('platformError', { platform: plat, error: err.message || String(err) });
+      }
+    })
+  );
 
-    return json({ platforms: platformResults, imagePrompt });
-  } catch (err) {
-    return json({ error: err.message || String(err) }, 502);
-  }
+  await send('done', { requestId });
 }
 
-/* ── 知识库定时刷新（取代 Dify 知识库流水线，见 docs/workflow-design.md §8） ── */
+/* ── 知识库定时刷新：抓取 → 清洗 → 分块 → embedding → 存入 Vectorize ──
+ * 取代 Dify 知识库流水线的自动化更新方案（见 docs/architecture.md）。
+ */
 
-// 按需替换成真实的目标页面；每个 key 对应一批 URL，抓取正文合并后存入 KV
+// 按需替换成真实的目标页面；key 格式为 "type:platform"（platform 对 keywords 类型没有实际过滤意义，写 general 即可）
 const KB_SOURCES = {
   'rules:amazon': [],
   'rules:shopee': [],
@@ -381,28 +452,51 @@ function stripHtml(html) {
     .replace(/<[^>]+>/g, ' ')
     .replace(/&nbsp;/g, ' ')
     .replace(/\s+/g, ' ')
-    .trim()
-    .slice(0, 6000);
+    .trim();
+}
+
+function chunkText(text, size = 500, overlap = 50) {
+  const chunks = [];
+  for (let i = 0; i < text.length; i += size - overlap) {
+    chunks.push(text.slice(i, i + size));
+    if (i + size >= text.length) break;
+  }
+  return chunks;
+}
+
+function hashString(s) {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0;
+  return (h >>> 0).toString(36);
 }
 
 async function refreshKnowledgeBase(env) {
-  if (!env.COPYFLOW_KB) return;
-  for (const [key, urls] of Object.entries(KB_SOURCES)) {
+  if (!env.VECTORIZE || !env.AI) return;
+  const vectors = [];
+  for (const [sourceKey, urls] of Object.entries(KB_SOURCES)) {
     if (!urls.length) continue;
-    const texts = await Promise.all(
-      urls.map(async (url) => {
-        try {
-          const res = await fetch(url, { headers: { 'User-Agent': 'CopyFlowBot/1.0' } });
-          if (!res.ok) return '';
-          return stripHtml(await res.text());
-        } catch {
-          return '';
-        }
-      })
-    );
-    const merged = texts.filter(Boolean).join('\n\n---\n\n');
-    if (merged) await env.COPYFLOW_KB.put(key, merged);
+    const [type, platform] = sourceKey.split(':');
+    for (const url of urls) {
+      try {
+        const res = await fetch(url, { headers: { 'User-Agent': 'CopyFlowBot/1.0' } });
+        if (!res.ok) continue;
+        const text = stripHtml(await res.text()).slice(0, 20000);
+        const chunks = chunkText(text);
+        if (!chunks.length) continue;
+        const vecs = await embed(env, chunks);
+        chunks.forEach((chunk, i) => {
+          vectors.push({
+            id: `${sourceKey}:${hashString(url)}:${i}`,
+            values: vecs[i],
+            metadata: { type, platform, text: chunk, sourceUrl: url },
+          });
+        });
+      } catch {
+        // 单个源抓取失败不影响其他源
+      }
+    }
   }
+  if (vectors.length) await env.VECTORIZE.upsert(vectors);
 }
 
 /* ── Worker 入口 ── */
@@ -415,7 +509,10 @@ export default {
       return new Response(null, { headers: CORS_HEADERS });
     }
     if (url.pathname === '/api/generate' && request.method === 'POST') {
-      return handleGenerate(request, env);
+      return sseResponse((send) => handleGenerateSSE(request, env, send));
+    }
+    if (url.pathname === '/api/history' && request.method === 'GET') {
+      return handleHistory(request, env);
     }
     if (url.pathname === '/api/health') {
       return json({ ok: true });

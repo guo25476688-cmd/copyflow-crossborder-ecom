@@ -1,6 +1,6 @@
 # CopyFlow 原型
 
-单文件 Web 原型（`index.html`，无构建、无依赖），调用 [CopyFlow API](../worker/)（Cloudflare Worker + DeepSeek）生成文案。原型早期版本对接的是 Dify 工作流，历史设计记录见 [`../docs/workflow-design.md`](../docs/workflow-design.md)。
+单文件 Web 原型（`index.html`，无构建、无依赖），调用 [CopyFlow API](../worker/)（Cloudflare Worker + DeepSeek）生成文案。原型早期版本对接的是 Dify 工作流，历史设计记录见 [`../docs/architecture.md`](../docs/architecture.md)。
 
 ## 在线 Demo
 
@@ -27,9 +27,9 @@ python3 -m http.server 7788
 | 已实现 | 未实现（见 [PRD 4.5](../docs/PRD.md#45-原型与-prd-的差异诚实记录)） |
 |---|---|
 | 三种输入模式（表单 / URL / 自由文本） | 历史记录页 |
-| 四平台并行生成 + 骨架屏进度 | 商品主图预览 UI |
-| 平台 Tab + 语种 Tab 结果对比 | 合规违禁词可视化标红 |
-| 分区块复制、演示模式 | 质量反馈 👍👎 埋点 |
+| 四平台并行生成 + 骨架屏进度 | 合规违禁词可视化标红 |
+| 平台 Tab + 语种 Tab 结果对比 | 质量反馈 👍👎 埋点 |
+| 分区块复制、演示模式 | |
 
 ## 技术说明
 
