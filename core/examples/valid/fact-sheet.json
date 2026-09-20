@@ -1,0 +1,26 @@
+{
+  "product": {
+    "name": "HoverGo Pro 无线蓝牙耳机",
+    "brand": "HoverGo",
+    "category": { "value": "Consumer Electronics > Headphones", "confidence": 0.9 }
+  },
+  "facts": [
+    { "id": "F1", "statement": "支持蓝牙 5.3 无线连接", "source": "user_input", "evidence": "蓝牙5.3" },
+    { "id": "F2", "statement": "具备主动降噪功能", "source": "user_input", "evidence": "主动降噪" },
+    { "id": "F3", "statement": "含充电盒总续航约 30 小时", "source": "user_input", "evidence": "续航30小时（含充电盒）" },
+    { "id": "F4", "statement": "防水等级 IPX5", "source": "user_input", "evidence": "IPX5防水" }
+  ],
+  "attributes": [
+    { "name": "Connectivity", "value": "Bluetooth 5.3", "fact_ids": ["F1"] },
+    { "name": "Battery life", "value": "Up to 30 hours with charging case", "fact_ids": ["F3"] },
+    { "name": "Water resistance", "value": "IPX5", "fact_ids": ["F4"] }
+  ],
+  "forbidden_claims": [
+    { "claim": "保护听力 / 医疗级降噪", "reason": "用户未提供任何医疗或听力保护相关依据" },
+    { "claim": "通过 CE / FCC 认证", "reason": "用户未提供认证信息" }
+  ],
+  "unknowns": [
+    { "field": "认证信息（CE / FCC 等）", "why_needed": "部分平台或市场可能要求电子类商品展示认证；未提供则文案不得声称" },
+    { "field": "颜色与尺寸规格", "why_needed": "买家常问；缺失时结构化属性表会不完整" }
+  ]
+}

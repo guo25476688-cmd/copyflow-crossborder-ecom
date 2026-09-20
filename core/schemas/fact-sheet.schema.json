@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "copyflow/fact-sheet.schema.json",
+  "title": "FactSheet 产品事实表",
+  "description": "所有下游文案的唯一事实来源。每条卖点都必须能追溯到这里的某个 fact 编号；缺失的信息写进 unknowns 交给卖家补充，不允许模型自行补全。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["product", "facts", "attributes", "forbidden_claims", "unknowns"],
+  "properties": {
+    "product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "category"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "brand": { "type": ["string", "null"] },
+        "category": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["value", "confidence"],
+          "properties": {
+            "value": { "type": "string", "minLength": 1 },
+            "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        }
+      }
+    },
+    "facts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "statement", "source", "evidence"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^F[0-9]+$" },
+          "statement": { "type": "string", "minLength": 1 },
+          "source": { "enum": ["user_input", "url", "image"] },
+          "evidence": { "type": "string", "minLength": 1, "description": "支撑这条事实的原文片段" }
+        }
+      }
+    },
+    "attributes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "value", "fact_ids"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "value": { "type": "string", "minLength": 1 },
+          "fact_ids": { "$ref": "#/$defs/factIds" }
+        }
+      }
+    },
+    "forbidden_claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["claim", "reason"],
+        "properties": {
+          "claim": { "type": "string", "minLength": 1 },
+          "reason": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["field", "why_needed"],
+        "properties": {
+          "field": { "type": "string", "minLength": 1 },
+          "why_needed": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "factIds": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "pattern": "^F[0-9]+$" }
+    }
+  }
+}

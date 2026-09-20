@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "copyflow/brief.schema.json",
+  "title": "Brief 创意简报",
+  "description": "介于事实表和各平台文案之间的一层：先定受众和角度，再按平台×市场渲染。每个角度必须引用事实编号。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["audience", "angles", "keywords", "market_tones"],
+  "properties": {
+    "audience": { "type": "string", "minLength": 1 },
+    "angles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "description", "fact_ids"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "description": { "type": "string", "minLength": 1 },
+          "fact_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "pattern": "^F[0-9]+$" }
+          }
+        }
+      }
+    },
+    "keywords": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "market_tones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["market", "tone"],
+        "properties": {
+          "market": { "type": "string", "pattern": "^[a-z]{2}-[A-Z]{2}$", "description": "BCP-47，如 en-US、id-ID" },
+          "tone": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

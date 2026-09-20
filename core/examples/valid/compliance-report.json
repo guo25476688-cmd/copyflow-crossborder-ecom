@@ -1,0 +1,20 @@
+{
+  "passed": false,
+  "rule_set_version": "example-0",
+  "issues": [
+    {
+      "rule_id": "example.banned-word",
+      "severity": "error",
+      "path": "content/bullets/1/text",
+      "evidence": "best",
+      "fix_hint": "移除或改写该词（示例规则，仅用于演示报告格式）"
+    },
+    {
+      "rule_id": "example.title-length",
+      "severity": "warning",
+      "path": "content/title",
+      "evidence": "HoverGo Pro Wireless Earbuds…",
+      "fix_hint": "缩短标题（示例规则，仅用于演示报告格式）"
+    }
+  ]
+}
