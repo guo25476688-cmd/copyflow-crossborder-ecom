@@ -2,30 +2,35 @@
   "platform": "amazon",
   "market": "en-US",
   "content": {
-    "title": "HoverGo Pro Wireless Earbuds, Active Noise Cancelling Bluetooth 5.3 Earphones with 30H Playtime, IPX5 Waterproof for Commute and Workout",
+    "title": "HoverGo Pro Wireless Earbuds, Active Noise Cancelling, Bluetooth 5.3",
     "bullets": [
       {
-        "heading": "ACTIVE NOISE CANCELLING",
+        "heading": "Active Noise Cancelling",
         "text": "Cuts down background noise on the train, in the office, or on a busy street so you can focus on your music and calls."
       },
       {
-        "heading": "UP TO 30 HOURS OF PLAYTIME",
+        "heading": "Up to 30 Hours of Playtime",
         "text": "CE certified, and better than AirPods for noise cancelling. About 30 hours of total playtime."
       },
       {
-        "heading": "STABLE BLUETOOTH 5.3",
+        "heading": "Stable Bluetooth 5.3",
         "text": "Bluetooth 5.3 keeps a steady wireless connection with your phone and other paired devices."
       },
       {
-        "heading": "IPX5 WATER RESISTANT",
+        "heading": "IPX5 Water Resistance",
         "text": "Rated IPX5 to handle sweat and light rain during runs and gym sessions."
       },
       {
-        "heading": "BUILT FOR EVERYDAY WEAR",
+        "heading": "Made for Everyday Wear",
         "text": "A lightweight wireless design made for commuting, working out, and everything in between."
       }
     ],
-    "description": "HoverGo Pro pairs active noise cancelling with a long-lasting charging case, Bluetooth 5.3 connectivity, and IPX5 water resistance, making it a practical everyday choice for commuters and active users."
+    "description": "HoverGo Pro pairs active noise cancelling with a long-lasting charging case, Bluetooth 5.3 connectivity, and IPX5 water resistance, making it a practical everyday choice for commuters and active users.",
+    "item_highlights": [
+      "Up to 30 hours playtime with charging case",
+      "IPX5 water resistant",
+      "Bluetooth 5.3"
+    ]
   },
   "attributes": [
     {

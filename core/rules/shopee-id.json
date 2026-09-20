@@ -1,0 +1,84 @@
+{
+  "id": "shopee-id",
+  "version": "2026-09-20",
+  "platform": "shopee",
+  "markets": [
+    "id-ID"
+  ],
+  "retrieved_at": "2026-09-20",
+  "description": "Shopee 印尼站 Listing 规则。只收录官方卖家教育中心明确写出的内容；官方没写的（长度上限、违禁词、gratis ongkir 文字用法等）列在 unverified 中，不臆造。",
+  "rules": [
+    {
+      "id": "shp.script.non-latin",
+      "check": "non_latin_script",
+      "scope": [
+        "all"
+      ],
+      "severity": "error",
+      "description": "名称、描述、规格中只允许印尼语和英语，出现中文、泰文等非拉丁字母会导致上传失败",
+      "fix_hint": "改用印尼语或英语，删除非拉丁字符",
+      "source": {
+        "url": "https://seller.shopee.co.id/edu/article/6849",
+        "section": "Apa itu Pelanggaran Penggunaan Bahasa Asing dan Font Unik?",
+        "retrieved_at": "2026-09-20"
+      }
+    },
+    {
+      "id": "shp.symbols.emoji",
+      "check": "emoji",
+      "scope": [
+        "all"
+      ],
+      "severity": "warning",
+      "description": "官方允许字符清单里没有 emoji，且“独特字符和符号”属违规；官方页面没有明确点名 emoji，故为警告，由卖家决定",
+      "fix_hint": "建议删除 emoji，或先在 Seller Centre 试上传确认是否被接受",
+      "source": {
+        "url": "https://seller.shopee.co.id/edu/article/6849",
+        "section": "Berikut adalah beberapa karakter yang diperbolehkan（允许字符表）",
+        "retrieved_at": "2026-09-20"
+      }
+    },
+    {
+      "id": "shp.no-contact-url",
+      "check": "forbidden_patterns",
+      "scope": [
+        "all"
+      ],
+      "severity": "error",
+      "description": "名称、描述中不得包含外部网站或个人信息（电话、邮箱）",
+      "fix_hint": "删除网址、电话、邮箱等",
+      "patterns": [
+        {
+          "pattern": "https?://\\S+",
+          "basis": "official_category"
+        },
+        {
+          "pattern": "\\bwww\\.\\S+",
+          "basis": "official_category"
+        },
+        {
+          "pattern": "[\\w.+-]+@[\\w-]+\\.[\\w.-]+",
+          "basis": "official_category"
+        },
+        {
+          "pattern": "(?<![\\d.])\\+?\\d[\\d\\s().-]{7,}\\d(?![\\d.])",
+          "basis": "official_category"
+        }
+      ],
+      "source": {
+        "url": "https://seller.shopee.co.id/edu/article/6852",
+        "section": "Bagaimana Saya Dapat Menghindari Pelanggaran Produk?",
+        "retrieved_at": "2026-09-20"
+      }
+    }
+  ],
+  "unverified": [
+    "标题与描述的字数上限（官方页面未写；网上的“20–120 / 20–3000”来自第三方，未核实）",
+    "禁用词清单，以及 “gratis ongkir” 等词能否出现在文字中（官方只写明不得在图片里使用 Shopee 的免运费标签）",
+    "药品与多种维生素类的具体限制（官方只写“禁止的药品和多种维生素不得销售”，未读到明细）",
+    "婴儿配方奶粉的促销限制（0-12 个月）",
+    "关键词堆砌（Spam kata pencarian）的判断标准与阈值",
+    "夸大与功效类声称：官方页面没有读到对应措辞，未套用 Amazon 的声称规则",
+    "允许字符清单标题为“beberapa（若干）”，不视为穷尽，因此不对清单外的 ASCII 标点做限制"
+  ]
+}

@@ -5,22 +5,58 @@
   "description": "规则引擎与事实核对评审的统一输出格式，界面据此标红。passed 必须与 issues 中是否存在 error 一致（由 checkReport 校验）。",
   "type": "object",
   "additionalProperties": false,
-  "required": ["passed", "rule_set_version", "issues"],
+  "required": [
+    "passed",
+    "rule_set_version",
+    "issues"
+  ],
   "properties": {
-    "passed": { "type": "boolean" },
-    "rule_set_version": { "type": "string", "minLength": 1 },
+    "passed": {
+      "type": "boolean"
+    },
+    "rule_set_version": {
+      "type": "string",
+      "minLength": 1
+    },
     "issues": {
       "type": "array",
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["rule_id", "severity", "path", "evidence", "fix_hint"],
+        "required": [
+          "rule_id",
+          "severity",
+          "path",
+          "evidence",
+          "fix_hint"
+        ],
         "properties": {
-          "rule_id": { "type": "string", "minLength": 1 },
-          "severity": { "enum": ["error", "warning"] },
-          "path": { "type": "string", "minLength": 1 },
-          "evidence": { "type": "string", "description": "触发问题的原文，用于界面高亮" },
-          "fix_hint": { "type": "string", "minLength": 1 }
+          "rule_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "severity": {
+            "enum": [
+              "error",
+              "warning"
+            ]
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence": {
+            "type": "string",
+            "description": "触发问题的原文，用于界面高亮"
+          },
+          "fix_hint": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "string",
+            "description": "该规则的官方来源链接，供界面展示"
+          }
         }
       }
     }

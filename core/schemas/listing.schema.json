@@ -5,21 +5,50 @@
   "description": "第一版只覆盖 amazon 与 shopee。新增平台 = 在 $defs 里加一个 content 结构，并在 allOf 里加一条 if/then。长度、违禁词等业务规则不写在这里，交给规则引擎。",
   "type": "object",
   "additionalProperties": false,
-  "required": ["platform", "market", "content", "attributes", "qa", "claims"],
+  "required": [
+    "platform",
+    "market",
+    "content",
+    "attributes",
+    "qa",
+    "claims"
+  ],
   "properties": {
-    "platform": { "enum": ["amazon", "shopee"] },
-    "market": { "type": "string", "pattern": "^[a-z]{2}-[A-Z]{2}$" },
-    "content": { "type": "object" },
+    "platform": {
+      "enum": [
+        "amazon",
+        "shopee"
+      ]
+    },
+    "market": {
+      "type": "string",
+      "pattern": "^[a-z]{2}-[A-Z]{2}$"
+    },
+    "content": {
+      "type": "object"
+    },
     "attributes": {
       "type": "array",
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["name", "value", "fact_ids"],
+        "required": [
+          "name",
+          "value",
+          "fact_ids"
+        ],
         "properties": {
-          "name": { "type": "string", "minLength": 1 },
-          "value": { "type": "string", "minLength": 1 },
-          "fact_ids": { "$ref": "#/$defs/factIds" }
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "value": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fact_ids": {
+            "$ref": "#/$defs/factIds"
+          }
         }
       }
     },
@@ -28,11 +57,23 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["question", "answer", "fact_ids"],
+        "required": [
+          "question",
+          "answer",
+          "fact_ids"
+        ],
         "properties": {
-          "question": { "type": "string", "minLength": 1 },
-          "answer": { "type": "string", "minLength": 1 },
-          "fact_ids": { "$ref": "#/$defs/factIds" }
+          "question": {
+            "type": "string",
+            "minLength": 1
+          },
+          "answer": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fact_ids": {
+            "$ref": "#/$defs/factIds"
+          }
         }
       }
     },
@@ -42,37 +83,90 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["text", "path", "fact_ids"],
+        "required": [
+          "text",
+          "path",
+          "fact_ids"
+        ],
         "properties": {
-          "text": { "type": "string", "minLength": 1 },
-          "path": { "type": "string", "minLength": 1, "description": "该陈述所在字段，如 content/bullets/0/text" },
-          "fact_ids": { "$ref": "#/$defs/factIds" }
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "该陈述所在字段，如 content/bullets/0/text"
+          },
+          "fact_ids": {
+            "$ref": "#/$defs/factIds"
+          }
         }
       }
     }
   },
   "allOf": [
     {
-      "if": { "properties": { "platform": { "const": "amazon" } }, "required": ["platform"] },
-      "then": { "properties": { "content": { "$ref": "#/$defs/amazonContent" } } }
+      "if": {
+        "properties": {
+          "platform": {
+            "const": "amazon"
+          }
+        },
+        "required": [
+          "platform"
+        ]
+      },
+      "then": {
+        "properties": {
+          "content": {
+            "$ref": "#/$defs/amazonContent"
+          }
+        }
+      }
     },
     {
-      "if": { "properties": { "platform": { "const": "shopee" } }, "required": ["platform"] },
-      "then": { "properties": { "content": { "$ref": "#/$defs/shopeeContent" } } }
+      "if": {
+        "properties": {
+          "platform": {
+            "const": "shopee"
+          }
+        },
+        "required": [
+          "platform"
+        ]
+      },
+      "then": {
+        "properties": {
+          "content": {
+            "$ref": "#/$defs/shopeeContent"
+          }
+        }
+      }
     }
   ],
   "$defs": {
     "factIds": {
       "type": "array",
       "minItems": 1,
-      "items": { "type": "string", "pattern": "^F[0-9]+$" }
+      "items": {
+        "type": "string",
+        "pattern": "^F[0-9]+$"
+      }
     },
     "amazonContent": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["title", "bullets", "description"],
+      "required": [
+        "title",
+        "bullets",
+        "description"
+      ],
       "properties": {
-        "title": { "type": "string", "minLength": 1 },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
         "bullets": {
           "type": "array",
           "minItems": 5,
@@ -80,25 +174,70 @@
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["heading", "text"],
+            "required": [
+              "heading",
+              "text"
+            ],
             "properties": {
-              "heading": { "type": "string", "minLength": 1 },
-              "text": { "type": "string", "minLength": 1 }
+              "heading": {
+                "type": "string",
+                "minLength": 1
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1
+              }
             }
           }
         },
-        "description": { "type": "string", "minLength": 1 }
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "item_highlights": {
+          "type": "array",
+          "minItems": 1,
+          "description": "Amazon 的 Item highlights：逗号分隔的短语（材质、适用场景等），合计上限由规则引擎校验，不是完整句子。可选。",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
       }
     },
     "shopeeContent": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["title", "highlight", "features", "promo_tags"],
+      "required": [
+        "title",
+        "highlight",
+        "features",
+        "promo_tags"
+      ],
       "properties": {
-        "title": { "type": "string", "minLength": 1 },
-        "highlight": { "type": "string", "minLength": 1 },
-        "features": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
-        "promo_tags": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "highlight": {
+          "type": "string",
+          "minLength": 1
+        },
+        "features": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "promo_tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
       }
     }
   }

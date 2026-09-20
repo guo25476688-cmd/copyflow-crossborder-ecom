@@ -3,24 +3,57 @@
   "market": "id-ID",
   "content": {
     "title": "HoverGo Pro Earphone Bluetooth 5.3 ANC Noise Cancelling Baterai 30 Jam Tahan Air IPX5 untuk Olahraga dan Kerja",
-    "highlight": "🔥 Noise cancelling aktif + baterai awet sampai 30 jam!",
+    "highlight": "Noise cancelling aktif + baterai awet sampai 30 jam!",
     "features": [
       "Active noise cancelling, nyaman di jalan dan di kantor",
       "Total baterai sekitar 30 jam dengan charging case",
       "Bluetooth 5.3 untuk koneksi lebih stabil",
       "Tahan air IPX5, aman untuk olahraga"
     ],
-    "promo_tags": ["Ready Stock", "Fast Shipping"]
+    "promo_tags": [
+      "Ready Stock",
+      "Fast Shipping"
+    ]
   },
   "attributes": [
-    { "name": "Konektivitas", "value": "Bluetooth 5.3", "fact_ids": ["F1"] },
-    { "name": "Daya tahan baterai", "value": "Hingga 30 jam dengan charging case", "fact_ids": ["F3"] }
+    {
+      "name": "Konektivitas",
+      "value": "Bluetooth 5.3",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "Daya tahan baterai",
+      "value": "Hingga 30 jam dengan charging case",
+      "fact_ids": [
+        "F3"
+      ]
+    }
   ],
   "qa": [
-    { "question": "Apakah earphone ini tahan air?", "answer": "Ya, tingkat ketahanan air IPX5.", "fact_ids": ["F4"] }
+    {
+      "question": "Apakah earphone ini tahan air?",
+      "answer": "Ya, tingkat ketahanan air IPX5.",
+      "fact_ids": [
+        "F4"
+      ]
+    }
   ],
   "claims": [
-    { "text": "Active noise cancelling", "path": "content/features/0", "fact_ids": ["F2"] },
-    { "text": "sekitar 30 jam", "path": "content/features/1", "fact_ids": ["F3"] }
+    {
+      "text": "Active noise cancelling",
+      "path": "content/features/0",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "text": "sekitar 30 jam",
+      "path": "content/features/1",
+      "fact_ids": [
+        "F3"
+      ]
+    }
   ]
 }

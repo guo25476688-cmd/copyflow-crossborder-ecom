@@ -1,0 +1,594 @@
+{
+  "id": "amazon-us",
+  "version": "2026-09-20",
+  "platform": "amazon",
+  "markets": [
+    "en-US"
+  ],
+  "retrieved_at": "2026-09-20",
+  "description": "Amazon 美国站 Listing 规则。依据等级：official_example=官方原文点名的短语，official_category=实现官方点名的类别但检测方式是启发式，derived=我基于官方精神的推断（只出警告）。",
+  "rules": [
+    {
+      "id": "amz.title.max-length",
+      "check": "max_length",
+      "target": "title",
+      "max": 75,
+      "severity": "error",
+      "description": "标题不得超过 75 个字符（含空格），媒体类除外",
+      "fix_hint": "缩短标题到 75 字符以内，多出的信息放进 item_highlights",
+      "source": {
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/GYTR6SYGFA5E3EQC",
+        "section": "Product title requirements > Character limit",
+        "retrieved_at": "2026-09-20"
+      }
+    },
+    {
+      "id": "amz.highlights.max-length",
+      "check": "max_length",
+      "target": "item_highlights",
+      "max": 125,
+      "joiner": ", ",
+      "severity": "error",
+      "description": "Item highlights 合计不得超过 125 个字符（含空格），写成逗号分隔的短语",
+      "fix_hint": "精简短语，合计 125 字符以内",
+      "source": {
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/GYTR6SYGFA5E3EQC",
+        "section": "Frequently asked questions > item highlights",
+        "retrieved_at": "2026-09-20"
+      }
+    },
+    {
+      "id": "amz.title.promotional",
+      "check": "forbidden_patterns",
+      "scope": [
+        "title"
+      ],
+      "severity": "error",
+      "description": "标题不得包含促销语或主观评价（官方示例：free shipping、100% quality guaranteed、Hot Item、Best seller）",
+      "fix_hint": "删除促销语和主观评价，只描述产品本身",
+      "patterns": [
+        {
+          "pattern": "free shipping",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "100%\\s*quality\\s*guaranteed",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "\\bhot item\\b",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "\\bbest[- ]?seller\\b",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "\\bsale\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "\\bdiscount(ed)?\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "\\d+\\s*%\\s*off\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "\\blimited[- ]time\\b",
+          "basis": "derived"
+        }
+      ],
+      "source": {
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/GYTR6SYGFA5E3EQC",
+        "section": "Product title requirements > Promotional content; Best practices > Subjective commentary",
+        "retrieved_at": "2026-09-20"
+      }
+    },
+    {
+      "id": "amz.title.special-chars",
+      "check": "forbidden_chars",
+      "scope": [
+        "title"
+      ],
+      "chars": "!$?_{}^¬¦",
+      "ignore_brand": true,
+      "severity": "error",
+      "description": "标题不得使用 ! $ ? _ { } ^ ¬ ¦（品牌名自带的字符官方有例外，细节未读全，故检查时忽略品牌名）",
+      "fix_hint": "删除这些字符",
+      "source": {
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/GYTR6SYGFA5E3EQC",
+        "section": "Product title requirements > Special characters",
+        "retrieved_at": "2026-09-20"
+      }
+    },
+    {
+      "id": "amz.title.word-repeat",
+      "check": "max_word_repeat",
+      "scope": [
+        "title"
+      ],
+      "max": 2,
+      "allowed_words": [
+        "in",
+        "on",
+        "over",
+        "with",
+        "and",
+        "or",
+        "for",
+        "the",
+        "a",
+        "an"
+      ],
+      "severity": "error",
+      "description": "标题中同一个词不得出现超过两次（介词、冠词、连词除外，品牌名同样受限）",
+      "fix_hint": "合并或删除重复的词",
+      "source": {
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/GYTR6SYGFA5E3EQC",
+        "section": "Product title requirements > Word repetition",
+        "retrieved_at": "2026-09-20"
+      }
+    },
+    {
+      "id": "amz.title.capitalization",
+      "check": "title_case",
+      "scope": [
+        "title"
+      ],
+      "severity": "warning",
+      "description": "标题各词首字母大写，介词/冠词/连词和计量单位缩写除外（属官方最佳实践，非硬性要求，故为警告）",
+      "fix_hint": "把每个实词的首字母改为大写",
+      "source": {
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/GYTR6SYGFA5E3EQC",
+        "section": "Best practices > Capitalization",
+        "retrieved_at": "2026-09-20"
+      }
+    },
+    {
+      "id": "amz.all-caps",
+      "check": "all_caps",
+      "scope": [
+        "title",
+        "bullet",
+        "description"
+      ],
+      "min_letters": 4,
+      "severity": "error",
+      "description": "标题、卖点、描述整段不得全大写",
+      "fix_hint": "改成每个词首字母大写或正常句式",
+      "source": {
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/G200390640",
+        "section": "Policies for writing listings > Use capital letters only for the first letter of each word",
+        "retrieved_at": "2026-09-20"
+      }
+    },
+    {
+      "id": "amz.no-contact-url",
+      "check": "forbidden_patterns",
+      "scope": [
+        "title",
+        "bullet",
+        "description",
+        "highlights"
+      ],
+      "severity": "error",
+      "description": "标题、卖点、描述中不得出现电话、邮箱、网址",
+      "fix_hint": "删除联系方式和链接",
+      "patterns": [
+        {
+          "pattern": "https?://\\S+",
+          "basis": "official_category"
+        },
+        {
+          "pattern": "\\bwww\\.\\S+",
+          "basis": "official_category"
+        },
+        {
+          "pattern": "[\\w.+-]+@[\\w-]+\\.[\\w.-]+",
+          "basis": "official_category"
+        },
+        {
+          "pattern": "(?<![\\d.])\\+?\\d[\\d\\s().-]{7,}\\d(?![\\d.])",
+          "basis": "official_category"
+        }
+      ],
+      "source": {
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/G200390640",
+        "section": "Policies for writing listings > Phone numbers, addresses, email addresses, or website URLs",
+        "retrieved_at": "2026-09-20"
+      }
+    },
+    {
+      "id": "amz.no-price-availability-shipping",
+      "check": "forbidden_patterns",
+      "scope": [
+        "bullet",
+        "description",
+        "highlights"
+      ],
+      "severity": "error",
+      "description": "卖点、描述中不得出现价格、库存、成色信息或免运费等替代配送承诺",
+      "fix_hint": "删除价格、库存、配送相关表述",
+      "patterns": [
+        {
+          "pattern": "free (shipping|delivery)",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "\\$\\s?\\d",
+          "basis": "official_category"
+        },
+        {
+          "pattern": "\\bin stock\\b|\\bout of stock\\b|\\bavailable now\\b",
+          "basis": "official_category"
+        },
+        {
+          "pattern": "\\bbrand[- ]new\\b|\\blike[- ]new\\b|\\brefurbished\\b",
+          "basis": "derived"
+        }
+      ],
+      "source": {
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/G200390640",
+        "section": "Policies for writing listings > Details of availability, price, or condition; alternative shipping offers, such as free shipping",
+        "retrieved_at": "2026-09-20"
+      }
+    },
+    {
+      "id": "amz.no-promotional-copy",
+      "check": "forbidden_patterns",
+      "scope": [
+        "bullet",
+        "description",
+        "highlights"
+      ],
+      "severity": "warning",
+      "description": "卖点、描述中不得含广告或促销内容（官方禁止 promotional material，具体措辞由我推断，故为警告）",
+      "fix_hint": "删除促销措辞，只保留产品事实",
+      "patterns": [
+        {
+          "pattern": "\\bon sale\\b|\\bsale\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "\\bdiscount(ed)?\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "\\d+\\s*%\\s*off\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "\\blimited[- ]time\\b|\\bbuy now\\b|\\border now\\b|\\bhurry\\b",
+          "basis": "derived"
+        }
+      ],
+      "source": {
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/G200390640",
+        "section": "Policies for writing listings > Adverts, promotional material",
+        "retrieved_at": "2026-09-20"
+      }
+    },
+    {
+      "id": "amz.no-review-requests",
+      "check": "forbidden_patterns",
+      "scope": [
+        "bullet",
+        "description"
+      ],
+      "severity": "warning",
+      "description": "不得包含评价、用户证言，或索要好评（官方明确禁止，检测短语为我推断，故为警告）",
+      "fix_hint": "删除评价引用和求好评的话术",
+      "patterns": [
+        {
+          "pattern": "leave (us |a |an )?(\\d[- ]?star |five[- ]star |positive )?review",
+          "basis": "derived"
+        },
+        {
+          "pattern": "please (rate|review)",
+          "basis": "derived"
+        },
+        {
+          "pattern": "\\b5[- ]?stars?\\b",
+          "basis": "derived"
+        }
+      ],
+      "source": {
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/G200390640",
+        "section": "Policies for writing listings > Reviews, quotes, or testimonials; Requests for positive customer reviews",
+        "retrieved_at": "2026-09-20"
+      }
+    },
+    {
+      "id": "amz.no-html",
+      "check": "forbidden_patterns",
+      "scope": [
+        "title",
+        "bullet",
+        "description",
+        "highlights"
+      ],
+      "severity": "error",
+      "description": "不得使用 HTML 或脚本代码（描述中允许换行标签 <br>）",
+      "fix_hint": "删除 HTML 标签",
+      "patterns": [
+        {
+          "pattern": "<\\/?(?!br\\b)[a-z][^>]*>",
+          "basis": "official_category"
+        }
+      ],
+      "source": {
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/G200390640",
+        "section": "Policies for writing listings > Don't use HTML, JavaScript, or other types of code",
+        "retrieved_at": "2026-09-20"
+      }
+    },
+    {
+      "id": "amz.restricted-phrases",
+      "check": "forbidden_patterns",
+      "scope": [
+        "title",
+        "bullet",
+        "description",
+        "highlights"
+      ],
+      "severity": "error",
+      "description": "不得使用受限短语，如 “FSA/HSA eligible”",
+      "fix_hint": "删除该短语",
+      "patterns": [
+        {
+          "pattern": "FSA\\s*/\\s*HSA",
+          "basis": "official_example"
+        }
+      ],
+      "source": {
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/G200390640",
+        "section": "Policies for writing listings > Restricted phrases such as “FSA/HSA eligible”",
+        "retrieved_at": "2026-09-20"
+      }
+    },
+    {
+      "id": "amz.no-emoji",
+      "check": "emoji",
+      "scope": [
+        "title",
+        "bullet",
+        "description",
+        "highlights"
+      ],
+      "severity": "warning",
+      "description": "标题、卖点、描述中不宜使用 emoji 或符号（官方原文限定为“每个词开头的符号”，故为警告）",
+      "fix_hint": "删除 emoji 和装饰性符号",
+      "source": {
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/G200390640",
+        "section": "Policies for writing listings > Use of emojis, emoticons, or symbols at the beginning of each word is prohibited",
+        "retrieved_at": "2026-09-20"
+      }
+    },
+    {
+      "id": "amz.claim.false-certification",
+      "check": "claim_needs_fact",
+      "scope": [
+        "all"
+      ],
+      "severity": "error",
+      "description": "认证类声称（如 “FDA Approved”“CE Certified”）必须有事实表中的依据，否则视为虚假认证",
+      "fix_hint": "删除该认证声称，或先在事实表中补充经卖家确认的认证证明",
+      "patterns": [
+        {
+          "pattern": "\\bFDA[- ](approved|cleared)\\b",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "\\bCE[- ]certified\\b",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "\\b(FCC|RoHS|UL)[- ](certified|approved|listed|compliant)\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "\\b(CE|FCC|RoHS)\\b",
+          "basis": "derived"
+        }
+      ],
+      "fact_patterns": [
+        "\\bFDA\\b",
+        "\\bCE\\b",
+        "\\bFCC\\b",
+        "\\bUL\\b",
+        "RoHS",
+        "认证",
+        "certif"
+      ],
+      "source": {
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/G202024200",
+        "section": "Claims guidelines > Comply with all applicable requirements",
+        "retrieved_at": "2026-09-20"
+      }
+    },
+    {
+      "id": "amz.claim.unqualified-superlative",
+      "check": "forbidden_patterns",
+      "scope": [
+        "all"
+      ],
+      "severity": "error",
+      "description": "不得使用没有依据的最高级或绝对化表述（官方示例：best、100% pure、guaranteed、twice as effective、30% more powerful）",
+      "fix_hint": "删除最高级表述；如有客观对比数据，需先在事实表中提供并人工确认",
+      "patterns": [
+        {
+          "pattern": "\\bbest\\b",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "100%\\s*pure",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "\\bguarantee(d|s)?\\b",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "(twice|two times) as (effective|powerful|strong)",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "\\d+\\s*%\\s*more\\s+(powerful|effective)",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "#\\s*1\\b|\\bnumber one\\b|\\bno\\.?\\s*1\\b",
+          "basis": "derived"
+        },
+        {
+          "pattern": "world'?s (best|first|only)|\\bunbeatable\\b",
+          "basis": "derived"
+        }
+      ],
+      "source": {
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/G202024200",
+        "section": "Claims guidelines > Refrain from unqualified superlatives",
+        "retrieved_at": "2026-09-20"
+      }
+    },
+    {
+      "id": "amz.claim.disease",
+      "check": "forbidden_patterns",
+      "scope": [
+        "all"
+      ],
+      "severity": "error",
+      "description": "不得暗示产品能诊断、治疗、缓解或预防疾病（官方给出了疾病清单，清单只是示例）",
+      "fix_hint": "删除疾病功效表述；食品/保健品尤其需要人工复核",
+      "patterns": [
+        {
+          "pattern": "\\b(treat(s|ing|ment)?|cures?|curing|prevent(s|ing)?|mitigat(e|es|ing)|heal(s|ing)?|relie(f|ve|ves)|reduc(e|es|ing)|alleviat(e|es|ing)|diagnos(e|es|ing))\\b[^.!?\\n]{0,60}\\b(AIDS|ADHD|ALS|Alzheimer'?s|cancer|cataracts?|celiac|chlamydia|concussions?|coronavirus|covid[- ]?19|crohn'?s|cystic fibrosis|dementia|depression|diabet(es|ic)|epilepsy|glaucoma|gonorrhea|gout|hepatitis|herpes|HIV|HPV|influenza|kidney disease|liver disease|lupus|meningitis|multiple sclerosis|muscular dystrophy|obesity|parkinson'?s|seizures?|stroke|syphilis|tumou?rs?|arthritis|anti[- ]?(bacterial|fungal|microbial))\\b",
+          "basis": "official_category"
+        },
+        {
+          "pattern": "\\b(AIDS|ADHD|ALS|Alzheimer'?s|cancer|cataracts?|celiac|chlamydia|concussions?|coronavirus|covid[- ]?19|crohn'?s|cystic fibrosis|dementia|depression|diabet(es|ic)|epilepsy|glaucoma|gonorrhea|gout|hepatitis|herpes|HIV|HPV|influenza|kidney disease|liver disease|lupus|meningitis|multiple sclerosis|muscular dystrophy|obesity|parkinson'?s|seizures?|stroke|syphilis|tumou?rs?|arthritis|anti[- ]?(bacterial|fungal|microbial))\\b[^.!?\\n]{0,40}\\b(treat(s|ing|ment)?|cures?|curing|prevent(s|ing)?|mitigat(e|es|ing)|heal(s|ing)?|relie(f|ve|ves)|reduc(e|es|ing)|alleviat(e|es|ing)|diagnos(e|es|ing))\\b",
+          "basis": "official_category"
+        }
+      ],
+      "source": {
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/G202024200",
+        "section": "Examples of prohibited products > Disease claims",
+        "retrieved_at": "2026-09-20"
+      }
+    },
+    {
+      "id": "amz.claim.disease-term",
+      "check": "forbidden_patterns",
+      "scope": [
+        "all"
+      ],
+      "severity": "warning",
+      "description": "出现官方疾病清单中的词，请确认不构成疾病功效声称",
+      "fix_hint": "确认该词不是在暗示治疗或预防；若是，请删除",
+      "patterns": [
+        {
+          "pattern": "\\b(AIDS|ADHD|ALS|Alzheimer'?s|cancer|cataracts?|celiac|chlamydia|concussions?|coronavirus|covid[- ]?19|crohn'?s|cystic fibrosis|dementia|depression|diabet(es|ic)|epilepsy|glaucoma|gonorrhea|gout|hepatitis|herpes|HIV|HPV|influenza|kidney disease|liver disease|lupus|meningitis|multiple sclerosis|muscular dystrophy|obesity|parkinson'?s|seizures?|stroke|syphilis|tumou?rs?|arthritis|anti[- ]?(bacterial|fungal|microbial))\\b",
+          "basis": "official_example"
+        }
+      ],
+      "source": {
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/G202024200",
+        "section": "Examples of prohibited products > Disease claims",
+        "retrieved_at": "2026-09-20"
+      },
+      "suppressed_by": "amz.claim.disease"
+    },
+    {
+      "id": "amz.claim.environmental",
+      "check": "claim_needs_fact",
+      "scope": [
+        "all"
+      ],
+      "severity": "error",
+      "description": "环保类声称（官方示例：eco-friendly、sustainable、carbon-neutral）必须有事实表中的依据",
+      "fix_hint": "删除环保声称，或在事实表中补充可验证的依据",
+      "patterns": [
+        {
+          "pattern": "\\beco[- ]?friendly\\b",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "\\bsustainabl(e|y)\\b",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "\\bcarbon[- ]neutral\\b",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "\\bbiodegradable\\b|\\bcompostable\\b|\\brecyclable\\b",
+          "basis": "derived"
+        }
+      ],
+      "fact_patterns": [
+        "eco",
+        "sustainab",
+        "recycl",
+        "biodegrad",
+        "carbon",
+        "环保",
+        "可回收"
+      ],
+      "source": {
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/G202024200",
+        "section": "Examples of prohibited products > Environmental claims",
+        "retrieved_at": "2026-09-20"
+      }
+    },
+    {
+      "id": "amz.claim.verifiable",
+      "check": "claim_needs_fact",
+      "scope": [
+        "all"
+      ],
+      "severity": "error",
+      "description": "可验证性声称（官方示例：lasts 10 years、100% organic、Made in Italy）必须有事实表中的依据",
+      "fix_hint": "删除该声称，或在事实表中补充依据",
+      "patterns": [
+        {
+          "pattern": "\\blasts?\\s+(up to\\s+)?\\d+\\s*(years?|months?)\\b",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "100%\\s*organic",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "\\bmade in (italy)\\b",
+          "basis": "official_example"
+        },
+        {
+          "pattern": "\\bmade in \\w+",
+          "basis": "derived"
+        }
+      ],
+      "fact_patterns": [
+        "made in",
+        "organic",
+        "lasts?",
+        "寿命",
+        "使用寿命",
+        "产地"
+      ],
+      "source": {
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/G202024200",
+        "section": "Claims guidelines > Ensure accuracy and verifiability",
+        "retrieved_at": "2026-09-20"
+      }
+    }
+  ],
+  "unverified": [
+    "Amazon 卖点的条数与长度限制（风格指南未读到）",
+    "Amazon 描述的长度限制",
+    "标题中品牌名含特殊字符的例外细节（官方 FAQ 提及，正文未读全）",
+    "本规则集只声明适用于美国站（en-US）；官方标题规则页称适用于除沙特、埃及、土耳其、阿联酋外的站点，但其他站点的其余规则未核实",
+    "官方说明的禁止声称类型“并不穷尽”，规则只覆盖官方点名的类型"
+  ]
+}
