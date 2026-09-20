@@ -1,0 +1,104 @@
+{
+  "product": {
+    "name": "iPhone 15 Pro 手机壳",
+    "brand": null,
+    "category": {
+      "value": "Consumer Electronics > Accessories > Phone Cases",
+      "confidence": 0.9
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品是iPhone 15 Pro手机壳。",
+      "source": "user_input",
+      "evidence": "iPhone 15 Pro 手机壳"
+    },
+    {
+      "id": "F2",
+      "statement": "手机壳采用TPU+PC双层结构。",
+      "source": "user_input",
+      "evidence": "TPU+PC双层"
+    },
+    {
+      "id": "F3",
+      "statement": "手机壳兼容磁吸MagSafe。",
+      "source": "user_input",
+      "evidence": "磁吸MagSafe兼容"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "手机壳",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "适用型号",
+      "value": "iPhone 15 Pro",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "材质结构",
+      "value": "TPU+PC双层",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "磁吸兼容",
+      "value": "MagSafe",
+      "fact_ids": [
+        "F3"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "军规级防摔",
+      "reason": "输入未提供军规标准、检测报告或认证依据，属于无依据的安全防护声称。"
+    },
+    {
+      "claim": "防摔1.5米",
+      "reason": "输入未提供跌落测试报告或认证依据，安全性/防护性能声称不能作为事实。"
+    },
+    {
+      "claim": "MagSafe认证/MFi认证",
+      "reason": "输入仅称磁吸MagSafe兼容，未提供MagSafe/MFi认证或授权证明。"
+    },
+    {
+      "claim": "防水/防水等级",
+      "reason": "输入未提及防水能力或防水等级，也未提供检测报告。"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "尺寸/厚度",
+      "why_needed": "买家需确认与iPhone 15 Pro的贴合度以及按键、镜头开孔是否匹配。"
+    },
+    {
+      "field": "重量",
+      "why_needed": "影响手感和日常携带体验。"
+    },
+    {
+      "field": "颜色/外观",
+      "why_needed": "买家购买时需要选择。"
+    },
+    {
+      "field": "磁吸强度/磁吸规格",
+      "why_needed": "买家需确认搭配MagSafe配件时的吸附稳定性。"
+    },
+    {
+      "field": "认证与检测证明（如CE、FCC、FDA、跌落测试报告）",
+      "why_needed": "输入未提供，无法支撑防摔1.5米和军规级防摔等声称，也影响合规与信任。"
+    },
+    {
+      "field": "保修/售后政策",
+      "why_needed": "买家需要了解质量问题如何处理。"
+    }
+  ]
+}

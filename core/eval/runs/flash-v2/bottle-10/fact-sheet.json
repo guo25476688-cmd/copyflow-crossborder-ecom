@@ -1,0 +1,147 @@
+{
+  "product": {
+    "name": "304 stainless steel insulated bottle 500ml",
+    "brand": null,
+    "category": {
+      "value": "Home & Kitchen > Kitchen & Dining > Drinkware > Thermoses & Travel Bottles",
+      "confidence": 0.6
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "304 stainless steel insulated bottle",
+      "source": "user_input",
+      "evidence": "304 stainless steel insulated bottle"
+    },
+    {
+      "id": "F2",
+      "statement": "容量 500ml",
+      "source": "user_input",
+      "evidence": "500ml"
+    },
+    {
+      "id": "F3",
+      "statement": "保温 12 小时",
+      "source": "user_input",
+      "evidence": "保温12小时"
+    },
+    {
+      "id": "F4",
+      "statement": "保冷 24 小时",
+      "source": "user_input",
+      "evidence": "保冷24小时"
+    },
+    {
+      "id": "F5",
+      "statement": "BPA free",
+      "source": "user_input",
+      "evidence": "BPA free"
+    },
+    {
+      "id": "F6",
+      "statement": "带茶漏",
+      "source": "user_input",
+      "evidence": "带茶漏"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "insulated bottle",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "Material",
+      "value": "304 stainless steel",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "Capacity",
+      "value": "500ml",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "保温时长",
+      "value": "12小时",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "保冷时长",
+      "value": "24小时",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "BPA",
+      "value": "free",
+      "fact_ids": [
+        "F5"
+      ]
+    },
+    {
+      "name": "配件",
+      "value": "茶漏",
+      "fact_ids": [
+        "F6"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "World's best insulation!!",
+      "reason": "绝对化、无法验证的夸大表述"
+    },
+    {
+      "claim": "FDA/LFGB 食品级认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "通过304不锈钢检测",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "防漏/防水等级（如 IPX7）",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "保温48小时/保冷48小时",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "食品接触材料认证/检测报告（如 FDA、LFGB）",
+      "why_needed": "输入未提供，需证明产品符合食品接触安全法规，降低合规风险。"
+    },
+    {
+      "field": "BPA free 检测报告",
+      "why_needed": "输入未提供，无法验证 BPA free 声称，买家可能要求证明。"
+    },
+    {
+      "field": "304不锈钢材质检测报告",
+      "why_needed": "输入未提供，需证明材质等级，避免材质虚标。"
+    },
+    {
+      "field": "保温/保冷测试条件与报告",
+      "why_needed": "输入未说明测试条件，无法验证 12/24 小时性能声称。"
+    },
+    {
+      "field": "尺寸、重量、口径、颜色",
+      "why_needed": "买家需要确认便携性、适配性和外观。"
+    },
+    {
+      "field": "清洗方式、是否可洗碗机、保修",
+      "why_needed": "买家关心使用维护和售后。"
+    }
+  ]
+}

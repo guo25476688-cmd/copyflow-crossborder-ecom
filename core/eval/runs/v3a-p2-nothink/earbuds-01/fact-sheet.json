@@ -1,0 +1,114 @@
+{
+  "product": {
+    "name": "HoverGo Pro 无线蓝牙耳机",
+    "brand": null,
+    "category": {
+      "value": "Consumer Electronics > Headphones",
+      "confidence": 0.9
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "蓝牙版本为5.3",
+      "source": "user_input",
+      "evidence": "蓝牙5.3"
+    },
+    {
+      "id": "F2",
+      "statement": "支持主动降噪",
+      "source": "user_input",
+      "evidence": "主动降噪"
+    },
+    {
+      "id": "F3",
+      "statement": "续航30小时（含充电盒）",
+      "source": "user_input",
+      "evidence": "续航30小时（含充电盒）"
+    },
+    {
+      "id": "F4",
+      "statement": "防水等级为IPX5",
+      "source": "user_input",
+      "evidence": "IPX5防水"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "蓝牙版本",
+      "value": "5.3",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "主动降噪",
+      "value": "支持",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "续航时间",
+      "value": "30小时（含充电盒）",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "防水等级",
+      "value": "IPX5",
+      "fact_ids": [
+        "F4"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "降噪效果吊打AirPods",
+      "reason": "与竞品比较，属于夸大宣传"
+    },
+    {
+      "claim": "具备CE认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "具备FCC认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "具备FDA认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "具备检测报告",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "尺寸",
+      "why_needed": "买家关心佩戴舒适度和便携性"
+    },
+    {
+      "field": "重量",
+      "why_needed": "买家关心佩戴舒适度和便携性"
+    },
+    {
+      "field": "颜色",
+      "why_needed": "买家关心外观选择"
+    },
+    {
+      "field": "适用型号",
+      "why_needed": "买家关心兼容性"
+    },
+    {
+      "field": "保修",
+      "why_needed": "买家关心售后保障"
+    },
+    {
+      "field": "认证与检测证明（如CE、FCC、FDA、检测报告）",
+      "why_needed": "买家关心产品合规性和安全性，输入未提供"
+    }
+  ]
+}

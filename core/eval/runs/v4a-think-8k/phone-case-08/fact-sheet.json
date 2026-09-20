@@ -1,0 +1,104 @@
+{
+  "product": {
+    "name": "iPhone 15 Pro 手机壳",
+    "brand": null,
+    "category": {
+      "value": "Cell Phones & Accessories > Phone Cases",
+      "confidence": 0.95
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品为 iPhone 15 Pro 手机壳",
+      "source": "user_input",
+      "evidence": "iPhone 15 Pro 手机壳"
+    },
+    {
+      "id": "F2",
+      "statement": "材质为 TPU+PC 双层",
+      "source": "user_input",
+      "evidence": "TPU+PC双层"
+    },
+    {
+      "id": "F3",
+      "statement": "磁吸兼容 MagSafe",
+      "source": "user_input",
+      "evidence": "磁吸MagSafe兼容"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "手机壳",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "适用型号",
+      "value": "iPhone 15 Pro",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "材质",
+      "value": "TPU+PC双层",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "磁吸兼容",
+      "value": "MagSafe兼容",
+      "fact_ids": [
+        "F3"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "军规级防摔",
+      "reason": "夸大/绝对化，输入未提供军规认证或防摔检测依据"
+    },
+    {
+      "claim": "防摔1.5米",
+      "reason": "属于防护性能/安全性声称，输入未提供检测报告或认证依据"
+    },
+    {
+      "claim": "防水等级（如 IP68）",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "认证（如 CE、FCC、RoHS）",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "认证与检测证明（如 CE、FCC、RoHS、防摔测试报告）",
+      "why_needed": "用于证明防摔性能及合规性，输入未提供"
+    },
+    {
+      "field": "尺寸、厚度、重量",
+      "why_needed": "买家需要确认贴合度、手感和物流成本"
+    },
+    {
+      "field": "颜色或外观选项",
+      "why_needed": "买家需要选择款式"
+    },
+    {
+      "field": "磁吸强度及是否影响无线充电",
+      "why_needed": "买家需要确认 MagSafe 使用体验"
+    },
+    {
+      "field": "清洗/保养方式",
+      "why_needed": "买家需要知道如何清洁维护"
+    },
+    {
+      "field": "保修期与售后政策",
+      "why_needed": "买家需要了解购买保障"
+    }
+  ]
+}

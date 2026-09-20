@@ -1,0 +1,124 @@
+{
+  "product": {
+    "name": "维生素D3+K2软胶囊",
+    "brand": null,
+    "category": {
+      "value": "Health & Household > Vitamins & Dietary Supplements > Vitamin D",
+      "confidence": 0.75
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品为维生素D3+K2软胶囊。",
+      "source": "user_input",
+      "evidence": "维生素D3+K2软胶囊"
+    },
+    {
+      "id": "F2",
+      "statement": "包装规格为60粒装。",
+      "source": "user_input",
+      "evidence": "60粒装"
+    },
+    {
+      "id": "F3",
+      "statement": "每粒含维生素D3 2000IU。",
+      "source": "user_input",
+      "evidence": "每粒含维生素D3 2000IU"
+    },
+    {
+      "id": "F4",
+      "statement": "产品无糖。",
+      "source": "user_input",
+      "evidence": "无糖"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "维生素D3+K2软胶囊",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "剂型",
+      "value": "软胶囊",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "主要成分",
+      "value": "维生素D3+K2",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "包装规格",
+      "value": "60粒装",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "维生素D3含量",
+      "value": "每粒2000IU",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "糖分",
+      "value": "无糖",
+      "fact_ids": [
+        "F4"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "补钙好帮手",
+      "reason": "促销性健康声称，输入未提供具体依据或监管批准。"
+    },
+    {
+      "claim": "有助改善骨质疏松",
+      "reason": "涉及疾病/健康功效声称，需监管审批和临床证据，输入未提供。"
+    },
+    {
+      "claim": "增强免疫力",
+      "reason": "健康功效声称，需科学或监管依据，输入未提供。"
+    },
+    {
+      "claim": "通过FDA认证",
+      "reason": "输入未提供。"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "维生素K2的剂量与形式（如MK-4或MK-7）",
+      "why_needed": "买家需要判断K2摄入量和配方完整性。"
+    },
+    {
+      "field": "用法用量（每日服用粒数、是否随餐）",
+      "why_needed": "影响服用安全性和效果，买家需要按说明服用。"
+    },
+    {
+      "field": "适用人群与禁忌人群",
+      "why_needed": "特殊人群可能不适合服用，需避免风险。"
+    },
+    {
+      "field": "保质期、生产日期与储存条件",
+      "why_needed": "买家需判断产品新鲜度和保存要求。"
+    },
+    {
+      "field": "认证与检测证明（如FDA、GMP、第三方检测报告）",
+      "why_needed": "输入未提供，买家需核实合规与质量。"
+    },
+    {
+      "field": "辅料、过敏原与胶囊成分（如明胶）",
+      "why_needed": "买家需规避过敏原或饮食限制。"
+    }
+  ]
+}

@@ -14,3 +14,8 @@ dist/
 # Cloudflare Worker 本地密钥（真实 key 只放 wrangler secret，不进仓库）
 worker/.dev.vars
 .wrangler/
+
+# 本地密钥文件（DeepSeek 等密钥只放环境变量或此类文件，绝不提交）
+.env
+*.env
+core/.env

@@ -1,0 +1,97 @@
+{
+  "product": {
+    "name": "猫抓板",
+    "brand": null,
+    "category": {
+      "value": "Pet Supplies > Cats > Cat Furniture > Cat Scratchers",
+      "confidence": 0.7
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品为猫抓板",
+      "source": "user_input",
+      "evidence": "猫抓板"
+    },
+    {
+      "id": "F2",
+      "statement": "材质为瓦楞纸",
+      "source": "user_input",
+      "evidence": "瓦楞纸"
+    },
+    {
+      "id": "F3",
+      "statement": "尺寸为 40cm",
+      "source": "user_input",
+      "evidence": "40cm"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "猫抓板",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "材质",
+      "value": "瓦楞纸",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "尺寸",
+      "value": "40cm",
+      "fact_ids": [
+        "F3"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "产品通过 CE / FCC / FDA 等认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "产品具备防水等级（如 IPX 级）",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "产品附有检测报告或材质安全检测证明",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "产品无毒无害、环保可回收或耐用耐抓",
+      "reason": "输入未提供检测或认证依据"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "认证与检测证明（如 CE、FCC、FDA、检测报告）",
+      "why_needed": "跨境平台上架常需提供合规认证与检测依据，输入未给出任何证明"
+    },
+    {
+      "field": "40cm 对应的具体维度（长、宽、高或直径）",
+      "why_needed": "买家需据此判断占地空间与适配位置，仅写 40cm 无法确定"
+    },
+    {
+      "field": "产品重量",
+      "why_needed": "影响运费计算与买家对稳定性的判断"
+    },
+    {
+      "field": "颜色",
+      "why_needed": "颜色是买家选购时的常见筛选条件"
+    },
+    {
+      "field": "适用猫咪体型或承重范围",
+      "why_needed": "买家需确认自家猫咪能否使用"
+    },
+    {
+      "field": "清洁方式或更换周期、保修政策",
+      "why_needed": "影响使用体验与售后预期"
+    }
+  ]
+}

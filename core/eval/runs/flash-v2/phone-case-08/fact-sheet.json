@@ -1,0 +1,110 @@
+{
+  "product": {
+    "name": "iPhone 15 Pro 手机壳",
+    "brand": null,
+    "category": {
+      "value": "Consumer Electronics > Mobile Accessories > Phone Cases",
+      "confidence": 0.9
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品为 iPhone 15 Pro 手机壳。",
+      "source": "user_input",
+      "evidence": "iPhone 15 Pro 手机壳"
+    },
+    {
+      "id": "F2",
+      "statement": "产品采用 TPU+PC 双层结构。",
+      "source": "user_input",
+      "evidence": "TPU+PC双层"
+    },
+    {
+      "id": "F3",
+      "statement": "产品防摔高度为 1.5 米。",
+      "source": "user_input",
+      "evidence": "防摔1.5米"
+    },
+    {
+      "id": "F4",
+      "statement": "产品磁吸并兼容 MagSafe。",
+      "source": "user_input",
+      "evidence": "磁吸MagSafe兼容"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "适用机型",
+      "value": "iPhone 15 Pro",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "材质结构",
+      "value": "TPU+PC双层",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "防摔高度",
+      "value": "1.5米",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "MagSafe兼容性",
+      "value": "磁吸MagSafe兼容",
+      "fact_ids": [
+        "F4"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "军规级防摔",
+      "reason": "输入未提供军规标准、测试方法或检测报告，不能作为已验证事实声称。"
+    },
+    {
+      "claim": "产品通过 CE/FCC/RoHS 认证",
+      "reason": "输入未提供任何认证信息。"
+    },
+    {
+      "claim": "产品具有 IP68 或任何防水等级",
+      "reason": "输入未提供防水等级或相关检测信息。"
+    },
+    {
+      "claim": "产品获得苹果官方 MagSafe 认证",
+      "reason": "输入仅写磁吸MagSafe兼容，未提供官方认证依据。"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "认证与检测证明（如 CE、FCC、RoHS、防摔检测报告）",
+      "why_needed": "合规上架与消费者信任需要，尤其军规级/防摔宣称应有检测证明支撑。"
+    },
+    {
+      "field": "尺寸（长宽厚）",
+      "why_needed": "消费者需要确认是否贴合手机、是否影响按键和镜头。"
+    },
+    {
+      "field": "重量",
+      "why_needed": "消费者关心便携性和手感。"
+    },
+    {
+      "field": "颜色/外观款式",
+      "why_needed": "购买决策关键属性。"
+    },
+    {
+      "field": "保修/售后政策",
+      "why_needed": "消费者关心质量问题和退换保障。"
+    },
+    {
+      "field": "清洗方式/耐污性",
+      "why_needed": "手机壳日常清洁和耐用性信息。"
+    }
+  ]
+}

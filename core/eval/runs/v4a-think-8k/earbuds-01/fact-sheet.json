@@ -1,0 +1,123 @@
+{
+  "product": {
+    "name": "HoverGo Pro 无线蓝牙耳机",
+    "brand": null,
+    "category": {
+      "value": "Consumer Electronics > Headphones",
+      "confidence": 0.8
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品为 HoverGo Pro 无线蓝牙耳机。",
+      "source": "user_input",
+      "evidence": "HoverGo Pro 无线蓝牙耳机"
+    },
+    {
+      "id": "F2",
+      "statement": "支持蓝牙5.3。",
+      "source": "user_input",
+      "evidence": "蓝牙5.3"
+    },
+    {
+      "id": "F3",
+      "statement": "具备主动降噪功能。",
+      "source": "user_input",
+      "evidence": "主动降噪"
+    },
+    {
+      "id": "F4",
+      "statement": "续航30小时（含充电盒）。",
+      "source": "user_input",
+      "evidence": "续航30小时（含充电盒）"
+    },
+    {
+      "id": "F5",
+      "statement": "支持IPX5防水。",
+      "source": "user_input",
+      "evidence": "IPX5防水"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品名称",
+      "value": "HoverGo Pro 无线蓝牙耳机",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "蓝牙版本",
+      "value": "5.3",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "降噪类型",
+      "value": "主动降噪",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "续航时间",
+      "value": "30小时（含充电盒）",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "防水等级",
+      "value": "IPX5",
+      "fact_ids": [
+        "F5"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "降噪效果吊打AirPods",
+      "reason": "与竞品比较且夸大，输入未提供客观比较或测试依据"
+    },
+    {
+      "claim": "通过CE/FCC/FDA认证或提供检测报告",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "采用环保无毒材质",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "HiFi/无损音质",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "认证与检测证明（如 CE、FCC、FDA、检测报告）",
+      "why_needed": "用于合规上架和支撑产品安全或性能声称，输入未提供"
+    },
+    {
+      "field": "尺寸和重量",
+      "why_needed": "买家会关心佩戴舒适度和物流成本，输入未提供"
+    },
+    {
+      "field": "颜色与外观选项",
+      "why_needed": "影响买家购买决策，输入未提供"
+    },
+    {
+      "field": "兼容设备与蓝牙协议支持",
+      "why_needed": "买家需要确认是否适配自己的手机或电脑，输入未提供"
+    },
+    {
+      "field": "充电时间与充电接口",
+      "why_needed": "买家需要了解充电便利性，输入未提供"
+    },
+    {
+      "field": "保修期与售后政策",
+      "why_needed": "买家需要评估售后保障，输入未提供"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "product": {
+    "name": "瑜伽垫",
+    "brand": null,
+    "category": {
+      "value": "Sports & Outdoors > Fitness & Exercise > Yoga Mats",
+      "confidence": 0.9
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品为瑜伽垫",
+      "source": "user_input",
+      "evidence": "瑜伽垫"
+    },
+    {
+      "id": "F2",
+      "statement": "材质为TPE",
+      "source": "user_input",
+      "evidence": "TPE材质"
+    },
+    {
+      "id": "F3",
+      "statement": "尺寸为183x61cm",
+      "source": "user_input",
+      "evidence": "183x61cm"
+    },
+    {
+      "id": "F4",
+      "statement": "厚度为6mm",
+      "source": "user_input",
+      "evidence": "厚6mm"
+    },
+    {
+      "id": "F5",
+      "statement": "表面为防滑纹理",
+      "source": "user_input",
+      "evidence": "防滑纹理"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "瑜伽垫",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "材质",
+      "value": "TPE",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "尺寸",
+      "value": "183x61cm",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "厚度",
+      "value": "6mm",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "表面纹理",
+      "value": "防滑纹理",
+      "fact_ids": [
+        "F5"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "绝对环保",
+      "reason": "绝对化用语，输入未提供任何环保认证或检测依据"
+    },
+    {
+      "claim": "无毒无味",
+      "reason": "属于安全健康类声称，输入未提供任何检测报告或认证支撑"
+    },
+    {
+      "claim": "通过环保认证（如SGS、REACH、RoHS等）",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "防滑等级/防滑系数（如R值、摩擦系数）",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "可降解或可回收",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "抗菌、防霉处理",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "颜色",
+      "why_needed": "买家选购时需确认颜色是否符合预期"
+    },
+    {
+      "field": "重量",
+      "why_needed": "影响携带便利性与运费判断"
+    },
+    {
+      "field": "清洗与保养方式",
+      "why_needed": "TPE瑜伽垫的清洁方式直接影响使用寿命，买家会关注"
+    },
+    {
+      "field": "质保或售后政策",
+      "why_needed": "买家需要判断出现质量问题时能否退换"
+    },
+    {
+      "field": "品牌或制造商",
+      "why_needed": "买家据以判断品牌可信度与来源"
+    },
+    {
+      "field": "包装清单（如收纳带、背带）",
+      "why_needed": "决定到手配件是否满足携带需求"
+    }
+  ]
+}

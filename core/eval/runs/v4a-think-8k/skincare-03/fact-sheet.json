@@ -1,0 +1,110 @@
+{
+  "product": {
+    "name": "玻尿酸神经酰胺保湿面霜",
+    "brand": null,
+    "category": {
+      "value": "Beauty & Personal Care > Skin Care > Moisturizers",
+      "confidence": 0.8
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品名为玻尿酸神经酰胺保湿面霜",
+      "source": "user_input",
+      "evidence": "玻尿酸神经酰胺保湿面霜"
+    },
+    {
+      "id": "F2",
+      "statement": "容量为50ml",
+      "source": "user_input",
+      "evidence": "50ml"
+    },
+    {
+      "id": "F3",
+      "statement": "适合干皮",
+      "source": "user_input",
+      "evidence": "适合干皮"
+    },
+    {
+      "id": "F4",
+      "statement": "含透明质酸钠、神经酰胺",
+      "source": "user_input",
+      "evidence": "含透明质酸钠、神经酰胺"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品名称",
+      "value": "玻尿酸神经酰胺保湿面霜",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "净含量",
+      "value": "50ml",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "适用肤质",
+      "value": "干皮",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "成分",
+      "value": "透明质酸钠、神经酰胺",
+      "fact_ids": [
+        "F4"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "7天美白祛斑",
+      "reason": "功效宣称，输入未提供检测或特证依据"
+    },
+    {
+      "claim": "医美级修复屏障",
+      "reason": "医疗级/修复功效夸大宣称，输入未提供依据"
+    },
+    {
+      "claim": "保湿",
+      "reason": "功效宣称，输入未提供检测或认证依据"
+    },
+    {
+      "claim": "已通过FDA/CE认证或持有化妆品特证/检测报告",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "品牌",
+      "why_needed": "输入未提供，影响品牌识别和合规信息展示"
+    },
+    {
+      "field": "完整成分表及各成分浓度",
+      "why_needed": "输入只列出透明质酸钠和神经酰胺，买家需要确认全成分和含量"
+    },
+    {
+      "field": "化妆品备案/特证/检测报告",
+      "why_needed": "输入未提供，美白祛斑、修复屏障等功效宣称需要合规依据"
+    },
+    {
+      "field": "使用方法与使用频率",
+      "why_needed": "买家需要知道如何正确使用产品"
+    },
+    {
+      "field": "保质期、生产日期/批号、储存条件",
+      "why_needed": "电商销售需要提供产品效期和储存信息"
+    },
+    {
+      "field": "适用肤质测试依据",
+      "why_needed": "输入仅写适合干皮，缺少测试或验证信息"
+    }
+  ]
+}

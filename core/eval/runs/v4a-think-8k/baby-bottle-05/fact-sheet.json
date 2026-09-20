@@ -1,0 +1,151 @@
+{
+  "product": {
+    "name": "婴儿玻璃奶瓶 240ml",
+    "brand": null,
+    "category": {
+      "value": "Baby > Feeding > Baby Bottles",
+      "confidence": 0.85
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品为婴儿玻璃奶瓶。",
+      "source": "user_input",
+      "evidence": "婴儿玻璃奶瓶"
+    },
+    {
+      "id": "F2",
+      "statement": "容量为240ml。",
+      "source": "user_input",
+      "evidence": "240ml"
+    },
+    {
+      "id": "F3",
+      "statement": "口径为宽口径。",
+      "source": "user_input",
+      "evidence": "宽口径"
+    },
+    {
+      "id": "F4",
+      "statement": "奶嘴材质为硅胶。",
+      "source": "user_input",
+      "evidence": "硅胶奶嘴"
+    },
+    {
+      "id": "F5",
+      "statement": "可耐高温。",
+      "source": "user_input",
+      "evidence": "耐高温"
+    },
+    {
+      "id": "F6",
+      "statement": "可煮沸消毒。",
+      "source": "user_input",
+      "evidence": "可煮沸消毒"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "婴儿玻璃奶瓶",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "瓶身材质",
+      "value": "玻璃",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "容量",
+      "value": "240ml",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "口径",
+      "value": "宽口径",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "奶嘴材质",
+      "value": "硅胶",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "耐温性",
+      "value": "耐高温",
+      "fact_ids": [
+        "F5"
+      ]
+    },
+    {
+      "name": "消毒方式",
+      "value": "可煮沸消毒",
+      "fact_ids": [
+        "F6"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "绝对安全",
+      "reason": "绝对化安全性声称，输入未提供检测或认证依据。"
+    },
+    {
+      "claim": "妈妈们都放心",
+      "reason": "主观保证性声称，无法验证，输入未提供依据。"
+    },
+    {
+      "claim": "通过 FDA 认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "不含 BPA / BPA Free",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "防胀气",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "可微波炉消毒",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "认证与检测证明（如食品接触材料检测、FDA、CE、检测报告）",
+      "why_needed": "输入未提供，无法证明玻璃、硅胶等材质的安全性与合规性，影响上架和买家信任。"
+    },
+    {
+      "field": "适用年龄段/月龄",
+      "why_needed": "婴儿奶瓶需明确适用阶段，买家据此判断是否适合自家宝宝。"
+    },
+    {
+      "field": "奶嘴流量/孔径/型号",
+      "why_needed": "不同月龄和喂养需求对应不同流量，影响购买决策。"
+    },
+    {
+      "field": "瓶身玻璃具体类型（如高硼硅玻璃）",
+      "why_needed": "影响耐热性、耐温差和安全性判断。"
+    },
+    {
+      "field": "煮沸消毒的具体条件（温度、时间、是否可微波/蒸汽消毒）",
+      "why_needed": "输入只说可煮沸，买家需要知道具体消毒方法和限制。"
+    },
+    {
+      "field": "尺寸、重量、颜色",
+      "why_needed": "买家关心使用手感和物流信息，输入未提供。"
+    }
+  ]
+}

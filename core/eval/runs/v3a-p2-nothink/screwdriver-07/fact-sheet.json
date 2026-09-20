@@ -1,0 +1,145 @@
+{
+  "product": {
+    "name": "Cordless screwdriver",
+    "brand": null,
+    "category": {
+      "value": "Tools & Home Improvement > Power Tools > Screwdrivers",
+      "confidence": 0.7
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "Cordless screwdriver 3.6V 1500mAh Li-ion",
+      "source": "user_input",
+      "evidence": "Cordless screwdriver 3.6V 1500mAh Li-ion"
+    },
+    {
+      "id": "F2",
+      "statement": "扭矩 5N.m",
+      "source": "user_input",
+      "evidence": "扭矩 5N.m"
+    },
+    {
+      "id": "F3",
+      "statement": "附赠24 pcs bits",
+      "source": "user_input",
+      "evidence": "附赠24 pcs bits"
+    },
+    {
+      "id": "F4",
+      "statement": "USB-C充电",
+      "source": "user_input",
+      "evidence": "USB-C充电"
+    },
+    {
+      "id": "F5",
+      "statement": "充满约3h",
+      "source": "user_input",
+      "evidence": "充满约3h"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "电压",
+      "value": "3.6V",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "电池容量",
+      "value": "1500mAh",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "电池类型",
+      "value": "Li-ion",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "扭矩",
+      "value": "5N.m",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "附赠配件",
+      "value": "24 pcs bits",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "充电接口",
+      "value": "USB-C",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "充电时间",
+      "value": "约3h",
+      "fact_ids": [
+        "F5"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "Professional grade",
+      "reason": "夸大宣传，无客观标准或证据支持"
+    },
+    {
+      "claim": "比博世更耐用",
+      "reason": "与竞品比较，无依据"
+    },
+    {
+      "claim": "CE认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "FCC认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "防水等级",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "检测报告",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "尺寸",
+      "why_needed": "买家需要了解产品大小是否适合使用场景"
+    },
+    {
+      "field": "重量",
+      "why_needed": "买家关心便携性和使用舒适度"
+    },
+    {
+      "field": "颜色",
+      "why_needed": "买家可能对颜色有偏好"
+    },
+    {
+      "field": "适用型号",
+      "why_needed": "买家需要确认是否兼容自己的设备"
+    },
+    {
+      "field": "保修",
+      "why_needed": "买家关心售后保障"
+    },
+    {
+      "field": "认证与检测证明（如CE、FCC、FDA、检测报告）",
+      "why_needed": "买家关心产品安全性和合规性，输入未提供"
+    }
+  ]
+}

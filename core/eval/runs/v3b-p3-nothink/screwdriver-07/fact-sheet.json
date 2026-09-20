@@ -1,0 +1,162 @@
+{
+  "product": {
+    "name": "Cordless screwdriver",
+    "brand": null,
+    "category": {
+      "value": "Tools & Home Improvement > Power Tools > Screwdrivers",
+      "confidence": 0.6
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品为无绳螺丝刀（Cordless screwdriver）",
+      "source": "user_input",
+      "evidence": "Cordless screwdriver"
+    },
+    {
+      "id": "F2",
+      "statement": "电压为 3.6V",
+      "source": "user_input",
+      "evidence": "3.6V"
+    },
+    {
+      "id": "F3",
+      "statement": "电池容量为 1500mAh",
+      "source": "user_input",
+      "evidence": "1500mAh"
+    },
+    {
+      "id": "F4",
+      "statement": "电池类型为锂离子（Li-ion）",
+      "source": "user_input",
+      "evidence": "Li-ion"
+    },
+    {
+      "id": "F5",
+      "statement": "扭矩为 5N.m",
+      "source": "user_input",
+      "evidence": "扭矩 5N.m"
+    },
+    {
+      "id": "F6",
+      "statement": "附赠 24 支批头",
+      "source": "user_input",
+      "evidence": "附赠24 pcs bits"
+    },
+    {
+      "id": "F7",
+      "statement": "采用 USB-C 充电",
+      "source": "user_input",
+      "evidence": "USB-C充电"
+    },
+    {
+      "id": "F8",
+      "statement": "充满电约需 3 小时",
+      "source": "user_input",
+      "evidence": "充满约3h"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "Cordless screwdriver",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "电压",
+      "value": "3.6V",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "电池容量",
+      "value": "1500mAh",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "电池类型",
+      "value": "Li-ion",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "扭矩",
+      "value": "5N.m",
+      "fact_ids": [
+        "F5"
+      ]
+    },
+    {
+      "name": "附赠批头数量",
+      "value": "24 pcs",
+      "fact_ids": [
+        "F6"
+      ]
+    },
+    {
+      "name": "充电接口",
+      "value": "USB-C",
+      "fact_ids": [
+        "F7"
+      ]
+    },
+    {
+      "name": "充电时间",
+      "value": "约3h",
+      "fact_ids": [
+        "F8"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "Professional grade",
+      "reason": "输入未提供任何专业等级认证或依据，属于夸大宣传"
+    },
+    {
+      "claim": "比博世更耐用",
+      "reason": "与竞品比较且无任何测试或数据支持，属于贬低竞品和无法证实的比较声称"
+    },
+    {
+      "claim": "产品具有专业级性能或耐用性",
+      "reason": "输入未提供检测报告或认证依据，无法证实"
+    },
+    {
+      "claim": "产品通过任何安全或质量认证（如 CE、FCC 等）",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "尺寸和重量",
+      "why_needed": "买家关心便携性和握持手感，输入未提供"
+    },
+    {
+      "field": "颜色",
+      "why_needed": "买家有颜色偏好，输入未提供"
+    },
+    {
+      "field": "适用型号或兼容性",
+      "why_needed": "买家需要确认是否适用于自己的设备，输入未提供"
+    },
+    {
+      "field": "保修期",
+      "why_needed": "买家关心售后保障，输入未提供"
+    },
+    {
+      "field": "认证与检测证明（如 CE、FCC、FDA、检测报告）",
+      "why_needed": "买家关心产品安全与合规，输入未提供，必须补充"
+    },
+    {
+      "field": "清洗或维护方式",
+      "why_needed": "买家需要了解如何保养，输入未提供"
+    }
+  ]
+}

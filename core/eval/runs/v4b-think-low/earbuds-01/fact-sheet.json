@@ -1,0 +1,123 @@
+{
+  "product": {
+    "name": "HoverGo Pro 无线蓝牙耳机",
+    "brand": null,
+    "category": {
+      "value": "Consumer Electronics > Headphones",
+      "confidence": 0.85
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品名称为 HoverGo Pro 无线蓝牙耳机。",
+      "source": "user_input",
+      "evidence": "HoverGo Pro 无线蓝牙耳机"
+    },
+    {
+      "id": "F2",
+      "statement": "支持蓝牙5.3。",
+      "source": "user_input",
+      "evidence": "蓝牙5.3"
+    },
+    {
+      "id": "F3",
+      "statement": "具备主动降噪功能。",
+      "source": "user_input",
+      "evidence": "主动降噪"
+    },
+    {
+      "id": "F4",
+      "statement": "续航30小时（含充电盒）。",
+      "source": "user_input",
+      "evidence": "续航30小时（含充电盒）"
+    },
+    {
+      "id": "F5",
+      "statement": "防水等级为IPX5。",
+      "source": "user_input",
+      "evidence": "IPX5防水"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品名称",
+      "value": "HoverGo Pro 无线蓝牙耳机",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "蓝牙版本",
+      "value": "5.3",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "降噪功能",
+      "value": "主动降噪",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "续航时间",
+      "value": "30小时（含充电盒）",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "防水等级",
+      "value": "IPX5",
+      "fact_ids": [
+        "F5"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "降噪效果吊打AirPods",
+      "reason": "属于与竞品比较的夸大说法，输入未提供可验证的测试或对比依据。"
+    },
+    {
+      "claim": "通过CE/FCC等认证",
+      "reason": "输入未提供任何认证信息。"
+    },
+    {
+      "claim": "具备IPX7/IP68防水",
+      "reason": "输入未提供，仅写明IPX5。"
+    },
+    {
+      "claim": "续航超过30小时",
+      "reason": "输入未提供，仅写明续航30小时（含充电盒）。"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "认证与检测报告（如CE、FCC、RoHS及检测报告）",
+      "why_needed": "用于合规上架和消费者信任，输入未提供。"
+    },
+    {
+      "field": "尺寸与重量",
+      "why_needed": "影响佩戴舒适度、包装和物流成本，输入未提供。"
+    },
+    {
+      "field": "颜色/外观款式",
+      "why_needed": "影响购买选择，输入未提供。"
+    },
+    {
+      "field": "充电接口与充电时间",
+      "why_needed": "影响使用便利性，输入未提供。"
+    },
+    {
+      "field": "支持蓝牙音频编码与兼容设备",
+      "why_needed": "影响音质和连接兼容性，输入未提供。"
+    },
+    {
+      "field": "保修期限与售后政策",
+      "why_needed": "影响购买保障，输入未提供。"
+    }
+  ]
+}

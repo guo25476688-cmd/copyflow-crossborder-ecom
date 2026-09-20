@@ -1,0 +1,116 @@
+{
+  "product": {
+    "name": "婴儿玻璃奶瓶 240ml",
+    "brand": null,
+    "category": {
+      "value": "Baby > Feeding > Baby Bottles",
+      "confidence": 0.75
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品是婴儿玻璃奶瓶，容量240ml",
+      "source": "user_input",
+      "evidence": "婴儿玻璃奶瓶 240ml"
+    },
+    {
+      "id": "F2",
+      "statement": "奶瓶为宽口径",
+      "source": "user_input",
+      "evidence": "宽口径"
+    },
+    {
+      "id": "F3",
+      "statement": "配备硅胶奶嘴",
+      "source": "user_input",
+      "evidence": "硅胶奶嘴"
+    },
+    {
+      "id": "F4",
+      "statement": "耐高温，可煮沸消毒",
+      "source": "user_input",
+      "evidence": "耐高温可煮沸消毒"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "婴儿玻璃奶瓶",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "容量",
+      "value": "240ml",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "口径",
+      "value": "宽口径",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "奶嘴材质",
+      "value": "硅胶",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "耐温性",
+      "value": "耐高温",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "消毒方式",
+      "value": "可煮沸消毒",
+      "fact_ids": [
+        "F4"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "绝对安全",
+      "reason": "绝对化表述，输入未提供任何安全检测或认证依据"
+    },
+    {
+      "claim": "妈妈们都放心",
+      "reason": "对消费者群体做无依据的概括性担保，属夸大宣传"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "奶瓶尺寸（高度、瓶身直径）",
+      "why_needed": "买家需要判断是否便于握持、能否放入消毒锅或奶瓶保温袋"
+    },
+    {
+      "field": "重量",
+      "why_needed": "影响携带与宝宝自主握持的适用性"
+    },
+    {
+      "field": "颜色或图案",
+      "why_needed": "买家选购时的主要外观决策信息"
+    },
+    {
+      "field": "适用月龄与奶嘴流量（如S/M/L、慢流量）",
+      "why_needed": "决定该奶瓶是否适合特定月龄宝宝使用"
+    },
+    {
+      "field": "是否可用于微波炉加热或蒸汽消毒",
+      "why_needed": "输入只写了可煮沸消毒，买家需确认其他常见消毒与加热方式是否适用"
+    },
+    {
+      "field": "品牌与保修/售后说明",
+      "why_needed": "影响购买信任与出现质量问题时能否退换"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "product": {
+    "name": "瑜伽垫",
+    "brand": null,
+    "category": {
+      "value": "Sports & Outdoors > Yoga & Pilates > Yoga Mats",
+      "confidence": 0.8
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品为瑜伽垫",
+      "source": "user_input",
+      "evidence": "瑜伽垫"
+    },
+    {
+      "id": "F2",
+      "statement": "材质为TPE",
+      "source": "user_input",
+      "evidence": "TPE材质"
+    },
+    {
+      "id": "F3",
+      "statement": "尺寸为183x61cm",
+      "source": "user_input",
+      "evidence": "183x61cm"
+    },
+    {
+      "id": "F4",
+      "statement": "厚度为6mm",
+      "source": "user_input",
+      "evidence": "厚6mm"
+    },
+    {
+      "id": "F5",
+      "statement": "带有防滑纹理",
+      "source": "user_input",
+      "evidence": "防滑纹理"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "瑜伽垫",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "材质",
+      "value": "TPE",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "尺寸",
+      "value": "183x61cm",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "厚度",
+      "value": "6mm",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "表面纹理",
+      "value": "防滑纹理",
+      "fact_ids": [
+        "F5"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "无毒无味",
+      "reason": "输入未提供检测或认证依据，安全性或气味声称不能作为事实"
+    },
+    {
+      "claim": "绝对环保",
+      "reason": "输入未提供环保认证或检测依据，且'绝对'属于绝对化用语"
+    },
+    {
+      "claim": "通过FDA认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "通过SGS检测",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "具有防水功能或防水等级",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "抗菌防霉",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "认证与检测证明（如CE、FCC、FDA、SGS检测报告）",
+      "why_needed": "输入未提供任何认证或检测文件，无法核实安全与环保声称，跨境上架常需合规证明"
+    },
+    {
+      "field": "颜色",
+      "why_needed": "买家需要确认实物颜色，输入未说明"
+    },
+    {
+      "field": "重量",
+      "why_needed": "影响运费、携带便利性和买家预期，输入未说明"
+    },
+    {
+      "field": "清洗与保养方式",
+      "why_needed": "影响使用寿命和使用体验，输入未说明"
+    },
+    {
+      "field": "适用场景或用途",
+      "why_needed": "买家需要判断是否适合瑜伽、普拉提等场景，输入未说明"
+    },
+    {
+      "field": "包装清单与质保",
+      "why_needed": "买家关心配件和售后保障，输入未说明"
+    }
+  ]
+}

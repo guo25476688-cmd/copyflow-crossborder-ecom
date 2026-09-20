@@ -1,0 +1,144 @@
+{
+  "product": {
+    "name": "LED台灯",
+    "brand": null,
+    "category": {
+      "value": "Home & Kitchen > Lighting > Desk Lamps",
+      "confidence": 0.6
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品是LED台灯",
+      "source": "user_input",
+      "evidence": "LED台灯"
+    },
+    {
+      "id": "F2",
+      "statement": "具有三档色温",
+      "source": "user_input",
+      "evidence": "三档色温"
+    },
+    {
+      "id": "F3",
+      "statement": "支持无极调光",
+      "source": "user_input",
+      "evidence": "无极调光"
+    },
+    {
+      "id": "F4",
+      "statement": "采用USB-C供电",
+      "source": "user_input",
+      "evidence": "USB-C供电"
+    },
+    {
+      "id": "F5",
+      "statement": "灯臂材质为铝合金",
+      "source": "user_input",
+      "evidence": "铝合金灯臂"
+    },
+    {
+      "id": "F6",
+      "statement": "功率为9W",
+      "source": "user_input",
+      "evidence": "功率9W"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "LED台灯",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "色温档位",
+      "value": "三档",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "调光方式",
+      "value": "无极调光",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "供电接口",
+      "value": "USB-C",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "灯臂材质",
+      "value": "铝合金",
+      "fact_ids": [
+        "F5"
+      ]
+    },
+    {
+      "name": "功率",
+      "value": "9W",
+      "fact_ids": [
+        "F6"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "让孩子远离近视",
+      "reason": "属于疾病预防/健康功效声称，输入未提供医学依据，且可能违反广告法。"
+    },
+    {
+      "claim": "保护视力",
+      "reason": "属于健康功效声称，输入未提供任何检测或认证依据。"
+    },
+    {
+      "claim": "产品通过CE/ROHS/FCC等认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "具备IP防水等级",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "无蓝光/无频闪或护眼认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "显色指数Ra≥95",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "尺寸（灯头、灯臂、底座尺寸）",
+      "why_needed": "买家需要判断占用空间、照射范围和摆放位置。"
+    },
+    {
+      "field": "重量",
+      "why_needed": "买家需要判断台灯稳定性和是否方便移动。"
+    },
+    {
+      "field": "颜色",
+      "why_needed": "买家需要根据外观偏好选择。"
+    },
+    {
+      "field": "三档色温的具体色温值(K)",
+      "why_needed": "买家需要判断冷暖光是否适合阅读或使用场景。"
+    },
+    {
+      "field": "调光范围或亮度(流明)",
+      "why_needed": "买家需要判断无极调光下的亮度是否足够。"
+    },
+    {
+      "field": "控制方式（触摸、按键、旋钮或遥控）",
+      "why_needed": "买家需要了解操作便利性。"
+    }
+  ]
+}

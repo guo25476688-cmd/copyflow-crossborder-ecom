@@ -1,0 +1,110 @@
+{
+  "product": {
+    "name": "维生素D3+K2软胶囊",
+    "brand": null,
+    "category": {
+      "value": "Health & Household > Vitamins & Dietary Supplements",
+      "confidence": 0.6
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品为维生素D3+K2软胶囊",
+      "source": "user_input",
+      "evidence": "维生素D3+K2软胶囊"
+    },
+    {
+      "id": "F2",
+      "statement": "规格为60粒装",
+      "source": "user_input",
+      "evidence": "60粒装"
+    },
+    {
+      "id": "F3",
+      "statement": "每粒含维生素D3 2000IU",
+      "source": "user_input",
+      "evidence": "每粒含维生素D3 2000IU"
+    },
+    {
+      "id": "F4",
+      "statement": "产品无糖",
+      "source": "user_input",
+      "evidence": "无糖"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品形态",
+      "value": "软胶囊",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "规格",
+      "value": "60粒装",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "每粒维生素D3含量",
+      "value": "2000IU",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "糖分",
+      "value": "无糖",
+      "fact_ids": [
+        "F4"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "补钙好帮手",
+      "reason": "功效性声称，输入未提供任何检测或认证依据"
+    },
+    {
+      "claim": "有助改善骨质疏松",
+      "reason": "疾病相关健康功效声称，输入未提供任何检测或认证依据"
+    },
+    {
+      "claim": "增强免疫力",
+      "reason": "健康功效声称，输入未提供任何检测或认证依据"
+    },
+    {
+      "claim": "产品含有维生素K2",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "维生素K2的含量与形式",
+      "why_needed": "产品名称为维生素D3+K2，但输入只给出D3含量，买家需要知道K2的具体规格"
+    },
+    {
+      "field": "适用人群与用法用量",
+      "why_needed": "买家需要知道每日服用粒数及适用人群，避免误用"
+    },
+    {
+      "field": "过敏原与成分表",
+      "why_needed": "买家需要确认是否含有过敏原或其他辅料成分"
+    },
+    {
+      "field": "保质期与储存条件",
+      "why_needed": "买家需要了解产品有效期和保存方式"
+    },
+    {
+      "field": "认证与检测报告（如GMP、FDA、第三方检测）",
+      "why_needed": "输入未提供任何认证或检测证明，买家需要据此判断产品质量与合规性"
+    },
+    {
+      "field": "品牌与生产商信息",
+      "why_needed": "买家需要确认品牌与生产来源"
+    }
+  ]
+}

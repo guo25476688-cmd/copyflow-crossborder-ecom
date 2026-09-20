@@ -1,0 +1,123 @@
+{
+  "product": {
+    "name": "304 stainless steel insulated bottle 500ml",
+    "brand": null,
+    "category": {
+      "value": "Home & Kitchen > Kitchen & Dining > Drinkware > Water Bottles",
+      "confidence": 0.8
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "材质为304不锈钢。",
+      "source": "user_input",
+      "evidence": "304 stainless steel"
+    },
+    {
+      "id": "F2",
+      "statement": "容量500ml。",
+      "source": "user_input",
+      "evidence": "500ml"
+    },
+    {
+      "id": "F3",
+      "statement": "保温12小时。",
+      "source": "user_input",
+      "evidence": "保温12小时"
+    },
+    {
+      "id": "F4",
+      "statement": "保冷24小时。",
+      "source": "user_input",
+      "evidence": "保冷24小时"
+    },
+    {
+      "id": "F5",
+      "statement": "带茶漏。",
+      "source": "user_input",
+      "evidence": "带茶漏"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "材质",
+      "value": "304 stainless steel",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "容量",
+      "value": "500ml",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "保温时长",
+      "value": "12小时",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "保冷时长",
+      "value": "24小时",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "茶漏",
+      "value": "带茶漏",
+      "fact_ids": [
+        "F5"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "World's best insulation!!",
+      "reason": "夸大、绝对化且与竞品比较，输入未提供依据"
+    },
+    {
+      "claim": "BPA free",
+      "reason": "安全性声称，输入未提供检测或认证依据"
+    },
+    {
+      "claim": "FDA approved",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "IPX7 waterproof",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "认证与检测证明（如 FDA、LFGB、检测报告）",
+      "why_needed": "用于支撑 BPA free、保温/保冷等声称，并满足电商平台合规要求"
+    },
+    {
+      "field": "尺寸（高度、直径、瓶口口径）",
+      "why_needed": "买家需要判断便携性、是否适配杯架或背包侧袋"
+    },
+    {
+      "field": "重量",
+      "why_needed": "影响便携性和运费计算"
+    },
+    {
+      "field": "颜色/外观选项",
+      "why_needed": "买家购买决策因素"
+    },
+    {
+      "field": "清洗方式（是否可洗碗机清洗）",
+      "why_needed": "影响日常使用与维护"
+    },
+    {
+      "field": "保修期/售后政策",
+      "why_needed": "买家关心售后保障"
+    }
+  ]
+}

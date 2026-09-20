@@ -1,0 +1,228 @@
+{
+  "model": "deepseek-flash",
+  "thinking": "off",
+  "prompt": "p3",
+  "date": "2026-09-20T17:13:03.463Z",
+  "cases": {
+    "baby-bottle-05": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 3.1,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 655,
+            "completion_tokens": 779,
+            "total_tokens": 1434,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            },
+            "prompt_cache_hit_tokens": 0,
+            "prompt_cache_miss_tokens": 655
+          },
+          "content_length": 2111
+        }
+      ]
+    },
+    "bottle-10": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 3.2,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 657,
+            "completion_tokens": 853,
+            "total_tokens": 1510,
+            "prompt_tokens_details": {
+              "cached_tokens": 384
+            },
+            "prompt_cache_hit_tokens": 384,
+            "prompt_cache_miss_tokens": 273
+          },
+          "content_length": 2491
+        }
+      ]
+    },
+    "cat-scratcher-06": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 2.8,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 637,
+            "completion_tokens": 587,
+            "total_tokens": 1224,
+            "prompt_tokens_details": {
+              "cached_tokens": 384
+            },
+            "prompt_cache_hit_tokens": 384,
+            "prompt_cache_miss_tokens": 253
+          },
+          "content_length": 1593
+        }
+      ]
+    },
+    "desk-lamp-02": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 3.4,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 658,
+            "completion_tokens": 823,
+            "total_tokens": 1481,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 146
+          },
+          "content_length": 2233
+        }
+      ]
+    },
+    "earbuds-01": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 2.8,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 666,
+            "completion_tokens": 711,
+            "total_tokens": 1377,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 154
+          },
+          "content_length": 1937
+        }
+      ]
+    },
+    "phone-case-08": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 3,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 659,
+            "completion_tokens": 739,
+            "total_tokens": 1398,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 147
+          },
+          "content_length": 1985
+        }
+      ]
+    },
+    "screwdriver-07": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 4,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 675,
+            "completion_tokens": 1032,
+            "total_tokens": 1707,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 163
+          },
+          "content_length": 2815
+        }
+      ]
+    },
+    "skincare-03": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 3.4,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 661,
+            "completion_tokens": 769,
+            "total_tokens": 1430,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 149
+          },
+          "content_length": 2001
+        }
+      ]
+    },
+    "supplement-04": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 3.7,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 665,
+            "completion_tokens": 738,
+            "total_tokens": 1403,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 153
+          },
+          "content_length": 1935
+        }
+      ]
+    },
+    "yoga-mat-09": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 2.8,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 652,
+            "completion_tokens": 691,
+            "total_tokens": 1343,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 140
+          },
+          "content_length": 1906
+        }
+      ]
+    }
+  }
+}

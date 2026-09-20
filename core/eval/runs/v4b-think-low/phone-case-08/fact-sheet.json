@@ -1,0 +1,104 @@
+{
+  "product": {
+    "name": "iPhone 15 Pro 手机壳",
+    "brand": null,
+    "category": {
+      "value": "Consumer Electronics > Mobile Accessories > Phone Cases",
+      "confidence": 0.9
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品为 iPhone 15 Pro 手机壳",
+      "source": "user_input",
+      "evidence": "iPhone 15 Pro 手机壳"
+    },
+    {
+      "id": "F2",
+      "statement": "材质为 TPU+PC 双层",
+      "source": "user_input",
+      "evidence": "TPU+PC双层"
+    },
+    {
+      "id": "F3",
+      "statement": "磁吸 MagSafe 兼容",
+      "source": "user_input",
+      "evidence": "磁吸MagSafe兼容"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品名称",
+      "value": "iPhone 15 Pro 手机壳",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "适用机型",
+      "value": "iPhone 15 Pro",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "材质",
+      "value": "TPU+PC双层",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "磁吸兼容",
+      "value": "MagSafe",
+      "fact_ids": [
+        "F3"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "军规级防摔",
+      "reason": "输入未提供军规标准或检测认证依据"
+    },
+    {
+      "claim": "防摔1.5米",
+      "reason": "涉及防摔性能，输入未提供跌落测试报告或认证依据"
+    },
+    {
+      "claim": "防水",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "通过认证（如CE、FCC、RoHS）",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "颜色/外观选项",
+      "why_needed": "买家需要选择款式，输入未提供"
+    },
+    {
+      "field": "尺寸与重量",
+      "why_needed": "影响贴合度、手感和便携性，输入未提供"
+    },
+    {
+      "field": "防摔/军规级检测报告",
+      "why_needed": "支撑防摔1.5米和军规级防摔声称，输入未提供"
+    },
+    {
+      "field": "产品认证（CE、FCC、RoHS等）",
+      "why_needed": "合规与上架需要，输入未提供"
+    },
+    {
+      "field": "MagSafe兼容性测试/授权",
+      "why_needed": "支撑磁吸MagSafe兼容声称，输入未提供"
+    },
+    {
+      "field": "保修/售后政策",
+      "why_needed": "买家决策需要，输入未提供"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "product": {
+    "name": "玻尿酸神经酰胺保湿面霜",
+    "brand": null,
+    "category": {
+      "value": "Beauty & Personal Care > Skin Care > Face > Moisturizers",
+      "confidence": 0.8
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品名称为玻尿酸神经酰胺保湿面霜，规格为50ml。",
+      "source": "user_input",
+      "evidence": "玻尿酸神经酰胺保湿面霜 50ml"
+    },
+    {
+      "id": "F2",
+      "statement": "容量为50ml。",
+      "source": "user_input",
+      "evidence": "50ml"
+    },
+    {
+      "id": "F3",
+      "statement": "适合干皮。",
+      "source": "user_input",
+      "evidence": "适合干皮"
+    },
+    {
+      "id": "F4",
+      "statement": "含透明质酸钠。",
+      "source": "user_input",
+      "evidence": "含透明质酸钠"
+    },
+    {
+      "id": "F5",
+      "statement": "含神经酰胺。",
+      "source": "user_input",
+      "evidence": "含透明质酸钠、神经酰胺"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品名称",
+      "value": "玻尿酸神经酰胺保湿面霜",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "容量",
+      "value": "50ml",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "适用肤质",
+      "value": "干皮",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "成分",
+      "value": "透明质酸钠、神经酰胺",
+      "fact_ids": [
+        "F4",
+        "F5"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "7天美白祛斑",
+      "reason": "美白祛斑属于功效宣称，输入未提供功效评价依据或特殊化妆品注册/检测证明。"
+    },
+    {
+      "claim": "医美级",
+      "reason": "医美级暗示医疗级别，输入未提供依据。"
+    },
+    {
+      "claim": "修复屏障",
+      "reason": "修复屏障属于功效宣称，输入未提供检测/认证依据。"
+    },
+    {
+      "claim": "保湿",
+      "reason": "保湿属于功效宣称，输入未提供功效评价或检测/认证依据。"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "完整成分表及浓度/INCI",
+      "why_needed": "输入只列出透明质酸钠、神经酰胺，缺少其余成分和含量，买家无法评估过敏风险和实际配方。"
+    },
+    {
+      "field": "使用方法与使用频率",
+      "why_needed": "输入未说明如何涂抹、每日次数及是否需避开眼周，买家需要知道正确用法。"
+    },
+    {
+      "field": "适用人群与禁忌",
+      "why_needed": "只写适合干皮，未说明敏感肌、孕妇、儿童等是否可用，买家需要判断是否适合自己。"
+    },
+    {
+      "field": "保质期、生产日期/批号、储存条件",
+      "why_needed": "化妆品需明确这些信息以判断安全性和使用期限。"
+    },
+    {
+      "field": "备案/注册编号与功效检测或认证证明",
+      "why_needed": "输入未提供备案/注册号、美白祛斑特证、安全性检测报告等，无法验证功效宣称与合规性。"
+    },
+    {
+      "field": "品牌、生产企业、产地",
+      "why_needed": "输入未提供品牌和厂商信息，买家需要确认产品来源和责任主体。"
+    }
+  ]
+}

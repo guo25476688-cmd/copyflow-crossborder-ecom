@@ -1,0 +1,123 @@
+{
+  "product": {
+    "name": "瑜伽垫",
+    "brand": null,
+    "category": {
+      "value": "Sports & Outdoors > Yoga > Yoga Mats",
+      "confidence": 0.9
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "材质为TPE",
+      "source": "user_input",
+      "evidence": "TPE材质"
+    },
+    {
+      "id": "F2",
+      "statement": "尺寸为183x61cm",
+      "source": "user_input",
+      "evidence": "183x61cm"
+    },
+    {
+      "id": "F3",
+      "statement": "厚度为6mm",
+      "source": "user_input",
+      "evidence": "厚6mm"
+    },
+    {
+      "id": "F4",
+      "statement": "具有防滑纹理",
+      "source": "user_input",
+      "evidence": "防滑纹理"
+    },
+    {
+      "id": "F5",
+      "statement": "无毒无味",
+      "source": "user_input",
+      "evidence": "无毒无味"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "材质",
+      "value": "TPE",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "尺寸",
+      "value": "183x61cm",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "厚度",
+      "value": "6mm",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "表面纹理",
+      "value": "防滑纹理",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "安全性",
+      "value": "无毒无味",
+      "fact_ids": [
+        "F5"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "绝对环保",
+      "reason": "绝对化用语，无法客观证实"
+    },
+    {
+      "claim": "无毒无味",
+      "reason": "健康相关声称，需要检测报告支持，输入未提供"
+    },
+    {
+      "claim": "防滑",
+      "reason": "功能声称，需要测试数据支持，输入未提供"
+    },
+    {
+      "claim": "TPE材质环保可降解",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "颜色",
+      "why_needed": "买家需要知道可选颜色"
+    },
+    {
+      "field": "重量",
+      "why_needed": "影响便携性和运费"
+    },
+    {
+      "field": "适用场景",
+      "why_needed": "帮助买家判断是否适合自身需求"
+    },
+    {
+      "field": "清洗方式",
+      "why_needed": "指导买家维护和清洁"
+    },
+    {
+      "field": "保修期",
+      "why_needed": "买家关心售后保障"
+    },
+    {
+      "field": "认证与检测证明（如CE、FCC、FDA、检测报告）",
+      "why_needed": "证明产品安全性和合规性，输入未提供"
+    }
+  ]
+}

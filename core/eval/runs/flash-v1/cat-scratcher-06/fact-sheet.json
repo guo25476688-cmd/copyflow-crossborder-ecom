@@ -1,0 +1,97 @@
+{
+  "product": {
+    "name": "猫抓板",
+    "brand": null,
+    "category": {
+      "value": "Pet Supplies > Cats > Scratching Posts",
+      "confidence": 0.7
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品为猫抓板",
+      "source": "user_input",
+      "evidence": "猫抓板"
+    },
+    {
+      "id": "F2",
+      "statement": "材质为瓦楞纸",
+      "source": "user_input",
+      "evidence": "瓦楞纸"
+    },
+    {
+      "id": "F3",
+      "statement": "尺寸标注为40cm",
+      "source": "user_input",
+      "evidence": "40cm"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "猫抓板",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "材质",
+      "value": "瓦楞纸",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "尺寸",
+      "value": "40cm",
+      "fact_ids": [
+        "F3"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "使用环保/无毒/可降解瓦楞纸并已获认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "承重XXkg/适合所有猫咪",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "防水防潮",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "通过SGS检测/有检测报告",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "40cm 对应的具体维度（长/宽/高/直径）",
+      "why_needed": "买家需要判断产品实际占用空间和适用场景"
+    },
+    {
+      "field": "厚度",
+      "why_needed": "影响耐用性和稳定性"
+    },
+    {
+      "field": "颜色/外观图案",
+      "why_needed": "影响购买偏好和家居搭配"
+    },
+    {
+      "field": "适用猫咪体重或体型",
+      "why_needed": "买家需要判断是否适合自家猫"
+    },
+    {
+      "field": "是否可双面使用/是否含替换芯",
+      "why_needed": "影响使用周期和性价比"
+    },
+    {
+      "field": "清洁方式",
+      "why_needed": "买家需要知道如何维护和除屑"
+    }
+  ]
+}

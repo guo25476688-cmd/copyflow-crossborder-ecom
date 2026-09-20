@@ -1,0 +1,345 @@
+{
+  "model": "deepseek-flash",
+  "thinking": "on",
+  "prompt": "p3",
+  "date": "2026-09-20T17:13:35.709Z",
+  "cases": {
+    "baby-bottle-05": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 8.2,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 680,
+            "completion_tokens": 1670,
+            "total_tokens": 2350,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 1061
+            },
+            "prompt_cache_hit_tokens": 0,
+            "prompt_cache_miss_tokens": 680
+          },
+          "content_length": 1476
+        }
+      ]
+    },
+    "bottle-10": {
+      "ok": false,
+      "attempts": 1,
+      "seconds": 57.1,
+      "errors": [
+        "模型调用失败：DeepSeek 返回了空内容（finish_reason=length，completion_tokens=4096）"
+      ],
+      "api": [
+        {
+          "finish_reason": "length",
+          "usage": {
+            "prompt_tokens": 682,
+            "completion_tokens": 4096,
+            "total_tokens": 4778,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 4096
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 170
+          },
+          "content_length": 0
+        },
+        {
+          "finish_reason": "length",
+          "usage": {
+            "prompt_tokens": 682,
+            "completion_tokens": 4096,
+            "total_tokens": 4778,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 4096
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 170
+          },
+          "content_length": 0
+        },
+        {
+          "finish_reason": "length",
+          "usage": {
+            "prompt_tokens": 682,
+            "completion_tokens": 4096,
+            "total_tokens": 4778,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 4096
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 170
+          },
+          "content_length": 0
+        }
+      ]
+    },
+    "cat-scratcher-06": {
+      "ok": true,
+      "attempts": 3,
+      "seconds": 24.5,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "length",
+          "usage": {
+            "prompt_tokens": 662,
+            "completion_tokens": 4096,
+            "total_tokens": 4758,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 3462
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 150
+          },
+          "content_length": 1639
+        },
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 707,
+            "completion_tokens": 422,
+            "total_tokens": 1129,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 195
+          },
+          "content_length": 1095
+        },
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 694,
+            "completion_tokens": 921,
+            "total_tokens": 1615,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 403
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 182
+          },
+          "content_length": 1213
+        }
+      ]
+    },
+    "desk-lamp-02": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 14.3,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 683,
+            "completion_tokens": 3228,
+            "total_tokens": 3911,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 2611
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 171
+          },
+          "content_length": 1556
+        }
+      ]
+    },
+    "earbuds-01": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 15.1,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 691,
+            "completion_tokens": 3480,
+            "total_tokens": 4171,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 2935
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 179
+          },
+          "content_length": 1392
+        }
+      ]
+    },
+    "phone-case-08": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 18.9,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 684,
+            "completion_tokens": 3293,
+            "total_tokens": 3977,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 2786
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 172
+          },
+          "content_length": 1312
+        }
+      ]
+    },
+    "screwdriver-07": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 16.1,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 700,
+            "completion_tokens": 3931,
+            "total_tokens": 4631,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 3256
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 188
+          },
+          "content_length": 1822
+        }
+      ]
+    },
+    "skincare-03": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 27.9,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "length",
+          "usage": {
+            "prompt_tokens": 686,
+            "completion_tokens": 4096,
+            "total_tokens": 4782,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 4096
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 174
+          },
+          "content_length": 0
+        },
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 686,
+            "completion_tokens": 1148,
+            "total_tokens": 1834,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 581
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 174
+          },
+          "content_length": 1419
+        }
+      ]
+    },
+    "supplement-04": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 14.4,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 690,
+            "completion_tokens": 3291,
+            "total_tokens": 3981,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 2693
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 178
+          },
+          "content_length": 1508
+        }
+      ]
+    },
+    "yoga-mat-09": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 15.1,
+      "errors": [],
+      "api": [
+        {
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 677,
+            "completion_tokens": 3237,
+            "total_tokens": 3914,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 2698
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 165
+          },
+          "content_length": 1420
+        }
+      ]
+    }
+  }
+}

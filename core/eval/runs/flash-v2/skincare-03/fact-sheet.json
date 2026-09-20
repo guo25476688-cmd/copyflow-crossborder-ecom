@@ -1,0 +1,131 @@
+{
+  "product": {
+    "name": "玻尿酸神经酰胺保湿面霜 50ml",
+    "brand": null,
+    "category": {
+      "value": "Beauty & Personal Care > Skin Care > Face > Moisturizers",
+      "confidence": 0.9
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品名称为玻尿酸神经酰胺保湿面霜",
+      "source": "user_input",
+      "evidence": "玻尿酸神经酰胺保湿面霜"
+    },
+    {
+      "id": "F2",
+      "statement": "容量为50ml",
+      "source": "user_input",
+      "evidence": "50ml"
+    },
+    {
+      "id": "F3",
+      "statement": "适合干皮",
+      "source": "user_input",
+      "evidence": "适合干皮"
+    },
+    {
+      "id": "F4",
+      "statement": "含透明质酸钠",
+      "source": "user_input",
+      "evidence": "透明质酸钠"
+    },
+    {
+      "id": "F5",
+      "statement": "含神经酰胺",
+      "source": "user_input",
+      "evidence": "神经酰胺"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品名称",
+      "value": "玻尿酸神经酰胺保湿面霜",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "容量",
+      "value": "50ml",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "适用肤质",
+      "value": "干皮",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "成分",
+      "value": "透明质酸钠",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "成分",
+      "value": "神经酰胺",
+      "fact_ids": [
+        "F5"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "7天美白祛斑",
+      "reason": "美白祛斑属于特殊化妆品功效宣称，需批准文号或功效评价，且7天为绝对化时限，输入未提供依据"
+    },
+    {
+      "claim": "医美级修复屏障",
+      "reason": "医美级属绝对化或医疗暗示，修复屏障为功效宣称，输入未提供依据"
+    },
+    {
+      "claim": "FDA认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "检测报告",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "无激素检测",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "敏感肌适用测试",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "认证与检测证明（如备案、特证、FDA、检测报告）",
+      "why_needed": "输入未提供，平台合规和买家信任通常需要，需补充相关证明"
+    },
+    {
+      "field": "美白祛斑功效依据或批准文号",
+      "why_needed": "输入声称7天美白祛斑，需特殊化妆品注册或功效评价资料支撑"
+    },
+    {
+      "field": "完整成分表",
+      "why_needed": "输入仅列出两种成分，买家需确认是否含过敏原或禁忌成分"
+    },
+    {
+      "field": "用法用量",
+      "why_needed": "面霜需说明使用频率、用量和使用步骤"
+    },
+    {
+      "field": "保质期、生产日期、开封后使用期限",
+      "why_needed": "买家需判断效期和储存要求"
+    },
+    {
+      "field": "品牌或生产商",
+      "why_needed": "输入未提供，影响买家信任与售后追溯"
+    }
+  ]
+}

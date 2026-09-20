@@ -1,0 +1,123 @@
+{
+  "product": {
+    "name": "婴儿玻璃奶瓶 240ml",
+    "brand": null,
+    "category": {
+      "value": "Baby > Feeding > Baby Bottles",
+      "confidence": 0.9
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品为婴儿玻璃奶瓶。",
+      "source": "user_input",
+      "evidence": "婴儿玻璃奶瓶"
+    },
+    {
+      "id": "F2",
+      "statement": "容量为240ml。",
+      "source": "user_input",
+      "evidence": "240ml"
+    },
+    {
+      "id": "F3",
+      "statement": "奶瓶为宽口径。",
+      "source": "user_input",
+      "evidence": "宽口径"
+    },
+    {
+      "id": "F4",
+      "statement": "奶嘴材质为硅胶。",
+      "source": "user_input",
+      "evidence": "硅胶奶嘴"
+    },
+    {
+      "id": "F5",
+      "statement": "奶瓶耐高温，可煮沸消毒。",
+      "source": "user_input",
+      "evidence": "耐高温可煮沸消毒"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "婴儿玻璃奶瓶",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "容量",
+      "value": "240ml",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "口径",
+      "value": "宽口径",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "奶嘴材质",
+      "value": "硅胶",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "消毒方式",
+      "value": "可煮沸消毒（耐高温）",
+      "fact_ids": [
+        "F5"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "绝对安全",
+      "reason": "绝对化安全性声称，输入未提供任何检测或认证依据"
+    },
+    {
+      "claim": "妈妈们都放心",
+      "reason": "以群体背书方式暗示安全可靠，属于无依据的绝对化说法"
+    },
+    {
+      "claim": "硅胶奶嘴为食品级、无毒无害",
+      "reason": "输入未提供食品接触材料检测或相关认证依据"
+    },
+    {
+      "claim": "已通过FDA、CE或食品接触材料检测",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "认证与检测证明（如FDA、CE、食品接触材料检测报告）",
+      "why_needed": "婴儿喂养用品涉及食品接触安全，买家会依据认证判断是否可放心购买，输入未提供任何检测或认证信息"
+    },
+    {
+      "field": "玻璃材质类型（高硼硅或钠钙）与耐温上限",
+      "why_needed": "玻璃种类决定耐温差与抗热震能力，直接关系到能否煮沸消毒及使用安全"
+    },
+    {
+      "field": "奶嘴孔径、流量与适用月龄",
+      "why_needed": "决定是否适合新生儿或较大婴儿，影响喂养体验与购买选择"
+    },
+    {
+      "field": "瓶身尺寸、重量与容量刻度",
+      "why_needed": "买家需要判断握持大小、是否便于外出携带以及能否准确冲调奶量"
+    },
+    {
+      "field": "颜色或外观款式",
+      "why_needed": "外观是母婴类商品的重要选购因素，输入未提及"
+    },
+    {
+      "field": "配件与售后（防尘盖、手柄、奶瓶刷、保修/退换）",
+      "why_needed": "配件是否齐全和售后政策影响购买决策与使用便利性"
+    }
+  ]
+}

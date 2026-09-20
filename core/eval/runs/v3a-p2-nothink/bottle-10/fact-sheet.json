@@ -1,0 +1,140 @@
+{
+  "product": {
+    "name": "304 stainless steel insulated bottle 500ml",
+    "brand": null,
+    "category": {
+      "value": "Home & Kitchen > Kitchen & Dining > Drinkware > Thermoses",
+      "confidence": 0.3
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "材质为304不锈钢",
+      "source": "user_input",
+      "evidence": "304 stainless steel"
+    },
+    {
+      "id": "F2",
+      "statement": "容量为500ml",
+      "source": "user_input",
+      "evidence": "500ml"
+    },
+    {
+      "id": "F3",
+      "statement": "保温12小时",
+      "source": "user_input",
+      "evidence": "保温12小时"
+    },
+    {
+      "id": "F4",
+      "statement": "保冷24小时",
+      "source": "user_input",
+      "evidence": "保冷24小时"
+    },
+    {
+      "id": "F5",
+      "statement": "BPA free",
+      "source": "user_input",
+      "evidence": "BPA free"
+    },
+    {
+      "id": "F6",
+      "statement": "带茶漏",
+      "source": "user_input",
+      "evidence": "带茶漏"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "材质",
+      "value": "304不锈钢",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "容量",
+      "value": "500ml",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "保温时长",
+      "value": "12小时",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "保冷时长",
+      "value": "24小时",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "BPA free",
+      "value": "是",
+      "fact_ids": [
+        "F5"
+      ]
+    },
+    {
+      "name": "配件",
+      "value": "茶漏",
+      "fact_ids": [
+        "F6"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "World's best insulation!!",
+      "reason": "夸大、绝对化用语，无依据"
+    },
+    {
+      "claim": "通过CE认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "通过FCC认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "通过FDA认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "提供检测报告",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "尺寸（如高度、直径）",
+      "why_needed": "买家需要确认是否适合杯架、背包侧袋等"
+    },
+    {
+      "field": "重量",
+      "why_needed": "买家关心便携性"
+    },
+    {
+      "field": "颜色/外观",
+      "why_needed": "买家有颜色偏好"
+    },
+    {
+      "field": "适用型号/场景",
+      "why_needed": "买家需要确认是否适合自己使用"
+    },
+    {
+      "field": "清洗方式",
+      "why_needed": "买家关心是否可机洗、是否易清洁"
+    },
+    {
+      "field": "保修信息",
+      "why_needed": "买家关心售后保障"
+    }
+  ]
+}

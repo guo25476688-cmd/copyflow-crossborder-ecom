@@ -1,0 +1,129 @@
+{
+  "product": {
+    "name": "瑜伽垫",
+    "brand": null,
+    "category": {
+      "value": "Sports & Outdoors > Fitness & Exercise > Yoga Mats",
+      "confidence": 0.85
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品为瑜伽垫",
+      "source": "user_input",
+      "evidence": "瑜伽垫"
+    },
+    {
+      "id": "F2",
+      "statement": "材质为 TPE",
+      "source": "user_input",
+      "evidence": "TPE材质"
+    },
+    {
+      "id": "F3",
+      "statement": "尺寸为 183x61cm",
+      "source": "user_input",
+      "evidence": "183x61cm"
+    },
+    {
+      "id": "F4",
+      "statement": "厚度为 6mm",
+      "source": "user_input",
+      "evidence": "厚6mm"
+    },
+    {
+      "id": "F5",
+      "statement": "表面为防滑纹理",
+      "source": "user_input",
+      "evidence": "防滑纹理"
+    },
+    {
+      "id": "F6",
+      "statement": "产品无毒无味",
+      "source": "user_input",
+      "evidence": "无毒无味"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "材质",
+      "value": "TPE",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "尺寸",
+      "value": "183x61cm",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "厚度",
+      "value": "6mm",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "表面",
+      "value": "防滑纹理",
+      "fact_ids": [
+        "F5"
+      ]
+    },
+    {
+      "name": "气味/安全性描述",
+      "value": "无毒无味",
+      "fact_ids": [
+        "F6"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "绝对环保",
+      "reason": "绝对化表述，输入未提供任何环保认证或检测依据"
+    },
+    {
+      "claim": "产品通过 CE / FCC / SGS 等认证或检测",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "具备防水等级（如 IPX 级防水）",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "通过 REACH / RoHS 等有害物质检测报告",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "颜色",
+      "why_needed": "买家选款和图文描述的必要信息，输入未提及"
+    },
+    {
+      "field": "产品重量",
+      "why_needed": "影响运费、便携性和买家预期，输入未提及"
+    },
+    {
+      "field": "认证与检测报告（如 CE、REACH、RoHS、SGS 检测报告）",
+      "why_needed": "支撑“无毒无味”等安全表述并满足部分平台/国家合规要求，输入未提供任何证书信息"
+    },
+    {
+      "field": "清洗与保养方式",
+      "why_needed": "买家关心日常维护方法，输入未提及"
+    },
+    {
+      "field": "适用场景与目标人群（如初学者、居家健身、普拉提）",
+      "why_needed": "帮助买家判断适配度，输入未提及"
+    },
+    {
+      "field": "包装清单与收纳配件（如背带、收纳袋）",
+      "why_needed": "影响买家对到手内容的预期，输入未提及"
+    }
+  ]
+}

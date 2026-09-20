@@ -1,0 +1,144 @@
+{
+  "product": {
+    "name": "Cordless screwdriver",
+    "brand": null,
+    "category": {
+      "value": "Tools & Home Improvement > Power Tools > Cordless Screwdrivers",
+      "confidence": 0.7
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "无绳螺丝刀，3.6V",
+      "source": "user_input",
+      "evidence": "Cordless screwdriver 3.6V"
+    },
+    {
+      "id": "F2",
+      "statement": "电池为 1500mAh Li-ion",
+      "source": "user_input",
+      "evidence": "1500mAh Li-ion"
+    },
+    {
+      "id": "F3",
+      "statement": "扭矩 5N.m",
+      "source": "user_input",
+      "evidence": "扭矩 5N.m"
+    },
+    {
+      "id": "F4",
+      "statement": "附赠 24 pcs bits",
+      "source": "user_input",
+      "evidence": "附赠24 pcs bits"
+    },
+    {
+      "id": "F5",
+      "statement": "USB-C 充电",
+      "source": "user_input",
+      "evidence": "USB-C充电"
+    },
+    {
+      "id": "F6",
+      "statement": "充满约 3h",
+      "source": "user_input",
+      "evidence": "充满约3h"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "电压",
+      "value": "3.6V",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "电池",
+      "value": "1500mAh Li-ion",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "扭矩",
+      "value": "5N.m",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "附赠批头",
+      "value": "24 pcs bits",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "充电接口",
+      "value": "USB-C",
+      "fact_ids": [
+        "F5"
+      ]
+    },
+    {
+      "name": "充电时间",
+      "value": "充满约3h",
+      "fact_ids": [
+        "F6"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "Professional grade（专业级）",
+      "reason": "无法验证的绝对化/等级宣称，输入未提供任何可支撑的依据"
+    },
+    {
+      "claim": "比博世更耐用",
+      "reason": "与竞品比较且涉及耐用性结论，输入未提供测试或数据依据"
+    },
+    {
+      "claim": "防水等级（如 IPX4/IPX7）",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "认证（如 CE、UL、RoHS）",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "电池循环寿命或保修时长",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "转速（RPM）或扭矩精度数据",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "尺寸与重量",
+      "why_needed": "买家判断便携性与握持手感，也影响运费与收纳"
+    },
+    {
+      "field": "颜色/外观选项",
+      "why_needed": "买家下单时需要确认可选颜色"
+    },
+    {
+      "field": "夹头类型与批头接口规格（如 1/4 英寸六角）",
+      "why_needed": "决定能否使用自有批头及兼容性"
+    },
+    {
+      "field": "空载转速（RPM）",
+      "why_needed": "影响拧螺丝效率与适用场景判断"
+    },
+    {
+      "field": "保修期与售后方式",
+      "why_needed": "影响购买决策与售后预期"
+    },
+    {
+      "field": "包装清单（是否含充电线、收纳盒、说明书）",
+      "why_needed": "买家需知道到手即用还需另购哪些配件"
+    }
+  ]
+}

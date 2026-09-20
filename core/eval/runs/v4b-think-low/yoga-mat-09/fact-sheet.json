@@ -1,0 +1,110 @@
+{
+  "product": {
+    "name": "瑜伽垫",
+    "brand": null,
+    "category": {
+      "value": "Sporting Goods > Exercise & Fitness > Yoga > Yoga Mats",
+      "confidence": 0.9
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "材质为TPE",
+      "source": "user_input",
+      "evidence": "TPE材质"
+    },
+    {
+      "id": "F2",
+      "statement": "尺寸为183x61cm",
+      "source": "user_input",
+      "evidence": "183x61cm"
+    },
+    {
+      "id": "F3",
+      "statement": "厚度为6mm",
+      "source": "user_input",
+      "evidence": "厚6mm"
+    },
+    {
+      "id": "F4",
+      "statement": "表面有防滑纹理",
+      "source": "user_input",
+      "evidence": "防滑纹理"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "材质",
+      "value": "TPE",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "尺寸",
+      "value": "183x61cm",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "厚度",
+      "value": "6mm",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "表面纹理",
+      "value": "防滑纹理",
+      "fact_ids": [
+        "F4"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "无毒无味",
+      "reason": "属于安全性声称，输入未提供检测或认证依据，不能作为事实"
+    },
+    {
+      "claim": "绝对环保",
+      "reason": "属于绝对化环保声称，输入未提供检测或认证依据，不能作为事实"
+    },
+    {
+      "claim": "通过CE/FCC/FDA等认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "防水防汗",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "认证与检测报告",
+      "why_needed": "买家关心产品安全与合规，输入未提供CE、FCC、FDA或第三方检测报告等依据"
+    },
+    {
+      "field": "颜色与花色",
+      "why_needed": "买家需要确认外观是否符合需求"
+    },
+    {
+      "field": "重量",
+      "why_needed": "影响携带、收纳与运费判断"
+    },
+    {
+      "field": "清洗与保养方式",
+      "why_needed": "影响日常使用与维护"
+    },
+    {
+      "field": "适用场景或适用人群",
+      "why_needed": "买家需判断是否满足瑜伽、健身等具体需求"
+    },
+    {
+      "field": "保修或售后政策",
+      "why_needed": "影响购买决策和售后保障"
+    }
+  ]
+}

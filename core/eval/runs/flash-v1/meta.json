@@ -1,0 +1,76 @@
+{
+  "model": "deepseek-flash",
+  "date": "2026-09-20T16:26:11.907Z",
+  "cases": {
+    "baby-bottle-05": {
+      "ok": true,
+      "attempts": 3,
+      "seconds": 46.6,
+      "errors": []
+    },
+    "bottle-10": {
+      "ok": false,
+      "attempts": 1,
+      "seconds": 32.3,
+      "errors": [
+        "模型调用失败：DeepSeek 返回了空内容"
+      ]
+    },
+    "cat-scratcher-06": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 7.3,
+      "errors": []
+    },
+    "desk-lamp-02": {
+      "ok": true,
+      "attempts": 3,
+      "seconds": 37.5,
+      "errors": []
+    },
+    "earbuds-01": {
+      "ok": false,
+      "attempts": 1,
+      "seconds": 31,
+      "errors": [
+        "模型调用失败：DeepSeek 返回了空内容"
+      ]
+    },
+    "phone-case-08": {
+      "ok": false,
+      "attempts": 3,
+      "seconds": 45.2,
+      "errors": [
+        "输出不是合法 JSON：Expected ',' or '}' after property value in JSON at position 154 (line 1 column 155)"
+      ]
+    },
+    "screwdriver-07": {
+      "ok": true,
+      "attempts": 1,
+      "seconds": 5.2,
+      "errors": []
+    },
+    "skincare-03": {
+      "ok": false,
+      "attempts": 2,
+      "seconds": 61.2,
+      "errors": [
+        "模型调用失败：DeepSeek 返回了空内容"
+      ]
+    },
+    "supplement-04": {
+      "ok": false,
+      "attempts": 1,
+      "seconds": 32.5,
+      "errors": [
+        "模型调用失败：DeepSeek 返回了空内容"
+      ]
+    },
+    "yoga-mat-09": {
+      "ok": true,
+      "attempts": 3,
+      "seconds": 37.5,
+      "errors": []
+    }
+  }
+}

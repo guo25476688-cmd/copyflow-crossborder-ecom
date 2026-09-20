@@ -1,0 +1,127 @@
+{
+  "product": {
+    "name": "LED台灯",
+    "brand": null,
+    "category": {
+      "value": "Home & Kitchen > Lighting > Desk Lamps",
+      "confidence": 0.8
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "三档色温",
+      "source": "user_input",
+      "evidence": "三档色温"
+    },
+    {
+      "id": "F2",
+      "statement": "无极调光",
+      "source": "user_input",
+      "evidence": "无极调光"
+    },
+    {
+      "id": "F3",
+      "statement": "USB-C供电",
+      "source": "user_input",
+      "evidence": "USB-C供电"
+    },
+    {
+      "id": "F4",
+      "statement": "铝合金灯臂",
+      "source": "user_input",
+      "evidence": "铝合金灯臂"
+    },
+    {
+      "id": "F5",
+      "statement": "功率9W",
+      "source": "user_input",
+      "evidence": "功率9W"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "色温档位",
+      "value": "三档",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "调光方式",
+      "value": "无极调光",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "供电接口",
+      "value": "USB-C",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "灯臂材质",
+      "value": "铝合金",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "功率",
+      "value": "9W",
+      "fact_ids": [
+        "F5"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "让孩子远离近视，保护视力",
+      "reason": "涉及疾病预防和健康功效，属于违规医疗声明"
+    },
+    {
+      "claim": "CE认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "FCC认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "防水等级（如IPX4）",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "检测报告",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "尺寸（长宽高）",
+      "why_needed": "买家需要确认台灯是否适合桌面空间"
+    },
+    {
+      "field": "重量",
+      "why_needed": "买家关心便携性和稳定性"
+    },
+    {
+      "field": "颜色",
+      "why_needed": "买家需要匹配家居风格"
+    },
+    {
+      "field": "适用型号或兼容性",
+      "why_needed": "买家需要确认是否与现有设备兼容"
+    },
+    {
+      "field": "保修期",
+      "why_needed": "买家关心售后保障"
+    },
+    {
+      "field": "认证与检测证明（如CE、FCC、FDA、检测报告）",
+      "why_needed": "买家需要确认产品符合安全标准，输入未提供"
+    }
+  ]
+}

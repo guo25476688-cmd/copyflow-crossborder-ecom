@@ -1,0 +1,131 @@
+{
+  "product": {
+    "name": "婴儿玻璃奶瓶 240ml",
+    "brand": null,
+    "category": {
+      "value": "Baby > Feeding > Bottles & Accessories > Baby Bottles",
+      "confidence": 0.9
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品是婴儿玻璃奶瓶。",
+      "source": "user_input",
+      "evidence": "婴儿玻璃奶瓶"
+    },
+    {
+      "id": "F2",
+      "statement": "容量为240ml。",
+      "source": "user_input",
+      "evidence": "240ml"
+    },
+    {
+      "id": "F3",
+      "statement": "口径为宽口径。",
+      "source": "user_input",
+      "evidence": "宽口径"
+    },
+    {
+      "id": "F4",
+      "statement": "奶嘴材质为硅胶。",
+      "source": "user_input",
+      "evidence": "硅胶奶嘴"
+    },
+    {
+      "id": "F5",
+      "statement": "耐高温，可煮沸消毒。",
+      "source": "user_input",
+      "evidence": "耐高温可煮沸消毒"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "婴儿玻璃奶瓶",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "容量",
+      "value": "240ml",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "口径",
+      "value": "宽口径",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "奶嘴材质",
+      "value": "硅胶",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "耐热与消毒",
+      "value": "耐高温，可煮沸消毒",
+      "fact_ids": [
+        "F5"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "绝对安全",
+      "reason": "绝对化用语，且输入未提供安全检测或认证依据。"
+    },
+    {
+      "claim": "妈妈们都放心",
+      "reason": "无法验证的消费者背书/绝对化表述，输入未提供依据。"
+    },
+    {
+      "claim": "通过 FDA/CE 等认证",
+      "reason": "输入未提供。"
+    },
+    {
+      "claim": "不含 BPA",
+      "reason": "输入未提供。"
+    },
+    {
+      "claim": "防胀气",
+      "reason": "输入未提供。"
+    },
+    {
+      "claim": "防摔/不易碎",
+      "reason": "输入未提供。"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "认证与检测证明（如 FDA、CE、检测报告）",
+      "why_needed": "婴儿入口用品需要合规证明，输入未提供，无法在 listing 中声称或证明安全性。"
+    },
+    {
+      "field": "适用年龄段/奶嘴流量",
+      "why_needed": "买家需确认是否适合宝宝月龄及喂养需求。"
+    },
+    {
+      "field": "瓶身尺寸（高度、直径）",
+      "why_needed": "影响握持、收纳及是否适配奶瓶加热器/消毒锅。"
+    },
+    {
+      "field": "颜色或图案",
+      "why_needed": "买家通常需要选择外观，输入未提供。"
+    },
+    {
+      "field": "重量",
+      "why_needed": "影响携带体验和物流成本。"
+    },
+    {
+      "field": "其他消毒方式（微波炉、蒸汽、洗碗机）及清洗方式",
+      "why_needed": "买家需了解日常清洁和消毒便利性；输入只写了可煮沸消毒。"
+    }
+  ]
+}

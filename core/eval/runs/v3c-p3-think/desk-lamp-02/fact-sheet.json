@@ -1,0 +1,136 @@
+{
+  "product": {
+    "name": "LED台灯",
+    "brand": null,
+    "category": {
+      "value": "Home & Kitchen > Lighting & Ceiling Fans > Desk Lamps",
+      "confidence": 0.65
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品是LED台灯。",
+      "source": "user_input",
+      "evidence": "LED台灯"
+    },
+    {
+      "id": "F2",
+      "statement": "具备三档色温。",
+      "source": "user_input",
+      "evidence": "三档色温"
+    },
+    {
+      "id": "F3",
+      "statement": "支持无极调光。",
+      "source": "user_input",
+      "evidence": "无极调光"
+    },
+    {
+      "id": "F4",
+      "statement": "采用USB-C供电。",
+      "source": "user_input",
+      "evidence": "USB-C供电"
+    },
+    {
+      "id": "F5",
+      "statement": "灯臂材质为铝合金。",
+      "source": "user_input",
+      "evidence": "铝合金灯臂"
+    },
+    {
+      "id": "F6",
+      "statement": "功率为9W。",
+      "source": "user_input",
+      "evidence": "功率9W"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "LED台灯",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "色温档位",
+      "value": "三档",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "调光方式",
+      "value": "无极调光",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "供电接口",
+      "value": "USB-C",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "灯臂材质",
+      "value": "铝合金",
+      "fact_ids": [
+        "F5"
+      ]
+    },
+    {
+      "name": "功率",
+      "value": "9W",
+      "fact_ids": [
+        "F6"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "让孩子远离近视，保护视力！",
+      "reason": "涉及健康/医疗功效，输入未提供检测或认证依据，不能作为事实或宣称。"
+    },
+    {
+      "claim": "产品通过 CE、FCC、FDA 等认证",
+      "reason": "输入未提供相关认证信息。"
+    },
+    {
+      "claim": "具备防水等级（如 IPX4/IPX5 等）",
+      "reason": "输入未提供。"
+    },
+    {
+      "claim": "提供护眼、无频闪、防蓝光等检测报告或认证",
+      "reason": "输入未提供。"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "认证与检测证明（如 CE、FCC、FDA、检测报告）",
+      "why_needed": "跨境销售和平台合规常需提供，输入未提供。"
+    },
+    {
+      "field": "色温具体数值（三档分别对应的开尔文值）",
+      "why_needed": "买家需要知道冷暖光范围，输入仅写三档色温。"
+    },
+    {
+      "field": "尺寸、重量和颜色",
+      "why_needed": "影响摆放、外观选择、运输和运费，输入未提供。"
+    },
+    {
+      "field": "调光范围或最低亮度",
+      "why_needed": "无极调光需知道亮度调节范围，输入未提供。"
+    },
+    {
+      "field": "电源适配器/插头规格与是否含适配器",
+      "why_needed": "USB-C供电需确认供电方式和配件，输入未提供。"
+    },
+    {
+      "field": "保修期与清洗/维护方式",
+      "why_needed": "售后和长期使用需要，输入未提供。"
+    }
+  ]
+}

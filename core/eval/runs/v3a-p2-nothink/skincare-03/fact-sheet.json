@@ -1,0 +1,118 @@
+{
+  "product": {
+    "name": "玻尿酸神经酰胺保湿面霜",
+    "brand": null,
+    "category": {
+      "value": "Beauty & Personal Care > Skin Care > Moisturizers > Face Creams",
+      "confidence": 0.6
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品容量为50ml。",
+      "source": "user_input",
+      "evidence": "50ml"
+    },
+    {
+      "id": "F2",
+      "statement": "产品适合干皮。",
+      "source": "user_input",
+      "evidence": "适合干皮"
+    },
+    {
+      "id": "F3",
+      "statement": "产品含透明质酸钠。",
+      "source": "user_input",
+      "evidence": "含透明质酸钠"
+    },
+    {
+      "id": "F4",
+      "statement": "产品含神经酰胺。",
+      "source": "user_input",
+      "evidence": "神经酰胺"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "容量",
+      "value": "50ml",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "适用肤质",
+      "value": "干皮",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "成分",
+      "value": "透明质酸钠",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "成分",
+      "value": "神经酰胺",
+      "fact_ids": [
+        "F4"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "7天美白祛斑",
+      "reason": "美白祛斑属于功效宣称，输入未提供任何依据或检测证明，且可能涉及特殊化妆品功效管理。"
+    },
+    {
+      "claim": "医美级修复屏障",
+      "reason": "医美级属于夸大和绝对化表述，修复屏障属于功效宣称，输入未提供依据。"
+    },
+    {
+      "claim": "产品具有美白祛斑功效",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "产品具有医美级修复屏障功效",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "产品通过相关认证或检测",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "产品具有特定防水等级",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "净含量单位是否为毫升",
+      "why_needed": "50ml 已明确，但需确认是否还有克重或其他规格。"
+    },
+    {
+      "field": "产品尺寸和包装规格",
+      "why_needed": "买家需要了解产品大小和包装形式。"
+    },
+    {
+      "field": "颜色或质地",
+      "why_needed": "买家需要了解产品外观和质地。"
+    },
+    {
+      "field": "适用型号或肤质细节",
+      "why_needed": "已写适合干皮，但需确认是否适合其他肤质。"
+    },
+    {
+      "field": "用法用量",
+      "why_needed": "买家需要知道如何使用和用量。"
+    },
+    {
+      "field": "认证与检测证明（如CE、FCC、FDA、检测报告）",
+      "why_needed": "输入未提供任何认证或检测证明，需补充以符合合规要求。"
+    }
+  ]
+}

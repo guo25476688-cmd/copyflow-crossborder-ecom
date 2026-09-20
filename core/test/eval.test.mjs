@@ -91,3 +91,12 @@ test('运行器：能对一个输出目录出报告，缺失用例不会中断',
   assert.match(bad, /earbuds-01 \| ❌/);
   assert.match(bad, /未通过详情/);
 });
+
+test('评分：真实模型输出（deepseek-flash 首次评测）——改写陈述不应被判漏提取，也没有编造', () => {
+  const real = JSON.parse(readFileSync(new URL('../eval/fixtures/real/earbuds-01.flash-v1.fact-sheet.json', import.meta.url), 'utf-8'));
+  const s = scoreFactSheet(earbuds, real);
+  assert.equal(s.recall, 1, `漏提取：${s.missed}`);
+  assert.deepEqual(s.fabricated, []);
+  assert.deepEqual(s.bait_asserted, []);
+  assert.equal(s.bait_flagged, 1);
+});

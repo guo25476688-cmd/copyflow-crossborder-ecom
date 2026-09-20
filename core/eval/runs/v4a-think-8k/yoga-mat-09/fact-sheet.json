@@ -1,0 +1,127 @@
+{
+  "product": {
+    "name": "瑜伽垫",
+    "brand": null,
+    "category": {
+      "value": "Sporting Goods > Exercise & Fitness > Yoga & Pilates > Yoga Mats",
+      "confidence": 0.9
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品名称为瑜伽垫",
+      "source": "user_input",
+      "evidence": "瑜伽垫"
+    },
+    {
+      "id": "F2",
+      "statement": "材质为TPE",
+      "source": "user_input",
+      "evidence": "TPE材质"
+    },
+    {
+      "id": "F3",
+      "statement": "尺寸为183x61cm",
+      "source": "user_input",
+      "evidence": "183x61cm"
+    },
+    {
+      "id": "F4",
+      "statement": "厚度为6mm",
+      "source": "user_input",
+      "evidence": "厚6mm"
+    },
+    {
+      "id": "F5",
+      "statement": "表面有防滑纹理",
+      "source": "user_input",
+      "evidence": "防滑纹理"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "瑜伽垫",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "材质",
+      "value": "TPE",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "尺寸",
+      "value": "183x61cm",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "厚度",
+      "value": "6mm",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "表面纹理",
+      "value": "防滑纹理",
+      "fact_ids": [
+        "F5"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "无毒无味，绝对环保",
+      "reason": "属于安全性/环保声称，输入未提供检测或认证依据，且‘绝对’为绝对化表达，不能作为事实。"
+    },
+    {
+      "claim": "通过 CE、FDA 等认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "具备防水等级（如 IPX）",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "提供检测报告",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "防滑性能达到专业等级或具有摩擦系数测试数据",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "颜色",
+      "why_needed": "买家需要确认实物颜色是否与预期一致"
+    },
+    {
+      "field": "重量",
+      "why_needed": "影响便携性和运费"
+    },
+    {
+      "field": "硬度/回弹性/支撑性",
+      "why_needed": "影响舒适度和适用运动"
+    },
+    {
+      "field": "清洗与保养方式",
+      "why_needed": "影响耐用性和卫生"
+    },
+    {
+      "field": "认证与检测证明（如 CE、FCC、FDA、检测报告）",
+      "why_needed": "用于合规、安全性和消费者信任；输入未提供，需要卖家补充"
+    },
+    {
+      "field": "防滑性能等级或摩擦系数测试数据",
+      "why_needed": "输入只写防滑纹理，无法验证实际防滑效果"
+    }
+  ]
+}

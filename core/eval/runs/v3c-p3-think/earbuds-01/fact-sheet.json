@@ -1,0 +1,123 @@
+{
+  "product": {
+    "name": "HoverGo Pro 无线蓝牙耳机",
+    "brand": null,
+    "category": {
+      "value": "Consumer Electronics > Headphones",
+      "confidence": 0.95
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品类型为无线蓝牙耳机",
+      "source": "user_input",
+      "evidence": "无线蓝牙耳机"
+    },
+    {
+      "id": "F2",
+      "statement": "蓝牙版本为5.3",
+      "source": "user_input",
+      "evidence": "蓝牙5.3"
+    },
+    {
+      "id": "F3",
+      "statement": "具备主动降噪功能",
+      "source": "user_input",
+      "evidence": "主动降噪"
+    },
+    {
+      "id": "F4",
+      "statement": "续航时间为30小时（含充电盒）",
+      "source": "user_input",
+      "evidence": "续航30小时（含充电盒）"
+    },
+    {
+      "id": "F5",
+      "statement": "具备IPX5防水",
+      "source": "user_input",
+      "evidence": "IPX5防水"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "无线蓝牙耳机",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "蓝牙版本",
+      "value": "5.3",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "降噪功能",
+      "value": "主动降噪",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "续航时间",
+      "value": "30小时（含充电盒）",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "防水等级",
+      "value": "IPX5",
+      "fact_ids": [
+        "F5"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "降噪效果吊打AirPods",
+      "reason": "与竞品比较、夸大，输入未提供可验证依据"
+    },
+    {
+      "claim": "已通过CE认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "已通过FCC认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "具备IPX7或IPX8防水等级",
+      "reason": "输入仅提供IPX5，未提供更高防水等级的依据"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "认证与检测证明（如 CE、FCC、FDA、检测报告）",
+      "why_needed": "买家会关注合规性与安全性，输入未提供任何认证或检测报告信息"
+    },
+    {
+      "field": "单次续航时间（不含充电盒）",
+      "why_needed": "输入仅给出含充电盒总续航30小时，买家需要了解耳机单次使用时长"
+    },
+    {
+      "field": "尺寸与重量",
+      "why_needed": "影响佩戴舒适度与便携性，输入未提供"
+    },
+    {
+      "field": "颜色/外观选项",
+      "why_needed": "影响购买选择，输入未提供"
+    },
+    {
+      "field": "充电接口与充电时间",
+      "why_needed": "影响日常使用便利性，输入未提供"
+    },
+    {
+      "field": "保修期与售后政策",
+      "why_needed": "买家关心售后保障，输入未提供"
+    }
+  ]
+}

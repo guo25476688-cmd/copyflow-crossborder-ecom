@@ -1,0 +1,127 @@
+{
+  "product": {
+    "name": "HoverGo Pro 无线蓝牙耳机",
+    "brand": null,
+    "category": {
+      "value": "Consumer Electronics > Headphones",
+      "confidence": 0.9
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "HoverGo Pro 是无线蓝牙耳机",
+      "source": "user_input",
+      "evidence": "HoverGo Pro 无线蓝牙耳机"
+    },
+    {
+      "id": "F2",
+      "statement": "蓝牙版本为5.3",
+      "source": "user_input",
+      "evidence": "蓝牙5.3"
+    },
+    {
+      "id": "F3",
+      "statement": "具备主动降噪功能",
+      "source": "user_input",
+      "evidence": "主动降噪"
+    },
+    {
+      "id": "F4",
+      "statement": "续航30小时（含充电盒）",
+      "source": "user_input",
+      "evidence": "续航30小时（含充电盒）"
+    },
+    {
+      "id": "F5",
+      "statement": "IPX5防水",
+      "source": "user_input",
+      "evidence": "IPX5防水"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "无线蓝牙耳机",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "蓝牙版本",
+      "value": "5.3",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "降噪类型",
+      "value": "主动降噪",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "续航时间",
+      "value": "30小时（含充电盒）",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "防水等级",
+      "value": "IPX5",
+      "fact_ids": [
+        "F5"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "降噪效果吊打AirPods",
+      "reason": "与竞品比较且夸大，输入未提供客观实测依据。"
+    },
+    {
+      "claim": "CE认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "FCC认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "RoHS认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "第三方检测报告",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "认证与检测证明（如 CE、FCC、RoHS、检测报告）",
+      "why_needed": "电商平台和部分市场要求合规认证；输入未提供，需补充以证明合规性。"
+    },
+    {
+      "field": "颜色",
+      "why_needed": "买家根据颜色偏好下单，缺失会影响购买决策。"
+    },
+    {
+      "field": "单只耳机重量与尺寸",
+      "why_needed": "影响佩戴舒适度和适用人群。"
+    },
+    {
+      "field": "充电盒尺寸与重量",
+      "why_needed": "影响便携性和收纳。"
+    },
+    {
+      "field": "单次充电续航时间",
+      "why_needed": "总续航含充电盒，买家需要知道耳机单次使用时长。"
+    },
+    {
+      "field": "支持蓝牙编解码器/协议",
+      "why_needed": "影响与设备的兼容性和音质表现。"
+    }
+  ]
+}

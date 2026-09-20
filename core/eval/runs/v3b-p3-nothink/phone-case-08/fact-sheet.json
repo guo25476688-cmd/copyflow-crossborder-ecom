@@ -1,0 +1,110 @@
+{
+  "product": {
+    "name": "iPhone 15 Pro 手机壳",
+    "brand": null,
+    "category": {
+      "value": "Consumer Electronics > Mobile Phone Accessories > Phone Cases",
+      "confidence": 0.8
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "适用于 iPhone 15 Pro",
+      "source": "user_input",
+      "evidence": "iPhone 15 Pro 手机壳"
+    },
+    {
+      "id": "F2",
+      "statement": "材质为 TPU+PC 双层",
+      "source": "user_input",
+      "evidence": "TPU+PC双层"
+    },
+    {
+      "id": "F3",
+      "statement": "防摔高度 1.5 米",
+      "source": "user_input",
+      "evidence": "防摔1.5米"
+    },
+    {
+      "id": "F4",
+      "statement": "磁吸 MagSafe 兼容",
+      "source": "user_input",
+      "evidence": "磁吸MagSafe兼容"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "适用型号",
+      "value": "iPhone 15 Pro",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "材质",
+      "value": "TPU+PC双层",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "防摔高度",
+      "value": "1.5米",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "磁吸兼容",
+      "value": "MagSafe兼容",
+      "fact_ids": [
+        "F4"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "军规级防摔",
+      "reason": "输入未提供任何军规标准或检测认证依据，属于无依据的绝对化/夸大宣称"
+    },
+    {
+      "claim": "防摔1.5米",
+      "reason": "输入未提供任何防摔测试报告或认证依据，该防护性能宣称无依据"
+    },
+    {
+      "claim": "MagSafe兼容",
+      "reason": "输入未提供 MagSafe 兼容性测试或认证依据，该兼容性宣称无依据"
+    },
+    {
+      "claim": "TPU+PC双层",
+      "reason": "输入未提供材质检测报告或成分证明，该材质宣称无依据"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "尺寸",
+      "why_needed": "买家需要确认手机壳是否贴合 iPhone 15 Pro 的机身尺寸"
+    },
+    {
+      "field": "重量",
+      "why_needed": "买家关心手机壳是否轻薄，影响手感"
+    },
+    {
+      "field": "颜色",
+      "why_needed": "买家需要选择颜色款式"
+    },
+    {
+      "field": "认证与检测证明（如 CE、FCC、FDA、检测报告）",
+      "why_needed": "输入未提供任何认证或检测报告，买家需要确认产品合规性和安全性"
+    },
+    {
+      "field": "清洗方式",
+      "why_needed": "买家需要知道如何清洁保养手机壳"
+    },
+    {
+      "field": "保修",
+      "why_needed": "买家关心售后保障"
+    }
+  ]
+}

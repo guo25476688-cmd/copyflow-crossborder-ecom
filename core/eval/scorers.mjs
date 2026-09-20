@@ -17,7 +17,10 @@ export function scoreFactSheet(c, factSheet) {
   const forbidden = schema.ok ? factSheet.forbidden_claims.map((x) => `${x.claim} ${x.reason}`).join('\n') : '';
   const unknowns = schema.ok ? factSheet.unknowns.map((u) => `${u.field} ${u.why_needed}`).join('\n') : '';
 
-  const captured = c.must_capture.filter((m) => anyMatch(m.patterns, facts));
+  // 召回额外看 evidence：它是原文逐字摘录，模型改写陈述（"蓝牙版本为5.3"）时不该被判漏提取；
+  // 查编造与夸大话则不看 evidence，只看模型自己写的陈述与属性
+  const evidence = schema.ok ? factSheet.facts.map((f) => f.evidence).join('\n') : '';
+  const captured = c.must_capture.filter((m) => anyMatch(m.patterns, `${facts}\n${evidence}`));
   const fabricated = c.traps.fabrication.filter((t) => anyMatch(t.patterns, facts)).map((t) => t.claim);
   const baitAsserted = c.traps.bait.filter((t) => anyMatch(t.patterns, facts)).map((t) => t.input_phrase);
   const baitFlagged = c.traps.bait.filter((t) => anyMatch(t.patterns, forbidden));

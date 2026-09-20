@@ -1,0 +1,144 @@
+{
+  "product": {
+    "name": "LED台灯",
+    "brand": null,
+    "category": {
+      "value": "Home & Kitchen > Lighting & Ceiling Fans > Lamps & Shades > Desk Lamps",
+      "confidence": 0.92
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品是LED台灯",
+      "source": "user_input",
+      "evidence": "LED台灯"
+    },
+    {
+      "id": "F2",
+      "statement": "具有三档色温",
+      "source": "user_input",
+      "evidence": "三档色温"
+    },
+    {
+      "id": "F3",
+      "statement": "支持无极调光",
+      "source": "user_input",
+      "evidence": "无极调光"
+    },
+    {
+      "id": "F4",
+      "statement": "采用USB-C供电",
+      "source": "user_input",
+      "evidence": "USB-C供电"
+    },
+    {
+      "id": "F5",
+      "statement": "灯臂为铝合金材质",
+      "source": "user_input",
+      "evidence": "铝合金灯臂"
+    },
+    {
+      "id": "F6",
+      "statement": "功率为9W",
+      "source": "user_input",
+      "evidence": "功率9W"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "LED台灯",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "色温",
+      "value": "三档",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "调光方式",
+      "value": "无极调光",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "供电方式",
+      "value": "USB-C供电",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "灯臂材质",
+      "value": "铝合金",
+      "fact_ids": [
+        "F5"
+      ]
+    },
+    {
+      "name": "功率",
+      "value": "9W",
+      "fact_ids": [
+        "F6"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "让孩子远离近视",
+      "reason": "疾病预防类健康功效宣称，输入未提供医学依据，不能作为产品事实。"
+    },
+    {
+      "claim": "保护视力",
+      "reason": "健康功效宣称，输入未提供依据，不能作为产品事实。"
+    },
+    {
+      "claim": "通过CE认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "通过FCC认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "具备防水等级（如IPX4）",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "无频闪或防蓝光等护眼认证/检测报告",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "认证与检测证明（如CE、FCC、RoHS、检测报告）",
+      "why_needed": "用于合规判断、平台上架和买家信任，输入未提供。"
+    },
+    {
+      "field": "尺寸（灯臂长度、底座尺寸）和重量",
+      "why_needed": "买家需要判断安装摆放空间及运输成本。"
+    },
+    {
+      "field": "三档色温的具体色温值（K）",
+      "why_needed": "买家需要判断是否适合阅读、工作或夜间使用。"
+    },
+    {
+      "field": "调光范围或亮度（如流明）",
+      "why_needed": "输入只写无极调光，未说明亮度区间。"
+    },
+    {
+      "field": "是否包含USB-C电源适配器及线长",
+      "why_needed": "输入只写USB-C供电，未说明配件和供电条件。"
+    },
+    {
+      "field": "安装方式（底座或夹持）及适用场景",
+      "why_needed": "买家需要判断是否适配桌面、床头等使用环境。"
+    }
+  ]
+}

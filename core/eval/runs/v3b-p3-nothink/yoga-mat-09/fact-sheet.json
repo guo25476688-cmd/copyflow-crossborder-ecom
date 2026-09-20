@@ -1,0 +1,118 @@
+{
+  "product": {
+    "name": "瑜伽垫",
+    "brand": null,
+    "category": {
+      "value": "Sports & Outdoors > Yoga > Yoga Mats",
+      "confidence": 0.9
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "材质为TPE",
+      "source": "user_input",
+      "evidence": "TPE材质"
+    },
+    {
+      "id": "F2",
+      "statement": "尺寸为183x61cm",
+      "source": "user_input",
+      "evidence": "183x61cm"
+    },
+    {
+      "id": "F3",
+      "statement": "厚度为6mm",
+      "source": "user_input",
+      "evidence": "厚6mm"
+    },
+    {
+      "id": "F4",
+      "statement": "具有防滑纹理",
+      "source": "user_input",
+      "evidence": "防滑纹理"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "材质",
+      "value": "TPE",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "尺寸",
+      "value": "183x61cm",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "厚度",
+      "value": "6mm",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "表面纹理",
+      "value": "防滑纹理",
+      "fact_ids": [
+        "F4"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "无毒无味",
+      "reason": "输入未提供检测或认证依据，属于安全性声称，不能作为事实"
+    },
+    {
+      "claim": "绝对环保",
+      "reason": "输入未提供检测或认证依据，属于环保声称，不能作为事实"
+    },
+    {
+      "claim": "通过CE认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "通过FDA认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "通过FCC认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "防水等级IPX4",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "颜色",
+      "why_needed": "买家需要知道可选颜色"
+    },
+    {
+      "field": "重量",
+      "why_needed": "买家关心便携性"
+    },
+    {
+      "field": "适用场景或运动类型",
+      "why_needed": "买家需要确认是否适合自身需求"
+    },
+    {
+      "field": "清洗方式",
+      "why_needed": "买家需要了解维护方法"
+    },
+    {
+      "field": "保修期",
+      "why_needed": "买家关心售后保障"
+    },
+    {
+      "field": "认证与检测证明（如CE、FCC、FDA、检测报告）",
+      "why_needed": "输入未提供，需补充以支持安全环保等声称"
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "product": {
+    "name": "Cordless screwdriver 3.6V 1500mAh Li-ion",
+    "brand": null,
+    "category": {
+      "value": "Tools & Home Improvement > Power Tools > Cordless Screwdrivers",
+      "confidence": 0.7
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品为无绳螺丝刀（Cordless screwdriver）",
+      "source": "user_input",
+      "evidence": "Cordless screwdriver"
+    },
+    {
+      "id": "F2",
+      "statement": "电压为 3.6V",
+      "source": "user_input",
+      "evidence": "3.6V"
+    },
+    {
+      "id": "F3",
+      "statement": "电池容量为 1500mAh，类型为 Li-ion",
+      "source": "user_input",
+      "evidence": "1500mAh Li-ion"
+    },
+    {
+      "id": "F4",
+      "statement": "扭矩为 5N.m",
+      "source": "user_input",
+      "evidence": "扭矩 5N.m"
+    },
+    {
+      "id": "F5",
+      "statement": "附赠 24 pcs bits",
+      "source": "user_input",
+      "evidence": "附赠24 pcs bits"
+    },
+    {
+      "id": "F6",
+      "statement": "采用 USB-C 充电",
+      "source": "user_input",
+      "evidence": "USB-C充电"
+    },
+    {
+      "id": "F7",
+      "statement": "充满电约需 3h",
+      "source": "user_input",
+      "evidence": "充满约3h"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "产品类型",
+      "value": "Cordless screwdriver",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "name": "电压",
+      "value": "3.6V",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "电池容量",
+      "value": "1500mAh",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "电池类型",
+      "value": "Li-ion",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "扭矩",
+      "value": "5N.m",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "name": "附赠配件",
+      "value": "24 pcs bits",
+      "fact_ids": [
+        "F5"
+      ]
+    },
+    {
+      "name": "充电接口",
+      "value": "USB-C",
+      "fact_ids": [
+        "F6"
+      ]
+    },
+    {
+      "name": "充电时间",
+      "value": "约3h",
+      "fact_ids": [
+        "F7"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "Professional grade（专业级）",
+      "reason": "属于主观等级宣称，输入未提供任何专业级标准或依据"
+    },
+    {
+      "claim": "比博世更耐用",
+      "reason": "与竞品做比较且涉及耐用性，输入未提供任何测试或数据依据"
+    },
+    {
+      "claim": "产品具备 CE / FCC / RoHS 等认证",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "产品具备防水等级（如 IPX4 等）",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "产品尺寸与重量",
+      "why_needed": "买家评估握持手感、便携性与运费，输入未提供"
+    },
+    {
+      "field": "颜色",
+      "why_needed": "颜色是购买决策与listing主图一致性所需信息，输入未提供"
+    },
+    {
+      "field": "认证与检测证明（CE、FCC、RoHS、检测报告等）",
+      "why_needed": "决定能否在目标市场上架及平台合规审核，必须由卖家补充"
+    },
+    {
+      "field": "保修期与售后政策",
+      "why_needed": "买家关心售后保障，影响转化与纠纷处理，输入未提供"
+    },
+    {
+      "field": "bit 的具体规格（尺寸、材质、类型）",
+      "why_needed": "买家需确认是否匹配自身使用场景，输入仅写了数量"
+    },
+    {
+      "field": "是否随附充电线/充电器及空载转速（RPM）",
+      "why_needed": "影响开箱可用性与实际使用性能预期，输入未提供"
+    }
+  ]
+}

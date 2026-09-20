@@ -1,0 +1,110 @@
+{
+  "product": {
+    "name": "玻尿酸神经酰胺保湿面霜",
+    "brand": null,
+    "category": {
+      "value": "Beauty & Personal Care > Skin Care > Moisturizers > Face Creams",
+      "confidence": 0.8
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "产品名称为玻尿酸神经酰胺保湿面霜",
+      "source": "user_input",
+      "evidence": "玻尿酸神经酰胺保湿面霜"
+    },
+    {
+      "id": "F2",
+      "statement": "净含量为 50ml",
+      "source": "user_input",
+      "evidence": "50ml"
+    },
+    {
+      "id": "F3",
+      "statement": "适合干皮使用",
+      "source": "user_input",
+      "evidence": "适合干皮"
+    },
+    {
+      "id": "F4",
+      "statement": "配方含透明质酸钠",
+      "source": "user_input",
+      "evidence": "含透明质酸钠"
+    },
+    {
+      "id": "F5",
+      "statement": "配方含神经酰胺",
+      "source": "user_input",
+      "evidence": "神经酰胺"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "净含量",
+      "value": "50ml",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "适用肤质",
+      "value": "干皮",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "成分",
+      "value": "透明质酸钠、神经酰胺",
+      "fact_ids": [
+        "F4",
+        "F5"
+      ]
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "7天美白祛斑",
+      "reason": "美白祛斑属于功效声称，输入未提供任何功效评价或检测依据，不能作为事实声称"
+    },
+    {
+      "claim": "医美级修复屏障",
+      "reason": "\"医美级\"为夸大、绝对化说法，修复屏障功效输入未提供检测或认证依据"
+    },
+    {
+      "claim": "具有美白祛斑功效评价报告/检测报告",
+      "reason": "输入未提供"
+    },
+    {
+      "claim": "具有医美级认证或医疗器械相关资质",
+      "reason": "输入未提供"
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "品牌名称与生产厂家/备案信息",
+      "why_needed": "消费者需要确认品牌与合规来源，输入仅有产品描述，未给出品牌或备案主体"
+    },
+    {
+      "field": "化妆品备案号、生产许可证及功效/安全性检测报告",
+      "why_needed": "美白祛斑等功效与安全性声称需有备案和检测依据支撑，否则无法合规宣传"
+    },
+    {
+      "field": "透明质酸钠、神经酰胺等成分的具体浓度或含量",
+      "why_needed": "成分含量直接影响功效预期与定价判断，输入只写了成分名称"
+    },
+    {
+      "field": "使用方法、使用频率与建议用量",
+      "why_needed": "买家需要知道如何使用及用多久，输入未提及"
+    },
+    {
+      "field": "保质期与开封后使用期限",
+      "why_needed": "护肤品的储存与使用期限直接影响购买决策，输入未提供"
+    },
+    {
+      "field": "质地、气味、包装形式与敏感肌是否适用",
+      "why_needed": "这些是买家选择面霜时的重要参考，输入仅标注适合干皮"
+    }
+  ]
+}
