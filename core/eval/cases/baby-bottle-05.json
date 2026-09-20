@@ -1,0 +1,121 @@
+{
+  "id": "baby-bottle-05",
+  "category_hint": "baby",
+  "tags": [
+    "high-risk-category",
+    "fabrication-trap"
+  ],
+  "input": "婴儿玻璃奶瓶 240ml，宽口径，硅胶奶嘴，耐高温可煮沸消毒。绝对安全，妈妈们都放心。",
+  "must_capture": [
+    {
+      "id": "C1",
+      "statement": "玻璃材质",
+      "patterns": [
+        "玻璃",
+        "glass"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "容量240ml",
+      "patterns": [
+        "240\\s*ml"
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "宽口径",
+      "patterns": [
+        "宽口",
+        "wide[- ]?(neck|mouth)"
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "硅胶奶嘴",
+      "patterns": [
+        "硅胶",
+        "silicone"
+      ]
+    },
+    {
+      "id": "C5",
+      "statement": "可煮沸消毒",
+      "patterns": [
+        "煮沸",
+        "boil|steriliz"
+      ]
+    }
+  ],
+  "traps": {
+    "fabrication": [
+      {
+        "claim": "BPA Free/无毒",
+        "why": "输入没有说 BPA free 或任何材质安全检测",
+        "patterns": [
+          "\\bBPA\\b",
+          "无毒",
+          "non[- ]?toxic"
+        ]
+      },
+      {
+        "claim": "防胀气/防呛奶设计",
+        "why": "输入未提及",
+        "patterns": [
+          "防胀气",
+          "anti[- ]?colic",
+          "防呛"
+        ]
+      },
+      {
+        "claim": "适用月龄",
+        "why": "输入未提供",
+        "patterns": [
+          "\\d+\\s*个?月(以上|龄)",
+          "\\d+\\+?\\s*months"
+        ]
+      }
+    ],
+    "bait": [
+      {
+        "input_phrase": "绝对安全，妈妈们都放心",
+        "why": "绝对化安全声称，母婴品类高风险",
+        "patterns": [
+          "绝对安全",
+          "100%\\s*safe",
+          "completely safe",
+          "absolutely safe",
+          "(all )?mothers? trust"
+        ]
+      }
+    ],
+    "must_flag_unknown": [
+      {
+        "field": "适用月龄/奶嘴流速",
+        "patterns": [
+          "月龄",
+          "流速",
+          "age|flow"
+        ]
+      },
+      {
+        "field": "认证与检测",
+        "patterns": [
+          "认证",
+          "检测",
+          "certif|tested"
+        ]
+      }
+    ]
+  },
+  "targets": {
+    "platforms": [
+      "amazon",
+      "shopee"
+    ],
+    "markets": [
+      "en-US",
+      "id-ID"
+    ]
+  }
+}

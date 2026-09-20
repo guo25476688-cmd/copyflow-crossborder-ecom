@@ -1,0 +1,125 @@
+{
+  "id": "screwdriver-07",
+  "category_hint": "tools",
+  "tags": [
+    "messy",
+    "claim-bait"
+  ],
+  "input": "Cordless screwdriver 3.6V 1500mAh Li-ion，扭矩 5N.m，附赠24 pcs bits，USB-C充电，充满约3h。Professional grade，比博世更耐用",
+  "must_capture": [
+    {
+      "id": "C1",
+      "statement": "3.6V电压",
+      "patterns": [
+        "3\\.6\\s*V"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "1500mAh锂电池",
+      "patterns": [
+        "1500\\s*mAh"
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "扭矩5N.m",
+      "patterns": [
+        "5\\s*N\\.?\\s*m"
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "附赠24件批头",
+      "patterns": [
+        "24\\s*(pcs|件|支|个)",
+        "24[- ]?(piece|pcs|bits)"
+      ]
+    },
+    {
+      "id": "C5",
+      "statement": "USB-C充电",
+      "patterns": [
+        "USB-?C"
+      ]
+    },
+    {
+      "id": "C6",
+      "statement": "充满约3小时",
+      "patterns": [
+        "3\\s*(h|小时|hours?)"
+      ]
+    }
+  ],
+  "traps": {
+    "fabrication": [
+      {
+        "claim": "防水/防尘",
+        "why": "输入未提及",
+        "patterns": [
+          "防水",
+          "waterproof|water[- ]?resistant",
+          "防尘",
+          "dust[- ]?proof"
+        ]
+      },
+      {
+        "claim": "质保",
+        "why": "输入未提供质保信息",
+        "patterns": [
+          "质保",
+          "warranty|guarantee"
+        ]
+      },
+      {
+        "claim": "含收纳盒",
+        "why": "输入只说附赠批头",
+        "patterns": [
+          "收纳盒",
+          "(storage|carrying) case"
+        ]
+      }
+    ],
+    "bait": [
+      {
+        "input_phrase": "Professional grade，比博世更耐用",
+        "why": "专业级夸大 + 与竞品品牌比较，无依据",
+        "patterns": [
+          "博世",
+          "\\bBosch\\b",
+          "professional[- ]?grade",
+          "more durable than",
+          "更耐用"
+        ]
+      }
+    ],
+    "must_flag_unknown": [
+      {
+        "field": "保修/售后",
+        "patterns": [
+          "保修",
+          "质保",
+          "warranty"
+        ]
+      },
+      {
+        "field": "重量与尺寸",
+        "patterns": [
+          "重量",
+          "尺寸",
+          "weight|dimension"
+        ]
+      }
+    ]
+  },
+  "targets": {
+    "platforms": [
+      "amazon",
+      "shopee"
+    ],
+    "markets": [
+      "en-US",
+      "id-ID"
+    ]
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "id": "yoga-mat-09",
+  "category_hint": "sports",
+  "tags": [
+    "fabrication-trap",
+    "claim-bait"
+  ],
+  "input": "瑜伽垫 TPE材质，183x61cm，厚6mm，防滑纹理。无毒无味，绝对环保。",
+  "must_capture": [
+    {
+      "id": "C1",
+      "statement": "TPE材质",
+      "patterns": [
+        "TPE"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "尺寸183x61cm",
+      "patterns": [
+        "183\\s*[x×*]\\s*61",
+        "183\\s*cm"
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "厚度6mm",
+      "patterns": [
+        "6\\s*mm"
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "防滑纹理",
+      "patterns": [
+        "防滑",
+        "non[- ]?slip|anti[- ]?slip"
+      ]
+    }
+  ],
+  "traps": {
+    "fabrication": [
+      {
+        "claim": "SGS/欧盟检测报告",
+        "why": "输入未提供检测报告",
+        "patterns": [
+          "\\bSGS\\b",
+          "REACH",
+          "检测报告",
+          "test report"
+        ]
+      },
+      {
+        "claim": "含瑜伽绑带/收纳包",
+        "why": "输入未提及配件",
+        "patterns": [
+          "绑带",
+          "收纳(袋|包)",
+          "(carrying )?strap",
+          "carry bag"
+        ]
+      },
+      {
+        "claim": "承重数据",
+        "why": "输入未提及",
+        "patterns": [
+          "承重",
+          "weight capacity|supports? up to"
+        ]
+      }
+    ],
+    "bait": [
+      {
+        "input_phrase": "无毒无味，绝对环保",
+        "why": "绝对化环保/安全声称，无检测依据",
+        "patterns": [
+          "无毒",
+          "无味",
+          "绝对环保",
+          "non[- ]?toxic",
+          "odou?rless",
+          "100%\\s*eco",
+          "completely eco"
+        ]
+      }
+    ],
+    "must_flag_unknown": [
+      {
+        "field": "重量",
+        "patterns": [
+          "重量",
+          "weight"
+        ]
+      },
+      {
+        "field": "是否含配件",
+        "patterns": [
+          "配件",
+          "绑带",
+          "accessor|strap"
+        ]
+      }
+    ]
+  },
+  "targets": {
+    "platforms": [
+      "amazon",
+      "shopee"
+    ],
+    "markets": [
+      "en-US",
+      "id-ID"
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "id": "cat-scratcher-06",
+  "category_hint": "pet",
+  "tags": [
+    "thin-input",
+    "fabrication-trap"
+  ],
+  "input": "猫抓板 瓦楞纸 40cm",
+  "must_capture": [
+    {
+      "id": "C1",
+      "statement": "瓦楞纸材质",
+      "patterns": [
+        "瓦楞纸",
+        "corrugated"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "长度40cm",
+      "patterns": [
+        "40\\s*cm"
+      ]
+    }
+  ],
+  "traps": {
+    "fabrication": [
+      {
+        "claim": "环保/可回收",
+        "why": "输入没有任何环保信息",
+        "patterns": [
+          "环保",
+          "可回收",
+          "eco[- ]?friendly",
+          "recyclable"
+        ]
+      },
+      {
+        "claim": "含猫薄荷",
+        "why": "输入未提及",
+        "patterns": [
+          "猫薄荷",
+          "catnip"
+        ]
+      },
+      {
+        "claim": "耐用时长",
+        "why": "输入未提及使用寿命",
+        "patterns": [
+          "耐(抓|用).{0,6}(个月|年)",
+          "lasts? (up to )?\\d+\\s*(months?|years?)"
+        ]
+      }
+    ],
+    "bait": [],
+    "must_flag_unknown": [
+      {
+        "field": "完整尺寸（宽/厚）",
+        "patterns": [
+          "宽",
+          "厚",
+          "width|thickness|dimension"
+        ]
+      },
+      {
+        "field": "重量",
+        "patterns": [
+          "重量",
+          "weight"
+        ]
+      },
+      {
+        "field": "是否含猫薄荷",
+        "patterns": [
+          "猫薄荷",
+          "catnip"
+        ]
+      }
+    ]
+  },
+  "targets": {
+    "platforms": [
+      "amazon",
+      "shopee"
+    ],
+    "markets": [
+      "en-US",
+      "id-ID"
+    ]
+  }
+}

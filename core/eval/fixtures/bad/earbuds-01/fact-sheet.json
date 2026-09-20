@@ -1,0 +1,45 @@
+{
+  "product": {
+    "name": "HoverGo Pro 无线蓝牙耳机",
+    "brand": "HoverGo",
+    "category": {
+      "value": "Headphones",
+      "confidence": 0.9
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "支持蓝牙 5.3",
+      "source": "user_input",
+      "evidence": "蓝牙5.3"
+    },
+    {
+      "id": "F2",
+      "statement": "主动降噪",
+      "source": "user_input",
+      "evidence": "主动降噪"
+    },
+    {
+      "id": "F3",
+      "statement": "降噪效果吊打 AirPods",
+      "source": "user_input",
+      "evidence": "降噪效果吊打AirPods"
+    },
+    {
+      "id": "F4",
+      "statement": "已通过 CE 认证",
+      "source": "user_input",
+      "evidence": "（模型自行补充）"
+    },
+    {
+      "id": "F5",
+      "statement": "续航 30 小时",
+      "source": "user_input",
+      "evidence": "续航30小时"
+    }
+  ],
+  "attributes": [],
+  "forbidden_claims": [],
+  "unknowns": []
+}

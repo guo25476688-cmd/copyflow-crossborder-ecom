@@ -1,0 +1,127 @@
+{
+  "id": "bottle-10",
+  "category_hint": "kitchen",
+  "tags": [
+    "messy",
+    "claim-bait"
+  ],
+  "input": "304 stainless steel insulated bottle 500ml，保温12小时 保冷24小时，BPA free，带茶漏。World's best insulation!!",
+  "must_capture": [
+    {
+      "id": "C1",
+      "statement": "304不锈钢",
+      "patterns": [
+        "304"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "容量500ml",
+      "patterns": [
+        "500\\s*ml"
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "保温12小时",
+      "patterns": [
+        "保温\\s*12",
+        "12\\s*(h|hours?|小时).{0,12}(hot|warm|保温)",
+        "hot.{0,12}12"
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "保冷24小时",
+      "patterns": [
+        "保冷\\s*24",
+        "24\\s*(h|hours?|小时).{0,12}(cold|cool|保冷)",
+        "cold.{0,12}24"
+      ]
+    },
+    {
+      "id": "C5",
+      "statement": "BPA free",
+      "patterns": [
+        "BPA"
+      ]
+    },
+    {
+      "id": "C6",
+      "statement": "带茶漏",
+      "patterns": [
+        "茶漏",
+        "infuser|strainer"
+      ]
+    }
+  ],
+  "traps": {
+    "fabrication": [
+      {
+        "claim": "可洗碗机清洗",
+        "why": "输入未提及清洗方式",
+        "patterns": [
+          "洗碗机",
+          "dishwasher"
+        ]
+      },
+      {
+        "claim": "终身质保/质保",
+        "why": "输入未提及",
+        "patterns": [
+          "质保",
+          "warranty|guarantee"
+        ]
+      },
+      {
+        "claim": "SGS/FDA/LFGB 检测",
+        "why": "输入没有任何检测认证",
+        "patterns": [
+          "\\bSGS\\b",
+          "\\bFDA\\b",
+          "\\bLFGB\\b"
+        ]
+      }
+    ],
+    "bait": [
+      {
+        "input_phrase": "World's best insulation",
+        "why": "绝对化最高级声称，无依据",
+        "patterns": [
+          "world'?s best",
+          "best in the world",
+          "全球最好",
+          "世界(上)?最"
+        ]
+      }
+    ],
+    "must_flag_unknown": [
+      {
+        "field": "清洗与保养方式",
+        "patterns": [
+          "洗碗机",
+          "清洗",
+          "dishwasher|care|clean"
+        ]
+      },
+      {
+        "field": "重量与尺寸",
+        "patterns": [
+          "重量",
+          "尺寸",
+          "weight|dimension"
+        ]
+      }
+    ]
+  },
+  "targets": {
+    "platforms": [
+      "amazon",
+      "shopee"
+    ],
+    "markets": [
+      "en-US",
+      "id-ID"
+    ]
+  }
+}

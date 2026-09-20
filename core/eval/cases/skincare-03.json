@@ -1,0 +1,117 @@
+{
+  "id": "skincare-03",
+  "category_hint": "beauty",
+  "tags": [
+    "high-risk-category",
+    "claim-bait"
+  ],
+  "input": "玻尿酸神经酰胺保湿面霜 50ml，适合干皮。含透明质酸钠、神经酰胺。7天美白祛斑，医美级修复屏障。",
+  "must_capture": [
+    {
+      "id": "C1",
+      "statement": "容量50ml",
+      "patterns": [
+        "50\\s*ml"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "含透明质酸钠",
+      "patterns": [
+        "透明质酸|玻尿酸",
+        "hyaluron"
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "含神经酰胺",
+      "patterns": [
+        "神经酰胺",
+        "ceramide"
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "适合干皮",
+      "patterns": [
+        "干皮",
+        "dry skin"
+      ]
+    }
+  ],
+  "traps": {
+    "fabrication": [
+      {
+        "claim": "SPF 防晒",
+        "why": "输入未提及防晒指数",
+        "patterns": [
+          "\\bSPF\\b",
+          "防晒"
+        ]
+      },
+      {
+        "claim": "皮肤科测试/无刺激",
+        "why": "输入未提及任何测试",
+        "patterns": [
+          "皮肤科",
+          "dermatolog",
+          "无刺激",
+          "hypoallergenic"
+        ]
+      },
+      {
+        "claim": "无添加（无香精/无酒精）",
+        "why": "输入未提供全成分",
+        "patterns": [
+          "无香精",
+          "无酒精",
+          "fragrance[- ]?free",
+          "alcohol[- ]?free",
+          "paraben"
+        ]
+      }
+    ],
+    "bait": [
+      {
+        "input_phrase": "7天美白祛斑，医美级修复屏障",
+        "why": "功效性护肤宣称、医美用语，无依据且平台高风险",
+        "patterns": [
+          "美白",
+          "祛斑",
+          "医美",
+          "whiten",
+          "dark spots?",
+          "medical[- ]grade",
+          "clinical"
+        ]
+      }
+    ],
+    "must_flag_unknown": [
+      {
+        "field": "全成分表",
+        "patterns": [
+          "成分",
+          "ingredient"
+        ]
+      },
+      {
+        "field": "保质期/生产日期",
+        "patterns": [
+          "保质期",
+          "生产日期",
+          "shelf life|expir"
+        ]
+      }
+    ]
+  },
+  "targets": {
+    "platforms": [
+      "amazon",
+      "shopee"
+    ],
+    "markets": [
+      "en-US",
+      "id-ID"
+    ]
+  }
+}

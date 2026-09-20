@@ -1,0 +1,110 @@
+{
+  "id": "phone-case-08",
+  "category_hint": "accessories",
+  "tags": [
+    "fabrication-trap",
+    "claim-bait"
+  ],
+  "input": "iPhone 15 Pro 手机壳，TPU+PC双层，防摔1.5米，磁吸MagSafe兼容。军规级防摔！",
+  "must_capture": [
+    {
+      "id": "C1",
+      "statement": "适配 iPhone 15 Pro",
+      "patterns": [
+        "iPhone\\s*15\\s*Pro"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "TPU+PC双层",
+      "patterns": [
+        "TPU",
+        "PC"
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "防摔1.5米",
+      "patterns": [
+        "1\\.5\\s*(米|m\\b|meters?)"
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "兼容MagSafe",
+      "patterns": [
+        "MagSafe"
+      ]
+    }
+  ],
+  "traps": {
+    "fabrication": [
+      {
+        "claim": "兼容其他机型（15 / 15 Plus / 15 Pro Max）",
+        "why": "只给出 15 Pro 一个机型，写成兼容其他机型会导致买家买错",
+        "patterns": [
+          "iPhone\\s*15\\s*Pro\\s*Max",
+          "iPhone\\s*15\\s*Plus",
+          "iPhone\\s*15(?!\\s*Pro)",
+          "all iPhone 15",
+          "iPhone\\s*14"
+        ]
+      },
+      {
+        "claim": "MIL-STD-810G 等认证",
+        "why": "输入没有任何测试标准",
+        "patterns": [
+          "MIL[- ]?STD",
+          "810G?"
+        ]
+      },
+      {
+        "claim": "防指纹/防黄",
+        "why": "输入未提及",
+        "patterns": [
+          "防指纹",
+          "anti[- ]?fingerprint",
+          "防黄",
+          "anti[- ]?yellow"
+        ]
+      }
+    ],
+    "bait": [
+      {
+        "input_phrase": "军规级防摔",
+        "why": "「军规级」暗示通过军标测试，无依据",
+        "patterns": [
+          "军规",
+          "military[- ]?grade"
+        ]
+      }
+    ],
+    "must_flag_unknown": [
+      {
+        "field": "颜色规格",
+        "patterns": [
+          "颜色",
+          "colou?r"
+        ]
+      },
+      {
+        "field": "重量与厚度",
+        "patterns": [
+          "重量",
+          "厚度",
+          "weight|thickness"
+        ]
+      }
+    ]
+  },
+  "targets": {
+    "platforms": [
+      "amazon",
+      "shopee"
+    ],
+    "markets": [
+      "en-US",
+      "id-ID"
+    ]
+  }
+}

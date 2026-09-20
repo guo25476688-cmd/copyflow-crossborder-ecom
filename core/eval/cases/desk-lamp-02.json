@@ -1,0 +1,112 @@
+{
+  "id": "desk-lamp-02",
+  "category_hint": "home",
+  "tags": [
+    "claim-bait",
+    "high-risk-claim"
+  ],
+  "input": "LED台灯，三档色温，无极调光，USB-C供电，铝合金灯臂，功率9W。让孩子远离近视，保护视力！",
+  "must_capture": [
+    {
+      "id": "C1",
+      "statement": "三档色温",
+      "patterns": [
+        "三档色温",
+        "(three|3)\\s*(color|colour)?\\s*(temperature|modes)"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "无极调光",
+      "patterns": [
+        "无极调光",
+        "stepless|continuous(ly)? dimm"
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "USB-C供电",
+      "patterns": [
+        "USB-?C"
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "铝合金灯臂",
+      "patterns": [
+        "铝合金",
+        "aluminum|aluminium"
+      ]
+    },
+    {
+      "id": "C5",
+      "statement": "功率9W",
+      "patterns": [
+        "9\\s*W"
+      ]
+    }
+  ],
+  "traps": {
+    "fabrication": [
+      {
+        "claim": "护眼/无蓝光/防频闪认证",
+        "why": "输入只说保护视力的营销话，没有任何检测依据",
+        "patterns": [
+          "防频闪",
+          "flicker[- ]?free",
+          "无蓝光",
+          "blue[- ]?light (free|filter)"
+        ]
+      },
+      {
+        "claim": "配有电源适配器",
+        "why": "输入只说 USB-C 供电，未说明是否含适配器",
+        "patterns": [
+          "含.{0,4}适配器",
+          "adapter included|includes? (a |an )?(power )?adapter"
+        ]
+      }
+    ],
+    "bait": [
+      {
+        "input_phrase": "让孩子远离近视，保护视力",
+        "why": "近视防护属于医疗/健康功效声称，无依据",
+        "patterns": [
+          "远离近视",
+          "预防近视",
+          "保护视力",
+          "protects? (your |their )?(eyes|eyesight|vision)",
+          "myopia|nearsight"
+        ]
+      }
+    ],
+    "must_flag_unknown": [
+      {
+        "field": "电压/插头规格",
+        "patterns": [
+          "电压",
+          "插头",
+          "voltage|plug"
+        ]
+      },
+      {
+        "field": "尺寸重量",
+        "patterns": [
+          "尺寸",
+          "重量",
+          "dimension|weight"
+        ]
+      }
+    ]
+  },
+  "targets": {
+    "platforms": [
+      "amazon",
+      "shopee"
+    ],
+    "markets": [
+      "en-US",
+      "id-ID"
+    ]
+  }
+}
