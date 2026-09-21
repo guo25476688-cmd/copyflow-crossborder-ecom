@@ -1,0 +1,58 @@
+name: Daily trend snapshot
+
+on:
+  schedule:
+    # 每天 UTC 01:17（北京时间 09:17）。避开整点：官方说明整点是高负载时段，任务可能延迟甚至被丢弃
+    - cron: '17 1 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: trend-snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Generate snapshot
+        working-directory: core
+        env:
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: node trends/snapshot.mjs "$RUNNER_TEMP/trend-out"
+
+      # 有类目失败时上一步退出码为 1（任务显示红色，提醒你去看），但已生成的快照仍然要保存
+      - name: Publish to trend-data branch
+        if: ${{ !cancelled() }}
+        run: |
+          set -euo pipefail
+          out="$RUNNER_TEMP/trend-out"
+          if [ ! -d "$out" ]; then echo "上一步没有产出，跳过"; exit 0; fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # 必须显式写 refspec：checkout 是只含默认分支的浅克隆，直接 fetch 分支名不会生成 origin/trend-data，第二天起会误建新分支导致推送被拒
+          git fetch origin "+refs/heads/trend-data:refs/remotes/origin/trend-data" || true
+          if git rev-parse --verify --quiet origin/trend-data; then
+            git worktree add -B trend-data "$RUNNER_TEMP/data" origin/trend-data
+          else
+            git worktree add --orphan -b trend-data "$RUNNER_TEMP/data"
+          fi
+
+          mkdir -p "$RUNNER_TEMP/data/snapshots"
+          cp "$out"/*.json "$RUNNER_TEMP/data/snapshots/"
+          cd "$RUNNER_TEMP/data"
+          git add snapshots
+          if git diff --cached --quiet; then echo "没有变化"; exit 0; fi
+          git commit -m "chore(trends): 趋势词快照 $(date -u +%F)"
+          git push origin trend-data

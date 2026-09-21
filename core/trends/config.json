@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "note": "查询词是可编辑的默认值。预算：每天 27 次 basic 搜索（每次 1 点数）≈ 每月 810 点数，在 Tavily 免费额度 1000 点内，留出约 190 点给手动试跑。改动前先跑 npm test，会校验预算。",
+  "search": {
+    "time_range": "week",
+    "max_results_per_query": 8,
+    "max_results_per_category": 20,
+    "max_terms_per_category": 8
+  },
+  "markets": [
+    {
+      "market": "en-US",
+      "country": "united states",
+      "language": "English",
+      "categories": [
+        {
+          "id": "consumer-electronics",
+          "name": "Consumer electronics & accessories",
+          "queries": [
+            "trending consumer electronics accessories this week",
+            "best selling wireless earbuds and phone accessories",
+            "viral tech gadgets people are buying"
+          ]
+        },
+        {
+          "id": "home-kitchen",
+          "name": "Home & kitchen",
+          "queries": [
+            "trending home and kitchen products this week",
+            "best selling kitchen gadgets right now",
+            "popular home organization products"
+          ]
+        },
+        {
+          "id": "beauty-personal-care",
+          "name": "Beauty & personal care",
+          "queries": [
+            "trending beauty and skincare products this week",
+            "best selling personal care items right now",
+            "popular hair care and makeup tools"
+          ]
+        },
+        {
+          "id": "fitness-outdoor",
+          "name": "Fitness & outdoor",
+          "queries": [
+            "trending fitness and workout gear this week",
+            "best selling outdoor and camping products",
+            "popular yoga and home gym accessories"
+          ]
+        },
+        {
+          "id": "pet-supplies",
+          "name": "Pet supplies",
+          "queries": [
+            "trending pet products this week",
+            "best selling dog and cat accessories",
+            "popular pet grooming and feeding products"
+          ]
+        }
+      ],
+      "trend_words": [
+        "trending",
+        "trend",
+        "trends",
+        "viral",
+        "best-selling",
+        "best selling",
+        "bestselling",
+        "best seller",
+        "bestseller",
+        "top-selling",
+        "top selling",
+        "popular",
+        "popularity",
+        "must-have",
+        "must have",
+        "in demand",
+        "on the rise",
+        "rising",
+        "hot"
+      ]
+    },
+    {
+      "market": "id-ID",
+      "country": "indonesia",
+      "language": "Indonesian",
+      "categories": [
+        {
+          "id": "elektronik-aksesoris",
+          "name": "Elektronik & aksesoris",
+          "queries": [
+            "produk elektronik dan aksesoris hp terlaris minggu ini",
+            "earphone dan gadget yang sedang viral",
+            "rekomendasi aksesoris gadget paling laku"
+          ]
+        },
+        {
+          "id": "kecantikan",
+          "name": "Kecantikan & perawatan diri",
+          "queries": [
+            "produk skincare dan kecantikan yang lagi tren minggu ini",
+            "produk perawatan rambut dan tubuh terlaris",
+            "makeup yang sedang viral di Indonesia"
+          ]
+        },
+        {
+          "id": "rumah-tangga",
+          "name": "Rumah tangga",
+          "queries": [
+            "peralatan rumah tangga terlaris minggu ini",
+            "alat dapur yang sedang viral",
+            "produk penyimpanan dan dekorasi rumah yang lagi tren"
+          ]
+        },
+        {
+          "id": "fashion",
+          "name": "Fashion",
+          "queries": [
+            "fashion wanita dan pria yang lagi tren minggu ini",
+            "tas dan sepatu terlaris saat ini",
+            "model hijab dan busana muslim yang sedang populer"
+          ]
+        }
+      ],
+      "trend_words": [
+        "naik daun",
+        "viral",
+        "laris",
+        "terlaris",
+        "populer",
+        "tren",
+        "trending",
+        "hits",
+        "lagi hits",
+        "paling dicari",
+        "banyak dicari",
+        "best seller",
+        "bestseller",
+        "paling laku",
+        "banyak diminati"
+      ]
+    }
+  ]
+}

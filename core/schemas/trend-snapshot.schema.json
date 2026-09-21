@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "copyflow/trend-snapshot.schema.json",
+  "title": "TrendSnapshot 趋势词快照",
+  "description": "每日定时抓取公开网页搜索结果，摘录其中出现的商品/属性/场景词。每个词必须带来源链接和原文摘录；只表示“近期公开网页里出现过”，不代表搜索量、销量或增长。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "date",
+    "generated_at",
+    "label",
+    "note",
+    "provider",
+    "searches",
+    "markets"
+  ],
+  "properties": {
+    "date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "generated_at": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9:.]+Z$"
+    },
+    "label": {
+      "const": "趋势词快照"
+    },
+    "note": {
+      "const": "仅表示这些词在近期公开网页的搜索结果中出现过，不代表搜索量、销量或增长趋势；使用前请自行判断。"
+    },
+    "provider": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "search",
+        "model"
+      ],
+      "properties": {
+        "search": {
+          "const": "tavily"
+        },
+        "model": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "searches": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "本次实际发出的搜索次数（basic 深度每次 1 点数）"
+    },
+    "markets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "market",
+          "categories"
+        ],
+        "properties": {
+          "market": {
+            "type": "string",
+            "pattern": "^[a-z]{2}-[A-Z]{2}$"
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "name",
+                "status",
+                "sources_seen",
+                "rejected_terms",
+                "rejected_reasons",
+                "terms"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "status": {
+                  "enum": [
+                    "ok",
+                    "no_results",
+                    "failed"
+                  ]
+                },
+                "error": {
+                  "type": "string"
+                },
+                "sources_seen": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "rejected_terms": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "description": "模型给出但被丢弃的词总数（校验失败、重复、超出上限），等于 rejected_reasons 各项之和"
+                },
+                "terms": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "term",
+                      "signal",
+                      "evidence",
+                      "source_url",
+                      "source_title"
+                    ],
+                    "properties": {
+                      "term": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "evidence": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "source_url": {
+                        "type": "string",
+                        "pattern": "^https?://"
+                      },
+                      "source_title": {
+                        "type": "string"
+                      },
+                      "published_date": {
+                        "type": "string",
+                        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+                      },
+                      "signal": {
+                        "enum": [
+                          "stated_trending",
+                          "mentioned"
+                        ],
+                        "description": "stated_trending：摘录里来源自己用了“流行/热销/走红”一类用语（是来源的说法，未经核实）；mentioned：词只是在网页里出现过，不代表流行。由代码判断，不是模型。"
+                      }
+                    }
+                  }
+                },
+                "rejected_reasons": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "description": "丢弃原因分类计数，如 evidence_not_in_source、evidence_is_just_term、over_limit"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

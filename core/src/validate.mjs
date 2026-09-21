@@ -10,6 +10,7 @@ const validators = {
   brief: ajv.compile(load('brief')),
   listing: ajv.compile(load('listing')),
   report: ajv.compile(load('compliance-report')),
+  trendSnapshot: ajv.compile(load('trend-snapshot')),
 };
 
 /** 结构校验：数据形状是否符合契约。返回 { ok, errors } */
