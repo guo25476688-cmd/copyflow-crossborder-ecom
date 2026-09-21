@@ -44,6 +44,7 @@ export function checkReferences({ factSheet, brief, listing }) {
 
   factSheet.attributes.forEach((a, i) => check(`事实表 attributes[${i}]`, a.fact_ids));
   brief?.angles.forEach((a, i) => check(`简报 angles[${i}]`, a.fact_ids));
+  brief?.keywords.forEach((k, i) => check(`简报 keywords[${i}]`, k.fact_ids));
   if (listing) {
     listing.attributes.forEach((a, i) => check(`文案 attributes[${i}]`, a.fact_ids));
     listing.qa.forEach((q, i) => check(`文案 qa[${i}]`, q.fact_ids));

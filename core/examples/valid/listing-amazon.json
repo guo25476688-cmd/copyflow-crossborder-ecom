@@ -22,7 +22,7 @@
       },
       {
         "heading": "Made for Everyday Wear",
-        "text": "A lightweight wireless design made for commuting, working out, and everything in between."
+        "text": "A wireless design made for commuting, working out, and everything in between."
       }
     ],
     "description": "HoverGo Pro pairs active noise cancelling with a long-lasting charging case, Bluetooth 5.3 connectivity, and IPX5 water resistance, making it a practical everyday choice for commuters and active users.",
@@ -105,6 +105,34 @@
       "path": "content/bullets/3/text",
       "fact_ids": [
         "F4"
+      ]
+    },
+    {
+      "text": "A wireless design",
+      "path": "content/bullets/4/text",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "text": "Up to 30 hours playtime",
+      "path": "content/item_highlights/0",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "text": "IPX5 water resistant",
+      "path": "content/item_highlights/1",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "text": "Bluetooth 5.3",
+      "path": "content/item_highlights/2",
+      "fact_ids": [
+        "F1"
       ]
     }
   ]

@@ -10,10 +10,7 @@
       "Bluetooth 5.3 untuk koneksi lebih stabil",
       "Tahan air IPX5, aman untuk olahraga"
     ],
-    "promo_tags": [
-      "Ready Stock",
-      "Fast Shipping"
-    ]
+    "promo_tags": []
   },
   "attributes": [
     {
@@ -53,6 +50,34 @@
       "path": "content/features/1",
       "fact_ids": [
         "F3"
+      ]
+    },
+    {
+      "text": "Noise cancelling aktif",
+      "path": "content/highlight",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "text": "sampai 30 jam",
+      "path": "content/highlight",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "text": "Bluetooth 5.3",
+      "path": "content/features/2",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "text": "Tahan air IPX5",
+      "path": "content/features/3",
+      "fact_ids": [
+        "F4"
       ]
     }
   ]

@@ -2,40 +2,109 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "copyflow/brief.schema.json",
   "title": "Brief 创意简报",
-  "description": "介于事实表和各平台文案之间的一层：先定受众和角度，再按平台×市场渲染。每个角度必须引用事实编号。",
+  "description": "介于事实表和各平台文案之间的一层：先定受众和角度，再按平台×市场渲染。每个角度、每个关键词都必须引用事实编号；关键词按市场给出（各市场语言不同），并标明来源是趋势快照还是模型自己提出。",
   "type": "object",
   "additionalProperties": false,
-  "required": ["audience", "angles", "keywords", "market_tones"],
+  "required": [
+    "audience",
+    "angles",
+    "keywords",
+    "market_tones"
+  ],
   "properties": {
-    "audience": { "type": "string", "minLength": 1 },
+    "audience": {
+      "type": "string",
+      "minLength": 1
+    },
     "angles": {
       "type": "array",
       "minItems": 1,
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["name", "description", "fact_ids"],
+        "required": [
+          "name",
+          "description",
+          "fact_ids"
+        ],
         "properties": {
-          "name": { "type": "string", "minLength": 1 },
-          "description": { "type": "string", "minLength": 1 },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
           "fact_ids": {
             "type": "array",
             "minItems": 1,
-            "items": { "type": "string", "pattern": "^F[0-9]+$" }
+            "items": {
+              "type": "string",
+              "pattern": "^F[0-9]+$"
+            }
           }
         }
       }
     },
-    "keywords": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "term",
+          "market",
+          "origin",
+          "fact_ids"
+        ],
+        "properties": {
+          "term": {
+            "type": "string",
+            "minLength": 1
+          },
+          "market": {
+            "type": "string",
+            "pattern": "^[a-z]{2}-[A-Z]{2}$"
+          },
+          "origin": {
+            "enum": [
+              "trend_snapshot",
+              "model"
+            ],
+            "description": "trend_snapshot：逐字取自趋势快照（可核对，但快照只表示词在网页里出现过）；model：模型自己提出，没有外部依据"
+          },
+          "fact_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "^F[0-9]+$"
+            },
+            "description": "说明产品确实具备这个关键词所描述的特征的事实"
+          }
+        }
+      }
+    },
     "market_tones": {
       "type": "array",
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["market", "tone"],
+        "required": [
+          "market",
+          "tone"
+        ],
         "properties": {
-          "market": { "type": "string", "pattern": "^[a-z]{2}-[A-Z]{2}$", "description": "BCP-47，如 en-US、id-ID" },
-          "tone": { "type": "string", "minLength": 1 }
+          "market": {
+            "type": "string",
+            "pattern": "^[a-z]{2}-[A-Z]{2}$",
+            "description": "BCP-47，如 en-US、id-ID"
+          },
+          "tone": {
+            "type": "string",
+            "minLength": 1
+          }
         }
       }
     }

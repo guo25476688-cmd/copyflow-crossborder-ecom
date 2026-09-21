@@ -1,13 +1,102 @@
 {
   "audience": "通勤和运动场景下、想要长续航和降噪的年轻上班族",
   "angles": [
-    { "name": "通勤降噪", "description": "地铁、办公室等嘈杂环境下的安静体验", "fact_ids": ["F2"] },
-    { "name": "一次充满用一周", "description": "含充电盒续航长，减少充电焦虑", "fact_ids": ["F3"] },
-    { "name": "运动不怕汗", "description": "IPX5 防水，跑步健身可用", "fact_ids": ["F4"] }
+    {
+      "name": "通勤降噪",
+      "description": "地铁、办公室等嘈杂环境下的安静体验",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "name": "一次充满用一周",
+      "description": "含充电盒续航长，减少充电焦虑",
+      "fact_ids": [
+        "F3"
+      ]
+    },
+    {
+      "name": "运动不怕汗",
+      "description": "IPX5 防水，跑步健身可用",
+      "fact_ids": [
+        "F4"
+      ]
+    }
   ],
-  "keywords": ["wireless earbuds", "noise cancelling", "bluetooth 5.3", "sport earbuds"],
+  "keywords": [
+    {
+      "term": "wireless earbuds",
+      "market": "en-US",
+      "origin": "trend_snapshot",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "term": "noise cancelling earbuds",
+      "market": "en-US",
+      "origin": "model",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "term": "bluetooth 5.3 earbuds",
+      "market": "en-US",
+      "origin": "model",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "term": "sweatproof earbuds",
+      "market": "en-US",
+      "origin": "model",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "term": "earbuds tahan air",
+      "market": "id-ID",
+      "origin": "model",
+      "fact_ids": [
+        "F4"
+      ]
+    },
+    {
+      "term": "earphone bluetooth 5.3",
+      "market": "id-ID",
+      "origin": "model",
+      "fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "term": "earphone noise cancelling",
+      "market": "id-ID",
+      "origin": "model",
+      "fact_ids": [
+        "F2"
+      ]
+    },
+    {
+      "term": "headset bluetooth tahan keringat",
+      "market": "id-ID",
+      "origin": "model",
+      "fact_ids": [
+        "F4"
+      ]
+    }
+  ],
   "market_tones": [
-    { "market": "en-US", "tone": "简洁、克制、以功能事实为主" },
-    { "market": "id-ID", "tone": "口语化、热情，善用本土促销表达" }
+    {
+      "market": "en-US",
+      "tone": "简洁、克制、以功能事实为主"
+    },
+    {
+      "market": "id-ID",
+      "tone": "口语化、热情，善用本土促销表达"
+    }
   ]
 }
