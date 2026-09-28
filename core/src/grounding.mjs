@@ -12,7 +12,9 @@ export const squash = (s) => norm(s).replace(/\s+/g, '');
 
 const CN_DIGIT = { 零: 0, 〇: 0, 一: 1, 二: 2, 两: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9 };
 // 中文数字只在后面紧跟量词/单位时才算数字（“三档色温”“两年”），避免把“一键”“统一”当成 1
-const CN_NUM = /([零〇一二两三四五六七八九十百]+)(?=[档挡个级段种层片粒瓶件套只条块节组倍孔面米克斤天年月周分秒小度寸])/gu;
+const CN_NUM = /([零〇一二两三四五六七八九十百]+)([档挡个级段种层片粒瓶件套只条块节组倍孔面米克斤天年月周分秒小度寸])/gu;
+// “一个”绝大多数是不定冠词用法（“一个亮点”＝a highlight），不是数量声称；其余“一+量词”（一年、一件）和“两个/三个”等仍按数字处理
+const isGenericArticle = (digits, unit) => digits === '一' && unit === '个';
 const cnToInt = (s) => {
   let total = 0;
   let cur = 0;
@@ -63,7 +65,8 @@ export function numbersIn(text) {
   const out = [];
   const push = (value, end) => out.push({ value, unit: unitAfter(t, end) });
   for (const m of t.matchAll(/\d+(?:[.,]\d+)*/g)) push(toNumber(m[0]), m.index + m[0].length);
-  for (const m of t.matchAll(CN_NUM)) push(cnToInt(m[1]), m.index + m[0].length);
+  // 单位检测的起点是数字之后、量词之前（“三米”的“米”本身就是单位，量词和单位重合时也要能识别到）
+  for (const m of t.matchAll(CN_NUM)) if (!isGenericArticle(m[1], m[2])) push(cnToInt(m[1]), m.index + m[1].length);
   // 英文复合数字（twenty-four）先整体提取并抹掉，避免其中的 four 被再算一次
   const rest = t.replace(EN_COMPOUND, (m, tens, unit, i) => (push(EN_TENS[tens.toLowerCase()] + (unit ? EN_UNITS[unit.toLowerCase()] ?? 1 : 0), i + m.length), ' '.repeat(m.length)));
   for (const m of rest.matchAll(EN_WORD)) push(EN_UNITS[m[0].toLowerCase()], m.index + m[0].length);

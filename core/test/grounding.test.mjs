@@ -25,6 +25,13 @@ test('数字提取：中文数字只在后面跟着量词时才算（三档色�
   assert.deepEqual(vals('一键 统一 唯一'), []);
 });
 
+test('数字提取：“一个”是不定冠词用法（a/an），不算数量声称；“两个/三个”等真实计数仍要提取', () => {
+  assert.deepEqual(vals('给买家一个可参考的尺寸信息'), []);
+  assert.deepEqual(vals('这款产品有一个亮点'), []);
+  assert.deepEqual(vals('两个模式，三个档位，一个开关').sort(), [2, 3]);
+  assert.deepEqual(vals('保修一年，容量一升'), [1], '“一”配其他量词仍是真实数量，只有“一个”是例外');
+});
+
 test('数字提取：英文与印尼语数字词；twenty-four 只算 24，不再重复算 4；one 只在跟着时间单位时算', () => {
   assert.deepEqual(vals('twenty-four hours'), [24]);
   assert.deepEqual(vals('three modes and a two-year warranty').sort(), [2, 3]);
