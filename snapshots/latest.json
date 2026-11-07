@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-06",
-  "generated_at": "2026-11-06T07:53:30.744Z",
+  "date": "2026-11-07",
+  "generated_at": "2026-11-07T07:04:06.067Z",
   "label": "趋势词快照",
   "note": "仅表示这些词在近期公开网页的搜索结果中出现过，不代表搜索量、销量或增长趋势；使用前请自行判断。",
   "provider": {
@@ -16,43 +16,66 @@
           "id": "consumer-electronics",
           "name": "Consumer electronics & accessories",
           "status": "ok",
-          "sources_seen": 4,
-          "rejected_terms": 2,
+          "sources_seen": 15,
+          "rejected_terms": 1,
           "rejected_reasons": {
-            "term_not_in_evidence": 2
+            "term_not_in_evidence": 1
           },
           "terms": [
             {
-              "term": "moto buds ultra",
-              "evidence": "Motorola announced its best-sounding moto buds yet, the new moto buds ultra 27",
+              "term": "phone accessories",
+              "evidence": "Phone accessories round out the top five planned gifts: cases (58 percent), portable power banks (55 percent) and wireless charging docks or pads (50 percent).",
               "signal": "mentioned",
-              "source_url": "https://www.prnewswire.com/news-releases/consumer-technology-latest-news/consumer-electronics-list",
-              "source_title": "All Consumer Electronics News and Press Releases from PR Newswire",
-              "published_date": "2026-11-03"
+              "source_url": "https://www.retailtouchpoints.com/news/americans-plan-to-shop-for-tech-gifts-this-holiday-season-despite-economic-concerns/621893",
+              "source_title": "Americans Plan to Shop for Tech Gifts this Holiday Season Despite Economic Concerns",
+              "published_date": "2026-11-02"
             },
             {
-              "term": "charging case",
-              "evidence": "GROOVZ True Wireless TWS In-Ear Earbuds + Charging Case & LED - PINK FLORAL",
+              "term": "portable power banks",
+              "evidence": "Phone accessories round out the top five planned gifts: cases (58 percent), portable power banks (55 percent) and wireless charging docks or pads (50 percent).",
               "signal": "mentioned",
-              "source_url": "https://www.ebay.com/b/Pink-Earbud-In-Ear-Cell-Phone-Headsets/80077/bn_108466249",
-              "source_title": "25+ Pink Earbud (In Ear) Cell Phone Headsets for sale",
-              "published_date": "2026-11-01"
+              "source_url": "https://www.retailtouchpoints.com/news/americans-plan-to-shop-for-tech-gifts-this-holiday-season-despite-economic-concerns/621893",
+              "source_title": "Americans Plan to Shop for Tech Gifts this Holiday Season Despite Economic Concerns",
+              "published_date": "2026-11-02"
             },
             {
-              "term": "smart display",
-              "evidence": "Apple’s first smart display puts a 7-inch Liquid Retina screen at the center of your living space",
+              "term": "wireless charging docks",
+              "evidence": "Phone accessories round out the top five planned gifts: cases (58 percent), portable power banks (55 percent) and wireless charging docks or pads (50 percent).",
               "signal": "mentioned",
-              "source_url": "https://www.gearpatrol.com/audio/best-tech-audio-hi-fi-releases-2026-october-week-4",
+              "source_url": "https://www.retailtouchpoints.com/news/americans-plan-to-shop-for-tech-gifts-this-holiday-season-despite-economic-concerns/621893",
+              "source_title": "Americans Plan to Shop for Tech Gifts this Holiday Season Despite Economic Concerns",
+              "published_date": "2026-11-02"
+            },
+            {
+              "term": "open-ear headphones",
+              "evidence": "Discover the best Open-Ear Headphones in Best Sellers.",
+              "signal": "mentioned",
+              "source_url": "https://us.amazon.com/gp/bestsellers/electronics/99530371011/ref=zg_b_bs_99530371011_1/ref=pd_aw_subss_m_sccl_1_2_bsb/000-0000000-0000000?pd_rd_r=579c072e-f5a1-4bc0-8fd1-c61adcd75ed0&pd_rd_wg=rQ4iY&pd_rd_w=raCk6&pd_rd_i=B0D2HKCMBP",
+              "source_title": "Amazon Best Sellers: Best Open-Ear Headphones"
+            },
+            {
+              "term": "wireless mouse",
+              "evidence": "And there’s Satechi’s Slim EX wireless mouse ($30).",
+              "signal": "mentioned",
+              "source_url": "https://www.gearpatrol.com/audio/best-tech-audio-hi-fi-releases-2026-november-week-1",
               "source_title": "The Best New Gadgets and Hi-Fi Releases of 2026 (Updated)",
-              "published_date": "2026-10-30"
+              "published_date": "2026-11-06"
             },
             {
-              "term": "projector",
-              "evidence": "XGIMI and Kickstarter Present NYC Innovation Showcase Featuring Record-Breaking AURA 3 Series Projector",
+              "term": "USB-C hubs",
+              "evidence": "There are three accessories in the collection, which include two USB-C hubs: the OntheGo 5-in-1 Multiport Adapter ($45) and the USB-C Snap Hub ($45).",
               "signal": "mentioned",
-              "source_url": "https://www.prnewswire.com/news-releases/consumer-technology-latest-news/consumer-electronics-list",
-              "source_title": "All Consumer Electronics News and Press Releases from PR Newswire",
-              "published_date": "2026-11-03"
+              "source_url": "https://www.gearpatrol.com/audio/best-tech-audio-hi-fi-releases-2026-november-week-1",
+              "source_title": "The Best New Gadgets and Hi-Fi Releases of 2026 (Updated)",
+              "published_date": "2026-11-06"
+            },
+            {
+              "term": "mechanical keyboard",
+              "evidence": "Lofree Flow Lite 84 Keys Mechanical Keyboard",
+              "signal": "mentioned",
+              "source_url": "https://www.nbcnews.com/select/shopping/best-gifts-for-teens-2026-rcna607267",
+              "source_title": "35+ Best Gifts for Teens in 2026, According to Teens | NBC Selected",
+              "published_date": "2026-11-06"
             }
           ]
         },
@@ -60,10 +83,24 @@
           "id": "home-kitchen",
           "name": "Home & kitchen",
           "status": "ok",
-          "sources_seen": 8,
+          "sources_seen": 20,
           "rejected_terms": 0,
           "rejected_reasons": {},
           "terms": [
+            {
+              "term": "air fryer",
+              "evidence": "1. Ambiano Air Fryer Most Read in Money",
+              "signal": "mentioned",
+              "source_url": "https://icucycle.com/twelve-best-aldi-finds-this-week-including-a-popular-kitchen-appliance-at-a-crazy-low-price-00331222.html",
+              "source_title": "Twelve Best Aldi Finds This Week - Including a Popular ..."
+            },
+            {
+              "term": "cast iron skillet",
+              "evidence": "5. Cast Iron Skillet 6. Cast Iron Dessert for Two",
+              "signal": "mentioned",
+              "source_url": "https://icucycle.com/twelve-best-aldi-finds-this-week-including-a-popular-kitchen-appliance-at-a-crazy-low-price-00331222.html",
+              "source_title": "Twelve Best Aldi Finds This Week - Including a Popular ..."
+            },
             {
               "term": "chef's knife",
               "evidence": "A chef's knife and paring knife are among the only four knives you need in your kitchen",
@@ -73,56 +110,43 @@
               "published_date": "2026-11-05"
             },
             {
-              "term": "paring knife",
-              "evidence": "A chef's knife and paring knife are among the only four knives you need in your kitchen",
+              "term": "electric kettle",
+              "evidence": "best-selling electric kettle brand in 2024",
+              "signal": "stated_trending",
+              "source_url": "https://www.youtube.com/watch?v=mRs3FDciGX0",
+              "source_title": "25 SMART Kitchen Products On Amazon That Save 10X The Time (And Effort!)",
+              "published_date": "2026-11-03"
+            },
+            {
+              "term": "food storage containers",
+              "evidence": "the food storage containers Food Editor Andrea Rivera Wawrzyn can’t get enough of",
               "signal": "mentioned",
-              "source_url": "https://www.thedailymeal.com/2308398/new-home-depot-products-look-for-november-2026",
-              "source_title": "11 Home Depot Kitchen Must-Haves To Look For In November 2026",
+              "source_url": "https://www.thekitchn.com/best-gifts-home-cooks-23852229",
+              "source_title": "16 Best Gifts for Home Cooks in 2026 (Stunning & Thoughtful) | The Kitchn",
               "published_date": "2026-11-05"
             },
             {
-              "term": "vegetable chopper",
-              "evidence": "a manual vegetable chopper for quick salad prep",
+              "term": "air fryer toaster oven",
+              "evidence": "“I can’t sing the praises of this air fryer toaster oven enough,” Micki says.",
               "signal": "mentioned",
-              "source_url": "https://www.facebook.com/firstmediasoyummy/posts/small-kitchen-these-3-clever-gadgets-make-room-for-more-linkdm-007/1771184085053280",
-              "source_title": "https://amzn.to/4i3FPj9 Small kitchen? These 3 clever ..."
-            },
-            {
-              "term": "vacuum sealer",
-              "evidence": "a handheld vacuum sealer for",
-              "signal": "mentioned",
-              "source_url": "https://www.facebook.com/firstmediasoyummy/posts/small-kitchen-these-3-clever-gadgets-make-room-for-more-linkdm-007/1771184085053280",
-              "source_title": "https://amzn.to/4i3FPj9 Small kitchen? These 3 clever ..."
-            },
-            {
-              "term": "jar opener",
-              "evidence": "an automatic jar opener for stubborn lids",
-              "signal": "mentioned",
-              "source_url": "https://www.facebook.com/firstmediasoyummy/posts/small-kitchen-these-3-clever-gadgets-make-room-for-more-linkdm-007/1771184085053280",
-              "source_title": "https://amzn.to/4i3FPj9 Small kitchen? These 3 clever ..."
-            },
-            {
-              "term": "storage bags",
-              "evidence": "I needed some storage bags for all my extra throw pillows, blankets, and sheets.",
-              "signal": "mentioned",
-              "source_url": "https://www.buzzfeed.com/bykitstone/products-organization-kick-an",
-              "source_title": "35 Products That’ll Make You Want To Go On An Organization Kick Around Your Home",
+              "source_url": "https://www.thekitchn.com/best-gifts-home-cooks-23852229",
+              "source_title": "16 Best Gifts for Home Cooks in 2026 (Stunning & Thoughtful) | The Kitchn",
               "published_date": "2026-11-05"
             },
             {
-              "term": "over-the-door organizer",
-              "evidence": "An over-the-door organizer so you can see your inventory and save space in your pantry or bathroom.",
+              "term": "food processor",
+              "evidence": "#10. Ninja BN601 Professional Plus Food Processor",
               "signal": "mentioned",
-              "source_url": "https://www.buzzfeed.com/bykitstone/products-organization-kick-an",
-              "source_title": "35 Products That’ll Make You Want To Go On An Organization Kick Around Your Home",
-              "published_date": "2026-11-05"
+              "source_url": "https://www.youtube.com/watch?v=vUCWq3kNr0I",
+              "source_title": "35 Early Amazon Black Friday Kitchen Deals 2026 - Up To 80% OFF",
+              "published_date": "2026-11-04"
             },
             {
-              "term": "drawer dividers",
-              "evidence": "5. Drawer dividers",
+              "term": "measuring spoons",
+              "evidence": "Multi-use measuring sets and magnetic measuring spoons: accurate measurements and easy storage",
               "signal": "mentioned",
-              "source_url": "https://www.facebook.com/TastyPresents/posts/31-organization-products-thatll-help-you-have-the-clutter-free-home-youve-always/1153554280358083",
-              "source_title": "31 Organization Products That'll Help You Have The ..."
+              "source_url": "https://www.tiktok.com/@amelia30620/video/7705052316927479058",
+              "source_title": "17 amazon products that going viral with women right now ..."
             }
           ]
         },
@@ -130,201 +154,73 @@
           "id": "beauty-personal-care",
           "name": "Beauty & personal care",
           "status": "ok",
-          "sources_seen": 6,
-          "rejected_terms": 0,
-          "rejected_reasons": {},
+          "sources_seen": 20,
+          "rejected_terms": 3,
+          "rejected_reasons": {
+            "term_not_in_evidence": 3
+          },
           "terms": [
-            {
-              "term": "barrier-repairing moisturizer",
-              "evidence": "“Gentle, barrier-repairing moisturizer ideal for dry skin, but may feel heavy in summer months”",
-              "signal": "mentioned",
-              "source_url": "https://www.hwahae.com/en/rankings/global",
-              "source_title": "Best Korean Beauty Products 2026 | Global K-Beauty Rankings by Hwahae",
-              "published_date": "2026-11-04"
-            },
             {
               "term": "hydrating toner",
               "evidence": "“Ceramide-rich hydrating toner with mochi texture, excellent value in 500ml size, best for dry skin.”",
               "signal": "mentioned",
               "source_url": "https://www.hwahae.com/en/rankings/global",
               "source_title": "Best Korean Beauty Products 2026 | Global K-Beauty Rankings by Hwahae",
-              "published_date": "2026-11-04"
+              "published_date": "2026-11-06"
             },
             {
               "term": "cleansing foam",
-              "evidence": "### beplain MUNG BEAN pH-BALANCED CLEANSING FOAM",
+              "evidence": "beplain MUNG BEAN pH-BALANCED CLEANSING FOAM",
               "signal": "mentioned",
               "source_url": "https://www.hwahae.com/en/rankings/global",
               "source_title": "Best Korean Beauty Products 2026 | Global K-Beauty Rankings by Hwahae",
-              "published_date": "2026-11-04"
+              "published_date": "2026-11-06"
             },
             {
-              "term": "hair protection spray",
-              "evidence": "Bondbar hair protection spray, Sauce Beauty hair oil, the Rock On hair product, and the Bondbar hair bonnet spray.",
+              "term": "retinol",
+              "evidence": "Both experts say to introduce retinol (a type of retinoid) slowly, especially if you have sensitive skin, because it can be irritating.",
               "signal": "mentioned",
-              "source_url": "https://www.facebook.com/sallybeauty/videos/looking-for-the-perfect-gifts-for-the-hair-lover-in-your-life-associate-lindsay-/968759942620746",
-              "source_title": "Sally Beauty HQ Associate Lindsay's Top Hair Essentials ..."
+              "source_url": "https://www.nbcnews.com/select/shopping/what-is-bloom-skin-rcna607872",
+              "source_title": "What Is Bloom Skin? The K-Beauty Trend Dermatologists Love",
+              "published_date": "2026-11-06"
             },
             {
-              "term": "hair oil",
-              "evidence": "Bondbar hair protection spray, Sauce Beauty hair oil, the Rock On hair product, and the Bondbar hair bonnet spray.",
+              "term": "centella asiatica",
+              "evidence": "Centella asiatica  (cica) and panthenol: These ingredients soothe irritated or reactive skin, Yoo says.",
               "signal": "mentioned",
-              "source_url": "https://www.facebook.com/sallybeauty/videos/looking-for-the-perfect-gifts-for-the-hair-lover-in-your-life-associate-lindsay-/968759942620746",
-              "source_title": "Sally Beauty HQ Associate Lindsay's Top Hair Essentials ..."
+              "source_url": "https://www.nbcnews.com/select/shopping/what-is-bloom-skin-rcna607872",
+              "source_title": "What Is Bloom Skin? The K-Beauty Trend Dermatologists Love",
+              "published_date": "2026-11-06"
             },
             {
-              "term": "hair bonnet spray",
-              "evidence": "Bondbar hair protection spray, Sauce Beauty hair oil, the Rock On hair product, and the Bondbar hair bonnet spray.",
+              "term": "lip balm",
+              "evidence": "Dr. Idriss Barrier Baste Moisturizing Lip Balm",
               "signal": "mentioned",
-              "source_url": "https://www.facebook.com/sallybeauty/videos/looking-for-the-perfect-gifts-for-the-hair-lover-in-your-life-associate-lindsay-/968759942620746",
-              "source_title": "Sally Beauty HQ Associate Lindsay's Top Hair Essentials ..."
-            },
-            {
-              "term": "body wash",
-              "evidence": "including face and body washes like Coffee and Joy Pure Aloe, hair care items such as Coffee and Red Jell-O, and",
-              "signal": "mentioned",
-              "source_url": "https://www.facebook.com/mykitsch/videos/award-winning-self-care-must-haves/1513409003958071",
-              "source_title": "Discover the best-selling self-care essentials that everyone ..."
-            },
-            {
-              "term": "styling tools",
-              "evidence": "Explore complexion products, eye makeup, lip essentials, finishing powders, styling tools, brushes, and kits that help you achieve long-lasting, camera-ready results.",
-              "signal": "mentioned",
-              "source_url": "https://www.naimies.com/collections/hair-brushes",
-              "source_title": "Hair Brushes\n – Naimie's",
-              "published_date": "2026-11-03"
+              "source_url": "https://www.today.com/shop/bobbies-bests-beauty-favorites-rcna267443",
+              "source_title": "Bobbie Thomas' Expert-Approved Fall Beauty and Style Finds",
+              "published_date": "2026-11-02"
             }
           ]
         },
         {
           "id": "fitness-outdoor",
           "name": "Fitness & outdoor",
-          "status": "ok",
-          "sources_seen": 7,
-          "rejected_terms": 1,
-          "rejected_reasons": {
-            "term_not_in_evidence": 1
-          },
-          "terms": [
-            {
-              "term": "home gym equipment",
-              "evidence": "Top-Tested Home Gym Equipment to Build a Better Workout Space",
-              "signal": "mentioned",
-              "source_url": "https://www.goodhousekeeping.com/what-to-buy/health-products/g74275292/home-gym-equipment",
-              "source_title": "Top-Tested Home Gym Equipment to Build a Better Workout Space",
-              "published_date": "2026-11-03"
-            },
-            {
-              "term": "yoga block",
-              "evidence": "## Alo Uplifting Yoga Block",
-              "signal": "mentioned",
-              "source_url": "https://www.goodhousekeeping.com/what-to-buy/health-products/g74275292/home-gym-equipment",
-              "source_title": "Top-Tested Home Gym Equipment to Build a Better Workout Space",
-              "published_date": "2026-11-03"
-            },
-            {
-              "term": "workout tank top",
-              "evidence": "This week's Amazon workout favorites include a PINSPARK workout tank top, comfy leggings, cozy sneakers, and the perfect mini gym bag from ERTUNA.",
-              "signal": "mentioned",
-              "source_url": "https://www.facebook.com/Amazon/posts/everyday-fitness-must-haves-built-to-keep-up-shop-amazon-private-brands/1807885294123318",
-              "source_title": "Everyday fitness must-haves built to keep up. Shop ..."
-            },
-            {
-              "term": "leggings",
-              "evidence": "This week's Amazon workout favorites include a PINSPARK workout tank top, comfy leggings, cozy sneakers, and the perfect mini gym bag from ERTUNA.",
-              "signal": "mentioned",
-              "source_url": "https://www.facebook.com/Amazon/posts/everyday-fitness-must-haves-built-to-keep-up-shop-amazon-private-brands/1807885294123318",
-              "source_title": "Everyday fitness must-haves built to keep up. Shop ..."
-            },
-            {
-              "term": "sneakers",
-              "evidence": "This week's Amazon workout favorites include a PINSPARK workout tank top, comfy leggings, cozy sneakers, and the perfect mini gym bag from ERTUNA.",
-              "signal": "mentioned",
-              "source_url": "https://www.facebook.com/Amazon/posts/everyday-fitness-must-haves-built-to-keep-up-shop-amazon-private-brands/1807885294123318",
-              "source_title": "Everyday fitness must-haves built to keep up. Shop ..."
-            },
-            {
-              "term": "mini gym bag",
-              "evidence": "This week's Amazon workout favorites include a PINSPARK workout tank top, comfy leggings, cozy sneakers, and the perfect mini gym bag from ERTUNA.",
-              "signal": "mentioned",
-              "source_url": "https://www.facebook.com/Amazon/posts/everyday-fitness-must-haves-built-to-keep-up-shop-amazon-private-brands/1807885294123318",
-              "source_title": "Everyday fitness must-haves built to keep up. Shop ..."
-            },
-            {
-              "term": "camping gear",
-              "evidence": "Where to find budget used camping gear?",
-              "signal": "mentioned",
-              "source_url": "https://www.facebook.com/groups/471872217319685/posts/1862533454920214",
-              "source_title": "Where to find budget used camping gear?"
-            }
-          ]
+          "status": "failed",
+          "sources_seen": 17,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [],
+          "error": "DeepSeek 500（可重试）"
         },
         {
           "id": "pet-supplies",
           "name": "Pet supplies",
-          "status": "ok",
-          "sources_seen": 3,
+          "status": "failed",
+          "sources_seen": 15,
           "rejected_terms": 0,
           "rejected_reasons": {},
-          "terms": [
-            {
-              "term": "pet supplements",
-              "evidence": "Revenue from the Hong Kong-based company’s pet supplements portfolio increased 3.5% in the first nine months of 2026.",
-              "signal": "mentioned",
-              "source_url": "https://globalpetindustry.com",
-              "source_title": "Home | GlobalPETS",
-              "published_date": "2026-11-05"
-            },
-            {
-              "term": "dog bandannas",
-              "evidence": "- Dog Bandannas & Neckties",
-              "signal": "mentioned",
-              "source_url": "https://thefamilypet.store",
-              "source_title": "The Family Pet"
-            },
-            {
-              "term": "dog cold weather wear",
-              "evidence": "- Dog Cold Weather Wear",
-              "signal": "mentioned",
-              "source_url": "https://thefamilypet.store",
-              "source_title": "The Family Pet"
-            },
-            {
-              "term": "dog hoodies",
-              "evidence": "- Dog Hoodies & Sweaters",
-              "signal": "mentioned",
-              "source_url": "https://thefamilypet.store",
-              "source_title": "The Family Pet"
-            },
-            {
-              "term": "dog pajamas",
-              "evidence": "- Dog Pajamas",
-              "signal": "mentioned",
-              "source_url": "https://thefamilypet.store",
-              "source_title": "The Family Pet"
-            },
-            {
-              "term": "dog rain gear",
-              "evidence": "- Dog Rain Gear",
-              "signal": "mentioned",
-              "source_url": "https://thefamilypet.store",
-              "source_title": "The Family Pet"
-            },
-            {
-              "term": "cat litter boxes",
-              "evidence": "- Cat Litter Boxes, Pans & Liners",
-              "signal": "mentioned",
-              "source_url": "https://thefamilypet.store",
-              "source_title": "The Family Pet"
-            },
-            {
-              "term": "cat scratchers",
-              "evidence": "- Cat Scratchers",
-              "signal": "mentioned",
-              "source_url": "https://thefamilypet.store",
-              "source_title": "The Family Pet"
-            }
-          ]
+          "terms": [],
+          "error": "DeepSeek 500（可重试）"
         }
       ]
     },
@@ -342,28 +238,32 @@
           },
           "terms": [
             {
-              "term": "tali gantungan HP",
-              "evidence": "Tali Gantungan HP Lanyard 45cm Satin Motif Keren",
+              "term": "aksesoris HP",
+              "evidence": "Kami menyediakan koleksi aksesoris HP terlengkap mulai dari casing lucu, tempered glass, TWS, power bank, hingga kabel data berkualitas.",
               "signal": "mentioned",
-              "source_url": "https://shopee.co.id/list/Aksesoris%20HP",
-              "source_title": "Jual Aksesoris HP Terlengkap & Harga Terbaru November ...",
-              "published_date": "2026-11-05"
+              "source_url": "https://www.instagram.com/reel/DfZBZObJ0es",
+              "source_title": "Sayang banget AKSESORIS gadget kamu ngangurin ..."
             },
             {
-              "term": "phone strap lanyard",
-              "evidence": "Tali Gantungan Gelang Hp Motif Phone Strap Lanyard HPLION Aksesoris Handphone",
+              "term": "tempered glass",
+              "evidence": "mulai dari casing lucu, tempered glass, TWS, power bank, hingga kabel data berkualitas",
               "signal": "mentioned",
-              "source_url": "https://www.tokopedia.com/find/aksesoris-hp",
-              "source_title": "Jual Aksesoris Hp Terbaru - Harga Murah November 2026 & Cicil 0%",
-              "published_date": "2026-11-03"
+              "source_url": "https://www.instagram.com/reel/DfZBZObJ0es",
+              "source_title": "Sayang banget AKSESORIS gadget kamu ngangurin ..."
             },
             {
-              "term": "casing HP",
-              "evidence": "MONCELL Casing Hp Untuk Infinix Hot 60 5G Hot 60i 4G Case Casing pola Kucing Hitam yang lucu Silikon Cesing Softcase Kasing HP Aksesoris dengan Tali Gantung Kesing",
+              "term": "power bank",
+              "evidence": "mulai dari casing lucu, tempered glass, TWS, power bank, hingga kabel data berkualitas",
               "signal": "mentioned",
-              "source_url": "https://www.tokopedia.com/find/aksesoris-hp",
-              "source_title": "Jual Aksesoris Hp Terbaru - Harga Murah November 2026 & Cicil 0%",
-              "published_date": "2026-11-03"
+              "source_url": "https://www.instagram.com/reel/DfZBZObJ0es",
+              "source_title": "Sayang banget AKSESORIS gadget kamu ngangurin ..."
+            },
+            {
+              "term": "kabel data",
+              "evidence": "mulai dari casing lucu, tempered glass, TWS, power bank, hingga kabel data berkualitas",
+              "signal": "mentioned",
+              "source_url": "https://www.instagram.com/reel/DfZBZObJ0es",
+              "source_title": "Sayang banget AKSESORIS gadget kamu ngangurin ..."
             },
             {
               "term": "earphone kabel",
@@ -373,14 +273,6 @@
               "source_title": "Punya ini bakal menghemat uang cuy. Earphone kabel ..."
             },
             {
-              "term": "ring holder HP",
-              "evidence": "10 Rekomendasi Ring Holder HP Terbaik (Terbaru Tahun 2026) | mybest",
-              "signal": "mentioned",
-              "source_url": "https://id.my-best.com/87789",
-              "source_title": "10 Rekomendasi Ring Holder HP Terbaik (Terbaru Tahun 2026) | mybest",
-              "published_date": "2026-10-31"
-            },
-            {
               "term": "phone holder",
               "evidence": "Pilih phone holder yang bisa menyesuaikan dengan ukuran layar ponsel atau tablet kamu.",
               "signal": "mentioned",
@@ -388,12 +280,12 @@
               "source_title": "Phone holder apa paling sesuai untuk ACR 50"
             },
             {
-              "term": "holder HP lipat",
-              "evidence": "Holder Hp Lipat Universal Anti-Slip Portable",
+              "term": "aksesoris laptop",
+              "evidence": "Jual Aksesoris Laptop Murah & Terbaik - Harga Terbaru November 2026",
               "signal": "mentioned",
-              "source_url": "https://shopee.co.id/list/Aksesoris%20HP",
-              "source_title": "Jual Aksesoris HP Terlengkap & Harga Terbaru November ...",
-              "published_date": "2026-11-05"
+              "source_url": "https://www.tokopedia.com/find/aksesoris-laptop",
+              "source_title": "Jual Aksesoris Laptop Murah & Terbaik - Harga Terbaru November 2026",
+              "published_date": "2026-11-04"
             }
           ]
         },
@@ -402,12 +294,24 @@
           "name": "Kecantikan & perawatan diri",
           "status": "ok",
           "sources_seen": 9,
-          "rejected_terms": 3,
-          "rejected_reasons": {
-            "term_not_in_evidence": 1,
-            "evidence_is_just_term": 2
-          },
+          "rejected_terms": 0,
+          "rejected_reasons": {},
           "terms": [
+            {
+              "term": "perawatan kulit",
+              "evidence": "Saat pandemi, minat untuk memakai kosmetik dan perawatan kulit",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/KOMPAScom/posts/baca-di-sini-ahli-kecantikan-selebritas-shani-darden-membagikan-rahasia-kulit-gl/1727644189391688",
+              "source_title": "Kompas.com"
+            },
+            {
+              "term": "moisturizer",
+              "evidence": "Find top moisturizers for glowing",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/discover/skincare-yang-lagi-viral?lang=en",
+              "source_title": "TikTok - Make Your Day",
+              "published_date": "2026-11-02"
+            },
             {
               "term": "serum rambut",
               "evidence": "Cobain Ivo Green Serum Expert Treatment! Serum rambut viral yang bantu merawat akar rambut & kulit kepala",
@@ -416,141 +320,79 @@
               "source_title": "Pejuang Hair care Cobain ini yuk yang punya masalah ..."
             },
             {
-              "term": "clean beauty",
-              "evidence": "Melalui pendekatan clean beauty, perhatian juga tertuju pada formula cruelty-free",
+              "term": "perawatan rambut",
+              "evidence": "Memperkenalkan perawatan rambut tercanggih dari Oriflame Duologi, perawatan rambut yang mengandung bahan skincare merawat rambut sesuai kebutuhan.",
               "signal": "mentioned",
-              "source_url": "https://www.instagram.com/p/DfWDqkDiPDi",
-              "source_title": "Mengapa tren produk kecantikan kini tidak lagi hanya soal ..."
+              "source_url": "https://bisniskosmetika.com/bath-body/hair-care",
+              "source_title": "Rekomendasi Produk Perawatan Rambut Oriflame",
+              "published_date": "2026-11-01"
             },
             {
-              "term": "cruelty-free",
-              "evidence": "perhatian juga tertuju pada formula cruelty-free serta kemasan yang lebih ramah lingkungan",
+              "term": "shampo",
+              "evidence": "coba yuk ganti produk perawatan rambut dengan shampo Love Nature with Organic Tea Tree Oil & Aloe Vera",
               "signal": "mentioned",
-              "source_url": "https://www.instagram.com/p/DfWDqkDiPDi",
-              "source_title": "Mengapa tren produk kecantikan kini tidak lagi hanya soal ..."
+              "source_url": "https://bisniskosmetika.com/bath-body/hair-care",
+              "source_title": "Rekomendasi Produk Perawatan Rambut Oriflame",
+              "published_date": "2026-11-01"
             },
             {
-              "term": "tren makeup",
-              "evidence": "Temukan berbagai tren makeup yang sedang populer di TikTok",
-              "signal": "stated_trending",
-              "source_url": "https://www.tiktok.com/discover/tren-make-up-yang-lagi-viral?lang=en",
-              "source_title": "Tren Make Up Yang Lagi Viral",
-              "published_date": "2026-11-02"
+              "term": "ekstrak bayam",
+              "evidence": "Dengan ekstrak bayam, bantu merawat rambut agar tetap sehat dan terawat.",
+              "signal": "mentioned",
+              "source_url": "https://www.instagram.com/reel/DfWthbTJKp8",
+              "source_title": "Meeting, hangout, sampai menjalani aktivitas sehari-hari ..."
+            },
+            {
+              "term": "makeup",
+              "evidence": "Content ini menampilkan ide makeup 17 Agustus yang playful dan modern",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@imachan3001/video/7705053391004716306",
+              "source_title": "yg salin tautan disayang tuhan🫰🏻 pliss bantuin ilangin sb😞 ..."
             }
           ]
         },
         {
           "id": "rumah-tangga",
           "name": "Rumah tangga",
-          "status": "ok",
+          "status": "failed",
           "sources_seen": 9,
           "rejected_terms": 0,
           "rejected_reasons": {},
-          "terms": [
-            {
-              "term": "tanaman artifisial",
-              "evidence": "Terlaris Saat Ini Arthome Tanaman Artifisial Garland Spring Straw 6x6x147 cm - Hijau",
-              "signal": "stated_trending",
-              "source_url": "https://www.ruparupa.com/c/rumah-tangga.html",
-              "source_title": "Jual Peralatan Rumah Tangga Lengkap",
-              "published_date": "2026-11-05"
-            },
-            {
-              "term": "alat pel spray",
-              "evidence": "Proclean Alat Pel Spray",
-              "signal": "mentioned",
-              "source_url": "https://www.ruparupa.com/c/rumah-tangga.html",
-              "source_title": "Jual Peralatan Rumah Tangga Lengkap",
-              "published_date": "2026-11-05"
-            },
-            {
-              "term": "sapu pengki",
-              "evidence": "Angola Set Sapu Pengki D02 Sapu Lantai",
-              "signal": "mentioned",
-              "source_url": "https://www.blibli.com/jual/perabot-rumah-tangga",
-              "source_title": "Perabotan Rumah Tangga 🔥 - Tukar Tambah & Harga 2026",
-              "published_date": "2026-11-05"
-            },
-            {
-              "term": "lemari dapur",
-              "evidence": "LEMARI DAPUR LEMARI PIRING ALUMINIUM RAK DAPUR BESI SERBAGUNA LEMARI DAPUR MINIMALIS FULL PLAT BESI",
-              "signal": "mentioned",
-              "source_url": "https://shopee.co.id/list/Toko%20Peralatan/Rumah%20Tangga",
-              "source_title": "Jual Toko Peralatan Rumah Tangga Terlengkap & Harga ...",
-              "published_date": "2026-11-01"
-            },
-            {
-              "term": "wajan viral",
-              "evidence": "masak apapun pasti enak pakai wajan viral..",
-              "signal": "stated_trending",
-              "source_url": "https://www.tiktok.com/@wildamomschannel/video/7702441704774733057",
-              "source_title": "masak apapun pasti enak pakai wajan viral.."
-            },
-            {
-              "term": "peralatan dapur",
-              "evidence": "Gen z mulai ngelirik peralatan dapur",
-              "signal": "mentioned",
-              "source_url": "https://www.facebook.com/groups/840443707354017/posts/2246460930085614",
-              "source_title": "Gen z mulai ngelirik peralatan dapur 🥰🍓✨️"
-            },
-            {
-              "term": "lemari bufet",
-              "evidence": "Lemari bufet adalah perabot serbaguna berprofil rendah",
-              "signal": "mentioned",
-              "source_url": "https://www.facebook.com/officialprodesign.id/posts/solusi-ekstra-penyimpanan-ruangan-anda-bufet-petraprodesign-sesuaikan-pilihan-uk/122165547770407756",
-              "source_title": "Solusi ekstra penyimpanan ruangan Anda, Bufet ..."
-            },
-            {
-              "term": "papan melamin",
-              "evidence": "Papan melamin dari Prodeco dapat menjadi pilihan untuk menghadirkan custom furniture",
-              "signal": "mentioned",
-              "source_url": "https://www.instagram.com/reel/DfJyUdwNdxQ",
-              "source_title": "prodecowood"
-            }
-          ]
+          "terms": [],
+          "error": "The operation was aborted due to timeout"
         },
         {
           "id": "fashion",
           "name": "Fashion",
           "status": "ok",
-          "sources_seen": 8,
-          "rejected_terms": 0,
-          "rejected_reasons": {},
+          "sources_seen": 9,
+          "rejected_terms": 1,
+          "rejected_reasons": {
+            "term_not_in_evidence": 1
+          },
           "terms": [
             {
-              "term": "celana jeans pria",
-              "evidence": "Celana jeans pria dari RAF ditawarkan diskon 70%.",
-              "signal": "mentioned",
-              "source_url": "https://www.tiktok.com/@ramayanadeptstore/video/7704606207234870549",
-              "source_title": "Tampil trendy dan gampang di-mix & match untuk gaya ..."
+              "term": "kaos pria polos oversized",
+              "evidence": "Kaos pria polos oversized dengan desain minimalis yang sedang tren.",
+              "signal": "stated_trending",
+              "source_url": "https://www.tiktok.com/discover/baju-pria-yang-lagi-trending",
+              "source_title": "Baju Pria Yang Lagi Trending",
+              "published_date": "2026-11-02"
             },
             {
-              "term": "atasan wanita",
-              "evidence": "Celana jeans pria dari RAF ditawarkan diskon 70%. atasan wanita",
+              "term": "sandal gunung",
+              "evidence": "SANDAL GUNUNG tali selempang black orange line KH7-017",
               "signal": "mentioned",
-              "source_url": "https://www.tiktok.com/@ramayanadeptstore/video/7704606207234870549",
-              "source_title": "Tampil trendy dan gampang di-mix & match untuk gaya ..."
-            },
-            {
-              "term": "pakaian muslim pria",
-              "evidence": "Cari pakaian muslim pria & wanita, pakaian anak, sampai sandal dan sepatu?",
-              "signal": "mentioned",
-              "source_url": "https://www.facebook.com/sudutbkt/videos/eh-eh-ada-apa-lagi-nih-diramayana-bukittinggiwarga-bukittinggi-agam-padang-panja/1780928499847584",
-              "source_title": "EH... EH... ADA APA LAGI NIH DI RAMAYANA ..."
-            },
-            {
-              "term": "pakaian muslimah",
-              "evidence": "Pilihan pakaian muslimah yang bukan saja selesa tapi juga bergaya boleh didapati di D'Bunda Fashion~",
-              "signal": "mentioned",
-              "source_url": "https://www.facebook.com/diskomdigilomboktengahkab/posts/fashion-shows-street-muslim-lombok-tengah-persembahan-dekranasda-fashionshow/1748064783994807",
-              "source_title": "Fashion Shows Street Muslim Lombok Tengah ..."
+              "source_url": "https://www.tokopedia.com/find/tas-sepatu-original",
+              "source_title": "Jual Tas Sepatu Original Terbaik - Harga Murah November 2026 & Cicil 0%",
+              "published_date": "2026-11-03"
             },
             {
               "term": "tas sepatu",
-              "evidence": "Jual Tas Sepatu Original Terbaik - Harga Murah November ...",
+              "evidence": "Bright Light - Tas Sepatu Bola Bright Light Original Waterproof Anti Air",
               "signal": "mentioned",
               "source_url": "https://www.tokopedia.com/find/tas-sepatu-original",
-              "source_title": "Jual Tas Sepatu Original Terbaik - Harga Murah November ...",
+              "source_title": "Jual Tas Sepatu Original Terbaik - Harga Murah November 2026 & Cicil 0%",
               "published_date": "2026-11-03"
             },
             {
@@ -563,7 +405,7 @@
             },
             {
               "term": "kebaya modern",
-              "evidence": "(Gratis Hijab) Kebaya modern tunik zigzag / Kebaya wisuda / Baju kebaya brokat trend 2025 full payet mewah / Kebaya modern kondangan seragaman pesta ibu besan",
+              "evidence": "Kebaya modern tunik zigzag / Kebaya wisuda / Baju kebaya brokat trend 2025 full payet mewah",
               "signal": "mentioned",
               "source_url": "https://www.tokopedia.com/find/trend-baju-hijab",
               "source_title": "Jual Trend Baju Hijab Model & Desain Terbaru - Harga November 2026",
@@ -571,10 +413,17 @@
             },
             {
               "term": "gamis syar'i",
-              "evidence": "4 hal penting saat pilih gamis syar'i yang nyaman dan ...",
+              "evidence": "4 hal penting saat pilih gamis syar'i yang nyaman dan",
               "signal": "mentioned",
               "source_url": "https://www.facebook.com/wahdahtv/posts/jangan-asal-pilih-gamis-perhatikan-4-hal-ini-saat-pilih-pakaian-jangan-hanya-fok/2022320028988306",
               "source_title": "4 hal penting saat pilih gamis syar'i yang nyaman dan ..."
+            },
+            {
+              "term": "pakaian muslimah",
+              "evidence": "Pilihan pakaian muslimah yang bukan saja selesa tapi juga bergaya boleh didapati di D'Bunda Fashion",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/diskomdigilomboktengahkab/posts/fashion-shows-street-muslim-lombok-tengah-persembahan-dekranasda-fashionshow/1748064783994807",
+              "source_title": "Fashion Shows Street Muslim Lombok Tengah ..."
             }
           ]
         }
