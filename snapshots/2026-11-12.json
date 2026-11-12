@@ -1,0 +1,552 @@
+{
+  "date": "2026-11-12",
+  "generated_at": "2026-11-12T08:16:37.013Z",
+  "label": "趋势词快照",
+  "note": "仅表示这些词在近期公开网页的搜索结果中出现过，不代表搜索量、销量或增长趋势；使用前请自行判断。",
+  "provider": {
+    "search": "tavily",
+    "model": "deepseek-flash"
+  },
+  "searches": 27,
+  "markets": [
+    {
+      "market": "en-US",
+      "categories": [
+        {
+          "id": "consumer-electronics",
+          "name": "Consumer electronics & accessories",
+          "status": "ok",
+          "sources_seen": 11,
+          "rejected_terms": 2,
+          "rejected_reasons": {
+            "term_not_in_evidence": 2
+          },
+          "terms": [
+            {
+              "term": "wireless earbuds",
+              "evidence": "TOZO T6 Ergonomic Edition Wireless Earbuds Bluetooth 5.3 Headphones",
+              "signal": "mentioned",
+              "source_url": "https://us.amazon.com/Best-Sellers-Amazon-Devices-Accessories-Earbuds/zgbs/amazon-devices/23673186011",
+              "source_title": "Amazon Best Sellers: Best Earbuds",
+              "published_date": "2026-11-07"
+            },
+            {
+              "term": "in-ear headset",
+              "evidence": "Skullcandy Sesh Evo True Wireless In-Ear Headset - Pure Mint",
+              "signal": "mentioned",
+              "source_url": "https://www.ebay.com/b/Green-Earbud-In-Ear-Cell-Phone-Headsets/80077/bn_108455437",
+              "source_title": "25+ Green Earbud (In Ear) Cell Phone Headsets for sale",
+              "published_date": "2026-11-11"
+            },
+            {
+              "term": "wireless headphones",
+              "evidence": "Solo 4 Wireless Headphones. Earbuds Price is $129.95",
+              "signal": "mentioned",
+              "source_url": "https://www.att.com/buy/accessories/browse/all/popular-android_popular-google",
+              "source_title": "Shop Popular Android, Popular Google Accessories",
+              "published_date": "2026-11-09"
+            },
+            {
+              "term": "smart display",
+              "evidence": "Apple’s first smart display puts a 7-inch Liquid Retina screen at the center of your living space",
+              "signal": "mentioned",
+              "source_url": "https://www.gearpatrol.com/audio/best-tech-audio-hi-fi-releases-2026-november-week-1",
+              "source_title": "The Best New Gadgets and Hi-Fi Releases of 2026 (Updated)",
+              "published_date": "2026-11-06"
+            },
+            {
+              "term": "portable hi-fi player",
+              "evidence": "Fosi’s DAP Neo is an $80 portable hi-fi player that looks like a classic iPo",
+              "signal": "mentioned",
+              "source_url": "https://www.gearpatrol.com/audio/best-tech-audio-hi-fi-releases-2026-november-week-1",
+              "source_title": "The Best New Gadgets and Hi-Fi Releases of 2026 (Updated)",
+              "published_date": "2026-11-06"
+            },
+            {
+              "term": "tech gadgets",
+              "evidence": "From trending beauty and skincare to fashion, tech gadgets, gaming",
+              "signal": "stated_trending",
+              "source_url": "https://www.instagram.com/p/DfnJ_zYjMB1",
+              "source_title": "Teens are notoriously the hardest people to buy for, ..."
+            }
+          ]
+        },
+        {
+          "id": "home-kitchen",
+          "name": "Home & kitchen",
+          "status": "ok",
+          "sources_seen": 20,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [
+            {
+              "term": "air fryer",
+              "evidence": "we recommend this glass basket air fryer from Cuisinart",
+              "signal": "mentioned",
+              "source_url": "https://www.goodhousekeeping.com/what-to-buy/sales-shopping-news/a74345183/black-friday-kitchen-deals-2026",
+              "source_title": "24 Best Black Friday Kitchen Deals, According to Cooking Experts",
+              "published_date": "2026-11-10"
+            },
+            {
+              "term": "electric can opener",
+              "evidence": "this hands-free, USB-charging electric can opener that’d make a killer stocking stuffer",
+              "signal": "mentioned",
+              "source_url": "https://www.today.com/shop/best-gifts-for-foodies-rcna594006",
+              "source_title": "The 50+ Best Gifts for Foodies, Tested by Editors | Shop TODAY",
+              "published_date": "2026-11-09"
+            },
+            {
+              "term": "meat thermometer",
+              "evidence": "MEATER Plus Smart Meat Thermometer",
+              "signal": "mentioned",
+              "source_url": "https://www.youtube.com/watch?v=MG85BpU2WZU",
+              "source_title": "Top 5 Must-Have Kitchen Gadgets in 2026: Cooking Made Easy!",
+              "published_date": "2026-11-06"
+            },
+            {
+              "term": "stand mixer",
+              "evidence": "KitchenAid Artisan 5-Quart Tilt-Head Stand Mixer",
+              "signal": "mentioned",
+              "source_url": "https://www.youtube.com/watch?v=MG85BpU2WZU",
+              "source_title": "Top 5 Must-Have Kitchen Gadgets in 2026: Cooking Made Easy!",
+              "published_date": "2026-11-06"
+            },
+            {
+              "term": "personal blender",
+              "evidence": "NutriBullet Ultra Personal Blender",
+              "signal": "mentioned",
+              "source_url": "https://www.youtube.com/watch?v=MG85BpU2WZU",
+              "source_title": "Top 5 Must-Have Kitchen Gadgets in 2026: Cooking Made Easy!",
+              "published_date": "2026-11-06"
+            },
+            {
+              "term": "salt and pepper grinder set",
+              "evidence": "Gaivis Electric Salt and Pepper Grinder Set",
+              "signal": "mentioned",
+              "source_url": "https://www.youtube.com/watch?v=MG85BpU2WZU",
+              "source_title": "Top 5 Must-Have Kitchen Gadgets in 2026: Cooking Made Easy!",
+              "published_date": "2026-11-06"
+            },
+            {
+              "term": "drawer dividers",
+              "evidence": "adjustable drawer dividers can help keep clutter at bay",
+              "signal": "mentioned",
+              "source_url": "https://shopping.yahoo.com/home-garden/home-improvement/articles/14-things-pro-organizers-home-172953927.html",
+              "source_title": "14 Things Pro Organizers Say Your Home Needs ASAP",
+              "published_date": "2026-11-10"
+            },
+            {
+              "term": "lazy susan",
+              "evidence": "A lazy Susan turntable tames deep cabinets",
+              "signal": "mentioned",
+              "source_url": "https://www.youtube.com/watch?v=bpz46uRWI5s",
+              "source_title": "Top 11 Home Organizers That Actually Work | Home Organization Systems That Last",
+              "published_date": "2026-11-06"
+            }
+          ]
+        },
+        {
+          "id": "beauty-personal-care",
+          "name": "Beauty & personal care",
+          "status": "ok",
+          "sources_seen": 11,
+          "rejected_terms": 2,
+          "rejected_reasons": {
+            "term_not_in_evidence": 2
+          },
+          "terms": [
+            {
+              "term": "hyaluronic acid serum",
+              "evidence": "Bubble Skincare Water Slide Hyaluronic Acid Serum",
+              "signal": "mentioned",
+              "source_url": "https://nymag.com/strategist/article/best-beauty-deals-this-week-november-10-2026.html",
+              "source_title": "The Best Beauty Sales of the Week | The Strategist",
+              "published_date": "2026-11-10"
+            },
+            {
+              "term": "firming eye gel",
+              "evidence": "GeneXC Firming Eye Gel",
+              "signal": "mentioned",
+              "source_url": "https://www.elle.com/beauty/makeup-skin-care/a74170745/best-beauty-products-2026",
+              "source_title": "The Best New Beauty Products of 2026, Tested and Reviewed by ELLE Editors",
+              "published_date": "2026-11-09"
+            },
+            {
+              "term": "gel mask",
+              "evidence": "This gel mask from Medicube is made with kojic acid and niacinamide",
+              "signal": "mentioned",
+              "source_url": "https://www.nbcnews.com/select/shopping/what-is-bloom-skin-rcna607872",
+              "source_title": "What Is Bloom Skin? The K-Beauty Trend Dermatologists Love",
+              "published_date": "2026-11-06"
+            },
+            {
+              "term": "centella serum",
+              "evidence": "PURTIO Wonder Releaf Centella Serum Unscented (60ml)",
+              "signal": "mentioned",
+              "source_url": "https://www.skincupid.us",
+              "source_title": "Korean Skincare UK | K-Beauty Retailer | Skin Cupid"
+            },
+            {
+              "term": "sheet masks",
+              "evidence": "These pricey Japanese sheet masks achieved cult status",
+              "signal": "mentioned",
+              "source_url": "https://www.nytimes.com/wirecutter/reviews/best-self-care-gifts-for-yourself",
+              "source_title": "The 49 Best Self-Care Gifts to Buy Yourself in 2026 | Reviews by Wirecutter",
+              "published_date": "2026-11-06"
+            },
+            {
+              "term": "healing gloss",
+              "evidence": "Virtue Healing Gloss",
+              "signal": "mentioned",
+              "source_url": "https://www.elle.com/beauty/hair/a74170751/best-hair-products-2026",
+              "source_title": "The Best New Hair Products of 2026, Tested and Reviewed by ELLE Editors",
+              "published_date": "2026-11-09"
+            }
+          ]
+        },
+        {
+          "id": "fitness-outdoor",
+          "name": "Fitness & outdoor",
+          "status": "ok",
+          "sources_seen": 16,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [
+            {
+              "term": "workout tank top",
+              "evidence": "This week's Amazon workout favorites include a PINSPARK workout tank top, comfy leggings",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/ajetsetjournal/posts/this-weeks-amazon-fitness-finds-are-worth-checking-out-from-the-soothfeel-workou/1776280184503057",
+              "source_title": "This week's Amazon Fitness finds are worth checking out! ..."
+            },
+            {
+              "term": "high-waisted leggings",
+              "evidence": "dark olive- green high-waisted leggings, and white sneakers",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/AlexCostaOfficial/posts/a-few-gym-outfits-and-brands-lve-been-wearing-lately-i-share-them-in-a-lot-more-/1709505820541757",
+              "source_title": "A few gym outfits and brands l've been wearing lately. ..."
+            },
+            {
+              "term": "inflatable air-frame tents",
+              "evidence": "including inflatable air-frame tents, hot tents, wood stoves",
+              "signal": "stated_trending",
+              "source_url": "https://hot-tent.com/collections/bestsellers",
+              "source_title": "Best-Selling Camping Gear | Coody & ..."
+            },
+            {
+              "term": "camping furniture",
+              "evidence": "hot tents, wood stoves, camping furniture, insulated floors",
+              "signal": "stated_trending",
+              "source_url": "https://hot-tent.com/collections/bestsellers",
+              "source_title": "Best-Selling Camping Gear | Coody & ..."
+            },
+            {
+              "term": "hiking boots",
+              "evidence": "Top-rated hiking boots for rocky trails.",
+              "signal": "mentioned",
+              "source_url": "https://www.reddit.com/r/hikinggear/comments/1xtqpo2/selling_mountaineering_gear",
+              "source_title": "Selling Mountaineering Gear! : r/hikinggear"
+            },
+            {
+              "term": "lightweight tents",
+              "evidence": "Best lightweight tents for backpacking.",
+              "signal": "mentioned",
+              "source_url": "https://www.reddit.com/r/hikinggear/comments/1xtqpo2/selling_mountaineering_gear",
+              "source_title": "Selling Mountaineering Gear! : r/hikinggear"
+            },
+            {
+              "term": "headlamp",
+              "evidence": "The fast-charging 400-lumen headlamp keeps up with your outdoor pursuits",
+              "signal": "mentioned",
+              "source_url": "https://gearjunkie.com/holiday-gear/best-gifts-camping",
+              "source_title": "The Best Gifts for Camping: Gear for the Ultimate Camp Setup | GearJunkie",
+              "published_date": "2026-11-05"
+            },
+            {
+              "term": "yoga mat",
+              "evidence": "Yoga Mat: The essential gear for yoga, Pilates, and stretching",
+              "signal": "mentioned",
+              "source_url": "https://deerruntreadmill.com/blogs/news/7-practical-fitness-gifts-for-her-making-everyday-workouts-easier",
+              "source_title": "7 Practical Fitness Gifts for Her: Making Everyday Workouts Easier",
+              "published_date": "2026-11-10"
+            }
+          ]
+        },
+        {
+          "id": "pet-supplies",
+          "name": "Pet supplies",
+          "status": "ok",
+          "sources_seen": 19,
+          "rejected_terms": 1,
+          "rejected_reasons": {
+            "evidence_is_just_term": 1
+          },
+          "terms": [
+            {
+              "term": "Flopping Fish Cat Toy",
+              "evidence": "Plush Interactive Realistic Flopping Fish Cat Toys (3 Pack)",
+              "signal": "mentioned",
+              "source_url": "https://www.sellthetrend.com/niche/pet-products",
+              "source_title": "Best Trending Pet Products to Dropship (Weekly Updated List) | Sell The Trend",
+              "published_date": "2026-11-07"
+            },
+            {
+              "term": "Interactive Dog Ball Toy",
+              "evidence": "Interactive Dog Ball Toy and Cat Hammock Bed for Desk",
+              "signal": "mentioned",
+              "source_url": "https://www.sellthetrend.com/niche/pet-products",
+              "source_title": "Best Trending Pet Products to Dropship (Weekly Updated List) | Sell The Trend",
+              "published_date": "2026-11-07"
+            },
+            {
+              "term": "Cat Hammock Bed",
+              "evidence": "Interactive Dog Ball Toy and Cat Hammock Bed for Desk",
+              "signal": "mentioned",
+              "source_url": "https://www.sellthetrend.com/niche/pet-products",
+              "source_title": "Best Trending Pet Products to Dropship (Weekly Updated List) | Sell The Trend",
+              "published_date": "2026-11-07"
+            },
+            {
+              "term": "Cordless Handheld Vacuum Cleaner",
+              "evidence": "POPDEER VC01 Cordless Handheld Vacuum Cleaner 120W Portable",
+              "signal": "mentioned",
+              "source_url": "https://www.sellthetrend.com/niche/pet-products",
+              "source_title": "Best Trending Pet Products to Dropship (Weekly Updated List) | Sell The Trend",
+              "published_date": "2026-11-07"
+            },
+            {
+              "term": "Large Cat Tree",
+              "evidence": "Large Cat Tree Tall Cat Tower for Indoor Cats Multi-Level",
+              "signal": "mentioned",
+              "source_url": "https://www.sellthetrend.com/niche/pet-products",
+              "source_title": "Best Trending Pet Products to Dropship (Weekly Updated List) | Sell The Trend",
+              "published_date": "2026-11-07"
+            },
+            {
+              "term": "self-rolling dog ball",
+              "evidence": "Discover the Merquin RolliBall: an automatic, self-rolling dog ball that keeps pups active and entertained.",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/discover/trending-pet-products",
+              "source_title": "Trending Pet Products | TikTok",
+              "published_date": "2026-11-09"
+            },
+            {
+              "term": "Cat String Toy",
+              "evidence": "The Award Winning Cat String Toy.",
+              "signal": "mentioned",
+              "source_url": "https://hammacher.com/categories/pets",
+              "source_title": "Pets"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "market": "id-ID",
+      "categories": [
+        {
+          "id": "elektronik-aksesoris",
+          "name": "Elektronik & aksesoris",
+          "status": "ok",
+          "sources_seen": 20,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [
+            {
+              "term": "aksesoris HP",
+              "evidence": "Cari aksesoris HP dan perlengkapan gadget? Central Com menyediakan beragam pilihan produk dengan harga menarik!",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@centralcomofficial/video/7706079393583533319",
+              "source_title": "real ga ni ? Di Central Com, mau Gen Z atau Millennial ..."
+            },
+            {
+              "term": "kipas mini portable",
+              "evidence": "💨 Kipas mini portable, praktis dibawa ke mana saja",
+              "signal": "mentioned",
+              "source_url": "https://www.instagram.com/reel/DfhS2wIJ5_V",
+              "source_title": "Instagram"
+            },
+            {
+              "term": "earphone kabel",
+              "evidence": "earphone kabel buat kalian yg mau di kiri bawah #earphone #headset #rekomendasi",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/aikin.gadget/videos/headset-audio-elektronik-gadgets/1818399459300251",
+              "source_title": "Headset Audio Review: Electronics and Gadgets Tips"
+            },
+            {
+              "term": "headset viral",
+              "evidence": "Segera dapatkan headset viral yang sedang banyak dicari!",
+              "signal": "stated_trending",
+              "source_url": "https://www.tiktok.com/@its_adaamm/video/7705380192365120775",
+              "source_title": "Headset Viral - Cek Keranjang Kuning!"
+            },
+            {
+              "term": "phone strap",
+              "evidence": "Phone Strap Awan Harga : 10.000/pcs 8.000/3pcs minimal order 12pcs",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/groups/1128204817775871/posts/2192766697986339",
+              "source_title": "Satu produk, ternyata bisa punya banyak fungsi!❤ bisa jadi ..."
+            },
+            {
+              "term": "TWS",
+              "evidence": "🎧 TWS untuk menemani aktivitas harian",
+              "signal": "mentioned",
+              "source_url": "https://www.instagram.com/reel/DfhS2wIJ5_V",
+              "source_title": "Instagram"
+            },
+            {
+              "term": "headset game",
+              "evidence": "Mouse blutot,Mouse Pad,HEADSET GAME,Speker komputer dll Merk",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/groups/4094025243988598/posts/29386415750989532",
+              "source_title": "Aksesoris ROBOT apa yang paling laris di daerahmu?"
+            }
+          ]
+        },
+        {
+          "id": "kecantikan",
+          "name": "Kecantikan & perawatan diri",
+          "status": "ok",
+          "sources_seen": 20,
+          "rejected_terms": 1,
+          "rejected_reasons": {
+            "bad_chars": 1
+          },
+          "terms": [
+            {
+              "term": "salicylic acid cleanser",
+              "evidence": "Salicylic Acid Cleanser untuk membantu membersihkan pori-pori sekaligus mengontrol minyak berlebih",
+              "signal": "mentioned",
+              "source_url": "https://cewekbanget.grid.id/read/064429835/tak-sekadar-tren-ini-peran-pdrn-hingga-ceramide-dalam-perawatan-kulit",
+              "source_title": "Tak Sekadar Tren, Ini Peran PDRN hingga Ceramide dalam Perawatan Kulit - CewekBanget",
+              "published_date": "2026-11-11"
+            },
+            {
+              "term": "snail mucin",
+              "evidence": "serta Snail Mucin yang dikenal dapat menjaga kelembapan dan membantu pemulihan kulit",
+              "signal": "mentioned",
+              "source_url": "https://cewekbanget.grid.id/read/064429835/tak-sekadar-tren-ini-peran-pdrn-hingga-ceramide-dalam-perawatan-kulit",
+              "source_title": "Tak Sekadar Tren, Ini Peran PDRN hingga Ceramide dalam Perawatan Kulit - CewekBanget",
+              "published_date": "2026-11-11"
+            },
+            {
+              "term": "ceramide series",
+              "evidence": "Selain itu, terdapat Ceramide Series yang membantu menjaga skin barrier",
+              "signal": "mentioned",
+              "source_url": "https://cewekbanget.grid.id/read/064429835/tak-sekadar-tren-ini-peran-pdrn-hingga-ceramide-dalam-perawatan-kulit",
+              "source_title": "Tak Sekadar Tren, Ini Peran PDRN hingga Ceramide dalam Perawatan Kulit - CewekBanget",
+              "published_date": "2026-11-11"
+            },
+            {
+              "term": "PDRN",
+              "evidence": "3 bahan aktif yang lagi banyak dicari bulan ini: PDRN, Microbiome, dan NAD+",
+              "signal": "stated_trending",
+              "source_url": "https://www.instagram.com/p/DfbXG-Hj9IE",
+              "source_title": "Instagram"
+            },
+            {
+              "term": "microbiome",
+              "evidence": "3 bahan aktif yang lagi banyak dicari bulan ini: PDRN, Microbiome, dan NAD+",
+              "signal": "stated_trending",
+              "source_url": "https://www.instagram.com/p/DfbXG-Hj9IE",
+              "source_title": "Instagram"
+            },
+            {
+              "term": "serum rambut",
+              "evidence": "Menampilkan 199 produk untuk \"serum rambut terbaik\" (1 - 60 dari 199)",
+              "signal": "mentioned",
+              "source_url": "https://www.tokopedia.com/find/serum-rambut-terbaik",
+              "source_title": "Jual Serum Rambut Terbaik Murah - Harga Terbaru November 2026",
+              "published_date": "2026-11-07"
+            },
+            {
+              "term": "hair growth serum",
+              "evidence": "My Iwe Hair Growth Serum Penumbuh Rambut Botak Rontok Rusak Parah Super Cepat Pa",
+              "signal": "mentioned",
+              "source_url": "https://www.tokopedia.com/find/serum-rambut-terbaik",
+              "source_title": "Jual Serum Rambut Terbaik Murah - Harga Terbaru November 2026",
+              "published_date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "rumah-tangga",
+          "name": "Rumah tangga",
+          "status": "failed",
+          "sources_seen": 20,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [],
+          "error": "DeepSeek 400：Failed to parse the request body as JSON: messages[1].content: unexpected end of hex escape at line 1 column 4616"
+        },
+        {
+          "id": "fashion",
+          "name": "Fashion",
+          "status": "ok",
+          "sources_seen": 20,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [
+            {
+              "term": "gamis layering",
+              "evidence": "- *Gamis Layering*: Gamis dengan desain layering yang bisa dilepas pasang, membuat tampilan lebih",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/fitinline/posts/kenali-tren-soft-living-dalam-fashion-mulai-dari-perubahan-gaya-berpakaian-kenya/1676565394262716",
+              "source_title": "Tren soft living dalam fashion: gaya, kenyamanan ..."
+            },
+            {
+              "term": "hijab instan bandana",
+              "evidence": "Tren Hijab Instan Bandana Two Tone yang Lagi Viral &",
+              "signal": "stated_trending",
+              "source_url": "https://www.tiktok.com/@laaaluv/video/7704227422794796294",
+              "source_title": "Tren Hijab Instan Bandana Two Tone yang Lagi Viral & ..."
+            },
+            {
+              "term": "pashmina plisket",
+              "evidence": "Dari kerudung sederhana sampai pashmina plisket",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/tashilulqurro/posts/dari-kerudung-sederhana-sampai-pashmina-plisket-ternyata-model-hijab-di-indonesi/1477551621140568",
+              "source_title": "Dari kerudung sederhana sampai pashmina plisket"
+            },
+            {
+              "term": "baju koko",
+              "evidence": "mulai dari knit, kulot, jeans, gamis, baju koko, hingga aneka pakaian pria.",
+              "signal": "mentioned",
+              "source_url": "https://www.instagram.com/reel/DflQanMyEzu",
+              "source_title": "Fren, lagi cari fashion lengkap untuk cewek maupun cowok ..."
+            },
+            {
+              "term": "tas bahu mini",
+              "evidence": "Tas Bahu Mini Levy Nylon - Deep Olive",
+              "signal": "mentioned",
+              "source_url": "https://www.charleskeith.co.id/id/CK2-20151613_DE.OLV-ID.html",
+              "source_title": "Tas Bahu Mini Levy Nylon - Deep Olive",
+              "published_date": "2026-11-11"
+            },
+            {
+              "term": "shoes bag",
+              "evidence": "Lindungi sepatu kesayanganmu dengan Trev Shoes Bag.",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@sporti.id/photo/7629675876568812808?image_index=8&lang=de-DE",
+              "source_title": "Trev Shoes Bag oleh Sporti ID"
+            },
+            {
+              "term": "denim jacket",
+              "evidence": "- Weekend santai: dress jersey + denim jacket + sneakers.",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@lokakain/video/7704989853338832129",
+              "source_title": "Preview Outfit Lebaran 2027: Koleksi Terbaru Lokakain ..."
+            },
+            {
+              "term": "kemeja",
+              "evidence": "potongan yang rapi dan warna netral (hitam, navy, abu-abu) mudah dipadukan dengan kemeja atau polo untuk",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@ahzofficiall/video/7707082017334119698",
+              "source_title": "STOP SCROLL! JANGAN SAMPAI KELEWAT ..."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
