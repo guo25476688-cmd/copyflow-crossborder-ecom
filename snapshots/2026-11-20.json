@@ -1,0 +1,570 @@
+{
+  "date": "2026-11-20",
+  "generated_at": "2026-11-20T08:29:41.449Z",
+  "label": "趋势词快照",
+  "note": "仅表示这些词在近期公开网页的搜索结果中出现过，不代表搜索量、销量或增长趋势；使用前请自行判断。",
+  "provider": {
+    "search": "tavily",
+    "model": "deepseek-flash"
+  },
+  "searches": 27,
+  "markets": [
+    {
+      "market": "en-US",
+      "categories": [
+        {
+          "id": "consumer-electronics",
+          "name": "Consumer electronics & accessories",
+          "status": "ok",
+          "sources_seen": 18,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [
+            {
+              "term": "wireless earbuds",
+              "evidence": "It's safe to say the wireless earbuds space is pretty saturated.",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/Engadget/posts/its-safe-to-say-the-wireless-earbuds-space-is-pretty-saturated-weve-tested-and-r/1684205490040806",
+              "source_title": "Engadget on Facebook: \"It's safe to say the wireless earbuds space is pretty saturated. We've tested and reviewed dozens of…\"",
+              "published_date": "2026-11-19"
+            },
+            {
+              "term": "noise cancelling earbuds",
+              "evidence": "Welcome to Recording Now's best wireless noise cancelling earbuds awards of 2026.",
+              "signal": "mentioned",
+              "source_url": "https://www.youtube.com/watch?v=eZZy1HuL6dk",
+              "source_title": "Best Noise Cancelling Earbuds 2026 - Here's My #1 Pick!",
+              "published_date": "2026-11-19"
+            },
+            {
+              "term": "open earbuds",
+              "evidence": "## Best open earbuds of 2026",
+              "signal": "mentioned",
+              "source_url": "https://www.cnet.com/tech/mobile/best-open-wireless-earbuds",
+              "source_title": "Best Open Earbuds for 2026: Top Picks From Bose, Shokz and Apple",
+              "published_date": "2026-11-13"
+            },
+            {
+              "term": "gaming headset",
+              "evidence": "## Razer Kraken Kitty V3 gaming headset",
+              "signal": "mentioned",
+              "source_url": "https://mashable.com/life/best-tech-gifts-for-2026",
+              "source_title": "Best tech gifts to buy for someone you love | Mashable",
+              "published_date": "2026-11-16"
+            },
+            {
+              "term": "Bluetooth tracker",
+              "evidence": "It’s a small Bluetooth tracker that works wi",
+              "signal": "mentioned",
+              "source_url": "https://www.gearpatrol.com/audio/best-tech-audio-hi-fi-releases-2026-november-week-2",
+              "source_title": "The Best New Gadgets and Hi-Fi Releases of 2026 (Updated)",
+              "published_date": "2026-11-13"
+            },
+            {
+              "term": "smart ring",
+              "evidence": "Best Buy has an upgrade for every one of those routines, from e-scooters to smart rings",
+              "signal": "mentioned",
+              "source_url": "https://www.forbes.com/sites/best-buy/article/best-buy-tech-gifts-for-different-personalities",
+              "source_title": "4 Best Buy Tech Gifts For Different Personalities On Your List",
+              "published_date": "2026-11-16"
+            },
+            {
+              "term": "wireless mouse",
+              "evidence": "And there’s Satechi’s Slim EX wireless mouse ($30).",
+              "signal": "mentioned",
+              "source_url": "https://www.gearpatrol.com/audio/best-tech-audio-hi-fi-releases-2026-november-week-2",
+              "source_title": "The Best New Gadgets and Hi-Fi Releases of 2026 (Updated)",
+              "published_date": "2026-11-13"
+            },
+            {
+              "term": "kitchen gadgets",
+              "evidence": "Are These Viral Kitchen Gadgets WORTH IT or TOTAL JUNK?!",
+              "signal": "stated_trending",
+              "source_url": "https://www.facebook.com/rossenreports/posts/are-these-viral-kitchen-gadgets-worth-it-or-total-junk/1715405463280234",
+              "source_title": "13K views · 335 reactions | Are These Viral Kitchen Gadgets WORTH IT or TOTAL JUNK?! | Jeff Rossen"
+            }
+          ]
+        },
+        {
+          "id": "home-kitchen",
+          "name": "Home & kitchen",
+          "status": "ok",
+          "sources_seen": 17,
+          "rejected_terms": 1,
+          "rejected_reasons": {
+            "term_not_in_evidence": 1
+          },
+          "terms": [
+            {
+              "term": "electric grinder",
+              "evidence": "Love cooking curries? An electric grinder will make preparing spic",
+              "signal": "mentioned",
+              "source_url": "https://www.techradar.com/home/small-appliances/no-gimmicks-just-genius-ive-rounded-up-the-best-genuinely-useful-kitchen-gadgets-under-usd50-to-gift-your-favorite-home-cook",
+              "source_title": "No gimmicks, just genius — I’ve rounded up the best genuinely useful kitchen gadgets under $50 to gift your favorite home cook | TechRadar",
+              "published_date": "2026-11-13"
+            },
+            {
+              "term": "air fryers",
+              "evidence": "Discover versatile options like air fryers, slow cookers, stand mixers, and coffee makers",
+              "signal": "mentioned",
+              "source_url": "https://www.qvc.com/c/kitchen-and-food/-/lglv/c.html",
+              "source_title": "Cookware, Baking Supplies & More — Kitchen & Food - QVC.com"
+            },
+            {
+              "term": "folding cutting board",
+              "evidence": "The featured products include a versatile folding cutting board, a marble-based fruit basket",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/BRIANDUFFYCHEF/posts/its-almost-thanksgiving-we-all-need-some-better-kitchen-stuff-here-are-some-of-m/1670354081149698",
+              "source_title": "Best kitchen tools for Thanksgiving"
+            },
+            {
+              "term": "drawer organizers",
+              "evidence": "The Vtopmart 25 Pack Clear Plastic Drawer Organizers stand out as the most versatile set for tackling clutter in drawers",
+              "signal": "mentioned",
+              "source_url": "https://everydayshortlist.com/best-home-organization-products",
+              "source_title": "Home Organization Products That Are Actually Worth Buying - Everyday Shortlist",
+              "published_date": "2026-11-15"
+            },
+            {
+              "term": "acrylic storage bins",
+              "evidence": "These clear acrylic storage bins are hands down some of my FAVORITE organization essentials!",
+              "signal": "mentioned",
+              "source_url": "https://www.instagram.com/reel/Dfvf2M-Iyza",
+              "source_title": "Instagram"
+            },
+            {
+              "term": "countertop organizer",
+              "evidence": "Key items featured include a countertop organizer, sheet organizers, a washer/dryer countertop",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/apieceofmyhaven/videos/amazon-zero-regret-organization-findslike-and-type-prep-and-ill-send-them-to-you/2338742296923042",
+              "source_title": "Amazon Zero Regret Organization Finds for Kitchen and Laundry ..."
+            },
+            {
+              "term": "organizer trays",
+              "evidence": "Looking for drawer organizer trays not made of plastic",
+              "signal": "mentioned",
+              "source_url": "https://www.reddit.com/r/Homeorganization/comments/1xytq55/looking_for_drawer_organizer_trays_not_made_of",
+              "source_title": "Looking for drawer organizer trays not made of plastic - Reddit"
+            }
+          ]
+        },
+        {
+          "id": "beauty-personal-care",
+          "name": "Beauty & personal care",
+          "status": "ok",
+          "sources_seen": 17,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [
+            {
+              "term": "exfoliating pads",
+              "evidence": "These exfoliating pads — 25% off — and exactly what I packed while traveling this week.",
+              "signal": "mentioned",
+              "source_url": "https://magpiebyjenshoop.com/7-early-black-friday-beauty-skincare-obsessions",
+              "source_title": "7 Early Black Friday Deals on Beloved Skincare/Beauty Brands",
+              "published_date": "2026-11-18"
+            },
+            {
+              "term": "salicylic acid cleanser",
+              "evidence": "A salicylic acid cleanser is a must-have for anyone with acne-prone skin.",
+              "signal": "stated_trending",
+              "source_url": "https://www.reviewed.com/beauty/features/amazon-essentials-personal-care-review",
+              "source_title": "How do personal care items from Amazon Essentials stack up to top beauty brands? - Reviewed",
+              "published_date": "2026-11-13"
+            },
+            {
+              "term": "silicone scalp massager",
+              "evidence": "Sndyi Silicone Scalp Massager Shampoo Brush, Hair Scrubber with Soft Silicone Bristles",
+              "signal": "mentioned",
+              "source_url": "https://benable.com/her_blog/affordable-beauty-tools-i-think-are-worth-it-08",
+              "source_title": "Affordable Beauty Tools I Think Are Worth It",
+              "published_date": "2026-11-13"
+            },
+            {
+              "term": "boar bristle brush",
+              "evidence": "The Hair Edit Mini Finish & Shine Boar Bristle Brush",
+              "signal": "mentioned",
+              "source_url": "https://www.ulta.com/shop/travel-size-mini/travel-size-tools-brushes?hair+concern=shine",
+              "source_title": "Shine Travel Size Tools & Brushes - 1 Products | Ulta Beauty"
+            },
+            {
+              "term": "makeup sponge",
+              "evidence": "Makeup Sponge Set BS-MALL Triangle Puff 14PCS Non-Latex Beauty Blender Sponges with Travel Case",
+              "signal": "mentioned",
+              "source_url": "https://benable.com/her_blog/affordable-beauty-tools-i-think-are-worth-it-08",
+              "source_title": "Affordable Beauty Tools I Think Are Worth It",
+              "published_date": "2026-11-13"
+            },
+            {
+              "term": "cushion foundation",
+              "evidence": "I'm talking cushion foundations, tinted sunscreens, and lip products that are doing double duty.",
+              "signal": "mentioned",
+              "source_url": "https://www.youtube.com/watch?v=IOfeBRPK13M",
+              "source_title": "AM Beauty: 6 Korean Beauty Trends to Explore",
+              "published_date": "2026-11-19"
+            },
+            {
+              "term": "rosehip oil",
+              "evidence": "Radha rosehip oil to not only soften skin and lock in moisture",
+              "signal": "mentioned",
+              "source_url": "https://www.buzzfeed.com/maitlandquitmeyer/beauty-products-reviewers-call-best-bought-all-year-an",
+              "source_title": "37 Beauty Products Reviewers Said Were The Best They Bought All Year",
+              "published_date": "2026-11-16"
+            },
+            {
+              "term": "body wash",
+              "evidence": "Best Bodywash: Salt & Stone Saffron & Cedar Body Wash",
+              "signal": "mentioned",
+              "source_url": "https://www.whowhatwear.com/beauty/beauty-editor-skincare-mainstays-2026",
+              "source_title": "11 Skincare Mainstays a Beauty Editor Used to the Last Drop | Who What Wear",
+              "published_date": "2026-11-17"
+            }
+          ]
+        },
+        {
+          "id": "fitness-outdoor",
+          "name": "Fitness & outdoor",
+          "status": "failed",
+          "sources_seen": 17,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [],
+          "error": "DeepSeek 400：{\"error\":{\"message\":\"Failed to parse the request body as JSON: messages[1].content: unexpected end of hex escape at line 1 column 6864 (request_id: a0bc9988-9fcc-444f-b4d0-1c09013cb60f)\",\"type\":\"inval"
+        },
+        {
+          "id": "pet-supplies",
+          "name": "Pet supplies",
+          "status": "ok",
+          "sources_seen": 14,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [
+            {
+              "term": "pet grooming glove",
+              "evidence": "Trending pet products on TikTok Shop this week include NOESEA Pet Grooming Glove Wipes",
+              "signal": "stated_trending",
+              "source_url": "https://www.sellthetrend.com/niche/pet-products",
+              "source_title": "Best Trending Pet Products to Dropship (Weekly Updated List) | Sell The Trend",
+              "published_date": "2026-11-15"
+            },
+            {
+              "term": "interactive dog ball toy",
+              "evidence": "Plush Interactive Realistic Flopping Fish Cat Toys (3 Pack) and Interactive Dog Ball Toy",
+              "signal": "mentioned",
+              "source_url": "https://www.sellthetrend.com/niche/pet-products",
+              "source_title": "Best Trending Pet Products to Dropship (Weekly Updated List) | Sell The Trend",
+              "published_date": "2026-11-15"
+            },
+            {
+              "term": "tofu cat litter",
+              "evidence": "| Tofu cat litter | $31.95 | $29.00Tuft & Paw unscented litter, 9.25 lb",
+              "signal": "mentioned",
+              "source_url": "https://ecombrainly.com/pet-care-market-trends",
+              "source_title": "Pet Care Market Trends 2026–2035 | Trending Pet Products",
+              "published_date": "2026-11-14"
+            },
+            {
+              "term": "freeze-dried chicken dog treats",
+              "evidence": "| Freeze-dried chicken dog treats | $23.21 | $14.59American Paws Pet chicken, 4 oz",
+              "signal": "mentioned",
+              "source_url": "https://ecombrainly.com/pet-care-market-trends",
+              "source_title": "Pet Care Market Trends 2026–2035 | Trending Pet Products",
+              "published_date": "2026-11-14"
+            },
+            {
+              "term": "dog ramp for couch",
+              "evidence": "| Dog ramp for couch | $60.82 | $169.00Lulil Rowan storage ramp, 19.5 in tall",
+              "signal": "mentioned",
+              "source_url": "https://ecombrainly.com/pet-care-market-trends",
+              "source_title": "Pet Care Market Trends 2026–2035 | Trending Pet Products",
+              "published_date": "2026-11-14"
+            },
+            {
+              "term": "dog grooming hammock",
+              "evidence": "| Dog grooming hammock | $35.58 | $34.99PerriPaw",
+              "signal": "mentioned",
+              "source_url": "https://ecombrainly.com/pet-care-market-trends",
+              "source_title": "Pet Care Market Trends 2026–2035 | Trending Pet Products",
+              "published_date": "2026-11-14"
+            },
+            {
+              "term": "stainless steel litter boxes",
+              "evidence": "Stainless steel litter boxes have grown in popularity recently, thanks largely to their nonstick material",
+              "signal": "stated_trending",
+              "source_url": "https://www.consumerreports.org/money/sales-promotions/best-black-friday-deals-on-pet-products-a8392571434",
+              "source_title": "Best Early Black Friday Deals on Pet Products - Consumer Reports",
+              "published_date": "2026-11-13"
+            },
+            {
+              "term": "automatic dog feeder",
+              "evidence": "The Petlibro One RFID Smart Feeder was the fanciest automatic dog feeder we evaluated",
+              "signal": "mentioned",
+              "source_url": "https://www.consumerreports.org/money/sales-promotions/best-black-friday-deals-on-pet-products-a8392571434",
+              "source_title": "Best Early Black Friday Deals on Pet Products - Consumer Reports",
+              "published_date": "2026-11-13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "market": "id-ID",
+      "categories": [
+        {
+          "id": "elektronik-aksesoris",
+          "name": "Elektronik & aksesoris",
+          "status": "ok",
+          "sources_seen": 9,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [
+            {
+              "term": "aksesoris gadget",
+              "evidence": "Temukan berbagai pilihan produk elektronik dan aksesoris gadget untuk menunjang aktivitas sehari-harimu.",
+              "signal": "mentioned",
+              "source_url": "https://www.instagram.com/reel/DfrTiuuusNI",
+              "source_title": "Good news buat kamu yang cari gadget dan aksesoris ..."
+            },
+            {
+              "term": "powerbank",
+              "evidence": "Mulai dari charger, kabel, powerbank, headset, casing",
+              "signal": "mentioned",
+              "source_url": "https://www.instagram.com/reel/DfrTiuuusNI",
+              "source_title": "Good news buat kamu yang cari gadget dan aksesoris ..."
+            },
+            {
+              "term": "headset",
+              "evidence": "Mulai dari charger, kabel, powerbank, headset, casing",
+              "signal": "mentioned",
+              "source_url": "https://www.instagram.com/reel/DfrTiuuusNI",
+              "source_title": "Good news buat kamu yang cari gadget dan aksesoris ..."
+            },
+            {
+              "term": "headphone",
+              "evidence": "Rekomendasi headphone pro.#gghm1 #headphone #headset #gg #monitor",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@ruslin_mbahsho/video/7709338794096348436",
+              "source_title": "Rekomendasi headphone pro. #gghm1 #headphone #headset #gg #monitor @GA... | TikTok"
+            },
+            {
+              "term": "earphone",
+              "evidence": "Masa 30ribuan dapet earphone cakep",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@dolanangadget/video/7707918504061685013",
+              "source_title": "Asli sedekah ini mh. Masa 30ribuan dapet earphone cakep ..."
+            },
+            {
+              "term": "casing & tempered glass",
+              "evidence": "Charger Earphone & headset Power bank Casing & tempered glass Flashdisk,",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@dolanangadget/video/7707918504061685013",
+              "source_title": "Asli sedekah ini mh. Masa 30ribuan dapet earphone cakep ..."
+            },
+            {
+              "term": "flashdisk",
+              "evidence": "Charger Earphone & headset Power bank Casing & tempered glass Flashdisk,",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@dolanangadget/video/7707918504061685013",
+              "source_title": "Asli sedekah ini mh. Masa 30ribuan dapet earphone cakep ..."
+            },
+            {
+              "term": "HP 1 jutaan",
+              "evidence": "nih kita punya barisan HP 1 jutaan terbaik.",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/samitech.id/videos/meskipun-drama-di-kasir-ada-ada-saja-belanja-elektronik-di-samitech-ponorogo-dij/4280821988728264",
+              "source_title": "Meskipun drama di kasir ada-ada saja, belanja elektronik ..."
+            }
+          ]
+        },
+        {
+          "id": "kecantikan",
+          "name": "Kecantikan & perawatan diri",
+          "status": "ok",
+          "sources_seen": 6,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [
+            {
+              "term": "masker anti aging",
+              "evidence": "Produk Masker Anti Aging Terlaris. 1. Retinol Masker Gold Peel Off Masker100g Anti Aging Collagen Dan Flek Mengurangi Kerutan Melembabkan Semua Jenis Kulit",
+              "signal": "stated_trending",
+              "source_url": "https://shopee.co.id/list/Masker/Anti%20Aging",
+              "source_title": "Jual Masker Anti Aging Terlengkap & Harga Terbaru ...",
+              "published_date": "2026-11-19"
+            },
+            {
+              "term": "retinol masker",
+              "evidence": "1. Retinol Masker Gold Peel Off Masker100g Anti Aging Collagen Dan Flek Mengurangi Kerutan Melembabkan Semua Jenis Kulit",
+              "signal": "mentioned",
+              "source_url": "https://shopee.co.id/list/Masker/Anti%20Aging",
+              "source_title": "Jual Masker Anti Aging Terlengkap & Harga Terbaru ...",
+              "published_date": "2026-11-19"
+            },
+            {
+              "term": "peel off masker",
+              "evidence": "1. Retinol Masker Gold Peel Off Masker100g Anti Aging Collagen Dan Flek Mengurangi Kerutan Melembabkan Semua Jenis Kulit",
+              "signal": "mentioned",
+              "source_url": "https://shopee.co.id/list/Masker/Anti%20Aging",
+              "source_title": "Jual Masker Anti Aging Terlengkap & Harga Terbaru ...",
+              "published_date": "2026-11-19"
+            },
+            {
+              "term": "makeup Naykilla",
+              "evidence": "makeup Naykilla yang sedang viral, dengan hasil cantik, natural, dan aesthetic.",
+              "signal": "stated_trending",
+              "source_url": "https://www.tiktok.com/@duddaaraujobr/video/7709938571649502471",
+              "source_title": "Chega de se preocupar se a maquiagem vai sair perfeita ..."
+            },
+            {
+              "term": "tren makeup Naykilla",
+              "evidence": "Tren makeup Naykilla imut lagi heboh di TikTok!",
+              "signal": "stated_trending",
+              "source_url": "https://www.tiktok.com/@dalilahome/video/7709414613787446561",
+              "source_title": "Quale vi piace di più? #tiktokshopblackfriday #offertelive # ..."
+            }
+          ]
+        },
+        {
+          "id": "rumah-tangga",
+          "name": "Rumah tangga",
+          "status": "ok",
+          "sources_seen": 9,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [
+            {
+              "term": "kasur",
+              "evidence": "Pengen punya kasur nyaman, almari cantik dan perlengkapan rumah yang lengkap tanpa bikin isi dompet menipis?",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/radartulungagungcoid/posts/pengen-punya-kasur-nyaman-almari-cantik-dan-perlengkapan-rumah-yang-lengkap-tanp/1827603625808480",
+              "source_title": "4.4K views · 11 reactions | Pengen punya kasur nyaman, almari cantik dan perlengkapan rumah yang lengkap tanpa bikin isi dompet menipis? 🤔💸\n\nTenang aja! Semua kebutuhan rumah tanggamu bisa kamu temukan di @bazarmurahbandung.ta  🥳\n\nMenyediakan berbagai pilihan KEBUTUHAN RUMAH TANGGA mulai dari Kasur, Almari, Souvenir, Alat Kebersihan, Perlengkapan Dapur dan Elektronik dengan harga super miring ❗\n\nKita juga bisa melayani pemesanan grosir 🥰 barang bisa diantarkan ke rumah customer dengan aman dan selamat 🥰\nTentunya toko kita luas , pelayanan ramah dan bebas mau berbelanja sepuasnya ❗❗\n🛍️ BELANJA HEMAT, BARANG TOP BERKUALITAS~\n\n📍 BAZAR MURAH TULUNGAGUNG CABANG BANDUNG \nJl Raya Bandung Campurdarat, Timur Pasar Bandung (Timur pas roti gembong gembul), Bandung, Tulungagung \n🕘 Senin-Minggu\nPukul 8 pagi sampai jam 8 malam\n📞 0851 2375 4920\n\n#BazarMurahTulungagung #BazarMurahBandung #KasurMurah #AlmariMurah #SouvenirTulungagung | Radar Tulungagung"
+            },
+            {
+              "term": "almari",
+              "evidence": "Pengen punya kasur nyaman, almari cantik dan perlengkapan rumah yang lengkap tanpa bikin isi dompet menipis?",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/radartulungagungcoid/posts/pengen-punya-kasur-nyaman-almari-cantik-dan-perlengkapan-rumah-yang-lengkap-tanp/1827603625808480",
+              "source_title": "4.4K views · 11 reactions | Pengen punya kasur nyaman, almari cantik dan perlengkapan rumah yang lengkap tanpa bikin isi dompet menipis? 🤔💸\n\nTenang aja! Semua kebutuhan rumah tanggamu bisa kamu temukan di @bazarmurahbandung.ta  🥳\n\nMenyediakan berbagai pilihan KEBUTUHAN RUMAH TANGGA mulai dari Kasur, Almari, Souvenir, Alat Kebersihan, Perlengkapan Dapur dan Elektronik dengan harga super miring ❗\n\nKita juga bisa melayani pemesanan grosir 🥰 barang bisa diantarkan ke rumah customer dengan aman dan selamat 🥰\nTentunya toko kita luas , pelayanan ramah dan bebas mau berbelanja sepuasnya ❗❗\n🛍️ BELANJA HEMAT, BARANG TOP BERKUALITAS~\n\n📍 BAZAR MURAH TULUNGAGUNG CABANG BANDUNG \nJl Raya Bandung Campurdarat, Timur Pasar Bandung (Timur pas roti gembong gembul), Bandung, Tulungagung \n🕘 Senin-Minggu\nPukul 8 pagi sampai jam 8 malam\n📞 0851 2375 4920\n\n#BazarMurahTulungagung #BazarMurahBandung #KasurMurah #AlmariMurah #SouvenirTulungagung | Radar Tulungagung"
+            },
+            {
+              "term": "pulpen isi 12",
+              "evidence": "1 Box Pulpen Isi 12 Tinta Gel Lancar dengan Pegangan Lembut ini isinya banyak, tintanya lancar dan nyaman digenggam.",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@hai.mom_store/video/7708431809368821044",
+              "source_title": "TikTok - Make Your Day"
+            },
+            {
+              "term": "alat dapur multifungsi",
+              "evidence": "Masak jadi lebih praktis dengan alat dapur multifungsi! Dengan kapasitas 2,5 liter dan daya 350W",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@samonoindonesia/video/7709450371755740436",
+              "source_title": "Masak jadi lebih praktis dengan alat dapur multifungsi! ..."
+            },
+            {
+              "term": "parutan sayur serbaguna",
+              "evidence": "Parutan sayur serbaguna ini dirancang untuk membantu memarut sayur dan buah dengan lebih cepat dan rapi.",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@tudung.sajisusun/video/7707623357302279444",
+              "source_title": "Parutan Sayur Serbaguna 5 Mata Pisau yang Bisa Diganti"
+            },
+            {
+              "term": "bangku penyimpanan",
+              "evidence": "Perabot dengan fungsi ganda — seperti bangku penyimpanan atau meja lipat — membantu hunian mungil tetap lega dan fungsional.",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/DurianLoversParadise/posts/penyimpanan-yang-cerdas-membuat-ruang-kecil-terasa-legaperabot-dengan-fungsi-gan/1036701696124607",
+              "source_title": "Penyimpanan yang cerdas membuat ruang kecil terasa lega.\n\nPerabot dengan fungsi ganda — seperti bangku penyimpanan atau meja lipat — membantu hunian mungil tetap lega dan fungsional. Rawat rumahmu seperti merawat harimu.\n\nSimpan video ini untuk hari-hari beratmu. 🔖\nFollow Durian Lover's Paradise untuk inspirasi rumah nyaman setiap hari.\n\n#RumahModern #DesainInterior #RumahSehat #SudutRumah #HidupNyaman #Dekorasi #ReelsIndonesia | Durian Lover's Paradise"
+            },
+            {
+              "term": "meja lipat",
+              "evidence": "Perabot dengan fungsi ganda — seperti bangku penyimpanan atau meja lipat — membantu hunian mungil tetap lega dan fungsional.",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/DurianLoversParadise/posts/penyimpanan-yang-cerdas-membuat-ruang-kecil-terasa-legaperabot-dengan-fungsi-gan/1036701696124607",
+              "source_title": "Penyimpanan yang cerdas membuat ruang kecil terasa lega.\n\nPerabot dengan fungsi ganda — seperti bangku penyimpanan atau meja lipat — membantu hunian mungil tetap lega dan fungsional. Rawat rumahmu seperti merawat harimu.\n\nSimpan video ini untuk hari-hari beratmu. 🔖\nFollow Durian Lover's Paradise untuk inspirasi rumah nyaman setiap hari.\n\n#RumahModern #DesainInterior #RumahSehat #SudutRumah #HidupNyaman #Dekorasi #ReelsIndonesia | Durian Lover's Paradise"
+            },
+            {
+              "term": "set toples",
+              "evidence": "Bikin dapur makin estetik dengan set toples yang dilengkapi tutup motif kayu dan desain embos ulir yang cantik.",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@hai.mom_store/video/7707960269548293396",
+              "source_title": "Bikin dapur makin estetik dengan set toples yang ..."
+            }
+          ]
+        },
+        {
+          "id": "fashion",
+          "name": "Fashion",
+          "status": "ok",
+          "sources_seen": 8,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [
+            {
+              "term": "setelan oneset",
+              "evidence": "Tren outfit wanita saat ini mencakup setelan oneset praktis, blouse bermotif lembut, rok midi atau tutu, dan celana cargo bergaya Korea.",
+              "signal": "stated_trending",
+              "source_url": "https://www.tiktok.com/discover/outfit-yang-lagi-trend-sekarang?lang=en",
+              "source_title": "Outfit Yang Lagi Trend Sekarang",
+              "published_date": "2026-11-16"
+            },
+            {
+              "term": "blouse bermotif",
+              "evidence": "Tren outfit wanita saat ini mencakup setelan oneset praktis, blouse bermotif lembut, rok midi atau tutu, dan celana cargo bergaya Korea.",
+              "signal": "stated_trending",
+              "source_url": "https://www.tiktok.com/discover/outfit-yang-lagi-trend-sekarang?lang=en",
+              "source_title": "Outfit Yang Lagi Trend Sekarang",
+              "published_date": "2026-11-16"
+            },
+            {
+              "term": "rok midi",
+              "evidence": "Tren outfit wanita saat ini mencakup setelan oneset praktis, blouse bermotif lembut, rok midi atau tutu, dan celana cargo bergaya Korea.",
+              "signal": "stated_trending",
+              "source_url": "https://www.tiktok.com/discover/outfit-yang-lagi-trend-sekarang?lang=en",
+              "source_title": "Outfit Yang Lagi Trend Sekarang",
+              "published_date": "2026-11-16"
+            },
+            {
+              "term": "celana cargo",
+              "evidence": "Tren outfit wanita saat ini mencakup setelan oneset praktis, blouse bermotif lembut, rok midi atau tutu, dan celana cargo bergaya Korea.",
+              "signal": "stated_trending",
+              "source_url": "https://www.tiktok.com/discover/outfit-yang-lagi-trend-sekarang?lang=en",
+              "source_title": "Outfit Yang Lagi Trend Sekarang",
+              "published_date": "2026-11-16"
+            },
+            {
+              "term": "tas selempang pria",
+              "evidence": "Temukan berbagai rekomendasi produk Merk Tas Selempang Pria, termasuk pilihan paling populer yang diminati banyak orang.",
+              "signal": "stated_trending",
+              "source_url": "https://shopee.co.id/list/Merk%20Tas%20Selempang/Pria",
+              "source_title": "Jual Merk Tas Selempang Pria Terlengkap & Harga ...",
+              "published_date": "2026-11-19"
+            },
+            {
+              "term": "dress muslim modern",
+              "evidence": "🎀 REKOMENDASI DRESS MUSLIM MODERN🎀 𝜗𝜚˚⋆ LINK ADA DI SETIAP GAMBAR YA BESTIE",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/groups/racunshopeecheckk/posts/2434986417276323",
+              "source_title": "Alda Aja on Facebook: \"⋆. 𐙚˚࿔ 🎀 REKOMENDASI DRESS MUSLIM MODERN🎀 𝜗𝜚˚⋆ LINK ADA DI SETIAP GAMBAR YA BESTIE\"",
+              "published_date": "2026-11-13"
+            },
+            {
+              "term": "gaya hijab",
+              "evidence": "Pada akhirnya, tujuh inspirasi gaya hijab agar wajah terlihat tirus tersebut bisa dicoba sesuai selera dan kenyamanan masing-masing.",
+              "signal": "mentioned",
+              "source_url": "https://chanelmuslim.com/fashion/ingin-wajah-terlihat-tirus-coba-7-inspirasi-gaya-hijab-ini",
+              "source_title": "Ingin Wajah Terlihat Tirus? Coba 7 Inspirasi Gaya Hijab Ini - Chanelmuslim.com",
+              "published_date": "2026-11-16"
+            },
+            {
+              "term": "sepatu futsal anak",
+              "evidence": "LAMGLES Sepatu Futsal Anak 3D Tapak Gerigi Sol Jait Ukuran 34-38 Original Indonesia Gratis Tas & Kaus Kaki",
+              "signal": "mentioned",
+              "source_url": "https://www.tokopedia.com/find/tas-sepatu-original",
+              "source_title": "Jual Tas Sepatu Original Terbaik - Harga Murah November 2026 & Cicil 0%",
+              "published_date": "2026-11-15"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
