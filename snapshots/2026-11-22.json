@@ -1,0 +1,548 @@
+{
+  "date": "2026-11-22",
+  "generated_at": "2026-11-22T07:57:49.040Z",
+  "label": "趋势词快照",
+  "note": "仅表示这些词在近期公开网页的搜索结果中出现过，不代表搜索量、销量或增长趋势；使用前请自行判断。",
+  "provider": {
+    "search": "tavily",
+    "model": "deepseek-flash"
+  },
+  "searches": 27,
+  "markets": [
+    {
+      "market": "en-US",
+      "categories": [
+        {
+          "id": "consumer-electronics",
+          "name": "Consumer electronics & accessories",
+          "status": "ok",
+          "sources_seen": 13,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [
+            {
+              "term": "wireless earbuds",
+              "evidence": "Top-rated wireless earbuds. Best budget wireless earbuds under $100",
+              "signal": "mentioned",
+              "source_url": "https://www.reddit.com/r/WirelessEarbuds/comments/1y0xx2d/looking_for_right_side_bud_or_selling_case_and",
+              "source_title": "Looking for right side bud or selling case and left bud(realme buds air 7)"
+            },
+            {
+              "term": "wireless charger",
+              "evidence": "Surge Foldaway 3-in-1 Wireless Charger by DailyObjects",
+              "signal": "mentioned",
+              "source_url": "https://design-milk.com/best-tech-gifts",
+              "source_title": "Best Tech Gifts 2026: Cool Gadgets for Design Enthusiasts",
+              "published_date": "2026-11-18"
+            },
+            {
+              "term": "Bluetooth tracker",
+              "evidence": "It’s a small Bluetooth tracker that works with Android’s Fin",
+              "signal": "mentioned",
+              "source_url": "https://www.gearpatrol.com/audio/best-tech-audio-hi-fi-releases-2026-november-week-3",
+              "source_title": "The Best New Gadgets and Hi-Fi Releases of 2026 (Updated)",
+              "published_date": "2026-11-20"
+            },
+            {
+              "term": "gaming headset",
+              "evidence": "Razer Kraken Kitty V3 gaming headset",
+              "signal": "mentioned",
+              "source_url": "https://mashable.com/life/best-tech-gifts-for-2026",
+              "source_title": "Best tech gifts to buy for someone you love | Mashable",
+              "published_date": "2026-11-16"
+            },
+            {
+              "term": "air fryer",
+              "evidence": "Ninja Crispi 4-in-1 Glass Air Fryer",
+              "signal": "mentioned",
+              "source_url": "https://mashable.com/life/best-tech-gifts-for-2026",
+              "source_title": "Best tech gifts to buy for someone you love | Mashable",
+              "published_date": "2026-11-16"
+            },
+            {
+              "term": "wireless mouse",
+              "evidence": "And there’s Satechi’s Slim EX wireless mouse ($30).",
+              "signal": "mentioned",
+              "source_url": "https://www.gearpatrol.com/audio/best-tech-audio-hi-fi-releases-2026-november-week-3",
+              "source_title": "The Best New Gadgets and Hi-Fi Releases of 2026 (Updated)",
+              "published_date": "2026-11-20"
+            },
+            {
+              "term": "mirrorless camera",
+              "evidence": "the Sony Alpha 6400 mirrorless camera is $200 off from now through Nov. 28",
+              "signal": "mentioned",
+              "source_url": "https://www.forbes.com/sites/best-buy/article/best-buy-tech-gifts-for-home-and-away",
+              "source_title": "Best Buy Tech Gifts For Home And Away",
+              "published_date": "2026-11-16"
+            },
+            {
+              "term": "smart mug",
+              "evidence": "Ember Smart Mug 2",
+              "signal": "mentioned",
+              "source_url": "https://www.youtube.com/watch?v=02VqwUwv8ek",
+              "source_title": "5 Viral Tech Gadgets on Amazon Everyone Wants in 2026!"
+            }
+          ]
+        },
+        {
+          "id": "home-kitchen",
+          "name": "Home & kitchen",
+          "status": "ok",
+          "sources_seen": 15,
+          "rejected_terms": 1,
+          "rejected_reasons": {
+            "term_not_in_evidence": 1
+          },
+          "terms": [
+            {
+              "term": "cordless handheld vacuum",
+              "evidence": "A cordless handheld vacuum is just the tool for speedy cleanups of small, everyday messes.",
+              "signal": "mentioned",
+              "source_url": "https://www.nytimes.com/wirecutter/appliances",
+              "source_title": "Home & Kitchen Appliances | Wirecutter",
+              "published_date": "2026-11-16"
+            },
+            {
+              "term": "mug organizers",
+              "evidence": "A set of adjustable mug organizers that'll help you better use your kitchen cabinet space",
+              "signal": "mentioned",
+              "source_url": "https://www.buzzfeed.com/elizabethlilly/kitchen-products-thatll-make-you-question-why-you-waited-an",
+              "source_title": "37 Kitchen Products That’ll Make You Question Why You Waited So Long To Buy ’Em",
+              "published_date": "2026-11-20"
+            },
+            {
+              "term": "drawer organizers",
+              "evidence": "The Vtopmart 25 Pack Clear Plastic Drawer Organizers stand out as the most versatile set for tackling clutter in drawers throughout your home.",
+              "signal": "mentioned",
+              "source_url": "https://everydayshortlist.com/best-home-organization-products",
+              "source_title": "Home Organization Products That Are Actually Worth Buying - Everyday Shortlist",
+              "published_date": "2026-11-15"
+            },
+            {
+              "term": "under sink organizer",
+              "evidence": "Under sink organizer (Plastic) -",
+              "signal": "mentioned",
+              "source_url": "https://www.youtube.com/watch?v=trrPAtTn5ls",
+              "source_title": "12 Useful Amazon Finds to Organize Your Home | Budget Friendly Storage Products",
+              "published_date": "2026-11-20"
+            },
+            {
+              "term": "expandable drawer dividers",
+              "evidence": "Expandable drawer dividers -",
+              "signal": "mentioned",
+              "source_url": "https://www.youtube.com/watch?v=trrPAtTn5ls",
+              "source_title": "12 Useful Amazon Finds to Organize Your Home | Budget Friendly Storage Products",
+              "published_date": "2026-11-20"
+            },
+            {
+              "term": "drawer dividers",
+              "evidence": "Box lids or strips of cardboard work well for drawer dividers.",
+              "signal": "mentioned",
+              "source_url": "https://www.reddit.com/r/OrganizationPorn/comments/1xxhcff/how_do_you_actually_get_started_with_organizing",
+              "source_title": "How do you actually get started with organizing your home? I'm so ..."
+            },
+            {
+              "term": "shoe organizer",
+              "evidence": "Metal shoe organizer -",
+              "signal": "mentioned",
+              "source_url": "https://www.youtube.com/watch?v=trrPAtTn5ls",
+              "source_title": "12 Useful Amazon Finds to Organize Your Home | Budget Friendly Storage Products",
+              "published_date": "2026-11-20"
+            }
+          ]
+        },
+        {
+          "id": "beauty-personal-care",
+          "name": "Beauty & personal care",
+          "status": "ok",
+          "sources_seen": 18,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [
+            {
+              "term": "exfoliating pads",
+              "evidence": "These exfoliating pads — 25% off — and exactly what I packed while traveling this week.",
+              "signal": "mentioned",
+              "source_url": "https://magpiebyjenshoop.com/7-early-black-friday-beauty-skincare-obsessions",
+              "source_title": "7 Early Black Friday Deals on Beloved Skincare/Beauty Brands",
+              "published_date": "2026-11-18"
+            },
+            {
+              "term": "under-eye brightener",
+              "evidence": "Anunder-eye brightenerthat's gone super viral super quick and FOR GOOD REASON!",
+              "signal": "stated_trending",
+              "source_url": "https://www.buzzfeed.com/samanthawieder/beauty-routine-see-before-and-after",
+              "source_title": "27 Before And After Photos Of Top Beauty Products",
+              "published_date": "2026-11-21"
+            },
+            {
+              "term": "retinol three-piece gift set",
+              "evidence": "Items include a craft kit, a cashmere sweater, a retinol three-piece gift set and more.",
+              "signal": "mentioned",
+              "source_url": "https://www.today.com/style/beauty",
+              "source_title": "Beauty - TODAY.com | TODAY",
+              "published_date": "2026-11-20"
+            },
+            {
+              "term": "white rice peeling ampoule",
+              "evidence": "A white rice peeling ampoule that's all over TikTok for creating a spa-like glow almost immediately!",
+              "signal": "mentioned",
+              "source_url": "https://shopping.yahoo.com/beauty/skincare/articles/24-effective-skincare-products-ll-090101092.html",
+              "source_title": "24 Effective Skincare Products That You’ll Want To Permanently Keep In Your Routine",
+              "published_date": "2026-11-18"
+            },
+            {
+              "term": "toner mist",
+              "evidence": "A refreshing toner mist made with grapes to plump the skin and rose oil to add a layer of soothing protection.",
+              "signal": "mentioned",
+              "source_url": "https://shopping.yahoo.com/beauty/skincare/articles/24-effective-skincare-products-ll-090101092.html",
+              "source_title": "24 Effective Skincare Products That You’ll Want To Permanently Keep In Your Routine",
+              "published_date": "2026-11-18"
+            },
+            {
+              "term": "blow dryer brush",
+              "evidence": "BondiBoost 2-in-1 Infrared Blow Dryer Brush",
+              "signal": "mentioned",
+              "source_url": "https://www.cosmopolitan.com/style-beauty/beauty/a74427296/best-beauty-gifts-2026",
+              "source_title": "The 25 Best Beauty Gifts to Give This Season, According to Editors Who Test Them All",
+              "published_date": "2026-11-16"
+            },
+            {
+              "term": "hair waver",
+              "evidence": "The Best Waver: Ghd Wave Triple Barrel Hair Waver, $240 $170",
+              "signal": "mentioned",
+              "source_url": "https://www.elle.com/beauty/a74455529/the-best-hair-tools-black-friday-2026",
+              "source_title": "Best Black Friday Hair Tool Deals 2026: Dyson, Shark, and More",
+              "published_date": "2026-11-19"
+            },
+            {
+              "term": "hair dryer",
+              "evidence": "The Best Hair Dryer: Dyson Supersonic Nural™ Hair Dryer,$450 $350",
+              "signal": "mentioned",
+              "source_url": "https://www.elle.com/beauty/a74455529/the-best-hair-tools-black-friday-2026",
+              "source_title": "Best Black Friday Hair Tool Deals 2026: Dyson, Shark, and More",
+              "published_date": "2026-11-19"
+            }
+          ]
+        },
+        {
+          "id": "fitness-outdoor",
+          "name": "Fitness & outdoor",
+          "status": "ok",
+          "sources_seen": 12,
+          "rejected_terms": 1,
+          "rejected_reasons": {
+            "term_not_in_evidence": 1
+          },
+          "terms": [
+            {
+              "term": "sports bra",
+              "evidence": "Berry flares, a layered sports bra and one last swipe of lip gloss before we head out.",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/womensbest/videos/the-gym-is-our-runway-today-berry-flares-a-layered-sports-bra-and-one-last-swipe/1084154324659810",
+              "source_title": "Women's Best on Facebook: \"The gym is our runway today. 💜 Berry flares, a layered sports bra and one last swipe of lip gloss be…\"",
+              "published_date": "2026-11-16"
+            },
+            {
+              "term": "leggings",
+              "evidence": "She showcases athletic wear, including leggings and sports bras, and transitions into casual outerwear like hoodies and jackets.",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/sammyseps/videos/4-fits-7-seconds-zero-patience-lately-which-one-is-coming-to-the-gym-with-me-sto/1698002415337115",
+              "source_title": "4 Gym Outfit Ideas in 7 Seconds With Shein Sportswear - Facebook"
+            },
+            {
+              "term": "athleisure",
+              "evidence": "... gym wear, relatable, budget, athleisure, recommendation, inspo, ideas, viral, explore, trending ] #relatable #gymoutfits #trending #explore\".",
+              "signal": "stated_trending",
+              "source_url": "https://www.instagram.com/reel/Df42Ef5N2zu",
+              "source_title": "Gym bbs gotta save this ⭐️ [ gym, gym outfits, sports bra, tennis ..."
+            },
+            {
+              "term": "workout clothes",
+              "evidence": "Because at this age, I want my workout clothes to do more than just look cute.",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/nancydinino/posts/when-you-feel-good-you-train-good-and-girrrrl-a-good-gym-fit-makes-all-the-diffe/10246446044354302",
+              "source_title": "Nancy Di Nino on Facebook: \"When you feel good, you train good. And GIRRRRL, a good gym fit makes ALL the difference. Use my cod…\"",
+              "published_date": "2026-11-19"
+            },
+            {
+              "term": "sleeping bags",
+              "evidence": "Shop select TETON Gear Amazon best sellers and save $5–$30 on cold-weather sleeping bags and outdoor essentials.",
+              "signal": "mentioned",
+              "source_url": "https://tetongear.com/collections/collections-amazon-best-sellers-sale",
+              "source_title": "Amazon Best Sellers Sale | Sleeping Bags | TETON Gear – Teton Gear",
+              "published_date": "2026-11-20"
+            },
+            {
+              "term": "yoga mat",
+              "evidence": "If there is one essential I’d recommend for new yogis, it’s a high-quality yoga mat.",
+              "signal": "mentioned",
+              "source_url": "https://www.cnn.com/cnn-underscored/health-fitness/these-are-my-yoga-essentials",
+              "source_title": "I’ve practiced yoga for over a decade. This is the gear I depend on for deep, restorative flows",
+              "published_date": "2026-11-17"
+            },
+            {
+              "term": "adjustable dumbbells",
+              "evidence": "### Adjustable Dumbbells",
+              "signal": "mentioned",
+              "source_url": "https://corehomefitness.com",
+              "source_title": "Home Gym Equipment - In-Home Fitness & Exercise | Core Home Fitness"
+            }
+          ]
+        },
+        {
+          "id": "pet-supplies",
+          "name": "Pet supplies",
+          "status": "ok",
+          "sources_seen": 18,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [
+            {
+              "term": "pet grooming glove",
+              "evidence": "Trending pet products on TikTok Shop this week include NOESEA Pet Grooming Glove Wipes",
+              "signal": "stated_trending",
+              "source_url": "https://www.sellthetrend.com/niche/pet-products",
+              "source_title": "Best Trending Pet Products to Dropship (Weekly Updated List) | Sell The Trend",
+              "published_date": "2026-11-15"
+            },
+            {
+              "term": "interactive dog ball toy",
+              "evidence": "Plush Interactive Realistic Flopping Fish Cat Toys (3 Pack) and Interactive Dog Ball Toy",
+              "signal": "mentioned",
+              "source_url": "https://www.sellthetrend.com/niche/pet-products",
+              "source_title": "Best Trending Pet Products to Dropship (Weekly Updated List) | Sell The Trend",
+              "published_date": "2026-11-15"
+            },
+            {
+              "term": "enrichment toys",
+              "evidence": "AI cameras, niche collar cams, clean dog food, enrichment toys, pet detergent, joint supplements, and cat trackers are booming.",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/discover/trending-pet-products",
+              "source_title": "TikTok - Make Your Day",
+              "published_date": "2026-11-16"
+            },
+            {
+              "term": "joint supplements",
+              "evidence": "clean dog food, enrichment toys, pet detergent, joint supplements, and cat trackers are booming.",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/discover/trending-pet-products",
+              "source_title": "TikTok - Make Your Day",
+              "published_date": "2026-11-16"
+            },
+            {
+              "term": "pee pads",
+              "evidence": "A pack of discreet pee pads that trap and neutralize odors.",
+              "signal": "mentioned",
+              "source_url": "https://www.buzzfeed.com/bykitstone/useful-pet-products-youll-wonder-how-you-went-without",
+              "source_title": "27 Genuinely Useful Pet Products Worth Buying - BuzzFeed"
+            },
+            {
+              "term": "automatic cat feeder",
+              "evidence": "A convenient automatic cat feeder so your favorite feline never misses a meal",
+              "signal": "mentioned",
+              "source_url": "https://www.buzzfeed.com/daniellehealy/pet-products-gush-about",
+              "source_title": "29 Must-Have Pet Products Worth Raving About",
+              "published_date": "2026-11-19"
+            },
+            {
+              "term": "pet grooming vacuum",
+              "evidence": "pet grooming vacuum ・ 🔸️TropiClean Fresh Breath 'N fun dental chews",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/BuzzFeedFood/posts/27-pet-products-so-useful-youll-wonder-how-youve-gone-this-long-without-em-read-/1597624062403709",
+              "source_title": "27 Pet Products So Useful, You'll Wonder How You've Gone This Long ..."
+            },
+            {
+              "term": "dog nail clippers",
+              "evidence": "🔸️TropiClean Fresh Breath 'N fun dental chews ・ 🔸️Dog nail clippers.",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/BuzzFeedFood/posts/27-pet-products-so-useful-youll-wonder-how-youve-gone-this-long-without-em-read-/1597624062403709",
+              "source_title": "27 Pet Products So Useful, You'll Wonder How You've Gone This Long ..."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "market": "id-ID",
+      "categories": [
+        {
+          "id": "elektronik-aksesoris",
+          "name": "Elektronik & aksesoris",
+          "status": "ok",
+          "sources_seen": 7,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [
+            {
+              "term": "TWS Earphone",
+              "evidence": "Lagi nyari TWS Earphone AI canggih tapi harganya terjangkau?",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@gadget_review01/video/7709695676623441172",
+              "source_title": "tws bisa jadi remote camera😱⁉️ #kouo #a10pro ..."
+            },
+            {
+              "term": "earphone",
+              "evidence": "Berbagai pilihan earphone UGREEN hadir dengan desain modern, kualitas suara jernih",
+              "signal": "mentioned",
+              "source_url": "https://www.instagram.com/reel/Df_naNyIfuy",
+              "source_title": "Ribet mau dengerin lagu tapi harus konek-konek bluetooth ..."
+            },
+            {
+              "term": "aksesoris elektronik",
+              "evidence": "Temukan Berbagai Gadget & Aksesoris Elektronik Terbaik dan Berkualitas",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/IndoGO.twn/posts/temukan-berbagai-gadget-aksesoris-elektronik-terbaik-dan-berkualitas-lengkap-den/1433672105647868",
+              "source_title": "IndoGo on Facebook: \"Temukan Berbagai Gadget & Aksesoris Elektronik Terbaik dan Berkualitas 🔌📱🎧💻 ✨ Lengkap dengan Harga H…\"",
+              "published_date": "2026-11-16"
+            },
+            {
+              "term": "Stand Phone Holder",
+              "evidence": "VOLANT Stand Phone Holder 360 Derajat Multifungsi",
+              "signal": "mentioned",
+              "source_url": "https://shopee.co.id/list/Aksesoris%20HP",
+              "source_title": "Jual Aksesoris HP Terlengkap & Harga Terbaru November ...",
+              "published_date": "2026-11-21"
+            },
+            {
+              "term": "case magnetic with stand",
+              "evidence": "produk case magnetic with stand untuk iPhone 17-18",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@ugreen_official_store/video/7708712426987982100",
+              "source_title": "Log in | TikTok"
+            },
+            {
+              "term": "aksesori HP",
+              "evidence": "Siapa bilang aksesori HP cuma buat gaya?",
+              "signal": "mentioned",
+              "source_url": "https://www.instagram.com/reel/DgAQ_Btpj_l",
+              "source_title": "🔥 SATU GADGET, BANYAK KEJUTAN! 😍 Siapa bilang ..."
+            },
+            {
+              "term": "powerbank",
+              "evidence": "Kejadian viral di threads tentang powerbank meledak, menjadi perbincangan hangat saat ini",
+              "signal": "stated_trending",
+              "source_url": "https://www.tiktok.com/@ugreen_official_store/video/7708712426987982100",
+              "source_title": "Log in | TikTok"
+            }
+          ]
+        },
+        {
+          "id": "kecantikan",
+          "name": "Kecantikan & perawatan diri",
+          "status": "ok",
+          "sources_seen": 5,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": []
+        },
+        {
+          "id": "rumah-tangga",
+          "name": "Rumah tangga",
+          "status": "ok",
+          "sources_seen": 7,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [
+            {
+              "term": "kasur",
+              "evidence": "Pengen punya kasur nyaman, almari cantik dan perlengkapan rumah yang lengkap",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/radartulungagungcoid/posts/pengen-punya-kasur-nyaman-almari-cantik-dan-perlengkapan-rumah-yang-lengkap-tanp/1827603625808480",
+              "source_title": "4.4K views · 11 reactions | Pengen punya kasur nyaman, almari cantik dan perlengkapan rumah yang lengkap tanpa bikin isi dompet menipis? 🤔💸\n\nTenang aja! Semua kebutuhan rumah tanggamu bisa kamu temukan di @bazarmurahbandung.ta  🥳\n\nMenyediakan berbagai pilihan KEBUTUHAN RUMAH TANGGA mulai dari Kasur, Almari, Souvenir, Alat Kebersihan, Perlengkapan Dapur dan Elektronik dengan harga super miring ❗\n\nKita juga bisa melayani pemesanan grosir 🥰 barang bisa diantarkan ke rumah customer dengan aman dan selamat 🥰\nTentunya toko kita luas , pelayanan ramah dan bebas mau berbelanja sepuasnya ❗❗\n🛍️ BELANJA HEMAT, BARANG TOP BERKUALITAS~\n\n📍 BAZAR MURAH TULUNGAGUNG CABANG BANDUNG \nJl Raya Bandung Campurdarat, Timur Pasar Bandung (Timur pas roti gembong gembul), Bandung, Tulungagung \n🕘 Senin-Minggu\nPukul 8 pagi sampai jam 8 malam\n📞 0851 2375 4920\n\n#BazarMurahTulungagung #BazarMurahBandung #KasurMurah #AlmariMurah #SouvenirTulungagung | Radar Tulungagung"
+            },
+            {
+              "term": "almari",
+              "evidence": "Pengen punya kasur nyaman, almari cantik dan perlengkapan rumah yang lengkap",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/radartulungagungcoid/posts/pengen-punya-kasur-nyaman-almari-cantik-dan-perlengkapan-rumah-yang-lengkap-tanp/1827603625808480",
+              "source_title": "4.4K views · 11 reactions | Pengen punya kasur nyaman, almari cantik dan perlengkapan rumah yang lengkap tanpa bikin isi dompet menipis? 🤔💸\n\nTenang aja! Semua kebutuhan rumah tanggamu bisa kamu temukan di @bazarmurahbandung.ta  🥳\n\nMenyediakan berbagai pilihan KEBUTUHAN RUMAH TANGGA mulai dari Kasur, Almari, Souvenir, Alat Kebersihan, Perlengkapan Dapur dan Elektronik dengan harga super miring ❗\n\nKita juga bisa melayani pemesanan grosir 🥰 barang bisa diantarkan ke rumah customer dengan aman dan selamat 🥰\nTentunya toko kita luas , pelayanan ramah dan bebas mau berbelanja sepuasnya ❗❗\n🛍️ BELANJA HEMAT, BARANG TOP BERKUALITAS~\n\n📍 BAZAR MURAH TULUNGAGUNG CABANG BANDUNG \nJl Raya Bandung Campurdarat, Timur Pasar Bandung (Timur pas roti gembong gembul), Bandung, Tulungagung \n🕘 Senin-Minggu\nPukul 8 pagi sampai jam 8 malam\n📞 0851 2375 4920\n\n#BazarMurahTulungagung #BazarMurahBandung #KasurMurah #AlmariMurah #SouvenirTulungagung | Radar Tulungagung"
+            },
+            {
+              "term": "perlengkapan dapur",
+              "evidence": "mulai dari Kasur, Almari, Souvenir, Alat Kebersihan, Perlengkapan Dapur dan Elektronik",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/radartulungagungcoid/posts/pengen-punya-kasur-nyaman-almari-cantik-dan-perlengkapan-rumah-yang-lengkap-tanp/1827603625808480",
+              "source_title": "4.4K views · 11 reactions | Pengen punya kasur nyaman, almari cantik dan perlengkapan rumah yang lengkap tanpa bikin isi dompet menipis? 🤔💸\n\nTenang aja! Semua kebutuhan rumah tanggamu bisa kamu temukan di @bazarmurahbandung.ta  🥳\n\nMenyediakan berbagai pilihan KEBUTUHAN RUMAH TANGGA mulai dari Kasur, Almari, Souvenir, Alat Kebersihan, Perlengkapan Dapur dan Elektronik dengan harga super miring ❗\n\nKita juga bisa melayani pemesanan grosir 🥰 barang bisa diantarkan ke rumah customer dengan aman dan selamat 🥰\nTentunya toko kita luas , pelayanan ramah dan bebas mau berbelanja sepuasnya ❗❗\n🛍️ BELANJA HEMAT, BARANG TOP BERKUALITAS~\n\n📍 BAZAR MURAH TULUNGAGUNG CABANG BANDUNG \nJl Raya Bandung Campurdarat, Timur Pasar Bandung (Timur pas roti gembong gembul), Bandung, Tulungagung \n🕘 Senin-Minggu\nPukul 8 pagi sampai jam 8 malam\n📞 0851 2375 4920\n\n#BazarMurahTulungagung #BazarMurahBandung #KasurMurah #AlmariMurah #SouvenirTulungagung | Radar Tulungagung"
+            },
+            {
+              "term": "alat kebersihan",
+              "evidence": "mulai dari Kasur, Almari, Souvenir, Alat Kebersihan, Perlengkapan Dapur dan Elektronik",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/radartulungagungcoid/posts/pengen-punya-kasur-nyaman-almari-cantik-dan-perlengkapan-rumah-yang-lengkap-tanp/1827603625808480",
+              "source_title": "4.4K views · 11 reactions | Pengen punya kasur nyaman, almari cantik dan perlengkapan rumah yang lengkap tanpa bikin isi dompet menipis? 🤔💸\n\nTenang aja! Semua kebutuhan rumah tanggamu bisa kamu temukan di @bazarmurahbandung.ta  🥳\n\nMenyediakan berbagai pilihan KEBUTUHAN RUMAH TANGGA mulai dari Kasur, Almari, Souvenir, Alat Kebersihan, Perlengkapan Dapur dan Elektronik dengan harga super miring ❗\n\nKita juga bisa melayani pemesanan grosir 🥰 barang bisa diantarkan ke rumah customer dengan aman dan selamat 🥰\nTentunya toko kita luas , pelayanan ramah dan bebas mau berbelanja sepuasnya ❗❗\n🛍️ BELANJA HEMAT, BARANG TOP BERKUALITAS~\n\n📍 BAZAR MURAH TULUNGAGUNG CABANG BANDUNG \nJl Raya Bandung Campurdarat, Timur Pasar Bandung (Timur pas roti gembong gembul), Bandung, Tulungagung \n🕘 Senin-Minggu\nPukul 8 pagi sampai jam 8 malam\n📞 0851 2375 4920\n\n#BazarMurahTulungagung #BazarMurahBandung #KasurMurah #AlmariMurah #SouvenirTulungagung | Radar Tulungagung"
+            },
+            {
+              "term": "elektronik rumah tangga",
+              "evidence": "Mulai dari elektronik rumah tangga hingga peralatan komersial untuk kafe, restoran, bakery",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/aiostore.elektronik/posts/-dicari-nih-yang-lagi-mau-isi-rumah-atau-lengkapi-perlengkapan-bisnis-mau-bikin-/1123430987110064",
+              "source_title": "🚨 DICARI NIH! YANG LAGI MAU ISI RUMAH ATAU ..."
+            },
+            {
+              "term": "fluted wall foam 3d",
+              "evidence": "Cuba deco dinding guna FLUTED WALL FOAM 3D ni!",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@kasyifahibrahim/video/7709736308662439174",
+              "source_title": "Nak rumah nampak mewah dan moden tanpa perlu keluar ..."
+            },
+            {
+              "term": "panci",
+              "evidence": "✓ Panci 7 lapis kualitas tinggi",
+              "signal": "mentioned",
+              "source_url": "https://www.instagram.com/reel/Df9UFShveIf",
+              "source_title": "Ada yang baru lagi nih bun !! Buruan coba sebelum viral ..."
+            }
+          ]
+        },
+        {
+          "id": "fashion",
+          "name": "Fashion",
+          "status": "ok",
+          "sources_seen": 4,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [
+            {
+              "term": "hoodie pria streetwear",
+              "evidence": "hoodie pria streetwear, jaket fleece tebal, sweater oversize unisex",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@youmilier/video/7710165070344441096",
+              "source_title": "Ini bukan tentang ikut trend semata-mata, tapi tentang cari ..."
+            },
+            {
+              "term": "jaket fleece tebal",
+              "evidence": "hoodie pria streetwear, jaket fleece tebal, sweater oversize unisex",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@youmilier/video/7710165070344441096",
+              "source_title": "Ini bukan tentang ikut trend semata-mata, tapi tentang cari ..."
+            },
+            {
+              "term": "sweater oversize unisex",
+              "evidence": "jaket fleece tebal, sweater oversize unisex, dan bikin look makin stylish",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@youmilier/video/7710165070344441096",
+              "source_title": "Ini bukan tentang ikut trend semata-mata, tapi tentang cari ..."
+            },
+            {
+              "term": "tas sepatu",
+              "evidence": "Jual Tas Sepatu Nike 🔥 Original & Model Terlengkap 2026",
+              "signal": "mentioned",
+              "source_url": "https://www.blibli.com/jual/tas-sepatu-nike",
+              "source_title": "Jual Tas Sepatu Nike 🔥 Original & Model Terlengkap 2026",
+              "published_date": "2026-11-16"
+            },
+            {
+              "term": "duffel bag",
+              "evidence": "NIKE Men Training Utility Power 2.0 Duffel Bag Medium 51L Tas Pria",
+              "signal": "mentioned",
+              "source_url": "https://www.blibli.com/jual/tas-sepatu-nike",
+              "source_title": "Jual Tas Sepatu Nike 🔥 Original & Model Terlengkap 2026",
+              "published_date": "2026-11-16"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
