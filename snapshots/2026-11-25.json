@@ -1,0 +1,587 @@
+{
+  "date": "2026-11-25",
+  "generated_at": "2026-11-25T09:48:07.314Z",
+  "label": "趋势词快照",
+  "note": "仅表示这些词在近期公开网页的搜索结果中出现过，不代表搜索量、销量或增长趋势；使用前请自行判断。",
+  "provider": {
+    "search": "tavily",
+    "model": "deepseek-flash"
+  },
+  "searches": 27,
+  "markets": [
+    {
+      "market": "en-US",
+      "categories": [
+        {
+          "id": "consumer-electronics",
+          "name": "Consumer electronics & accessories",
+          "status": "ok",
+          "sources_seen": 14,
+          "rejected_terms": 1,
+          "rejected_reasons": {
+            "term_not_in_evidence": 1
+          },
+          "terms": [
+            {
+              "term": "wireless charger",
+              "evidence": "Surge Foldaway 3-in-1 Wireless Charger by DailyObjects",
+              "signal": "mentioned",
+              "source_url": "https://design-milk.com/best-tech-gifts",
+              "source_title": "Best Tech Gifts 2026: Cool Gadgets for Design Enthusiasts",
+              "published_date": "2026-11-18"
+            },
+            {
+              "term": "Bluetooth tracker",
+              "evidence": "It’s a small Bluetooth tracker that works with Android’s Fin",
+              "signal": "mentioned",
+              "source_url": "https://www.gearpatrol.com/audio/best-tech-audio-hi-fi-releases-2026-november-week-3",
+              "source_title": "The Best New Gadgets and Hi-Fi Releases of 2026 (Updated)",
+              "published_date": "2026-11-20"
+            },
+            {
+              "term": "smart glasses",
+              "evidence": "Samsung and Google have officially entered the smart glasses race and they brought serious fashion partners along.",
+              "signal": "mentioned",
+              "source_url": "https://www.youtube.com/watch?v=6ObtzyWhhVs",
+              "source_title": "20 NEW Smart Gadgets Worth Your Money!",
+              "published_date": "2026-11-23"
+            },
+            {
+              "term": "LED strip",
+              "evidence": "A smart LED strip where each LED can be a different color, so it can do gradients and animations that basic strips can't.",
+              "signal": "mentioned",
+              "source_url": "https://www.hackster.io/news/10-best-gifts-for-engineers-in-2026-tech-gadgets-they-will-actually-use-and-brag-about-d31cb860faa2",
+              "source_title": "10 Best Gifts for Engineers in 2026: Tech Gadgets They Will Actually Use (and Brag About!) - Hackster.io",
+              "published_date": "2026-11-20"
+            },
+            {
+              "term": "fitness tracker",
+              "evidence": "The Oura Ring is our favorite fitness tracker because it’s more stylish and discreet than any of the competition.",
+              "signal": "mentioned",
+              "source_url": "https://www.hollywoodreporter.com/lifestyle/shopping/best-buy-tech-gifts-bose-segway-oura-insta360-1236761260",
+              "source_title": "Best Buy Tech Gifts: Bose, Segway, Oura, Insta360",
+              "published_date": "2026-11-23"
+            },
+            {
+              "term": "wireless mouse",
+              "evidence": "And there’s Satechi’s Slim EX wireless mouse ($30).",
+              "signal": "mentioned",
+              "source_url": "https://www.gearpatrol.com/audio/best-tech-audio-hi-fi-releases-2026-november-week-3",
+              "source_title": "The Best New Gadgets and Hi-Fi Releases of 2026 (Updated)",
+              "published_date": "2026-11-20"
+            },
+            {
+              "term": "3D printer",
+              "evidence": "Why it made the list: 3D printers were in nearly 600 Hackster projects in 2026, up almost 40% on 2025.",
+              "signal": "mentioned",
+              "source_url": "https://www.hackster.io/news/10-best-gifts-for-engineers-in-2026-tech-gadgets-they-will-actually-use-and-brag-about-d31cb860faa2",
+              "source_title": "10 Best Gifts for Engineers in 2026: Tech Gadgets They Will Actually Use (and Brag About!) - Hackster.io",
+              "published_date": "2026-11-20"
+            }
+          ]
+        },
+        {
+          "id": "home-kitchen",
+          "name": "Home & kitchen",
+          "status": "ok",
+          "sources_seen": 18,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [
+            {
+              "term": "air fryer",
+              "evidence": "- Ninja Air Fryer Pro XL 6.5-quart $99.99 (was $189.99).",
+              "signal": "mentioned",
+              "source_url": "https://www.popsci.com/gear/amazon-kitchen-black-friday-deals-2026",
+              "source_title": "I found 81 kitchen deals on Amazon that are worth your money | Popular Science",
+              "published_date": "2026-11-19"
+            },
+            {
+              "term": "air fryer toaster oven",
+              "evidence": "Cuisinart TOA-55 air fryer toaster oven: $109.95 (was $209.95)",
+              "signal": "mentioned",
+              "source_url": "https://www.popsci.com/gear/amazon-kitchen-black-friday-deals-2026",
+              "source_title": "I found 81 kitchen deals on Amazon that are worth your money | Popular Science",
+              "published_date": "2026-11-19"
+            },
+            {
+              "term": "stand mixer",
+              "evidence": "KitchenAid Artisan 5-quart tilt-head stand mixer $349.95 (was $499.99).",
+              "signal": "mentioned",
+              "source_url": "https://www.popsci.com/gear/amazon-kitchen-black-friday-deals-2026",
+              "source_title": "I found 81 kitchen deals on Amazon that are worth your money | Popular Science",
+              "published_date": "2026-11-19"
+            },
+            {
+              "term": "espresso machine",
+              "evidence": "Breville Barista Pro espresso machine $564.95 (was $849.95).",
+              "signal": "mentioned",
+              "source_url": "https://www.popsci.com/gear/amazon-kitchen-black-friday-deals-2026",
+              "source_title": "I found 81 kitchen deals on Amazon that are worth your money | Popular Science",
+              "published_date": "2026-11-19"
+            },
+            {
+              "term": "bamboo cutting boards",
+              "evidence": "Bamboo cutting boards are becoming popular alternatives to plastic, and this trio won over our tester",
+              "signal": "stated_trending",
+              "source_url": "https://shopping.yahoo.com/home-garden/kitchen/article/10-kitchen-items-that-are-no-longer-worth-your-money-in-2026-144500990.html",
+              "source_title": "10 kitchen items that are no longer worth your money in 2026",
+              "published_date": "2026-11-20"
+            },
+            {
+              "term": "mug organizers",
+              "evidence": "A set of adjustable mug organizers that'll help you better use your kitchen cabinet space",
+              "signal": "mentioned",
+              "source_url": "https://www.buzzfeed.com/elizabethlilly/kitchen-products-thatll-make-you-question-why-you-waited-an",
+              "source_title": "37 Kitchen Products That’ll Make You Question Why You Waited So Long To Buy ’Em",
+              "published_date": "2026-11-20"
+            },
+            {
+              "term": "lazy Susan organizer",
+              "evidence": "A lazy Susan organizer for your refrigerator or pantry that rotates 360 degrees",
+              "signal": "mentioned",
+              "source_url": "https://www.buzzfeed.com/samanthaleffler/organization-products-to-help-you-with-kitchen-chaos",
+              "source_title": "27 Useful Organization Products For Your Kitchen",
+              "published_date": "2026-11-24"
+            },
+            {
+              "term": "drawer dividers",
+              "evidence": "Expandable drawer dividers -",
+              "signal": "mentioned",
+              "source_url": "https://www.youtube.com/watch?v=trrPAtTn5ls",
+              "source_title": "12 Useful Amazon Finds to Organize Your Home | Budget Friendly Storage Products",
+              "published_date": "2026-11-20"
+            }
+          ]
+        },
+        {
+          "id": "beauty-personal-care",
+          "name": "Beauty & personal care",
+          "status": "ok",
+          "sources_seen": 17,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [
+            {
+              "term": "cushion foundation",
+              "evidence": "I'm talking cushion foundations, tinted sunscreens, and lip products that are doing double duty.",
+              "signal": "mentioned",
+              "source_url": "https://www.youtube.com/watch?v=IOfeBRPK13M",
+              "source_title": "AM Beauty: 6 Korean Beauty Trends to Explore",
+              "published_date": "2026-11-19"
+            },
+            {
+              "term": "exfoliating pads",
+              "evidence": "These exfoliating pads — 25% off — and exactly what I packed while traveling this week.",
+              "signal": "mentioned",
+              "source_url": "https://magpiebyjenshoop.com/7-early-black-friday-beauty-skincare-obsessions",
+              "source_title": "7 Early Black Friday Deals on Beloved Skincare/Beauty Brands",
+              "published_date": "2026-11-18"
+            },
+            {
+              "term": "snail mucin essence",
+              "evidence": "Some reviewers prefer this to the cult-fave Cosrx snail mucin essence",
+              "signal": "mentioned",
+              "source_url": "https://www.buzzfeed.com/maitlandquitmeyer/best-beauty-products-to-buy-from-amazons-early",
+              "source_title": "Top 34 Amazon Early Black Friday Beauty Deals To Buy",
+              "published_date": "2026-11-20"
+            },
+            {
+              "term": "retinol cream",
+              "evidence": "Even testers with sensitive skin were able to tolerate this effective and exceptionally moisturizing retinol cream",
+              "signal": "mentioned",
+              "source_url": "https://www.nytimes.com/wirecutter/deals-highlights/black-friday-beauty-deals-2026",
+              "source_title": "All the Very Best Black Friday Beauty Deals | Reviews by Wirecutter",
+              "published_date": "2026-11-23"
+            },
+            {
+              "term": "pimple patches",
+              "evidence": "Mighty Patch Hero Cosmetics Original Nighttime Acne Pimple Patches | 36 Ct (Ad)",
+              "signal": "mentioned",
+              "source_url": "https://www.instagram.com/p/DgC9vsuER1-",
+              "source_title": "Snow White’s Finds on Instagram: \"Amazon’s Current Top 10 Best Sellers—Beauty & Self Care (Ad) 🧖‍♀️🧴✨ 🛒 Shoppable photos! Tap to shop!…\"",
+              "published_date": "2026-11-22"
+            },
+            {
+              "term": "micellar cleansing water",
+              "evidence": "A Garnier Micellar Cleansing Water lifts away the day's grime like a magnet, no harsh rubbing required.",
+              "signal": "mentioned",
+              "source_url": "https://www.buzzfeed.com/alexaericksongage/skincare-products-from-walmart-that-trust-me",
+              "source_title": "27 Best Walmart Skincare Products You Need Now",
+              "published_date": "2026-11-23"
+            },
+            {
+              "term": "vitamin C serum",
+              "evidence": "three best-selling vitamin C treatments: The Vitamin C Serum, The Cream, and The Face Cream Mask",
+              "signal": "stated_trending",
+              "source_url": "https://shopping.yahoo.com/beauty/skincare/articles/19-best-mens-skincare-sets-144100029.html",
+              "source_title": "19 Skincare Gift Sets He’ll Be Thrilled to Receive",
+              "published_date": "2026-11-18"
+            },
+            {
+              "term": "makeup brushes",
+              "evidence": "Master your makeup application with the right set of makeup brushes.",
+              "signal": "mentioned",
+              "source_url": "https://www.youtube.com/watch?v=hD6gi6vH9X0",
+              "source_title": "My GO-TO MAKEUP Brush Collection | Let me SHOW you why!"
+            }
+          ]
+        },
+        {
+          "id": "fitness-outdoor",
+          "name": "Fitness & outdoor",
+          "status": "ok",
+          "sources_seen": 15,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [
+            {
+              "term": "workout clothes",
+              "evidence": "DALLAS carries a wide assortment of footwear, workout clothes, sports equipment",
+              "signal": "mentioned",
+              "source_url": "https://www.yelp.com/search?find_desc=Workout+Clothes&find_loc=Dallas%2C+TX",
+              "source_title": "TOP 10 BEST Workout Clothes in Dallas, TX - (2026 Guide) - Yelp"
+            },
+            {
+              "term": "gym wear",
+              "evidence": "Thrift stores, Depop, Vinted, and H&M are popular for affordable gym wear",
+              "signal": "stated_trending",
+              "source_url": "https://www.facebook.com/groups/2401157423686595/posts/2635737510228584",
+              "source_title": "Where to find good gym wear and gear - Facebook"
+            },
+            {
+              "term": "workout gear",
+              "evidence": "New workout gear! I thought it was time for a refresh!",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/BethGoodrhamPersonalStylist/posts/new-workout-gear-i-thought-it-was-time-for-a-refresh-i-always-run-in-sweatybetty/1739593287738552",
+              "source_title": "New workout gear! I thought it was time for a refresh! I always run in ..."
+            },
+            {
+              "term": "adjustable dumbbells",
+              "evidence": "Adjustable dumbbells save the most floor space.",
+              "signal": "mentioned",
+              "source_url": "https://repfitness.com/blogs/guides/best-functional-training-home-gym",
+              "source_title": "Best Functional Training Home Gym Guide | REP Fitness",
+              "published_date": "2026-11-19"
+            },
+            {
+              "term": "kettlebells",
+              "evidence": "Dumbbells and kettlebells are go-to tools for single-arm and single-leg work",
+              "signal": "mentioned",
+              "source_url": "https://repfitness.com/blogs/guides/best-functional-training-home-gym",
+              "source_title": "Best Functional Training Home Gym Guide | REP Fitness",
+              "published_date": "2026-11-19"
+            },
+            {
+              "term": "plyo box",
+              "evidence": "Plyo boxes are simple but oh so versatile.",
+              "signal": "mentioned",
+              "source_url": "https://repfitness.com/blogs/guides/best-functional-training-home-gym",
+              "source_title": "Best Functional Training Home Gym Guide | REP Fitness",
+              "published_date": "2026-11-19"
+            },
+            {
+              "term": "jump rope",
+              "evidence": "Adding a jump rope to your kit is great for quick cardio",
+              "signal": "mentioned",
+              "source_url": "https://repfitness.com/blogs/guides/best-functional-training-home-gym",
+              "source_title": "Best Functional Training Home Gym Guide | REP Fitness",
+              "published_date": "2026-11-19"
+            },
+            {
+              "term": "yoga mat",
+              "evidence": "a Manduka PRO Yoga Mat or Bala Bangles makes much more sense",
+              "signal": "mentioned",
+              "source_url": "https://www.active.com/fitness/articles/2026-best-gifts-for-fitness-enthusiasts",
+              "source_title": "15 Best Gifts for Fitness Enthusiasts in 2026… | ACTIVE.com",
+              "published_date": "2026-11-24"
+            }
+          ]
+        },
+        {
+          "id": "pet-supplies",
+          "name": "Pet supplies",
+          "status": "ok",
+          "sources_seen": 14,
+          "rejected_terms": 1,
+          "rejected_reasons": {
+            "evidence_is_just_term": 1
+          },
+          "terms": [
+            {
+              "term": "dog food",
+              "evidence": "The Farmer's Dog Black Friday sale takes 50% off fresh dog food",
+              "signal": "mentioned",
+              "source_url": "https://www.registerguard.com/story/shopping/deals/black-friday/2026/11/24/the-farmers-dog-black-friday-fresh-pet-food-sale/92935793007",
+              "source_title": "The Farmer's Dog Black Friday sale takes 50% off fresh dog food"
+            },
+            {
+              "term": "cat food",
+              "evidence": "Woof Gang Bakery is the leader in raw, kibble, canned and dehydrated dog and cat foods.",
+              "signal": "mentioned",
+              "source_url": "https://woofgangsavannahga.com/sandfly",
+              "source_title": "Pet Food Supply Store Savannah GA - Woof Gang Bakery & Grooming Sandfly"
+            },
+            {
+              "term": "dog bed",
+              "evidence": "EZ-Wash Tweed Shearling Memory Foam Dog Bed - Farm To Pet",
+              "signal": "mentioned",
+              "source_url": "https://farmtopettreats.com/collections/pet-accessories",
+              "source_title": "Pet Accessories – Farm To Pet",
+              "published_date": "2026-11-20"
+            },
+            {
+              "term": "cat tree",
+              "evidence": "PuzzlePaw Christmas Cat Tree with Bed, $45 (originally $60)",
+              "signal": "mentioned",
+              "source_url": "https://www.sacbee.com/guides/pets/33-jaw-dropping-amazon-deals-on-dog-beds-cat-toys-and-other-tail-wagging-essentials-for-pet-parents",
+              "source_title": "Shop These 33+ Early Amazon Black Friday Deals on Pet Supplies",
+              "published_date": "2026-11-19"
+            },
+            {
+              "term": "cat scratching post",
+              "evidence": "Meowker 35″ Tall Palm Tree Cat Scratching Post, $23 (originally $38)",
+              "signal": "mentioned",
+              "source_url": "https://www.sacbee.com/guides/pets/33-jaw-dropping-amazon-deals-on-dog-beds-cat-toys-and-other-tail-wagging-essentials-for-pet-parents",
+              "source_title": "Shop These 33+ Early Amazon Black Friday Deals on Pet Supplies",
+              "published_date": "2026-11-19"
+            },
+            {
+              "term": "dog harness",
+              "evidence": "2. Puppia Soft Dog Harness",
+              "signal": "mentioned",
+              "source_url": "https://www.youtube.com/watch?v=Gy4dQMCaw3M",
+              "source_title": "Top 30 Best Dog Products for Busy Pet Parents - YouTube"
+            },
+            {
+              "term": "dog toys",
+              "evidence": "dog food online, cat food delivery, pet accessories shop, dog toys india, pet grooming navi mumbai,",
+              "signal": "mentioned",
+              "source_url": "https://www.instagram.com/p/DgDZOUvuY9m",
+              "source_title": "\" Customer Review by Laxman Tikoti \"One of the best ... - Instagram"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "market": "id-ID",
+      "categories": [
+        {
+          "id": "elektronik-aksesoris",
+          "name": "Elektronik & aksesoris",
+          "status": "ok",
+          "sources_seen": 8,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [
+            {
+              "term": "aksesoris HP",
+              "evidence": "Belanja aksesoris HP jadi lebih mudah dengan pilihan produk yang lengkap di Central Com!",
+              "signal": "mentioned",
+              "source_url": "https://www.instagram.com/reel/DgE5s32RP1Z",
+              "source_title": "Mau digilakan pula 😂 Datang ke CENTRAL COM, bisa lihat ..."
+            },
+            {
+              "term": "earphone bluetooth",
+              "evidence": "#tws #stereo #earphonebluetooth",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@juzairi_share/video/7711253744016526610",
+              "source_title": "earphone sound yg padu, bass padu, ofc dari stereo TWS ! ..."
+            },
+            {
+              "term": "TWS",
+              "evidence": "earphone sound yg padu, bass padu, ofc dari stereo TWS !",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@juzairi_share/video/7711253744016526610",
+              "source_title": "earphone sound yg padu, bass padu, ofc dari stereo TWS ! ..."
+            },
+            {
+              "term": "Bluetooth Headphones",
+              "evidence": "Cek Anker soundcore Q20i Bluetooth Headphones with Mic Hi-Res Hybrid ANC Headset",
+              "signal": "mentioned",
+              "source_url": "https://www.instagram.com/reel/Df9VzeIvukO",
+              "source_title": "Sooooo sweettt🥹🫶"
+            },
+            {
+              "term": "aksesoris gadget",
+              "evidence": "Berbagai perlengkapan dan aksesoris gadget tersedia di sini.",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/bantaeng.viral/videos/mau-beli-handphone-elektronik-paket-internet-atau-aksesoris-jangan-bingung-semua/1699781441667972",
+              "source_title": "Pelayanan Toko Paling Lincah di Marina Perdana Bantaeng"
+            },
+            {
+              "term": "kipas portable",
+              "evidence": "#AksesorisHP OPPO5G TWS KipasPortable",
+              "signal": "mentioned",
+              "source_url": "https://www.instagram.com/reel/DgAQ_Btpj_l",
+              "source_title": "Info Cegatan Wilayah Sragen | Sragen Terkini on Instagram: \"🔥 SATU GADGET, BANYAK KEJUTAN! 😍 Siapa bilang aksesori HP cuma buat gaya? Yang satu ini punya fitur …\"",
+              "published_date": "2026-11-21"
+            }
+          ]
+        },
+        {
+          "id": "kecantikan",
+          "name": "Kecantikan & perawatan diri",
+          "status": "ok",
+          "sources_seen": 9,
+          "rejected_terms": 1,
+          "rejected_reasons": {
+            "term_not_in_evidence": 1
+          },
+          "terms": [
+            {
+              "term": "perawatan rambut",
+              "evidence": "Perawatan rambut bukan hanya tentang apa yang kamu gunakan dari luar.",
+              "signal": "mentioned",
+              "source_url": "https://www.instagram.com/p/DgHJXzMm8bc",
+              "source_title": "Bonvie"
+            },
+            {
+              "term": "perawatan kulit",
+              "evidence": "Ada yang dikenal lewat makeup profesional, perawatan kulit, hingga kosmetik yang mengangkat kekayaan budaya Indonesia.",
+              "signal": "mentioned",
+              "source_url": "https://www.instagram.com/reel/Df9myZAPXXx",
+              "source_title": "HayaHere on Instagram: \"Sebelum beauty brand berlomba-lomba viral di media sosial, Indonesia ternyata sudah punya deretan br…\"",
+              "published_date": "2026-11-20"
+            },
+            {
+              "term": "perawatan tubuh",
+              "evidence": "PAKET KUMPLIT PERAWATAN RAMBUT DAN PERAWATAN TUBUH",
+              "signal": "mentioned",
+              "source_url": "https://www.tokopedia.com/find/hair-care-1-paket",
+              "source_title": "Jual Hair Care 1 Paket Murah & Terbaik - Harga Terbaru ...",
+              "published_date": "2026-11-24"
+            },
+            {
+              "term": "tren makeup",
+              "evidence": "Di antara tren makeup yang sedang populer, ada dua pilihan yang sering diperdebatkan",
+              "signal": "stated_trending",
+              "source_url": "https://www.tiktok.com/@destiaaff_/video/7710192460701486344",
+              "source_title": "Makeup Transition Doris: Plong Banget Rasanya! 🥹"
+            },
+            {
+              "term": "makeup profesional",
+              "evidence": "Ada yang dikenal lewat makeup profesional, perawatan kulit, hingga kosmetik yang mengangkat kekayaan budaya Indonesia.",
+              "signal": "mentioned",
+              "source_url": "https://www.instagram.com/reel/Df9myZAPXXx",
+              "source_title": "HayaHere on Instagram: \"Sebelum beauty brand berlomba-lomba viral di media sosial, Indonesia ternyata sudah punya deretan br…\"",
+              "published_date": "2026-11-20"
+            }
+          ]
+        },
+        {
+          "id": "rumah-tangga",
+          "name": "Rumah tangga",
+          "status": "ok",
+          "sources_seen": 9,
+          "rejected_terms": 0,
+          "rejected_reasons": {},
+          "terms": [
+            {
+              "term": "rak dan organizer",
+              "evidence": "3 barang rumah tangga yang paling gampang laku: rak dan organizer, alat dapur praktis, dan perlengkapan kebersihan.",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/cscargo.id/posts/3-barang-rumah-tangga-yang-paling-gampang-laku-rak-dan-organizer-alat-dapur-prak/1212250547993745",
+              "source_title": "3 barang rumah tangga yang paling gampang laku"
+            },
+            {
+              "term": "alat dapur praktis",
+              "evidence": "3 barang rumah tangga yang paling gampang laku: rak dan organizer, alat dapur praktis, dan perlengkapan kebersihan.",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/cscargo.id/posts/3-barang-rumah-tangga-yang-paling-gampang-laku-rak-dan-organizer-alat-dapur-prak/1212250547993745",
+              "source_title": "3 barang rumah tangga yang paling gampang laku"
+            },
+            {
+              "term": "perlengkapan kebersihan",
+              "evidence": "3 barang rumah tangga yang paling gampang laku: rak dan organizer, alat dapur praktis, dan perlengkapan kebersihan.",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/cscargo.id/posts/3-barang-rumah-tangga-yang-paling-gampang-laku-rak-dan-organizer-alat-dapur-prak/1212250547993745",
+              "source_title": "3 barang rumah tangga yang paling gampang laku"
+            },
+            {
+              "term": "alat masak",
+              "evidence": "Sebuah video yang sedang menjadi tren menunjukkan sebuah alat masak yang begitu canggih hingga membuat banyak orang terkejut.",
+              "signal": "stated_trending",
+              "source_url": "https://www.tiktok.com/@vqha_29/video/7709679198155115796",
+              "source_title": "Alat Masak Canggih Viral di TikTok, Bikin Masak Jadi Mudah!"
+            },
+            {
+              "term": "alat dapur multifungsi",
+              "evidence": "Masak jadi lebih praktis dengan alat dapur multifungsi!",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@samonoindonesia/video/7709450371755740436",
+              "source_title": "Masak jadi lebih praktis dengan alat dapur multifungsi! ..."
+            },
+            {
+              "term": "kotak penyimpanan serbaguna",
+              "evidence": "Kotak penyimpanan serbaguna ini memiliki ・ produk ini cocok diletakkan di kamar tidur, meja rias, ruang tamu, hingga ruang kerja.",
+              "signal": "mentioned",
+              "source_url": "https://www.facebook.com/groups/1492830577436050/posts/29711034325188964",
+              "source_title": "Kotak penyimpanan serbaguna ini memiliki desain"
+            },
+            {
+              "term": "rak dinding kayu gantung",
+              "evidence": "Rak dinding kayu gantung dengan anyaman rotan menawarkan gabungan fungsi dan",
+              "signal": "mentioned",
+              "source_url": "https://www.tiktok.com/@creativewithodi/video/7706375519469669638",
+              "source_title": "Rak pajangan dinding minimalis yang kokoh dan gampang ..."
+            },
+            {
+              "term": "wadah madu",
+              "evidence": "Terlaris Wadah Madu Aesthetic imhome bahan kaca tutup kayu estetik estetic peralatan rumah tangga perabotan",
+              "signal": "stated_trending",
+              "source_url": "https://www.tokopedia.com/find/perabot-rumah-tangga-estetik",
+              "source_title": "Jual Perabot Rumah Tangga Estetik Murah & Terbaik",
+              "published_date": "2026-11-21"
+            }
+          ]
+        },
+        {
+          "id": "fashion",
+          "name": "Fashion",
+          "status": "ok",
+          "sources_seen": 7,
+          "rejected_terms": 2,
+          "rejected_reasons": {
+            "term_not_in_evidence": 2
+          },
+          "terms": [
+            {
+              "term": "baju atasan hijab",
+              "evidence": "Di Tokopedia, tersedia berbagai macam koleksi Model Baju Atasan Hijab dari model muslim terkini",
+              "signal": "mentioned",
+              "source_url": "https://www.tokopedia.com/find/model-baju-atasan-hijab",
+              "source_title": "Jual Model Baju Atasan Hijab Model & Desain Terbaru",
+              "published_date": "2026-11-20"
+            },
+            {
+              "term": "gamis dres couple",
+              "evidence": "Cek gamis dres COUPLE cwek fashion silk terbaru termewah busana muslim kekinian terbaru viral terbaru",
+              "signal": "stated_trending",
+              "source_url": "https://www.facebook.com/kholifah.n.2025/posts/cek-gamis-dres-couple-cwek-fashion-silk-terbaru-termewah-busana-muslim-kekinian-/2354748045273518",
+              "source_title": "Holifah N on Facebook: \"Cek gamis dres COUPLE cwek fashion silk terbaru termewah busana muslim kekinian terbaru viral terbar…\"",
+              "published_date": "2026-11-18"
+            },
+            {
+              "term": "busana muslim",
+              "evidence": "Cek gamis dres COUPLE cwek fashion silk terbaru termewah busana muslim kekinian terbaru viral terbaru",
+              "signal": "stated_trending",
+              "source_url": "https://www.facebook.com/kholifah.n.2025/posts/cek-gamis-dres-couple-cwek-fashion-silk-terbaru-termewah-busana-muslim-kekinian-/2354748045273518",
+              "source_title": "Holifah N on Facebook: \"Cek gamis dres COUPLE cwek fashion silk terbaru termewah busana muslim kekinian terbaru viral terbar…\"",
+              "published_date": "2026-11-18"
+            },
+            {
+              "term": "tas sepatu",
+              "evidence": "Jual Tas Sepatu Nike Original Terbaik - Harga Murah ...",
+              "signal": "mentioned",
+              "source_url": "https://www.tokopedia.com/find/tas-sepatu-nike-original",
+              "source_title": "Jual Tas Sepatu Nike Original Terbaik - Harga Murah ...",
+              "published_date": "2026-11-24"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
